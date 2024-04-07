@@ -10,15 +10,13 @@
 
 ## Participantes
 
-......  COLOQUE AQUI O SEU TEXTO ......
-
-> Os membros do grupo são: 
-> -  Guilherme de Oliveira Souza
-> -  Igor Maia Moreira Fernandes
-> -  Luis Henrique Sampaio Vieira
-> - Thiago Moreira de Queiroz
-> - Victor Schneider do Vale
-> - Vitor Prates Souza Lima
+Os membros participantes do grupo são: 
+* Guilherme de Oliveira Souza
+* Igor Maia Moreira Fernandes
+* Luis Henrique Sampaio Vieira
+* Thiago Moreira de Queiroz
+* Victor Schneider do Vale
+* Vitor Prates Souza Lima
 
 # Estrutura do Documento
 
@@ -56,10 +54,15 @@
 
 
 # Introdução
+O panorama socioeconômico contemporâneo é marcado por uma crescente demanda por flexibilidade e agilidade na busca por oportunidades de trabalho. A necessidade de encontrar oportunidades de trabalho de maneira rápida e eficiente tornou-se uma demanda crescente em um mundo cada vez mais conectado e dinâmico. De acordo com a Pesquisa Nacional por Amostra de Domicílios Contínua do IBGE, a taxa de desempregados (desocupados) foi de 8,1 milhões no 4º trimestre de 2023. Os homens representaram 45,7% dos desocupados e as mulheres 54,3%. Além disso, os jovens com idade entre 18 e 24 anos representam quase ⅓ dos desocupados, ficando atrás apenas daqueles com a idade de 25 a 39, com 35,5%.
+Nesse contexto, o advento de plataformas digitais surge como uma alternativa promissora para conectar empregadores e trabalhadores de forma eficiente, especialmente no âmbito do mercado informal. A UaiJobs se destaca como uma plataforma inovadora que visa facilitar essa conexão, conectando empregos informais e empregados, proporcionando a possibilidade de fazer uma renda extra ou conseguir um funcionário de última hora.
+O projeto nasceu da necessidade de se conseguir trabalhos esporádicos, sem vínculo empregatício formal, atendendo a um público-alvo composto por adultos e adolescentes a partir de 16 anos. A plataforma representa um avanço significativo na maneira como as pessoas buscam e oferecem trabalho, especialmente em um cenário onde a flexibilidade e a agilidade são cada vez mais valorizadas.
+Dito isso, o UaiJobs é mais do que apenas um meio de conectar empregadores e trabalhadores, é uma ferramenta para capacitar indivíduos, bem como, oferecer uma solução inovadora que pode ajudar a aliviar algumas das pressões enfrentadas por aqueles que estão desocupados.
 
 ## Problema
 
-......  COLOQUE AQUI O SEU TEXTO ......
+De acordo com o exposto acima, a carência que este projeto deseja suprir é: “A falta de uma plataforma eficiente para conectar empregadores e trabalhadores no contexto informal”.
+Muitas vezes, as vagas informais não são amplamente divulgadas, resultando em um mercado fragmentado e ineficiente. Além disso, os empregadores podem enfrentar dificuldades para encontrar pessoas com as habilidades necessárias para preencher essas vagas. 
 
 > Nesse momento você deve apresentar o problema que a sua aplicação deve
 > resolver. No entanto, não é a hora de comentar sobre a aplicação.
@@ -79,7 +82,10 @@
 
 ## Objetivos
 
-......  COLOQUE AQUI O SEU TEXTO ......
+O objetivo geral da UaiJobs é facilitar a conexão entre empregadores e trabalhadores informais, permitindo que ambos encontrem o que procuram de maneira rápida e eficaz, a fim de suprir a comunicação defasada nesse sistema laboral. Analisando de forma mais detalhada, a plataforma objetiva os seguintes tópicos:
+* Fornecer ao trabalhador informal uma maneira de encontrar remuneração de forma independente, podendo auxiliá-los financeiramente em períodos de altos índices de desemprego; 
+* Implementar um local seguro para o empregador divulgar suas necessidades de serviços;
+* Estimular a qualidade do serviço prestado através de um sistema de avaliações, a fim de manter um padrão de excelência entre os usuário da plataforma
 
 > Aqui você deve descrever os objetivos do trabalho indicando que o
 > objetivo geral é desenvolver um software para solucionar o problema
