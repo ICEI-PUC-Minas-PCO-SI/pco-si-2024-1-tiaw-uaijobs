@@ -12,11 +12,13 @@
 
 ......  COLOQUE AQUI O SEU TEXTO ......
 
-> Inclua a lista dos membros da equipe com seus nomes completos.
->
 > Os membros do grupo são: 
-> - Fulano da Silva
-> - Ciclano Albuquerque
+> -  Guilherme de Oliveira Souza
+> -  Igor Maia Moreira Fernandes
+> -  Luis Henrique Sampaio Vieira
+> - Thiago Moreira de Queiroz
+> - Victor Schneider do Vale
+> - Vitor Prates Souza Lima
 
 # Estrutura do Documento
 
