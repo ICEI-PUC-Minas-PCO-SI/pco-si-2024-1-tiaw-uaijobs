@@ -66,22 +66,6 @@ Dito isso, o UaiJobs é mais do que apenas um meio de conectar empregadores e tr
 De acordo com o exposto acima, a carência que este projeto deseja suprir é: “A falta de uma plataforma eficiente para conectar empregadores e trabalhadores no contexto informal”.
 Muitas vezes, as vagas informais não são amplamente divulgadas, resultando em um mercado fragmentado e ineficiente. Além disso, os empregadores podem enfrentar dificuldades para encontrar pessoas com as habilidades necessárias para preencher essas vagas. 
 
-> Nesse momento você deve apresentar o problema que a sua aplicação deve
-> resolver. No entanto, não é a hora de comentar sobre a aplicação.
-> Descreva também o contexto em que essa aplicação será usada, se
-> houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de
-> fato existir, pois ainda não é a hora de apresentar requisitos
-> detalhados ou projetos.
->
-> Nesse momento, o grupo pode optar por fazer uso
-> de ferramentas como Design Thinking, que permite um olhar de ponta a
-> ponta para o problema.
->
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
-
 ## Objetivos
 
 O objetivo geral da UaiJobs é facilitar a conexão entre empregadores e trabalhadores informais, permitindo que ambos encontrem o que procuram de maneira rápida e eficaz, a fim de suprir a comunicação defasada nesse sistema laboral. Analisando de forma mais detalhada, a plataforma objetiva os seguintes tópicos:
