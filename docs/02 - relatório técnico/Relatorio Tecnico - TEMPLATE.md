@@ -13,7 +13,7 @@
 Os membros participantes do grupo são: 
 * Guilherme de Oliveira Souza
 * Igor Maia Moreira Fernandes
-* Luis Henrique Sampaio Vieira
+* Luis H. Sampaio Vieira
 * Thiago Moreira de Queiroz
 * Victor Schneider do Vale
 * Vitor Prates Souza Lima
