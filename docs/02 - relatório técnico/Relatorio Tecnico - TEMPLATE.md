@@ -761,14 +761,17 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 
 # Metodologia
+A equipe escolheu utilizar metodologias ágeis, tendo o ScrumBan como base para definição do processo de desenvolvimento. Metodologia essa que foca na organização de tarefas e na otimização das mesmas.
+O Projeto Scrumban é organizado em um quadro do tipo Kanban. Denominando tarefas para cada membro, sendo essas escritas em cartões distribuídos entre diversas colunas correspondentes aos estágios das tarefas. 
+À medida que os membros das equipes trabalham nelas, os cartões são movidos para a coluna correspondente ao estágio atual de cada tarefa.
+Essa metódologia foi escolhida por se fácil de se usar, ter uma boa otimização do fluxo de trabalho, uma boa consistência e por propor uma melhora constante
 
-......  COLOQUE AQUI O SEU TEXTO ......
+![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/129126008/eb9c3700-5f67-46d2-b182-c3b30db897da)
 
-> Nesta parte do documento, você deve apresentar a metodologia 
-> adotada pelo grupo, descrevendo o processo de trabalho baseado nas metodologias ágeis, 
-> a divisão de papéis e tarefas, as ferramentas empregadas e como foi realizada a
-> gestão de configuração do projeto via GitHub.
->
+Para o processo de Design Thinking, todos os membros foram incentivados a contribuir com ideias das mais diversas, adquirindo uma variedade de linhas de pensamento e de recursos que poderiam ou não ser usados.
+![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/129126008/d6aef4a7-9acb-49b2-bbbc-50e819e49237)
+Como vemos na imagem acima, após a contribuição com este leque de opções e ideias, aplicamos uma priorização das tarefas numa relação de custo x impacto, deixando claro o que poderia ser mais viável ou não.
+
 > Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido
 > pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar
 > o andamento do projeto, a execução das tarefas e o status de desenvolvimento
@@ -784,12 +787,13 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 ......  COLOQUE AQUI O SEU TEXTO ......
 
-> Apresente a divisão de papéis e tarefas entre os membros do grupo.
->
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-
+Scrum Master: Thiago Moreira
+Product Owner: Vitor Prates
+Equipe de Desenvolvimento
+Guilherme De Oliveira (Desenvolvedor Front End)
+Luis H. Sampaio (Desenvolvedor Back End)
+Igor Fernandes (Analista de Negócios)
+Victor Schneider (Designer)
 
 ## Ferramentas
 
