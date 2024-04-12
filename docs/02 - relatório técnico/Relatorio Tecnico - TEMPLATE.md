@@ -180,10 +180,21 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|ID    | Descrição do Requisito                                                                           | Prioridade |
+|------|--------------------------------------------------------------------------------------------------|-------|
+|RF-001| Cadastro de usuário (Capacidade para usuários se cadastrarem como trabalhadores ou empregadores) | ALTA | 
+|RF-002| Filtro de vagas que considera: tipo de trabalho, remuneração e período/data                      | ALTA |
+|RF-003| Sistema de avaliação e feedback                                                                  | ALTA | 
+|RF-004| Sistema de geolocalização                                                                        | MÉDIA |
+|RF-005| Espaço para anúncios                                                                             | MÉDIA | 
+|RF-006| Acessibilidade da plataforma para PCD                                                            | MÉDIA |
+|RF-007| Barra de pesquisa para usuários                                                                  | MÉDIA | 
+|RF-008| Página sobre criadores e objetivo do projeto                                                     | ALTA |
+|RF-009| Impulsionar vagas por meio de pagamento para a plataforma                                        | MÉDIA | 
+|RF-010| Algorítimo de recomendações de serviços baseados nos interesses do usuário                       | ALTA |
+|RF-011| Pesquisa de interesses após primeiro Login                                                       | ALTA | 
+|RF-012| Gamificação: Sistema de ranqueamento do usuário                                                  | BAIXA |
+
 
 
 ### Requisitos não Funcionais
@@ -219,10 +230,11 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
 
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|ID| Restrição                                                                                                                     |
+|--|-------------------------------------------------------------------------------------------------------------------------------|
+|01| Não poderá utilizar banco de dados no desenvolvimento do projeto                                                              |
+|02| O projeto precisa necessariamente ser intuitivo e de fácil entendimento para todas as idades diante de níveis tecnológicos.   |
+|03| Todo os colaboradores do projeto precisam conhecer e participar efetivamente de todas as etapas do projeto                    |
 
 
 > Enumere as restrições à sua solução. Lembre-se de que as restrições
