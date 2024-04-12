@@ -116,7 +116,8 @@ O objetivo geral da UaiJobs é facilitar a conexão entre empregadores e trabalh
 
 ## Público-Alvo
 
-......  COLOQUE AQUI O SEU TEXTO ......
+O público-alvo da UaiJobs é composto por adultos e adolescentes a partir de 16 anos que buscam oportunidades de trabalho informal. Isso inclui pessoas que estão em busca de uma renda extra, estudantes que querem conciliar o estudo com o trabalho, aposentados, e aqueles que preferem a flexibilidade do trabalho informal. A plataforma também visa os empregadores que precisam de trabalhadores para tarefas específicas ou para  curtos períodos de tempo.
+
 
 > Descreva quem serão as pessoas que usarão a sua aplicação indicando os
 > diferentes perfis. O objetivo aqui não é definir quem serão os
