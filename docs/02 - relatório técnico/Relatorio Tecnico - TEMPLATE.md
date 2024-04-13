@@ -299,45 +299,52 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Metodologia
 
-......  COLOQUE AQUI O SEU TEXTO ......
+A equipe adotou a metodologia ScrumBan, focando na organização de tarefas, na flexibildade, na possibilidade de escolha e na agilidade dos processos.
+O Scrumban é uma metodologia ágil que mistura elementos do Scrum e do Kanban. Essa metodologia traz a estrutura organizada do Scrum, e combina com o fluxo contínuo e visualização do Kanban.
 
-> Nesta parte do documento, você deve apresentar a metodologia 
-> adotada pelo grupo, descrevendo o processo de trabalho baseado nas metodologias ágeis, 
-> a divisão de papéis e tarefas, as ferramentas empregadas e como foi realizada a
-> gestão de configuração do projeto via GitHub.
->
-> Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido
-> pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar
-> o andamento do projeto, a execução das tarefas e o status de desenvolvimento
-> da solução.
-> 
-> **Links Úteis**:
-> - [Tutorial Trello](https://trello.com/b/8AygzjUA/tutorial-trello)
-> - [Gestão ágil de projetos com o Trello](https://www.youtube.com/watch?v=1o9BOMAKBRE)
-> - [Gerência de projetos - Trello com Scrum](https://www.youtube.com/watch?v=DHLA8X_ujwo)
-> - [Tutorial Slack](https://slack.com/intl/en-br/)
+Alguns pontos que trouxeram a equipe para este método:
+
+Une o melhor dos dois métodos.
+Permite entregas contínuas.
+Usa quadros Kanban para acompanhar o fluxo de trabalho.
+As tarefas no quadro Kanban são priorizadas, o que ajuda a equipe a se concentrar nas mais importantes primeiro.
+É adaptável, pode ser facilmente ajustada para atender às necessidades específicas a qualquer hora.
+É focado no trabalho, a equipe foca em concluir tarefas o mais rápido possível.
+Incentiva a melhoria contínua, com a equipe constantemente procurando maneiras de melhorar seus processos e fluxos de trabalho.
+
+Para o projeto, a equipe optou por todos participarem juntamente no processo de design thinking, construção da etapa de entendimento e na etapa de exploração, propondo idéias das mais diversas sobre funcionaliade e elementos do site.
+Para implementação e documentação dessas idéias, foram separadas por seções, podendo cada integrante, escolher qual desenvolveria. Nesta etapa, a equipe fez o uso da ferramenta Miro, com a finalidade de contruir quadros contendo as idéias, e da ferramenta Trello, com a finalidade de separar e escolher as tarefas.
+Miro: https://miro.com/app/board/uXjVNjOu4ck=/
+![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/129126008/9bf1b0a8-7413-4d03-82cb-50f9c1e331be)
+alt: Imagem do board no Miro, servindo apenas de ilustração e demonstração do projeto final.
+
+Trello: https://trello.com/invite/b/qW8TBTgm/ATTI62ad82444c52393de4dd9e46e5877bf46509A37D/uai-jobs-tasks
+![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/129126008/449b79e3-7d0a-41ed-8dab-254207638c68)
+alt: Imagem do board do Trello, apresentando a separação das tarefas.
+
+Para o controle e gestão do projeto via Git, foi acordado entre a equipe, a criação de apenas uma branch de revisão, sendo ela fora da master, e a criação de branchs diversas para a implementação de alterações, que depois de feitas, seriam conjuntas com a branch de testes. A equipe usou do próprio GitHub para a efetuação dos commits, trazendo uma padronização de ferramentas e de processo e gerenciamento de versões.
 
 ## Divisão de Papéis
 
-......  COLOQUE AQUI O SEU TEXTO ......
-
-> Apresente a divisão de papéis e tarefas entre os membros do grupo.
->
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-
+Scrum Master: Leonardo Vilela
+Product Owner: Amália Soares
+Equipe de Desenvolvimento
+Guilherme de Oliveira Souza (Desenvolvedor Front End)
+Igor Maia Moreira Fernandes (Desenvolvedor Front End)
+Luis Henrique Sampaio Vieira (Desenvolvedor Front End)
+Thiago Moreira de Queiroz (Desenvolvedor Front End)
+Victor Schneider do Vale (Desenvolvedor Front End)
+Vitor Prates Souza Lima (Desenvolvedor Front End)
 
 ## Ferramentas
 
-......  COLOQUE AQUI O SEU TEXTO - SIGA O EXEMPLO DA TABELA ABAIXO  ......
-
 | Ambiente  | Plataforma              |Link de Acesso |
 |-----------|-------------------------|---------------|
-|Processo de Design Thinkgin  | Miro |  https://miro.com/XXXXXXX | 
-|Repositório de código | GitHub | https://github.com/XXXXXXX | 
+|Processo de Design Thinkgin  | Miro |  (https://miro.com/app/board/uXjVNjOu4ck=/) | 
+|Repositório de código | GitHub | (https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs) | 
 |Hospedagem do site | Heroku |  https://XXXXXXX.herokuapp.com | 
-|Protótipo Interativo | MavelApp ou Figma | https://figma.com/XXXXXXX | 
+|Protótipo Interativo | MavelApp | https://marvelapp.com/prototype/1ah9095e/screen/94366212 | 
+|User flow | Figma | https://www.figma.com/file/Luqd8sBxzYdyUahcCHgC0H/User-Flow-UaiJobs?type=design&node-id=0%3A1&mode=design&t=KzEpENNHxDYwQXGN-1 |
 
 >
 > Liste as ferramentas empregadas no desenvolvimento do
@@ -345,7 +352,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 > 
 > As ferramentas empregadas no projeto são:
 > 
-> - Editor de código.
+> - Editor de código .
 > - Ferramentas de comunicação
 > - Ferramentas de diagramação
 > - Plataforma de hospedagem
