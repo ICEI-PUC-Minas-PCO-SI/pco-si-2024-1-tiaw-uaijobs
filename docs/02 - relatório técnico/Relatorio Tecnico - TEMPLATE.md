@@ -206,8 +206,14 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
+|RNF-001| O sistema deve ser responsivo para rodar em todos dispositivos | ALTA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-003| Proteção dos dados dos usuários cadastrados, para ninguém ter acesso não autorizado. |  MÉDIA | 
+|RNF-004| A interface do usuário deve ser intuitiva e fácil de usar, especialmente para um público diversificado que pode não estar familiarizado com tecnologia avançada. |  ALTA | 
+|RNF-005| Oferecer recursos de personalização permite aos usuários adaptarem a experiência do site de acordo com suas preferências individuais. Isso pode incluir a capacidade de salvar buscas, configurar alertas de emprego, personalizar perfis e receber recomendações de vagas com base em históricos de navegação. |  MÉDIA | 
+|RNF-006|  O sistema deve ser capaz de lidar com falhas de componentes individuais sem interromper o funcionamento do site como um todo. |  BAIXA | 
+
+
 
 > Com base nas Histórias de Usuário, enumere os requisitos da sua
 > solução. Classifique esses requisitos em dois grupos:
