@@ -232,6 +232,13 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 ## User Flow
 
 ......  INCLUA AQUI O DIAGRAMA COM O FLUXO DO USUÁRIO NA APLICAÇÃO ......
+A seguinte imagem mostra como poderá ser o fluxo de interação do usuário pelas telas do sistema, revelando cada caminho que poderá ser seguido, cada uma tem interação com outras uma ou mais.
+Essas telas estão detalhadas na seção de Wireframes.
+![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/129126008/532b6559-d1b3-4d97-ae42-493073e497fb)
+alt: Imagem do user flow.
+
+
+
 
 > Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor
 > mapear todo fluxo de telas do site ou app. Essa técnica funciona
@@ -275,13 +282,13 @@ O Scrumban é uma metodologia ágil que mistura elementos do Scrum e do Kanban. 
 
 Alguns pontos que trouxeram a equipe para este método:
 
-Une o melhor dos dois métodos.
-Permite entregas contínuas.
-Usa quadros Kanban para acompanhar o fluxo de trabalho.
-As tarefas no quadro Kanban são priorizadas, o que ajuda a equipe a se concentrar nas mais importantes primeiro.
-É adaptável, pode ser facilmente ajustada para atender às necessidades específicas a qualquer hora.
-É focado no trabalho, a equipe foca em concluir tarefas o mais rápido possível.
-Incentiva a melhoria contínua, com a equipe constantemente procurando maneiras de melhorar seus processos e fluxos de trabalho.
+* Une o melhor dos dois métodos.
+* Permite entregas contínuas.
+* Usa quadros Kanban para acompanhar o fluxo de trabalho.
+* As tarefas no quadro Kanban são priorizadas, o que ajuda a equipe a se concentrar nas mais importantes primeiro.
+* É adaptável, pode ser facilmente ajustada para atender às necessidades específicas a qualquer hora.
+* É focado no trabalho, a equipe foca em concluir tarefas o mais rápido possível.
+* Incentiva a melhoria contínua, com a equipe constantemente procurando maneiras de melhorar seus processos e fluxos de trabalho.
 
 Para o projeto, a equipe optou por todos participarem juntamente no processo de design thinking, construção da etapa de entendimento e na etapa de exploração, propondo idéias das mais diversas sobre funcionaliade e elementos do site.
 Para implementação e documentação dessas idéias, foram separadas por seções, podendo cada integrante, escolher qual desenvolveria. Nesta etapa, a equipe fez o uso da ferramenta Miro, com a finalidade de contruir quadros contendo as idéias, e da ferramenta Trello, com a finalidade de separar e escolher as tarefas.
@@ -297,36 +304,28 @@ Para o controle e gestão do projeto via Git, foi acordado entre a equipe, a cri
 
 ## Divisão de Papéis
 
-Scrum Master: Leonardo Vilela
-Product Owner: Amália Soares
+* Scrum Master: Leonardo Vilela
+* Product Owner: Amália Soares
 Equipe de Desenvolvimento
-Guilherme de Oliveira Souza (Desenvolvedor Front End)
-Igor Maia Moreira Fernandes (Desenvolvedor Front End)
-Luis Henrique Sampaio Vieira (Desenvolvedor Front End)
-Thiago Moreira de Queiroz (Desenvolvedor Front End)
-Victor Schneider do Vale (Desenvolvedor Front End)
-Vitor Prates Souza Lima (Desenvolvedor Front End)
+* Guilherme de Oliveira (Desenvolvedor Front End)
+* Igor Maia Moreira (Desenvolvedor Front End)
+* Luis Henrique (Desenvolvedor Front End)
+* Thiago Moreira (Desenvolvedor Front End)
+* Victor Schneider(Desenvolvedor Front End)
+* Vitor Prates (Desenvolvedor Front End)
 
 ## Ferramentas
 
 | Ambiente  | Plataforma              |Link de Acesso |
 |-----------|-------------------------|---------------|
 Alteração-Metodologia-Divisão-Ferramentas
-|Processo de Design Thinkgin  | Miro |  (https://miro.com/app/board/uXjVNjOu4ck=/) | 
-|Repositório de código | GitHub | (https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs) | 
-=======
-|Processo de Design Thinkgin  | Miro |  https://miro.com/XXXXXXX |
-|Documentação | Google Drive | https://drive.google.com/drive/folders/1Bt5ecXhlsIZ9WLKxS-o76BaBwXPInwzX?usp=drive_link | 
-|Repositório de código | GitHub | https://github.com/XXXXXXX | 
- Documentações
+|Processo de Design Thinkgin  | Miro | <https://miro.com/app/board/uXjVNjOu4ck=/> | 
+|Repositório de código | GitHub | <https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs> | 
+|Documentação | Google Drive | <https://drive.google.com/drive/folders/1Bt5ecXhlsIZ9WLKxS-o76BaBwXPInwzX?usp=drive_link> | 
 |Hospedagem do site | Heroku |  https://XXXXXXX.herokuapp.com | 
-|Protótipo Interativo | MavelApp | https://marvelapp.com/prototype/1ah9095e/screen/94366212 | 
-|User flow | Figma | https://www.figma.com/file/Luqd8sBxzYdyUahcCHgC0H/User-Flow-UaiJobs?type=design&node-id=0%3A1&mode=design&t=KzEpENNHxDYwQXGN-1 |
+|Protótipo Interativo | MavelApp | <https://marvelapp.com/prototype/1ah9095e/screen/94366212> | 
+|User flow | Figma | <https://www.figma.com/file/Luqd8sBxzYdyUahcCHgC0H/User-Flow-UaiJobs?type=design&node-id=0%3A1&mode=design&t=KzEpENNHxDYwQXGN-1> |
 
->
-> Liste as ferramentas empregadas no desenvolvimento do
-> projeto, justificando a escolha delas, sempre que possível.
-> 
 > As ferramentas empregadas no projeto são:
 > 
 > - Editor de código .
