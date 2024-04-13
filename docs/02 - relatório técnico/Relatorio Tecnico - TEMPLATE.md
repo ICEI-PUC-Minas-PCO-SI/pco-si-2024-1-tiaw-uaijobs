@@ -80,10 +80,9 @@ A necessidade de uma plataforma como a UaiJobs é evidente, uma vez que, o aumen
 
 ## Público-Alvo
 
-O público-alvo da UaiJobs é composto por adultos e adolescentes a partir de 16 anos que buscam oportunidades de trabalho informal. 
-Isso inclui pessoas que desejam complementar sua renda, seja para atender a necessidades financeiras imediatas ou para alcançar objetivos de longo prazo. Bem como, estudantes que querem conciliar o estudo com o trabalho, os aposentados, que desejam permanecer ativos e produtivos.
-Além disso, a plataforma também será útil para aqueles que valorizam a flexibilidade do trabalho informal. Esse perfil de usuário prefere trabalhar em horários não convencionais ou ter a liberdade de escolher tarefas que se alinhem com seus interesses pessoais.
-Por fim, a UaiJobs também será utilizada por empregadores que precisam de trabalhadores para tarefas específicas ou para períodos de tempo curtos. Esses empregadores podem variar desde pequenas ou grandes empresas até indivíduos que precisam de ajuda em tarefas diárias.
+O público-alvo da UaiJobs é composto por adultos e adolescentes a partir de 16 anos que buscam oportunidades de trabalho informal. Isso inclui pessoas que desejam complementar sua renda, seja para atender a necessidades financeiras imediatas ou para alcançar objetivos de longo prazo, bem como, estudantes que querem conciliar o estudo com o trabalho, os aposentados, que desejam permanecer ativos e produtivos.
+
+Além disso, a plataforma também será útil para aqueles que valorizam a flexibilidade do trabalho informal. Esse perfil de usuário prefere trabalhar em horários não convencionais ou ter a liberdade de escolher tarefas que se alinhem com seus interesses pessoais.Por fim, a UaiJobs também será utilizada por empregadores que precisam de trabalhadores para tarefas específicas ou para períodos de tempo curtos. Esses empregadores podem variar desde pequenas ou grandes empresas até indivíduos que precisam de ajuda em tarefas diárias.
 
  
 # Especificações do Projeto
