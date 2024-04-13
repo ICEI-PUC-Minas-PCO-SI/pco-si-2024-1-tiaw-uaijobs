@@ -1,12 +1,12 @@
-<<<<<<< HEAD:docs/02 - relatório técnico/Relatorio Tecnico - TEMPLATE.md
+ HEAD:docs/02 - relatório técnico/Relatorio Tecnico - TEMPLATE.md
 # Informações do Projeto
 `TÍTULO DO PROJETO`  
 
-......  COLOQUE AQUI O SEU TEXTO ......
+UaiJobs
 
 `CURSO` 
 
-......  COLOQUE AQUI O SEU TEXTO ......
+Análise e Desenvolvimento de Sistemas
 
 ## Participantes
 
@@ -32,8 +32,8 @@ Os membros participantes do grupo são:
   - [Personas e Mapas de Empatia](#personas-e-mapas-de-empatia)
   - [Histórias de Usuários](#histórias-de-usuários)
   - [Requisitos](#requisitos)
-    - [Requisitos Funcionais](#requisitos-funcionais)
-    - [Requisitos não Funcionais](#requisitos-não-funcionais)
+     [Requisitos Funcionais](#requisitos-funcionais)
+     [Requisitos não Funcionais](#requisitos-não-funcionais)
   - [Restrições](#restrições)
 - [Projeto de Interface](#projeto-de-interface)
   - [User Flow](#user-flow)
@@ -66,22 +66,6 @@ Dito isso, o UaiJobs é mais do que apenas um meio de conectar empregadores e tr
 De acordo com o exposto acima, a carência que este projeto deseja suprir é: “A falta de uma plataforma eficiente para conectar empregadores e trabalhadores no contexto informal”.
 Muitas vezes, as vagas informais não são amplamente divulgadas, resultando em um mercado fragmentado e ineficiente. Além disso, os empregadores podem enfrentar dificuldades para encontrar pessoas com as habilidades necessárias para preencher essas vagas. 
 
-> Nesse momento você deve apresentar o problema que a sua aplicação deve
-> resolver. No entanto, não é a hora de comentar sobre a aplicação.
-> Descreva também o contexto em que essa aplicação será usada, se
-> houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de
-> fato existir, pois ainda não é a hora de apresentar requisitos
-> detalhados ou projetos.
->
-> Nesse momento, o grupo pode optar por fazer uso
-> de ferramentas como Design Thinking, que permite um olhar de ponta a
-> ponta para o problema.
->
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
-
 ## Objetivos
 
 O objetivo geral da UaiJobs é facilitar a conexão entre empregadores e trabalhadores informais, permitindo que ambos encontrem o que procuram de maneira rápida e eficaz, a fim de suprir a comunicação defasada nesse sistema laboral. Analisando de forma mais detalhada, a plataforma objetiva os seguintes tópicos:
@@ -89,30 +73,10 @@ O objetivo geral da UaiJobs é facilitar a conexão entre empregadores e trabalh
 * Implementar um local seguro para o empregador divulgar suas necessidades de serviços;
 * Estimular a qualidade do serviço prestado através de um sistema de avaliações, a fim de manter um padrão de excelência entre os usuário da plataforma
 
-> Aqui você deve descrever os objetivos do trabalho indicando que o
-> objetivo geral é desenvolver um software para solucionar o problema
-> apresentado acima. Apresente também alguns (pelo menos 2) objetivos
-> específicos dependendo de onde você vai querer concentrar a sua
-> prática investigativa, ou como você vai aprofundar no seu trabalho.
-> 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
 
 ## Justificativa
 
-......  COLOQUE AQUI O SEU TEXTO ......
-
-> Descreva a importância ou a motivação para trabalhar com esta aplicação
-> que você escolheu. Indique as razões pelas quais você escolheu seus
-> objetivos específicos ou as razões para aprofundar em certos aspectos
-> do software.
-> 
-> O grupo de trabalho pode fazer uso de questionários, entrevistas e
-> dados estatísticos, que podem ser apresentados, com o objetivo de
-> esclarecer detalhes do problema que será abordado pelo grupo.
->
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+A necessidade de uma plataforma como a UaiJobs é evidente, uma vez que, o aumento da informalidade no mercado de trabalho, associada a alta taxa de desemprego, bem como a crescente demanda por flexibilidade, promovem a urgência da criação de ferramentas que permitam que empregadores e trabalhadores se conectem de maneira eficiente. Desta forma, a UaiJobs preenche essa lacuna, oferecendo uma solução prática e eficaz para a busca e oferta de trabalhos informais.
 
 ## Público-Alvo
 
@@ -196,18 +160,33 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|ID    | Descrição do Requisito                                                                           | Prioridade |
+|------|--------------------------------------------------------------------------------------------------|-------|
+|RF-001| Cadastro de usuário (Capacidade para usuários se cadastrarem como trabalhadores ou empregadores) | ALTA | 
+|RF-002| Filtro de vagas que considera: tipo de trabalho, remuneração e período/data                      | ALTA |
+|RF-003| Sistema de avaliação e feedback                                                                  | ALTA | 
+|RF-004| Sistema de geolocalização                                                                        | MÉDIA |
+|RF-005| Espaço para anúncios                                                                             | MÉDIA | 
+|RF-006| Acessibilidade da plataforma para PCD                                                            | MÉDIA |
+|RF-007| Barra de pesquisa para usuários                                                                  | MÉDIA | 
+|RF-008| Página sobre criadores e objetivo do projeto                                                     | ALTA |
+|RF-009| Impulsionar vagas por meio de pagamento para a plataforma                                        | MÉDIA | 
+|RF-010| Algorítimo de recomendações de serviços baseados nos interesses do usuário                       | ALTA |
+|RF-011| Pesquisa de interesses após primeiro Login                                                       | ALTA | 
+|RF-012| Gamificação: Sistema de ranqueamento do usuário                                                  | BAIXA |
+
 
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
+|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | ALTA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-003| Proteção e criptografia de dados que o usuário inserir no site. |  ALTA |
+|RNF-004| O site deve ser acessível a todos os usuários, incluindo pessoas com deficiências visuais, auditivas ou motoras |  MÉDIA |
+|RNF-005| O site deve ser capaz de lidar com um aumento no número de usuários sem comprometer o desempenho| BAIXA |
+
 
 > Com base nas Histórias de Usuário, enumere os requisitos da sua
 > solução. Classifique esses requisitos em dois grupos:
@@ -235,10 +214,11 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
 
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|ID| Restrição                                                                                                                     |
+|--|-------------------------------------------------------------------------------------------------------------------------------|
+|01| Não poderá utilizar banco de dados no desenvolvimento do projeto                                                              |
+|02| O projeto precisa necessariamente ser intuitivo e de fácil entendimento para todas as idades diante de níveis tecnológicos.   |
+|03| Todo os colaboradores do projeto precisam conhecer e participar efetivamente de todas as etapas do projeto                    |
 
 
 > Enumere as restrições à sua solução. Lembre-se de que as restrições
@@ -340,8 +320,14 @@ Vitor Prates Souza Lima (Desenvolvedor Front End)
 
 | Ambiente  | Plataforma              |Link de Acesso |
 |-----------|-------------------------|---------------|
+Alteração-Metodologia-Divisão-Ferramentas
 |Processo de Design Thinkgin  | Miro |  (https://miro.com/app/board/uXjVNjOu4ck=/) | 
 |Repositório de código | GitHub | (https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs) | 
+=======
+|Processo de Design Thinkgin  | Miro |  https://miro.com/XXXXXXX |
+|Documentação | Google Drive | https://drive.google.com/drive/folders/1Bt5ecXhlsIZ9WLKxS-o76BaBwXPInwzX?usp=drive_link | 
+|Repositório de código | GitHub | https://github.com/XXXXXXX | 
+ Documentações
 |Hospedagem do site | Heroku |  https://XXXXXXX.herokuapp.com | 
 |Protótipo Interativo | MavelApp | https://marvelapp.com/prototype/1ah9095e/screen/94366212 | 
 |User flow | Figma | https://www.figma.com/file/Luqd8sBxzYdyUahcCHgC0H/User-Flow-UaiJobs?type=design&node-id=0%3A1&mode=design&t=KzEpENNHxDYwQXGN-1 |
@@ -484,7 +470,10 @@ Vitor Prates Souza Lima (Desenvolvedor Front End)
 
 # Referências
 
-......  COLOQUE AQUI O SEU TEXTO ......
+**161,6 milhões de pessoas com 10 anos ou mais de idade utilizaram a Internet no país, em 2022.** Disponível em: <https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/38307-161-6-milhoes-de-pessoas-com-10-anos-ou-mais-de-idade-utilizaram-a-internet-no-pais-em-2022>. Acesso em: 15 mar. 2024.
+**Divulgação trimestral.** Disponível em: <https://www.ibge.gov.br/estatisticas/sociais/trabalho/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html?t=resultados>. Acesso em: 12 mar. 2024.
+**Divulgação trimestral.** Disponível em: <https://www.ibge.gov.br/estatisticas/sociais/populacao/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html?>. Acesso em: 3 abr. 2024.
+**Sistema IBGE de Recuperação Automática - SIDRA.** Disponível em: <https://sidra.ibge.gov.br/home/pnadct/brasil>. Acesso em: 21 mar. 2024.
 
 > Inclua todas as referências (livros, artigos, sites, etc) utilizados
 > no desenvolvimento do trabalho.
@@ -784,14 +773,6 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 
 # Metodologia
-
-......  COLOQUE AQUI O SEU TEXTO ......
-
-> Nesta parte do documento, você deve apresentar a metodologia 
-> adotada pelo grupo, descrevendo o processo de trabalho baseado nas metodologias ágeis, 
-> a divisão de papéis e tarefas, as ferramentas empregadas e como foi realizada a
-> gestão de configuração do projeto via GitHub.
->
 > Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido
 > pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar
 > o andamento do projeto, a execução das tarefas e o status de desenvolvimento
@@ -805,13 +786,26 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 ## Divisão de Papéis
 
-......  COLOQUE AQUI O SEU TEXTO ......
+> A equipe escolheu utilizar metodologias ágeis, tendo o ScrumBan como base para definição do processo de desenvolvimento. Metodologia essa que foca na organização de tarefas e na otimização das mesmas.
+> O Projeto Scrumban é organizado em um quadro do tipo Kanban. Denominando tarefas para cada membro, sendo essas escritas em cartões distribuídos entre diversas colunas correspondentes aos estágios das tarefas. 
+> À medida que os membros das equipes trabalham nelas, os cartões são movidos para a coluna correspondente ao estágio atual de cada tarefa.
+> Essa metódologia foi escolhida por se fácil de se usar, ter uma boa otimização do fluxo de trabalho, uma boa consistência e por propor uma melhora constante
 
-> Apresente a divisão de papéis e tarefas entre os membros do grupo.
->
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+> - ![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/129126008/eb9c3700-5f67-46d2-b182-c3b30db897da)
+
+ Para o processo de Design Thinking, todos os membros foram incentivados a contribuir com ideias das mais diversas, adquirindo uma variedade de linhas de pensamento e de recursos que poderiam ou não ser usados.
+ ![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/129126008/d6aef4a7-9acb-49b2-bbbc-50e819e49237) 
+ Como vemos na imagem acima, após a contribuição com este leque de opções e ideias, aplicamos uma priorização das tarefas numa relação de custo x impacto, deixando claro o que poderia ser mais viável ou não.
+
+Scrum Master: Thiago Moreira
+Product Owner: Vitor Prates
+Equipe de Desenvolvimento
+Guilherme De Oliveira (Desenvolvedor Front End)
+Luis H. Sampaio (Desenvolvedor Back End)
+Igor Fernandes (Analista de Negócios)
+Victor Schneider (Designer)
+
+
 
 
 ## Ferramentas
@@ -970,5 +964,5 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 > 
 > **Links Úteis**:
 > - [Formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
->>>>>>> 576e4073eb686b7caee5801aac8f95491eb4d605:docs/relatorio/Relatorio Tecnico - TEMPLATE.md
+> 576e4073eb686b7caee5801aac8f95491eb4d605:docs/relatorio/Relatorio Tecnico - TEMPLATE.md
 > - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
