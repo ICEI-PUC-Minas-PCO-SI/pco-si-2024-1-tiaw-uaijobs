@@ -233,7 +233,8 @@ De acordo com o apresentado no User Flow, as telas do sistema contam com descri�
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Base_Elementos.jpg)
 
-**Tela - Página Inicial**
+
+### Tela - Página Inicial
 
 Essa tela representa o que o usuário encontrará assim que carregar a página pela primeira vez. Nela podemos identificar alguns elementos importantes: 
  
@@ -245,53 +246,62 @@ Essa tela representa o que o usuário encontrará assim que carregar a página p
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Inicial.jpg)
 
-**Tela - Página de Login**
+
+### Tela - Página de Login
 
 Nesse ambiente, o usuário poderá realizar seu login na página.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Login.jpg)
 
-**Tela - Página de Cadastro**
+
+### Tela - Página de Cadastro
 
 Nessa página o usuário poderá realizar seu cadastro caso ainda não possua login no sistema.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Cadastro.jpg)
 
-**Tela - Freelancers Disponíveis**
+
+### Tela - Freelancers Disponíveis
 
 Na tela de Freelancers Disponíveis o usuário poderá localizar todos os demais usuários disponíveis para executar serviços na plataforma. Ele poderá abrir o perfil deste Freelancer e acessar suas avaliações.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Freelancers_Dispon%C3%ADveis.jpg)
 
-**Tela - Página do Freelancer**
+
+### Tela - Página do Freelancer
 
 Nessa tela o usuário poderá ver as avaliações e um breve resumo do usuário ao qual ele deseja contratar.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Freelancer.jpg)
 
-**Tela - Vagas em Aberto**
+
+### Tela - Vagas em Aberto
 
 Essa página é destinada aos Freelancers, visto que expõe as vagas cadastradas por contratantes na plataforma. O usuário tem acesso a um breve resumo da vaga, contendo informações como: função, remuneração, data, etc. Além disso, existe um filtro de busca na barra horizontal da página, permitindo ao usuário navegar pelas vagas que desejar, deixando visível apenas as que atenderem seus requisitos.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Vagas_Aberto.jpg)
 
-**Tela - Vaga**
+
+### Tela - Vaga
 
 O usuário, ao clicar numa vaga na página anterior, pode acessar todas as suas informações por completo e manifestar seu interesse por ela.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Vaga.jpg)
 
-**Tela - Como o UaiJobs funciona?**
+
+### Tela - Como o UaiJobs funciona?
 
 Aqui o usuário tem acesso a um vídeo de apresentação de como a plataforma funciona, além de informações adicionais como um campo de anúncios e patrocínios.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Como_UaiJobs_Funciona.jpg)
 
-**Tela - Publicar Vaga**
+
+### Tela - Publicar Vaga
 
 Essa é a seção em que um dono de um serviço pode divulgar sua vaga em busca de um trabalhador para realizá-la. Nela há um formulário obrigatório ao qual o contratante deve preencher. 
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Publicar_Vaga.jpg)
+
 
 
 # Metodologia
