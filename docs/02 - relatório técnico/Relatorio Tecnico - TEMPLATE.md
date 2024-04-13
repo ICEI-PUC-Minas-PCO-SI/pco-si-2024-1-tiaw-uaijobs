@@ -458,7 +458,10 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Referências
 
-......  COLOQUE AQUI O SEU TEXTO ......
+**161,6 milhões de pessoas com 10 anos ou mais de idade utilizaram a Internet no país, em 2022.** Disponível em: <https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/38307-161-6-milhoes-de-pessoas-com-10-anos-ou-mais-de-idade-utilizaram-a-internet-no-pais-em-2022>. Acesso em: 15 mar. 2024.
+**Divulgação trimestral.** Disponível em: <https://www.ibge.gov.br/estatisticas/sociais/trabalho/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html?t=resultados>. Acesso em: 12 mar. 2024.
+**Divulgação trimestral.** Disponível em: <https://www.ibge.gov.br/estatisticas/sociais/populacao/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html?>. Acesso em: 3 abr. 2024.
+**Sistema IBGE de Recuperação Automática - SIDRA.** Disponível em: <https://sidra.ibge.gov.br/home/pnadct/brasil>. Acesso em: 21 mar. 2024.
 
 > Inclua todas as referências (livros, artigos, sites, etc) utilizados
 > no desenvolvimento do trabalho.
