@@ -108,51 +108,58 @@ O público-alvo da UaiJobs é composto por adultos e adolescentes a partir de 16
 
 ## Personas e Mapas de Empatia
 
-......  COLOQUE AQUI O SEU TEXTO ......
+As personas identificadas durante a fase de compreensão do problema são descritas nas imagens que seguem:
 
+| Foto | Nome | Idade | Profissão | Aplicativos | Motivações | Frustrações | Hobbies|
+| ---- | :----: | :-----: | :---------: | -------------- | -----------| ------------ | ----------------- |
+| ![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/164440525/1b69084e-81cd-4759-ad76-4b099084db73) | Ana Silva | 21 anos | Estudante universitária. | *Instagram<br/>*Facebook<br/>*Whatsapp<br/>*Pinterest| Desenvolver e aprimorar como profissional.<br/>Praticar e aprimorar suas habilidades.|Falta de tempo.<br/>Falta de oportunidade.| * Fotografia<br/> * Edição de foto e video|
 
-> Relacione as personas identificadas no seu projeto e os respectivos mapas de empatia. Lembre-se que 
-> você deve ser enumerar e descrever precisamente e de forma
-> personalizada todos os principais envolvidos com a solução almeja. 
-> 
-> Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina
-> e/ou nos seguintes links:
->
-> **Links Úteis**:
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Como fazer um mapa de empatia - Vídeo](https://www.youtube.com/watch?v=JlKHGpVoA2Y)
-> 
-> 
-> **Exemplo de Persona**
-> 
-> ![Exemplo de Persona](imaages/../images/persona.png)
-> 
-> Fonte: [Como criar uma persona para o seu negócio](https://raissaviegas.com.br/como-criar-uma-persona/)
+&nbsp;
 
+| Foto | Nome | Idade | Profissão | Aplicativos | Motivações | Frustrações | Hobbies|
+| ---- | :----: | :-----: | :---------: | -------------- | -----------| ------------ | ----------------- |
+| ![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/164440525/770474bc-86ad-4c31-8d8a-25a4fbfff0b4) |Pedro Oliveira | 32 anos | Designer Gráfico. | *Instagram<br/>*Behance<br/>*Whatsapp<br/>*Webflow<br/>*Linkedin| Liberdade de trabalho.<br/>Viver uma vida autêntica.|Baixa renda em tempos de pouca demanda.<br/>Pouca variedade em seu portfólio.|* Arte<br/> * Animação * Música<br/> * Poesia|
+
+&nbsp;
+
+| Foto | Nome | Idade | Profissão | Aplicativos | Motivações | Frustrações | Hobbies|
+| ---- | :----: | :-----: | :---------: | -------------- | -----------| ------------ | ----------------- |
+|![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/164440525/f5089341-79d0-49f0-a916-1df298a301c8)| Maria da Silva | 55 anos | Proprietária do bar "Calabouço". |*Facebook<br/>*Whatsapp| Alcançar sucesso financeiro.<br/> Ter um estabelecimento reconhecido e renomado.| * Diculdade de Gestão Pessoal<br/> * Alto custo| Culinária e Artesanato |
 
 ## Histórias de Usuários
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
+Com base na análise e compreensão do dia a dia das personas selecionadas para o projeto, foram documentadas as seguintes histórias de usuário:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
+| `EU` | `QUERO/PRECISO` | `PARA` |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|Ana Silva     | Trabalhos flexivéis perto de mim. | Minha agenda é apertada, então eu preciso de encontrar serviços perto de onde moro e que eu possa realizar nos meus momentos livres.|
+|Ana Silva     | Uma maneira de receber/ver o feedback | Me orientar sobre minha performance, no que posso melhorar e me sentir gratificada. |
+|Pedro Oliveira| Site fácil de se navegar e que possa ser acessado em qualquer lugar. | Para que eu possa procurar oportunidades de uma renda extra seja no conforto de minha casa ou no celular em uma viagem. | 
+|Pedro Oliveira|Ver as especificações do serviço, horários e expectativas. | Necessito de entender se sou capaz de cumprir com o serviço que fui contratado dentro do limite imposto.|
+|Maria da Silva|Um repertório das habilidades do candidato.|Julgar se o candidato é ou não capaz de executar o serviço que estou contratando.| 
+|Maria da Silva| Gostaria de ver tipo uma avaliação do usuário. | Antes de contratar, quero saber como o candidato foi avaliado previamente por outros, entender a qualidade e prestatividade do mesmo.|
 
-> Apresente aqui as histórias de usuário que são relevantes para o
-> projeto de sua solução. As Histórias de Usuário consistem em uma
-> ferramenta poderosa para a compreensão e elicitação dos requisitos
-> funcionais e não funcionais da sua aplicação. Se possível, agrupe as
-> histórias de usuário por contexto, para facilitar consultas
-> recorrentes à essa parte do documento.
->
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
+Um pouco sobre as Personas:
+
+**Ana Silva**
+
+Ana é estudante universitária, dedicada e ocupada e busca
+ganhar uma renda extra para lidar com os custos de seus estudos. Apaixonada por fotografia, ela é criativa e proativa, Ela é uma pessoa sociável, ativa nas redes sociais, e está sempre buscando inspiração e compartilhando suas experiências com amigos e seguidores. Ana sonha em finalizar seus estudos e alcançar sucesso em sua carreira, quer viajar para novos lugares e capturar os momentos em que se sinta feliz. Ana sonha em alcançar independência financeira e encontrar um equilíbrio do seu trabalho com seus hobbies e paixões.
+
+**Pedro Oliveira**
+
+Pedro é designer gráfico que valoriza liberdade e flexibilidade em seu estilo de vida. Ele é apaixonado por sua profissão e está sempre em busca de oportunidades para aprimorar suas habilidades e explorar novos projetos. Pedro é proativo e determinado, especialmente durante os períodos de baixa demanda de trabalho, quando busca oportunidades de emprego rápido para complementar sua renda. Ele é criativo, comprometido e está sempre em busca de inspiração em sua vida pessoal e profissional. Pedro almeja alcançar renome como designer gráfico, e fazer muito dinheiro com isso, Ele aspira a viver uma vida autêntica, conectada com suas raízes e valores, enquanto continua a se desenvolver profissionalmente e a contribuir para sua comunidade de maneiras significativas.
+
+**Maria da Silva**
+
+Maria é uma empresária determinada, com vasta experiencia no seu ramo. Ela é conhecida por sua dedicação ao seu bar e por sua busca incessante por manter altos padrões de qualidade. Apesar de sua relutância em adotar tecnologias modernas, ela é uma pessoa trabalhadora e focada no sucesso de seu negócio. Maria é tradicional e preza por métodos convencionais, mas também valoriza a eficiência e a confiabilidade. Embora possa ser brava, especialmente sob pressão durante os fins de semana movimentados, ela é uma líder respeitada por sua equipe e uma figura querida por seus clientes. Maria quer assegurar o sucesso do seu bar e manter sua boa renda até que possa se aposentar, Ela aspira a proporcionar experiências memoráveis aos seus clientes, mantendo altos padrões de qualidade em seus serviços. Ela aspira que um dia seus filhos possam assumir seu legado, mas teme que ninguém possa fazer um trabalho tão exigente quanto ela.
+
+
+## Proposta de valor 
+
+![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/164440525/42c08c89-ec1b-4578-b2c2-1be43d10f910)
+
+
 
 ## Requisitos
 
