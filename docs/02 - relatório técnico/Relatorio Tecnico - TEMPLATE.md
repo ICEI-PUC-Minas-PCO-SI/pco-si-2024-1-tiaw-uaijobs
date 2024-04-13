@@ -80,23 +80,10 @@ A necessidade de uma plataforma como a UaiJobs é evidente, uma vez que, o aumen
 
 ## Público-Alvo
 
-O público-alvo da UaiJobs é composto por adultos e adolescentes a partir de 16 anos que buscam oportunidades de trabalho informal. Isso inclui pessoas que estão em busca de uma renda extra, estudantes que querem conciliar o estudo com o trabalho, aposentados, e aqueles que preferem a flexibilidade do trabalho informal. A plataforma também visa os empregadores que precisam de trabalhadores para tarefas específicas ou para  curtos períodos de tempo.
+O público-alvo da UaiJobs é composto por adultos e adolescentes a partir de 16 anos que buscam oportunidades de trabalho informal. Isso inclui pessoas que desejam complementar sua renda, seja para atender a necessidades financeiras imediatas ou para alcançar objetivos de longo prazo, bem como, estudantes que querem conciliar o estudo com o trabalho, os aposentados, que desejam permanecer ativos e produtivos.
 
+Além disso, a plataforma também será útil para aqueles que valorizam a flexibilidade do trabalho informal. Esse perfil de usuário prefere trabalhar em horários não convencionais ou ter a liberdade de escolher tarefas que se alinhem com seus interesses pessoais.Por fim, a UaiJobs também será utilizada por empregadores que precisam de trabalhadores para tarefas específicas ou para períodos de tempo curtos. Esses empregadores podem variar desde pequenas ou grandes empresas até indivíduos que precisam de ajuda em tarefas diárias.
 
-> Descreva quem serão as pessoas que usarão a sua aplicação indicando os
-> diferentes perfis. O objetivo aqui não é definir quem serão os
-> clientes ou quais serão os papéis dos usuários na aplicação. A ideia
-> é, dentro do possível, conhecer um pouco mais sobre o perfil dos
-> usuários: conhecimentos prévios, relação com a tecnologia, relações
-> hierárquicas, etc.
->
-> Adicione informações sobre o público-alvo por meio de uma descrição
-> textual, ou diagramas de personas, mapa de stakeholders, ou como o
-> grupo achar mais conveniente.
-> 
-> **Links Úteis**:
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
  
 # Especificações do Projeto
 
