@@ -168,38 +168,12 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-
 |RNF-001| O sistema deve ser responsivo para rodar em todos dispositivos | ALTA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
 |RNF-003| Proteção dos dados dos usuários cadastrados, para ninguém ter acesso não autorizado. |  MÉDIA | 
 |RNF-004| A interface do usuário deve ser intuitiva e fácil de usar, especialmente para um público diversificado que pode não estar familiarizado com tecnologia avançada. |  ALTA | 
 |RNF-005| Oferecer recursos de personalização permite aos usuários adaptarem a experiência do site de acordo com suas preferências individuais. Isso pode incluir a capacidade de salvar buscas, configurar alertas de emprego, personalizar perfis e receber recomendações de vagas com base em históricos de navegação. |  MÉDIA | 
 |RNF-006|  O sistema deve ser capaz de lidar com falhas de componentes individuais sem interromper o funcionamento do site como um todo. |  BAIXA | 
-
-
-
-
-> Com base nas Histórias de Usuário, enumere os requisitos da sua
-> solução. Classifique esses requisitos em dois grupos:
->
-> - [Requisitos Funcionais (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
->   correspondem a uma funcionalidade que deve estar presente na
->   plataforma (ex: cadastro de usuário).
->
-> - [Requisitos Não Funcionais (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
->   correspondem a uma característica técnica, seja de usabilidade,
->   desempenho, confiabilidade, segurança ou outro (ex: suporte a
->   dispositivos iOS e Android).
->
-> Lembre-se que cada requisito deve corresponder à uma e somente uma
-> característica alvo da sua solução. Além disso, certifique-se de que
-> todos os aspectos capturados nas Histórias de Usuário foram cobertos.
-> 
-> **Links Úteis**:
-> 
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
-
 
 ## Restrições
 
@@ -222,38 +196,21 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Projeto de Interface
 
-......  COLOQUE AQUI O SEU TEXTO DE INTRODUÇÃO ......
+As interfaces foram elaboradas com os fundamentos de serem completamente flúidas, intuitivas, fáceis de se usar e totalmente responsivas, onde o usuário se sentirá incluído e confortável independente do dispositivo ao qual estará utilizando, conseguindo ter um fluxo livre e abrangente. As páginas terão uma identidade visual unica entre todas, sendo seus estilos padronizados. Alguns tópicos importantes sobre as interfaces são:
 
-> Apresente as principais interfaces da solução. Discuta como 
-> foram elaboradas de forma a atender os requisitos funcionais, não
-> funcionais e histórias de usuário abordados nas [Especificações do
-> Projeto](#especificações-do-projeto).
+* A principal interface do site será a página de Home, onde o usuário poderá ter acesso a praticamente todas as páginas; 
+* Em todas as interfaces, enquanto o usuário não estiver concectado a um perfil, ele terá a opção de se cadastrar ou de fazer o login em um já cadastrado;
+* O site terá a funcionalidade de geolocalização, podendo filtrar trabalhos e trabalhadores para mais perto do usuário;
+* Para procurar um trabalho informal, o trabalhador poderá filtrar requisitos como valor do trabalho;
+* A barra de pesquisa permitirá que vagas possão ser buscadas, utilizando-se de palavras chave;
+* Página terá um resposta rápida e será totalmente útil.
 
 ## User Flow
 
-......  INCLUA AQUI O DIAGRAMA COM O FLUXO DO USUÁRIO NA APLICAÇÃO ......
 A seguinte imagem mostra como poderá ser o fluxo de interação do usuário pelas telas do sistema, revelando cada caminho que poderá ser seguido, cada uma tem interação com outras uma ou mais.
 Essas telas estão detalhadas na seção de Wireframes.
-![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/129126008/532b6559-d1b3-4d97-ae42-493073e497fb)
+![User-Flow UaiJobs](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/129126008/183283d1-44fb-4a17-b112-692f076dbbff)
 alt: Imagem do user flow.
-
-
-
-
-> Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor
-> mapear todo fluxo de telas do site ou app. Essa técnica funciona
-> para alinhar os caminhos e as possíveis ações que o usuário pode
-> fazer junto com os membros de sua equipe.
->
-> **Links Úteis**:
-> - [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-> - [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-> - [Top 25 User Flow Tools & Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
->
-> **Exemplo**:
-> 
-> ![Exemplo de UserFlow](images/userflow.jpg)
-
 
 ## Wireframes
 
@@ -328,56 +285,25 @@ Alteração-Metodologia-Divisão-Ferramentas
 
 > As ferramentas empregadas no projeto são:
 > 
-> - Editor de código .
-> - Ferramentas de comunicação
-> - Ferramentas de diagramação
-> - Plataforma de hospedagem
-> 
-> O editor de código foi escolhido porque ele possui uma integração com o
-> sistema de versão. As ferramentas de comunicação utilizadas possuem
-> integração semelhante e por isso foram selecionadas. Por fim, para criar
-> diagramas utilizamos essa ferramenta por melhor captar as
-> necessidades da nossa solução.
-> 
-> **Links Úteis - Hospedagem**:
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Crie seu Site com o HostGator](https://www.hostgator.com.br/como-publicar-seu-site)
-> - [GoDady](https://br.godaddy.com/how-to)
-> - [GitHub Pages](https://pages.github.com/)
+> - Editor de código |Vs code| A escolha do Vs code foi feita com base na experiência dos integrantes do grupo com a ferramenta.
+> - Ferramentas de comunicação |WhatsApp e Reuniões presenciais| Devido a praticidade de mensagens e o contato presencial entre os envolvidos.
+> - Ferramentas de diagramação |Figma e Miro| Escolhidas pela versatilidade das plataformas e por serem plataformas que trazem grandes possibilidades de conteúdos.
+> - Plataforma de hospedagem ||
 
 ## Controle de Versão
 
 ......  COLOQUE AQUI O SEU TEXTO ......
+ Para configuração, gerenciamento e versionamento do projeto, o grupo utiliza das ferramentas disponíveis pelo próprio GitHub, onde todo o conteúdo foi incrementado atráves de branchs terceiras, que seriam revisadas, para branchs secundárias, onde seriam testadas e após isso, incrementadas a branch master. Ex:
+ * master: Versão operante, já revisada e testada;
+ * Documentações: Versão apenas revisada, ainda não testadas;
+ * Alterações-XXXXX: Versão não revisada, sendo desenvolvida.
 
-> Discuta como a configuração do projeto foi feita na ferramenta de
-> versionamento escolhida. Exponha como a gerência de tags, merges,
-> commits e branchs é realizada. Discuta como a gerência de issues foi
-> realizada.
-> A ferramenta de controle de versão adotada no projeto foi o
-> [Git](https://git-scm.com/), sendo que o [Github](https://github.com)
-> foi utilizado para hospedagem do repositório `upstream`.
-> 
-> O projeto segue a seguinte convenção para o nome de branchs:
-> 
-> - `master`: versão estável já testada do software
-> - `unstable`: versão já testada do software, porém instável
-> - `testing`: versão em testes do software
-> - `dev`: versão de desenvolvimento do software
-> 
-> Quanto à gerência de issues, o projeto adota a seguinte convenção para
-> etiquetas:
-> 
-> - `bugfix`: uma funcionalidade encontra-se com problemas
-> - `enhancement`: uma funcionalidade precisa ser melhorada
-> - `feature`: uma nova funcionalidade precisa ser introduzida
->
-> **Links Úteis**:
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
-> - [5 Git Workflows & Branching Strategy to deliver better code](https://zepel.io/blog/5-git-workflows-to-improve-development/)
->
-> **Exemplo - GitHub Feature Branch Workflow**:
->
+Quanto à gerência dos issues, seguimos:
+ * bugfix: Onde algo apresenta problemas;
+ * enhancement: Onde algo apresenta uma possibilidade de melhora;
+ * feature: A incrementação de um novo recurso.
+
+
 > ![Exemplo de Wireframe](images/Github-Workflow.png)
 
 # **############## SPRINT 1 ACABA AQUI #############**
