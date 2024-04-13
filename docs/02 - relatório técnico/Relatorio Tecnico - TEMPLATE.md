@@ -2,11 +2,11 @@
 # Informações do Projeto
 `TÍTULO DO PROJETO`  
 
-......  COLOQUE AQUI O SEU TEXTO ......
+UaiJobs
 
 `CURSO` 
 
-......  COLOQUE AQUI O SEU TEXTO ......
+Análise e Desenvolvimento de Sistemas
 
 ## Participantes
 
