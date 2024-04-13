@@ -222,19 +222,26 @@ alt: Imagem do user flow.
 ## Wireframes
 
 De acordo com o apresentado no User Flow, as telas do sistema contam com descrições detalhadas de cada uma de suas seções, seguindo um padrão para o desenvolvimento do projeto por completo. Existem estruturas presentes na grande maioria das telas, responsáveis pelas mesmas funções. São elas: 
- **- Cabeçalho**: Essa seção tem a função de localizar o acesso à página de login e à página de usuário, além do nome e logo da página;
- **- Barra Horizontal**: Essa seção é destinada aos filtros da página, sejam os de busca ou os de cadastro de vagas. Essa aba do sistema não está presente em todas as telas;
- **- Conteúdo**: A parte de conteúdos está relacionada à todo a informação da página, tudo que é exposto ao usuário para navegar pelo programa;
- **- Rodapé**: O rodapé, por fim, armazena a seção de perguntas frequentes, termos de uso e o “fale conosco”.
+ 
+**- Cabeçalho**: Essa seção tem a função de localizar o acesso à página de login e à página de usuário, além do nome e logo da página;
+ 
+**- Barra Horizontal**: Essa seção é destinada aos filtros da página, sejam os de busca ou os de cadastro de vagas. Essa aba do sistema não está presente em todas as telas;
+ 
+**- Conteúdo**: A parte de conteúdos está relacionada à todo a informação da página, tudo que é exposto ao usuário para navegar pelo programa;
+ 
+**- Rodapé**: O rodapé, por fim, armazena a seção de perguntas frequentes, termos de uso e o “fale conosco”.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Base_Elementos.jpg)
 
 **Tela - Página Inicial**
 
 Essa tela representa o que o usuário encontrará assim que carregar a página pela primeira vez. Nela podemos identificar alguns elementos importantes: 
- **- Botão de login**: Guia o usuário para a tela de login;
- **- Botão de cadastro**: Guia o usuário para a tela de cadastro;
- **- Botão Freelancers disponíveis**: Esse botão guia o usuário até uma página que exibe todos os usuários cadastrados na plataforma que estão disponíveis para realizar serviços.
+ 
+**- Botão de login**: Guia o usuário para a tela de login;
+ 
+**- Botão de cadastro**: Guia o usuário para a tela de cadastro;
+ 
+**- Botão Freelancers disponíveis**: Esse botão guia o usuário até uma página que exibe todos os usuários cadastrados na plataforma que estão disponíveis para realizar serviços.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Inicial.jpg)
 
