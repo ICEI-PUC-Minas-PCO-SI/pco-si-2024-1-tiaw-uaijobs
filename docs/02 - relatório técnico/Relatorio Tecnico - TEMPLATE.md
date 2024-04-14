@@ -91,30 +91,30 @@ Durante toda a elaboração do projeto, questões como as definições dos probl
 
 ## Personas e Mapas de Empatia
 
-As personas identificadas durante a fase de compreensão do problema são descritas nas imagens que seguem:
+As Personas identificadas durante a fase de compreensão do problema são descritas nas imagens que seguem:
 
-| Foto | Nome | Idade | Profissão | Aplicativos | Motivações | Frustrações | Hobbies|
-| ---- | :----: | :-----: | :---------: | -------------- | -----------| ------------ | ----------------- |
-| ![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/164440525/1b69084e-81cd-4759-ad76-4b099084db73) | Ana Silva | 21 anos | Estudante universitária. | *Instagram<br/>*Facebook<br/>*Whatsapp<br/>*Pinterest| Desenvolver e aprimorar como profissional.<br/>Praticar e aprimorar suas habilidades.|Falta de tempo.<br/>Falta de oportunidade.| * Fotografia<br/> * Edição de foto e video|
-
-&nbsp;
-
-| Foto | Nome | Idade | Profissão | Aplicativos | Motivações | Frustrações | Hobbies|
-| ---- | :----: | :-----: | :---------: | -------------- | -----------| ------------ | ----------------- |
-| ![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/164440525/770474bc-86ad-4c31-8d8a-25a4fbfff0b4) |Pedro Oliveira | 32 anos | Designer Gráfico. | *Instagram<br/>*Behance<br/>*Whatsapp<br/>*Webflow<br/>*Linkedin| Liberdade de trabalho.<br/>Viver uma vida autêntica.|Baixa renda em tempos de pouca demanda.<br/>Pouca variedade em seu portfólio.|* Arte<br/> * Animação * Música<br/> * Poesia|
+| Ana Silva | Idade | Profissão | Aplicativos | Motivações | Frustrações | Hobbies|
+| ---- | :-----: | :---------: | :--------------: | :-----------:| :------------: | :-----------------: |
+| ![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/164440525/1b69084e-81cd-4759-ad76-4b099084db73)| 21 anos | Estudante universitária | Instagram<br/><br/>Facebook<br/><br/>WhatsApp<br/><br/>Pinterest| Desenvolver e aprimorar como profissional<br/><br/>Praticar e aprimorar suas habilidades|Falta de tempo<br/><br/>Falta de oportunidade| Fotografia<br/><br/>Edição de foto e video|
 
 &nbsp;
 
-| Foto | Nome | Idade | Profissão | Aplicativos | Motivações | Frustrações | Hobbies|
-| ---- | :----: | :-----: | :---------: | -------------- | -----------| ------------ | ----------------- |
-|![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/164440525/f5089341-79d0-49f0-a916-1df298a301c8)| Maria da Silva | 55 anos | Proprietária do bar "Calabouço". |*Facebook<br/>*Whatsapp| Alcançar sucesso financeiro.<br/> Ter um estabelecimento reconhecido e renomado.| * Diculdade de Gestão Pessoal<br/> * Alto custo| Culinária e Artesanato |
+| Pedro Oliveira| Idade | Profissão | Aplicativos | Motivações | Frustrações | Hobbies|
+| ---- | :-----: | :---------: | :--------------: | :-----------:| :------------: | :-----------------: |
+| ![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/164440525/770474bc-86ad-4c31-8d8a-25a4fbfff0b4) | 32 anos | Designer Gráfico | Instagram<br/><br/>Behance<br/><br/>WhatsApp<br/><br/>Webflow<br/><br/>Linkedin| Liberdade de trabalho<br/><br/>Viver uma vida autêntica|Baixa renda em tempos de pouca demanda<br/><br/>Pouca variedade em seu portfólio| Arte<br/><br/> Animação<br/><br/> Música<br/><br/>Poesia|
+
+&nbsp;
+
+| Maria da Silva | Idade | Profissão | Aplicativos | Motivações | Frustrações | Hobbies|
+| ---- | :-----: | :---------: | :--------------: | :-----------:| :------------: | :-----------------: |
+|![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/164440525/f5089341-79d0-49f0-a916-1df298a301c8)| 55 anos | Proprietária do bar "Calabouço" |Facebook<br/><br/>Whatsapp| <br/> Alcançar sucesso financeiro <br/><br/> Ter um estabelecimento reconhecido e renomado| Dificuldade de Gestão Pessoal <br/><br/> Alto custo| Culinária <br/><br/> Artesanato |
 
 ## Histórias de Usuários
 
-Com base na análise e compreensão do dia a dia das personas selecionadas para o projeto, foram documentadas as seguintes histórias de usuário:
+Com base na análise e compreensão do dia a dia das Personas selecionadas para o UaiJobs, foram documentadas as seguintes histórias de usuário:
 
 | `EU` | `QUERO/PRECISO` | `PARA` |
-|--------------------|------------------------------------|----------------------------------------|
+|:--------------------:|:------------------------------------:|:----------------------------------------:|
 |Ana Silva     | Trabalhos flexivéis perto de mim. | Minha agenda é apertada, então eu preciso de encontrar serviços perto de onde moro e que eu possa realizar nos meus momentos livres.|
 |Ana Silva     | Uma maneira de receber/ver o feedback | Me orientar sobre minha performance, no que posso melhorar e me sentir gratificada. |
 |Pedro Oliveira| Site fácil de se navegar e que possa ser acessado em qualquer lugar. | Para que eu possa procurar oportunidades de uma renda extra seja no conforto de minha casa ou no celular em uma viagem. | 
@@ -126,8 +126,7 @@ Um pouco sobre as Personas:
 
 **Ana Silva**
 
-Ana é estudante universitária, dedicada e ocupada e busca
-ganhar uma renda extra para lidar com os custos de seus estudos. Apaixonada por fotografia, ela é criativa e proativa, Ela é uma pessoa sociável, ativa nas redes sociais, e está sempre buscando inspiração e compartilhando suas experiências com amigos e seguidores. Ana sonha em finalizar seus estudos e alcançar sucesso em sua carreira, quer viajar para novos lugares e capturar os momentos em que se sinta feliz. Ana sonha em alcançar independência financeira e encontrar um equilíbrio do seu trabalho com seus hobbies e paixões.
+Ana é estudante universitária, dedicada e ocupada e busca ganhar uma renda extra para lidar com os custos de seus estudos. Apaixonada por fotografia, ela é criativa e proativa, Ela é uma pessoa sociável, ativa nas redes sociais, e está sempre buscando inspiração e compartilhando suas experiências com amigos e seguidores. Ana sonha em finalizar seus estudos e alcançar sucesso em sua carreira, quer viajar para novos lugares e capturar os momentos em que se sinta feliz. Ana sonha em alcançar independência financeira e encontrar um equilíbrio do seu trabalho com seus hobbies e paixões.
 
 **Pedro Oliveira**
 
