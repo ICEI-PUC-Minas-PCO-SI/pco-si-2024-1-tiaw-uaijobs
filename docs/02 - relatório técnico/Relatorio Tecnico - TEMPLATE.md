@@ -190,14 +190,14 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Projeto de Interface
 
-As interfaces foram elaboradas com os fundamentos de serem completamente flúidas, intuitivas, fáceis de se usar e totalmente responsivas, onde o usuário se sentirá incluído e confortável independente do dispositivo ao qual estará utilizando, conseguindo ter um fluxo livre e abrangente. As páginas terão uma identidade visual unica entre todas, sendo seus estilos padronizados. Alguns tópicos importantes sobre as interfaces são:
+As interfaces foram elaboradas com os fundamentos de serem completamente fluidas, intuitivas, fáceis de se usar e totalmente responsivas, onde o usuário se sentirá incluído e confortável independente do dispositivo ao qual estará utilizando, conseguindo ter um fluxo livre e abrangente. As páginas terão uma identidade visual única entre todas, sendo seus estilos padronizados. Alguns tópicos importantes sobre as interfaces são:
 
 * A principal interface do site será a página de Home, onde o usuário poderá ter acesso a praticamente todas as páginas; 
-* Em todas as interfaces, enquanto o usuário não estiver concectado a um perfil, ele terá a opção de se cadastrar ou de fazer o login em um já cadastrado;
+* Em todas as interfaces, enquanto o usuário não estiver conectado a um perfil, ele terá a opção de se cadastrar ou de fazer o login em um já cadastrado;
 * O site terá a funcionalidade de geolocalização, podendo filtrar trabalhos e trabalhadores para mais perto do usuário;
 * Para procurar um trabalho informal, o trabalhador poderá filtrar requisitos como valor do trabalho;
-* A barra de pesquisa permitirá que vagas possão ser buscadas, utilizando-se de palavras chave;
-* Página terá um resposta rápida e será totalmente útil.
+* A barra de pesquisa permitirá que vagas possam ser buscadas, utilizando-se de palavras chave;
+* A página terá uma resposta rápida e será totalmente útil.
 
 ## User Flow
 
@@ -303,7 +303,7 @@ alt: Imagem Tela Publicar Vaga.
 
 # Metodologia
 
-A equipe adotou a metodologia ScrumBan, focando na organização de tarefas, na flexibildade, na possibilidade de escolha e na agilidade dos processos.
+A equipe adotou a metodologia ScrumBan, focando na organização de tarefas, na flexibilidade, na possibilidade de escolha e na agilidade dos processos.
 O Scrumban é uma metodologia ágil que mistura elementos do Scrum e do Kanban. Essa metodologia traz a estrutura organizada do Scrum, e combina com o fluxo contínuo e visualização do Kanban.
 
 Alguns pontos que trouxeram a equipe para este método:
@@ -316,8 +316,8 @@ Alguns pontos que trouxeram a equipe para este método:
 * É focado no trabalho, a equipe foca em concluir tarefas o mais rápido possível.
 * Incentiva a melhoria contínua, com a equipe constantemente procurando maneiras de melhorar seus processos e fluxos de trabalho.
 
-Para o projeto, a equipe optou por todos participarem juntamente no processo de design thinking, construção da etapa de entendimento e na etapa de exploração, propondo idéias das mais diversas sobre funcionaliade e elementos do site.
-Para implementação e documentação dessas idéias, foram separadas por seções, podendo cada integrante, escolher qual desenvolveria. Nesta etapa, a equipe fez o uso da ferramenta Miro, com a finalidade de contruir quadros contendo as idéias, e da ferramenta Trello, com a finalidade de separar e escolher as tarefas.
+Para o projeto, a equipe optou por todos participarem juntamente no processo de design thinking, construção da etapa de entendimento e na etapa de exploração, propondo idéias das mais diversas sobre funcionalidade e elementos do site.
+Para implementação e documentação dessas idéias, foram separadas por seções, podendo cada integrante escolher qual desenvolveria. Nesta etapa, a equipe fez o uso da ferramenta Miro, com a finalidade de construir quadros contendo as idéias, e da ferramenta Trello, com a finalidade de separar e escolher as tarefas.
 Miro: https://miro.com/app/board/uXjVNjOu4ck=/
 
 ![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/129126008/9bf1b0a8-7413-4d03-82cb-50f9c1e331be)
