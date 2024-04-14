@@ -188,15 +188,6 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |02| O projeto precisa necessariamente ser intuitivo e de fácil entendimento para todas as idades diante de níveis tecnológicos.   |
 |03| Todo os colaboradores do projeto precisam conhecer e participar efetivamente de todas as etapas do projeto                    |
 
-
-> Enumere as restrições à sua solução. Lembre-se de que as restrições
-> geralmente limitam a solução candidata.
-> 
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
-
-
 # Projeto de Interface
 
 As interfaces foram elaboradas com os fundamentos de serem completamente flúidas, intuitivas, fáceis de se usar e totalmente responsivas, onde o usuário se sentirá incluído e confortável independente do dispositivo ao qual estará utilizando, conseguindo ter um fluxo livre e abrangente. As páginas terão uma identidade visual unica entre todas, sendo seus estilos padronizados. Alguns tópicos importantes sobre as interfaces são:
@@ -328,10 +319,12 @@ Alguns pontos que trouxeram a equipe para este método:
 Para o projeto, a equipe optou por todos participarem juntamente no processo de design thinking, construção da etapa de entendimento e na etapa de exploração, propondo idéias das mais diversas sobre funcionaliade e elementos do site.
 Para implementação e documentação dessas idéias, foram separadas por seções, podendo cada integrante, escolher qual desenvolveria. Nesta etapa, a equipe fez o uso da ferramenta Miro, com a finalidade de contruir quadros contendo as idéias, e da ferramenta Trello, com a finalidade de separar e escolher as tarefas.
 Miro: https://miro.com/app/board/uXjVNjOu4ck=/
+
 ![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/129126008/9bf1b0a8-7413-4d03-82cb-50f9c1e331be)
 alt: Imagem do board no Miro, servindo apenas de ilustração e demonstração do projeto final.
 
 Trello: https://trello.com/invite/b/qW8TBTgm/ATTI62ad82444c52393de4dd9e46e5877bf46509A37D/uai-jobs-tasks
+
 ![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/129126008/449b79e3-7d0a-41ed-8dab-254207638c68)
 alt: Imagem do board do Trello, apresentando a separação das tarefas.
 
@@ -361,12 +354,12 @@ Alteração-Metodologia-Divisão-Ferramentas
 |Protótipo Interativo | MavelApp | <https://marvelapp.com/prototype/1ah9095e/screen/94366212> | 
 |User flow | Figma | <https://www.figma.com/file/Luqd8sBxzYdyUahcCHgC0H/User-Flow-UaiJobs?type=design&node-id=0%3A1&mode=design&t=KzEpENNHxDYwQXGN-1> |
 
-> As ferramentas empregadas no projeto são:
-> 
-> - Editor de código |Vs code| A escolha do Vs code foi feita com base na experiência dos integrantes do grupo com a ferramenta.
-> - Ferramentas de comunicação |WhatsApp e Reuniões presenciais| Devido a praticidade de mensagens e o contato presencial entre os envolvidos.
-> - Ferramentas de diagramação |Figma e Miro| Escolhidas pela versatilidade das plataformas e por serem plataformas que trazem grandes possibilidades de conteúdos.
-> - Plataforma de hospedagem ||
+ As ferramentas empregadas no projeto são:
+
+- Editor de código |Vs code| A escolha do Vs code foi feita com base na experiência dos integrantes do grupo com a ferramenta.
+- Ferramentas de comunicação |WhatsApp e Reuniões presenciais| Devido a praticidade de mensagens e o contato presencial entre os envolvidos.
+- Ferramentas de diagramação |Figma e Miro| Escolhidas pela versatilidade das plataformas e por serem plataformas que trazem grandes possibilidades de conteúdos.
+- Plataforma de hospedagem ||
 
 ## Controle de Versão
 
