@@ -87,11 +87,7 @@ Além disso, a plataforma também será útil para aqueles que valorizam a flexi
  
 # Especificações do Projeto
 
-......  COLOQUE AQUI O SEU TEXTO ......
-
-> Apresente uma visão geral do que será abordado nesta parte do
-> documento, enumerando as técnicas e/ou ferramentas utilizadas para
-> realizar a especificações do projeto
+Durante toda a elaboração do projeto, questões como as definições dos problemas e o escopo abrangente pelo sistema foram pautas trabalhadas em grupo a partir da observação e pesquisas do público-alvo, a fim de atingirmos a maior completude de informações possível ao sanar as dores dos usuários em questão. Sabendo disso, essa coleta de dados foi estabelecida por meio da personificação deste público, simulando seus padrões de rotina para esclarecer como a UaiJobs promoveria melhorias na vida destes. Seguem os dados coletados:
 
 ## Personas e Mapas de Empatia
 
@@ -223,28 +219,30 @@ alt: Imagem do user flow.
 
 De acordo com o apresentado no User Flow, as telas do sistema contam com descrições detalhadas de cada uma de suas seções, seguindo um padrão para o desenvolvimento do projeto por completo. Existem estruturas presentes na grande maioria das telas, responsáveis pelas mesmas funções. São elas: 
  
-**- Cabeçalho**: Essa seção tem a função de localizar o acesso à página de login e à página de usuário, além do nome e logo da página;
+* **Cabeçalho**: Essa seção tem a função de localizar o acesso à página de login e à página de usuário, além do nome e logo da página;
  
-**- Barra Horizontal**: Essa seção é destinada aos filtros da página, sejam os de busca ou os de cadastro de vagas. Essa aba do sistema não está presente em todas as telas;
+* **Barra Horizontal**: Essa seção é destinada aos filtros da página, sejam os de busca ou os de cadastro de vagas. Essa aba do sistema não está presente em todas as telas;
  
-**- Conteúdo**: A parte de conteúdos está relacionada à todo a informação da página, tudo que é exposto ao usuário para navegar pelo programa;
+* **Conteúdo**: A parte de conteúdos está relacionada à todo a informação da página, tudo que é exposto ao usuário para navegar pelo programa;
  
-**- Rodapé**: O rodapé, por fim, armazena a seção de perguntas frequentes, termos de uso e o “fale conosco”.
+* **Rodapé**: O rodapé, por fim, armazena a seção de perguntas frequentes, termos de uso e o “fale conosco”.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Base_Elementos.jpg)
+alt: Imagem Wireframe Modelo.
 
 
 ### Tela - Página Inicial
 
 Essa tela representa o que o usuário encontrará assim que carregar a página pela primeira vez. Nela podemos identificar alguns elementos importantes: 
  
-**- Botão de login**: Guia o usuário para a tela de login;
+* **Botão de login**: Guia o usuário para a tela de login;
  
-**- Botão de cadastro**: Guia o usuário para a tela de cadastro;
+* **Botão de cadastro**: Guia o usuário para a tela de cadastro;
  
-**- Botão Freelancers disponíveis**: Esse botão guia o usuário até uma página que exibe todos os usuários cadastrados na plataforma que estão disponíveis para realizar serviços.
+* **Botão Freelancers disponíveis**: Esse botão guia o usuário até uma página que exibe todos os usuários cadastrados na plataforma que estão disponíveis para realizar serviços.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Inicial.jpg)
+alt: Imagem Tela Página inicial.
 
 
 ### Tela - Página de Login
@@ -252,6 +250,7 @@ Essa tela representa o que o usuário encontrará assim que carregar a página p
 Nesse ambiente, o usuário poderá realizar seu login na página.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Login.jpg)
+alt: Imagem Tela Página de Login.
 
 
 ### Tela - Página de Cadastro
@@ -259,6 +258,7 @@ Nesse ambiente, o usuário poderá realizar seu login na página.
 Nessa página o usuário poderá realizar seu cadastro caso ainda não possua login no sistema.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Cadastro.jpg)
+alt: Imagem Tela Página inicial.
 
 
 ### Tela - Freelancers Disponíveis
@@ -266,6 +266,7 @@ Nessa página o usuário poderá realizar seu cadastro caso ainda não possua lo
 Na tela de Freelancers Disponíveis o usuário poderá localizar todos os demais usuários disponíveis para executar serviços na plataforma. Ele poderá abrir o perfil deste Freelancer e acessar suas avaliações.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Freelancers_Dispon%C3%ADveis.jpg)
+alt: Imagem Tela Freelancers Disponíveis.
 
 
 ### Tela - Página do Freelancer
@@ -273,6 +274,7 @@ Na tela de Freelancers Disponíveis o usuário poderá localizar todos os demais
 Nessa tela o usuário poderá ver as avaliações e um breve resumo do usuário ao qual ele deseja contratar.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Freelancer.jpg)
+alt: Imagem Tela Página do Freelancer.
 
 
 ### Tela - Vagas em Aberto
@@ -280,6 +282,7 @@ Nessa tela o usuário poderá ver as avaliações e um breve resumo do usuário 
 Essa página é destinada aos Freelancers, visto que expõe as vagas cadastradas por contratantes na plataforma. O usuário tem acesso a um breve resumo da vaga, contendo informações como: função, remuneração, data, etc. Além disso, existe um filtro de busca na barra horizontal da página, permitindo ao usuário navegar pelas vagas que desejar, deixando visível apenas as que atenderem seus requisitos.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Vagas_Aberto.jpg)
+alt: Imagem Tela Vagas em aberto.
 
 
 ### Tela - Vaga
@@ -287,6 +290,7 @@ Essa página é destinada aos Freelancers, visto que expõe as vagas cadastradas
 O usuário, ao clicar numa vaga na página anterior, pode acessar todas as suas informações por completo e manifestar seu interesse por ela.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Vaga.jpg)
+alt: Imagem Tela Vaga.
 
 
 ### Tela - Como o UaiJobs funciona?
@@ -294,6 +298,7 @@ O usuário, ao clicar numa vaga na página anterior, pode acessar todas as suas 
 Aqui o usuário tem acesso a um vídeo de apresentação de como a plataforma funciona, além de informações adicionais como um campo de anúncios e patrocínios.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Como_UaiJobs_Funciona.jpg)
+alt: Imagem Tela Como o UaiJobs funciona?.
 
 
 ### Tela - Publicar Vaga
@@ -301,6 +306,7 @@ Aqui o usuário tem acesso a um vídeo de apresentação de como a plataforma fu
 Essa é a seção em que um dono de um serviço pode divulgar sua vaga em busca de um trabalhador para realizá-la. Nela há um formulário obrigatório ao qual o contratante deve preencher. 
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Publicar_Vaga.jpg)
+alt: Imagem Tela Publicar Vaga.
 
 
 
@@ -364,7 +370,6 @@ Alteração-Metodologia-Divisão-Ferramentas
 
 ## Controle de Versão
 
-......  COLOQUE AQUI O SEU TEXTO ......
  Para configuração, gerenciamento e versionamento do projeto, o grupo utiliza das ferramentas disponíveis pelo próprio GitHub, onde todo o conteúdo foi incrementado atráves de branchs terceiras, que seriam revisadas, para branchs secundárias, onde seriam testadas e após isso, incrementadas a branch master. Ex:
  * master: Versão operante, já revisada e testada;
  * Documentações: Versão apenas revisada, ainda não testadas;
@@ -376,7 +381,7 @@ Quanto à gerência dos issues, seguimos:
  * feature: A incrementação de um novo recurso.
 
 
-> ![Exemplo de Wireframe](images/Github-Workflow.png)
+ ![Exemplo de Wireframe](images/Github-Workflow.png)
 
 # **############## SPRINT 1 ACABA AQUI #############**
 
