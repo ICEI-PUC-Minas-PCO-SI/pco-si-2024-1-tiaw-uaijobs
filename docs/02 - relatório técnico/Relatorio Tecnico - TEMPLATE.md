@@ -254,7 +254,7 @@ alt: Imagem Tela Página inicial.
 
 ### Tela - Freelancers Disponíveis
 
-Na tela de Freelancers Disponíveis o usuário poderá localizar todos os demais usuários disponíveis para executar serviços na plataforma. Ele poderá abrir o perfil deste Freelancer e acessar suas avaliações.
+Na tela de Freelancers Disponíveis o usuário poderá localizar todos os demais usuários disponíveis para executar serviços na plataforma. Ele poderá usar uma serie de filtros para achar o freelancer ideal para seu serviço, podendo ainda, abrir o perfil deste Freelancer e acessar suas avaliações e detalhes de contato.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Freelancers_Dispon%C3%ADveis.jpg)
 alt: Imagem Tela Freelancers Disponíveis.
@@ -262,7 +262,7 @@ alt: Imagem Tela Freelancers Disponíveis.
 
 ### Tela - Página do Freelancer
 
-Nessa tela o usuário poderá ver as avaliações e um breve resumo do usuário ao qual ele deseja contratar.
+Nessa tela o usuário poderá ter uma visão mais detalhada de um freelancer em especifico, tal como, suas avaliações e um breve resumo do usuário ao qual ele deseja contratar.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Freelancer.jpg)
 alt: Imagem Tela Página do Freelancer.
@@ -276,9 +276,9 @@ Essa página é destinada aos Freelancers, visto que expõe as vagas cadastradas
 alt: Imagem Tela Vagas em aberto.
 
 
-### Tela - Vaga
+### Tela - Detalhe da Vaga
 
-O usuário, ao clicar numa vaga na página anterior, pode acessar todas as suas informações por completo e manifestar seu interesse por ela.
+O usuário, ao clicar em uma vaga na página anterior, pode acessar todas as informações por completo, bem como manifestar seu interesse por ela.
 
 ![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Vaga.jpg)
 alt: Imagem Tela Vaga.
