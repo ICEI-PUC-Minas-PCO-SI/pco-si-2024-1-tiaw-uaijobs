@@ -115,18 +115,18 @@ Com base na análise e compreensão do dia a dia das Personas selecionadas para 
 
 | `EU` | `QUERO/PRECISO` | `PARA` |
 |:--------------------:|:------------------------------------:|:----------------------------------------:|
-|Ana Silva     | Trabalhos flexivéis perto de mim. | Minha agenda é apertada, então eu preciso de encontrar serviços perto de onde moro e que eu possa realizar nos meus momentos livres.|
+|Ana Silva     | Trabalhos flexíveis perto de mim. | Minha agenda é apertada, então eu preciso de encontrar serviços perto de onde moro e que eu possa realizar nos meus momentos livres.|
 |Ana Silva     | Uma maneira de receber/ver o feedback | Me orientar sobre minha performance, no que posso melhorar e me sentir gratificada. |
-|Pedro Oliveira| Site fácil de se navegar e que possa ser acessado em qualquer lugar. | Para que eu possa procurar oportunidades de uma renda extra seja no conforto de minha casa ou no celular em uma viagem. | 
-|Pedro Oliveira|Ver as especificações do serviço, horários e expectativas. | Necessito de entender se sou capaz de cumprir com o serviço que fui contratado dentro do limite imposto.|
-|Maria da Silva|Um repertório das habilidades do candidato.|Julgar se o candidato é ou não capaz de executar o serviço que estou contratando.| 
+|Pedro Oliveira| Site fácil de se navegar e que possa ser acessado em qualquer lugar. | Para que eu possa procurar oportunidades de renda extra seja no conforto de minha casa ou no celular em uma viagem. | 
+|Pedro Oliveira| Ver as especificações do serviço, horários e expectativas. | Necessito de entender se sou capaz de cumprir com o serviço que fui contratado dentro do limite imposto.|
+|Maria da Silva| Um repertório das habilidades do candidato.|Julgar se o candidato é ou não capaz de executar o serviço que estou contratando.| 
 |Maria da Silva| Gostaria de ver tipo uma avaliação do usuário. | Antes de contratar, quero saber como o candidato foi avaliado previamente por outros, entender a qualidade e prestatividade do mesmo.|
 
 Um pouco sobre as Personas:
 
 **Ana Silva**
 
-Ana é estudante universitária, dedicada e ocupada e busca ganhar uma renda extra para lidar com os custos de seus estudos. Apaixonada por fotografia, ela é criativa e proativa, Ela é uma pessoa sociável, ativa nas redes sociais, e está sempre buscando inspiração e compartilhando suas experiências com amigos e seguidores. Ana sonha em finalizar seus estudos e alcançar sucesso em sua carreira, quer viajar para novos lugares e capturar os momentos em que se sinta feliz. Ana sonha em alcançar independência financeira e encontrar um equilíbrio do seu trabalho com seus hobbies e paixões.
+Ana é estudante universitária, dedicada e ocupada e busca ganhar uma renda extra para lidar com os custos de seus estudos. Apaixonada por fotografia, Ela é criativa e proativa. É uma pessoa sociável, ativa nas redes sociais, e está sempre buscando inspiração e compartilhando suas experiências com amigos e seguidores. Ana sonha em finalizar seus estudos, alcançar independência financeira e o sucesso em sua carreira. Quer viajar para novos lugares e capturar os momentos em que se sinta feliz, encontrando um equilíbrio do seu trabalho com seus hobbies e paixões.
 
 **Pedro Oliveira**
 
@@ -134,12 +134,13 @@ Pedro é designer gráfico que valoriza liberdade e flexibilidade em seu estilo 
 
 **Maria da Silva**
 
-Maria é uma empresária determinada, com vasta experiencia no seu ramo. Ela é conhecida por sua dedicação ao seu bar e por sua busca incessante por manter altos padrões de qualidade. Apesar de sua relutância em adotar tecnologias modernas, ela é uma pessoa trabalhadora e focada no sucesso de seu negócio. Maria é tradicional e preza por métodos convencionais, mas também valoriza a eficiência e a confiabilidade. Embora possa ser brava, especialmente sob pressão durante os fins de semana movimentados, ela é uma líder respeitada por sua equipe e uma figura querida por seus clientes. Maria quer assegurar o sucesso do seu bar e manter sua boa renda até que possa se aposentar, Ela aspira a proporcionar experiências memoráveis aos seus clientes, mantendo altos padrões de qualidade em seus serviços. Ela aspira que um dia seus filhos possam assumir seu legado, mas teme que ninguém possa fazer um trabalho tão exigente quanto ela.
+Maria é uma empresária determinada, com vasta experiencia no seu ramo. Ela é conhecida por sua dedicação ao seu bar e por sua busca incessante por manter altos padrões de qualidade. Apesar de sua relutância em adotar tecnologias modernas, ela é uma pessoa trabalhadora e focada no sucesso de seu negócio. Maria é tradicional e preza por métodos convencionais, mas também valoriza a eficiência e a confiabilidade. Embora possa ser brava, especialmente sob pressão durante os fins de semana movimentados, ela é uma líder respeitada por sua equipe e uma figura querida por seus clientes. Maria quer assegurar o sucesso do seu bar e manter sua boa renda até que possa se aposentar, Ela aspira a proporcionar experiências memoráveis aos seus clientes, mantendo altos padrões de qualidade em seus serviços. Ela almeja que um dia seus filhos assumam seu legado, mas teme que ninguém possa fazer um trabalho tão exigente quanto ela.
 
 
 ## Proposta de valor 
 
 ![image](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/164440525/42c08c89-ec1b-4578-b2c2-1be43d10f910)
+alt: Imagem Proposta de Valor.
 
 
 
@@ -373,7 +374,8 @@ Quanto à gerência dos issues, seguimos:
  * feature: A incrementação de um novo recurso.
 
 
- ![Exemplo de Wireframe](images/Github-Workflow.png)
+ ![Image](images/Github-Workflow.png)
+ alt: Imagem modelo de Gestão de Versão.
 
 # **############## SPRINT 1 ACABA AQUI #############**
 
