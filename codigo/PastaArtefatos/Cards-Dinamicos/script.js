@@ -148,6 +148,9 @@ vaga.forEach(vagaItem => {
     const button = document.createElement('button');
     button.classList.add('btn', 'btn-outline-danger');
     button.textContent = 'Ver detalhes';
+    button.onclick = function() {
+        window.location.href = 'DetalhamentoVaga.html';
+    };
     bttn.appendChild(button);
 
     vagaCard.appendChild(title);
