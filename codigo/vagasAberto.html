@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Inclusão do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="script.js"></script>
+    <title>UaiJobs</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin-top: 140px; /* Compensar o header fixo e os filtros */
+        }
+
+        .img-fluid-custom {
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .page-link-custom {
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #704040;
+            padding: 10px 0;
+            color: white;
+        }
+
+        .highlight-card:hover {
+            background-color: #f8f9fa; /* Cor clara para destacar */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        .filters-container {
+            position: fixed;
+            top: 80px; /* Altura do cabeçalho fixo */
+            width: 100%;
+            background-color: #704040; /* Cor similar ao header */
+            z-index: 999;
+            padding: 10px 0;
+        }
+
+        .filters-container .dropdown .dropdown-toggle {
+            background-color: #4e2525;
+            border-color: #4e2525;
+            color: white;
+        }
+
+        .filters-container .dropdown .dropdown-menu {
+            background-color: #4e2525;
+        }
+
+        .filters-container .dropdown .dropdown-item {
+            color: white;
+        }
+
+        .filters-container .dropdown .dropdown-item:hover {
+            background-color: #703838;
+        }
+    </style>
+</head>
+
+<body onload="selectPage(1)">
+
+    <!-- Cabeçalho fixo com logo e título -->
+    <header class="fixed-top text-white py-3" style="background-color: #4e2525;">
+        <div class="container d-flex align-items-center">
+            <img src="../img/logoPNG.png" alt="Logo UaiJobs" class="rounded-circle me-3 border border-white" style="width: 60px; height: auto;">
+            <h1 class="h3 mb-0">UaiJobs</h1>
+            <nav class="ms-auto">
+                <!-- <a href="../Login/Login.html" class="btn btn-light me-2">Login</a> -->
+                <!-- <a href="../Cadastro/Cadastro.html" class="btn btn-light">Cadastre-se</a> -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Filtros abaixo do cabeçalho -->
+    <div class="filters-container">
+        <div class="container">
+            <div class="row g-3 justify-content-center pt-2">
+                <div class="col-auto">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownCategory" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categoria
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownCategory">
+                            <li><a class="dropdown-item" href="#">Vendas</a></li>
+                            <li><a class="dropdown-item" href="#">Tecnologia</a></li>
+                            <li><a class="dropdown-item" href="#">Construção</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownPeriod" data-bs-toggle="dropdown" aria-expanded="false">
+                            Período
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownPeriod">
+                            <li><a class="dropdown-item" href="#">Manhã</a></li>
+                            <li><a class="dropdown-item" href="#">Tarde</a></li>
+                            <li><a class="dropdown-item" href="#">Noite</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownDate" data-bs-toggle="dropdown" aria-expanded="false">
+                            Data
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownDate">
+                            <li><a class="dropdown-item" href="#">Hoje</a></li>
+                            <li><a class="dropdown-item" href="#">Esta semana</a></li>
+                            <li><a class="dropdown-item" href="#">Este mês</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownCity" data-bs-toggle="dropdown" aria-expanded="false">
+                            Cidade
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownCity">
+                            <li><a class="dropdown-item" href="#">Contagem</a></li>
+                            <li><a class="dropdown-item" href="#">Belo Horizonte</a></li>
+                            <li><a class="dropdown-item" href="#">Betim</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex-grow-1">
+        <!-- Cards de itens que serão paginados -->
+        <div class="container my-4 pt-4">
+            <div class="row g-4 justify-content-center">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mx-3">
+                    <div class="card h-100 highlight-card" style="cursor:pointer;">
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title mb-3" id="item-title-1">-</h4>
+                            <img class="img-fluid img-fluid-custom border mb-3" src="img/banner.jpg" alt="" id="item-img-1">
+                            <p class="card-text" id="item-description-1">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mx-3">
+                    <div class="card h-100 highlight-card" style="cursor:pointer;">
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title mb-3" id="item-title-2">-</h4>
+                            <img class="img-fluid img-fluid-custom border mb-3" src="img/banner.jpg" alt="" id="item-img-2">
+                            <p class="card-text" id="item-description-2">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mx-3">
+                    <div class="card h-100 highlight-card" style="cursor:pointer;">
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title mb-3" id="item-title-3">-</h4>
+                            <img class="img-fluid img-fluid-custom border mb-3" src="img/banner.jpg" alt="" id="item-img-3">
+                            <p class="card-text" id="item-description-3">-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles de paginação -->
+            <nav class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link page-link-custom" href="#" onclick="backPage()">Anterior</a>
+                    </li>
+                    <li class="page-item"><a class="page-link page-link-custom" href="#" onclick="selectPage(1)">1</a></li>
+                    <li class="page-item"><a class="page-link page-link-custom" href="#" onclick="selectPage(2)">2</a></li>
+                    <li class="page-item"><a class="page-link page-link-custom" href="#" onclick="selectPage(3)">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link page-link-custom" href="#" onclick="fowardPage()">Próximo</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="text-center fixed-bottom">
+        <div class="container">
+            <ul class="list-inline">
+                <li class="list-inline-item "><a href="#" class="text-white">Perguntas Frequentes</a></li>
+                <li class="list-inline-item "><a href="#" class="text-white">Termos de Uso</a></li>
+                <li class="list-inline-item "><a href="#" class="text-white">Fale conosco</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS e integridade verificada -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../script.js"></script>
+</body>
+
+</html>
