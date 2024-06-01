@@ -136,22 +136,23 @@ function selectPage(page) {
     const pageItems = filteredItems.slice(start, end);
 
     for (let i = 0; i < object.sizePage; i++) {
-        const item = pageItems[i];
+        const card = document.getElementById(`item-${i + 1}`);
         const title = document.getElementById(`item-title-${i + 1}`);
         const img = document.getElementById(`item-img-${i + 1}`);
         const description = document.getElementById(`item-description-${i + 1}`);
 
-        if (item) {
+        if (pageItems[i]) {
+            const item = pageItems[i];
             title.innerHTML = item.title;
             img.src = item.image;
             description.innerHTML = item.description;
+            card.style.display = 'block'; // Show the card
         } else {
-            title.innerHTML = '-';
-            img.src = 'img/banner.jpg';
-            description.innerHTML = '-';
+            card.style.display = 'none'; // Hide the card
         }
     }
 }
+
 
 function backPage() {
     if (currentPage > 1) {
