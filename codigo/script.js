@@ -8,6 +8,7 @@ const object = {
             "categoria": "Tecnologia",
             "periodo": "Manhã",
             "data": "Hoje",
+            "dataLiteral": "10/01/2001",
             "cidade": "Belo Horizonte",
             "valorHora": 100
         },
@@ -18,6 +19,7 @@ const object = {
             "categoria": "Vendas",
             "periodo": "Tarde",
             "data": "Esta semana",
+            "dataLiteral": "10/01/2001",
             "cidade": "Contagem",
             "valorHora": 50
         },
@@ -28,6 +30,7 @@ const object = {
             "categoria": "Tecnologia",
             "periodo": "Noite",
             "data": "Este mês",
+            "dataLiteral": "10/01/2001",
             "cidade": "Betim",
             "valorHora": 120
         },
@@ -38,6 +41,7 @@ const object = {
             "categoria": "Serviços Gerais",
             "periodo": "Manhã",
             "data": "Este mês",
+            "dataLiteral": "10/01/2001",
             "cidade": "Belo Horizonte",
             "valorHora": 30
         },
@@ -48,6 +52,7 @@ const object = {
             "categoria": "Tecnologia",
             "periodo": "Tarde",
             "data": "Esta semana",
+            "dataLiteral": "10/01/2001",
             "cidade": "Contagem",
             "valorHora": 80
         },
@@ -58,6 +63,7 @@ const object = {
             "categoria": "Tecnologia",
             "periodo": "Noite",
             "data": "Hoje",
+            "dataLiteral": "10/01/2001",
             "cidade": "Belo Horizonte",
             "valorHora": 150
         },
@@ -68,6 +74,7 @@ const object = {
             "categoria": "Construção",
             "periodo": "Manhã",
             "data": "Este mês",
+            "dataLiteral": "10/01/2001",
             "cidade": "Betim",
             "valorHora": 70
         },
@@ -78,6 +85,7 @@ const object = {
             "categoria": "Serviços Gerais",
             "periodo": "Tarde",
             "data": "Esta semana",
+            "dataLiteral": "10/01/2001",
             "cidade": "Contagem",
             "valorHora": 40
         },
@@ -88,6 +96,7 @@ const object = {
             "categoria": "Serviços Gerais",
             "periodo": "Noite",
             "data": "Hoje",
+            "dataLiteral": "10/02/2001",
             "cidade": "Belo Horizonte",
             "valorHora": 35
         }
@@ -97,38 +106,79 @@ const object = {
 let currentPage = 1;
 let filteredItems = object.items;
 
-const filters = {
+let filters = {
     categoria: '',
     periodo: '',
     data: '',
+    dataIni: '',
+    dataFim: '',
     cidade: '',
     valorHora: 1000
 };
 
-function setFilter(filterType, value) {
+// Atualiza o botão do dropdown com o valor selecionado
+function updateDropdownButton(dropdownId, value) {
+    const button = document.getElementById(dropdownId);
+    button.innerHTML = value + ' <span class="caret"></span>';
+}
+
+function changeData(){
+    filters.dataIni = '01/02/2001'
+    filters.dataFim = '20/02/2001'
+    applyFilters()
+}
+
+// Define o filtro e aplica os filtros
+function setFilter(filterType, value, dropdownId) {
     filters[filterType] = value;
+    console.log(filters)
+    updateDropdownButton(dropdownId, value);
     applyFilters();
 }
 
+// Atualiza o valor do filtro de valor por hora
 function updatavalorHoraLabel(value) {
     filters.valorHora = parseInt(value);
     document.getElementById('valorHoraMaxLabel').innerText = value;
     applyFilters();
 }
 
+// Aplica os filtros aos itens
 function applyFilters() {
-    filteredItems = object.items.filter(item => 
-        (!filters.categoria || item.categoria === filters.categoria) &&
+    filteredItems = object.items.filter(item =>  {
+
+        if(filters.dataIni && filters.dataFim){
+            var dateFrom = filters.dataIni;
+            var dateTo = filters.dataFim;
+            var dateCheck = item.dataLiteral;
+
+            var d1 = dateFrom.split("/");
+            var d2 = dateTo.split("/");
+            var c = dateCheck.split("/");
+
+            var from = new Date(d1[2], parseInt(d1[1])-1, d1[0]);  // -1 because months are from 0 to 11
+            var to   = new Date(d2[2], parseInt(d2[1])-1, d2[0]);
+            var check = new Date(c[2], parseInt(c[1])-1, c[0]);
+
+            if(!(check >= from && check <= to)){
+                return false;
+            }
+        }
+
+        return (!filters.categoria || item.categoria === filters.categoria) &&
         (!filters.periodo || item.periodo === filters.periodo) &&
         (!filters.data || item.data === filters.data) &&
         (!filters.cidade || item.cidade === filters.cidade) &&
-        (item.valorHora <= filters.valorHora)
+        (item.valorHora <= filters.valorHora);
+    } 
     );
+    console.log(filteredItems)
     numberOfPages = Math.ceil(filteredItems.length / object.sizePage);
     currentPage = 1;
     selectPage(1);
 }
 
+// Seleciona a página
 function selectPage(page) {
     currentPage = page;
     const start = (page - 1) * object.sizePage;
@@ -153,17 +203,28 @@ function selectPage(page) {
     }
 }
 
-
+// Muda para a página anterior
 function backPage() {
     if (currentPage > 1) {
         selectPage(currentPage - 1);
     }
 }
 
+// Muda para a próxima página
 function fowardPage() {
     if (currentPage < numberOfPages) {
         selectPage(currentPage + 1);
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => selectPage(1));
+document.addEventListener('DOMContentLoaded', () => {
+    selectPage(1);
+
+    // Adiciona os event listeners aos itens do dropdown
+    document.querySelectorAll('.dropdown-menu a').forEach(item => {
+        item.addEventListener('click', event => {
+            const filterType = item.parentElement.parentElement.previousElementSibling.id.replace('dropdown', '').toLowerCase();
+            setFilter(filterType, item.textContent, item.parentElement.parentElement.previousElementSibling.id);
+        });
+    });
+});
