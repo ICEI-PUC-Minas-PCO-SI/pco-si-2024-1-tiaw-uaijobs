@@ -1,0 +1,213 @@
+/* Variáveis globais para cores que serão usadas em todo o CSS */
+:root {
+    --main-bg-color: #4e2525; 
+    --accent-color: antiquewhite; 
+    --text-color: black; 
+  }
+  
+  /* Estilos para o corpo do documento */
+  body {
+    font-family: Arial, sans-serif; 
+    background-color: #f0f0f0;
+    margin: 0; 
+    padding: 0; 
+  }
+  
+  /* Estilos para o cabeçalho */
+  header {
+    background-color: var(--main-bg-color); /* Usa a cor de fundo principal */
+    color: var(--accent-color); /* Usa a cor de destaque para o texto */
+    padding: 1rem; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    font-size: 1rem; 
+  }
+  
+  /* Estilos para o logotipo no cabeçalho */
+  header .logo {
+    width: 100px; 
+    height: auto;
+    border: 5px solid var(--accent-color); 
+    border-radius: 100%; /* Formato circular */
+    margin-right: 50px; 
+  }
+  
+  /* Estilos para a navegação no cabeçalho */
+  header nav {
+    margin-left: auto; 
+  }
+  
+  /* Estilos para a lista de navegação no cabeçalho */
+  header ul {
+    padding-left: 0;
+    list-style: none; 
+    display: flex; 
+  }
+  
+  /* Estilos para os itens da lista de navegação */
+  header ul li {
+    background-color: var(--accent-color); 
+    padding: 10px; 
+    border-radius: 5%; 
+    margin-left: 10px; 
+  }
+  
+  /* Estilos para os links no cabeçalho */
+  header a {
+    color: var(--text-color); /* Cor do texto */
+    text-decoration: none; 
+  }
+  
+  /* Estilos para o contêiner principal */
+  .container {
+    display: flex;
+    justify-content: space-between; 
+    padding: 20px; 
+  }
+  
+  /* Estilos para o contêiner de filtros */
+  .filter-container {
+    background-color: #f5f5f5; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    padding: 20px; 
+    width: 25%; 
+  }
+  
+  /* Estilos para as seções de filtro */
+  .filter-section {
+    margin-bottom: 20px; 
+  }
+  
+  /* Estilos para os títulos das seções de filtro */
+  .filter-title {
+    background: #dcdcdc; 
+    color: #333; 
+    padding: 10px; 
+    border: none; 
+    width: 100%; 
+    text-align: left; 
+    cursor: pointer;
+    border-radius: 4px; 
+  }
+  
+  /* Estilos para o conteúdo das seções de filtro */
+  .filter-content {
+    display: none; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-top: none; 
+    border-radius: 0 0 4px 4px; 
+    background-color: #e6e6e6; 
+  }
+  
+  
+  /* Estilos para o título expandido das seções de filtro */
+  .filter-title.expanded + .filter-content {
+    display: block; /* Mostra o conteúdo quando expandido */
+  }
+  
+  /* Estilos para o botão de pesquisa */
+  #search-button {
+    background: var(--main-bg-color); 
+    color: white; 
+    padding: 10px; 
+    border: none;
+    width: 100%; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    font-size: 16px;
+  }
+  
+  /* Estilos para o botão de pesquisa ao passar o mouse */
+  #search-button:hover,
+  #search-button:focus {
+    background-color: #3e1f1f; 
+  }
+  
+  /* Estilos para o controle deslizante de preço */
+  #price-slider {
+    margin: 10px 0; 
+  }
+  
+  /* Estilos para os campos de entrada de preço */
+  .price-inputs {
+    display: flex; 
+  }
+  
+  /* Estilos para os campos de preço mínimo e máximo */
+  #price-min,
+  #price-max {
+    width: 45%; 
+    margin: 0 2.5%; 
+    text-align: center; 
+  }
+  
+  /* Estilos para o contêiner de resultados */
+  .result-container {
+    background-color: #fff; 
+    border: 1px solid #000; 
+    border-radius: 8px;
+    padding: 20px; 
+    width: 70%; 
+  }
+  
+  /* Estilos para a lista de resultados */
+  #result-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Estilos para cada item de resultado */
+  .result-item {
+    margin-bottom: 10px; 
+    border-bottom: 1px solid #ddd; 
+    padding-bottom: 10px; 
+  }
+  
+  /* Estilos para as imagens nos itens de resultado */
+  .result-item img {
+    max-width: 100px; 
+    border-radius: 50%; 
+    display: block; 
+    margin-bottom: 10px; 
+  }
+  
+  /* Estilos para o rodapé */
+  footer {
+    border-top: 2px solid rgb(58, 58, 58); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 1rem; 
+    margin-top: 20px; 
+  }
+  
+  /* Estilos para a lista no rodapé */
+  footer ul {
+    list-style: none; 
+    display: flex; 
+  }
+  
+  /* Estilos para os itens da lista no rodapé */
+  footer ul li {
+    display: inline; 
+    margin: 0 10px; 
+  }
+  
+  /* Estilos para os links no rodapé */
+  footer ul li a {
+    color: var(--text-color); 
+    text-decoration: none; 
+  }
+  
+  /* Media query para ajustar o layout em telas menores */
+  @media (max-width: 768px) {
+    /* Ajusta a largura dos contêineres para ocupar toda a largura disponível */
+    .filter-container,
+    .result-container {
+      width: 100%;
+    }
+  }
+  

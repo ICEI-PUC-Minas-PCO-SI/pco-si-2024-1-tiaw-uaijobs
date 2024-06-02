@@ -1,0 +1,145 @@
+{
+    "categorias": ["Computação", "Construção", "Culinária", "Design", "Finanças", "Fotografia", "Jurídico", "Limpeza", "Marketing", "Mídias Sociais", "Redação", "Trabalhos Manuais", "Tradução", "Videoclipe"],
+    "localizacoes": ["Belo Horizonte", "Betim", "Contagem"],
+    "preco": {"min": 0, "max": 150},
+    "habilidades": [
+        "Análise Financeira", "Artesanato", "Assessoria Legal", "Bilíngue", "Comunicação Eficaz", "Criação Visual", "Desenvolvimento de Software", "Edição de Imagens", "Engenharia Civil", "Escrita Criativa", "Estratégia de Marketing", "Gastronomia", "Gestão de Redes Sociais", "Gestão de Tempo", "Linguística Aplicada", "Limpeza Profissional", "Organização", "Produção de Vídeo", "Trabalho em Equipe"
+    ],
+    "freelancers": [
+        {
+            "nome": "João Silva",
+            "foto": "Imagens/usuario-masculino.png",
+            "resumo": "Desenvolvedor front-end com 5 anos de experiência.",
+            "categoria": "Computação",
+            "localizacao": "Belo Horizonte",
+            "preco": 50,
+            "habilidades": ["HTML", "CSS", "JavaScript"]
+        },
+        {
+            "nome": "Maria Souza",
+            "foto": "Imagens/avatar-feminino.png",
+            "resumo": "Designer gráfico, criativa e com paixão por ilustrações.",
+            "categoria": "Design",
+            "localizacao": "Contagem",
+            "preco": 25,
+            "habilidades": ["Photoshop", "Criação Visual", "Illustrator"]
+        },
+        {
+            "nome": "Carlos Pereira",
+            "foto": "Imagens/usuario-masculino.png",
+            "resumo": "Redator especializado em SEO e marketing de conteúdo.",
+            "categoria": "Redação",
+            "localizacao": "Belo Horizonte",
+            "preco": 30,
+            "habilidades": ["SEO", "Escrita Criativa", "Copywriting"]
+        },
+        {
+            "nome": "Ana Torres",
+            "foto": "Imagens/avatar-feminino.png",
+            "resumo": "Especialista em limpeza e organização de ambientes.",
+            "categoria": "Limpeza",
+            "localizacao": "Betim",
+            "preco": 30,
+            "habilidades": ["Limpeza Profissional", "Organização"]
+        },
+        {
+            "nome": "Ricardo Gomes",
+            "foto": "Imagens/usuario-masculino.png",
+            "resumo": "Artista manual com foco em madeira e metais.",
+            "categoria": "Trabalhos Manuais",
+            "localizacao": "Contagem",
+            "preco": 35,
+            "habilidades": ["Artesanato", "Trabalho em Equipe"]
+        },
+        {
+            "nome": "Patricia Lima",
+            "foto": "Imagens/avatar-feminino.png",
+            "resumo": "Advogada com ampla experiência em direito empresarial.",
+            "categoria": "Jurídico",
+            "localizacao": "Belo Horizonte",
+            "preco": 100,
+            "habilidades": ["Assessoria Legal", "Comunicação Eficaz"]
+        },
+        {
+            "nome": "Eduardo Rocha",
+            "foto": "Imagens/usuario-masculino.png",
+            "resumo": "Chef de cozinha especializado em culinária italiana.",
+            "categoria": "Culinária",
+            "localizacao": "Betim",
+            "preco": 80,
+            "habilidades": ["Gastronomia", "Gestão de Tempo"]
+        },
+        {
+            "nome": "Fernanda Oliveira",
+            "foto": "Imagens/avatar-feminino.png",
+            "resumo": "Contadora com expertise em planejamento financeiro.",
+            "categoria": "Finanças",
+            "localizacao": "Contagem",
+            "preco": 70,
+            "habilidades": ["Análise Financeira", "Organização"]
+        },
+        {
+            "nome": "Gustavo Henrique",
+            "foto": "Imagens/usuario-masculino.png",
+            "resumo": "Fotógrafo com foco em eventos e retratos.",
+            "categoria": "Fotografia",
+            "localizacao": "Belo Horizonte",
+            "preco": 60,
+            "habilidades": ["Edição de Imagens", "Comunicação Eficaz"]
+        },
+        {
+            "nome": "Larissa Ribeiro",
+            "foto": "Imagens/avatar-feminino.png",
+            "resumo": "Especialista em marketing digital e mídias sociais.",
+            "categoria": "Marketing",
+            "localizacao": "Betim",
+            "preco": 80,
+            "habilidades": ["Estratégia de Marketing", "Gestão de Redes Sociais"]
+        },
+        {
+            "nome": "Thiago Martins",
+            "foto": "Imagens/usuario-masculino.png",
+            "resumo": "Engenheiro civil com projetos residenciais e comerciais.",
+            "categoria": "Construção",
+            "localizacao": "Contagem",
+            "preco": 90,
+            "habilidades": ["Engenharia Civil", "Gestão de Tempo"]
+        },
+        {
+            "nome": "Camila Gonçalves",
+            "foto": "Imagens/avatar-feminino.png",
+            "resumo": "Tradutora inglês-português com experiência em localização de roteiros.",
+            "categoria": "Tradução",
+            "localizacao": "Belo Horizonte",
+            "preco": 45,
+            "habilidades": ["Linguística Aplicada", "Bilíngue"]
+        },
+        {
+            "nome": "Roberto Alves",
+            "foto": "Imagens/usuario-masculino.png",
+            "resumo": "Produtor de videoclipes com foco em música independente.",
+            "categoria": "Videoclipe",
+            "localizacao": "Betim",
+            "preco": 120,
+            "habilidades": ["Produção de Vídeo", "Criatividade"]
+        },
+        {
+            "nome": "Sandra Moraes",
+            "foto": "Imagens/avatar-feminino.png",
+            "resumo": "Desenvolvedora de software com ênfase em aplicativos móveis.",
+            "categoria": "Computação",
+            "localizacao": "Contagem",
+            "preco": 65,
+            "habilidades": ["Desenvolvimento de Software", "Trabalho em Equipe"]
+        },
+        {
+            "nome": "Lucas Carvalho",
+            "foto": "Imagens/usuario-masculino.png",
+            "resumo": "Especialista em gestão de mídias sociais e conteúdo online.",
+            "categoria": "Mídias Sociais",
+            "localizacao": "Belo Horizonte",
+            "preco": 75,
+            "habilidades": ["Gestão de Redes Sociais", "Comunicação Eficaz"]
+        }
+    ]
+}
