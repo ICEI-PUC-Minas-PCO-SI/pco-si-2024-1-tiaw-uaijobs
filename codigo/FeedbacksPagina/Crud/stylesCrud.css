@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*Header e logo*/
+img {
+    width: 10%;
+    height: 10%;
+}
+header{
+    background-color: #4e2525;
+    display: block;
+}
+
+header h1{
+    color:antiquewhite;
+    font-size: 3rem;
+    vertical-align: middle;
+}
+
+header .logo{
+    width: 8vw;   
+    height: auto; 
+    border: 5px solid antiquewhite;
+    border-radius:100%;
+    margin-right: 50px;
+}
+
+header ul{
+    padding-left: 0px;
+    position: fixed;
+    top: calc((8vw + 20px)/2);
+    
+}
+
+header ul li{
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 5%;
+    list-style: none;
+    display: inline;
+    font-size: 1rem;
+}
+
+header div {
+    position: absolute;
+    vertical-align: middle;
+    height:100%;
+    padding: 0px;
+    top: 0px;
+}
+
+header a{
+    color: black;
+    text-decoration: none;
+}
+
+.principal{
+    padding-top: 200px;
+}
+/*Texto de introdução*/
+.textoIntroducao{
+    font-size: 20px;
+}
+/*Container de inserir avaliações*/
+.containerCrudFeedbacks{
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    width: 800px;
+    margin-top: 1%;
+    margin-left: 30%;
+}
+
+/*Estrelas de avaliação*/
+.estrelas .p {
+    padding: -200;
+}
+.rate {
+    float: left;
+    height: 40px;
+    padding: 0 0 0 0px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+/* FOOTER */
+footer{
+    border-top: 2px solid rgb(58, 58, 58);
+}
+
+footer ul{
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 0px;
+}
+
+footer ul li{
+    display: inline;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+body{
+    justify-content: center;
+    align-items: center;
+}
+.p {
+    font-family: Arial, Helvetica, sans-serif;
+}
