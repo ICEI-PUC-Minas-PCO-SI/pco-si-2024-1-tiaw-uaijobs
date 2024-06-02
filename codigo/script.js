@@ -178,6 +178,26 @@ function applyFilters() {
     selectPage(1);
 }
 
+function resetFilters() {
+    filters = {
+        categoria: null,
+        periodo: null,
+        data: null,
+        cidade: null,
+        valorHora: 1000
+    };
+
+    document.getElementById('dropdownCategory').innerText = 'Categoria';
+    document.getElementById('dropdownPeriod').innerText = 'Período';
+    document.getElementById('dropdownDate').innerText = 'Data';
+    document.getElementById('dropdownCity').innerText = 'Cidade';
+    document.getElementById('valorHora').value = 1000;
+    document.getElementById('valorHoraMinLabel').innerText = 0;
+    document.getElementById('valorHoraMaxLabel').innerText = 1000;
+
+    applyFilters();
+}
+
 // Seleciona a página
 function selectPage(page) {
     currentPage = page;
