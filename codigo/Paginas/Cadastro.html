@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+    <title>UaiJobs</title>
+
+</head>
+<body>
+
+    <header class="fixed-top px-5 py-3">
+        <img src="../img/logoPNG.png" alt="Logo UaiJobs" class="logo">
+        <h1 class="d-inline">UaiJobs</h1>
+        <div class="d-inline">
+            <ul class="mx-5">
+                <li class=""><a href="Login.html">Login</a></li>
+                <li class=""><a href="Cadastro.html">Cadastre-se</a></li>
+            </ul>
+        </div>
+        
+    </header>
+
+    <main>
+        <div class="divLoginCadastro m-5 border border-2 border-black p-3">
+
+            <form class="formTipoCadastro">
+                
+            </form>
+
+            <form class="formCadastroFreelancer">
+                <div class="form-group">
+                  <label for="inputNomeCadastro">Nome Completo:</label>
+                  <input type="text" class="form-control" placeholder="Seu nome completo" id="inputNomeCadastro" >
+                </div>
+                <div class="form-group">
+                    <label for="inputNascimentoCadastro">Data de Nascimento:</label>
+                    <input type="date" class="form-control" placeholder="Seu Aniversário" id="inputNascimentoCadastro" >
+                </div>
+                <div class="form-group">
+                    <label for="inputCPFCadastro">Seu CPF ou CNPJ:</label>
+                    <input type="number" class="form-control" placeholder="xxx.xxx.xxx-xx" id="inputCPFCadastro" >
+                </div>
+                <div class="form-group">
+                    <label for="inputTelefoneCadastro">Telefone:</label>
+                    <input type="tel" class="form-control" placeholder="(xx) xxxxx-xxxx" id="inputTelefoneCadastro" >
+                </div>
+                <div class="form-group">
+                    <label for="inputCEPCadastro">Seu CEP:</label>
+                    <input type="number" class="form-control" placeholder="xxxxx-xxx" id="inputCEPCadastro" >
+                </div>
+                <div class="form-group">
+                    <label for="inputLinkedinCadastro">Linkedin:</label>
+                    <input type="text" class="form-control" placeholder="Seu Linkedin" id="inputLinkedinCadastro">
+                </div>
+                <div class="form-group">
+                    <label for="inputEmailCadastro">Endereço de email:</label>
+                    <input type="email" class="form-control" placeholder="Seu email" id="inputEmailCadastro" >
+                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmailConfirmacaoCadastro">Confirmação de email:</label>
+                    <input type="email" class="form-control" placeholder="Confirme seu email" id="inputEmailConfirmacaoCadastro" >
+                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+                </div>
+                <div class="form-group">
+                  <label for="inputSenhaCadastro">Senha</label>
+                  <input type="password" class="form-control" placeholder="Senha" id="inputSenhaCadastro">
+                </div> 
+
+                <p class="mt-3 mb-0">Selecione o tipo desejado de usuário:</p>
+                <div class="">
+                    <input type="radio" id="inputCadastroEmpregador" value="empregador" name="tipoCadastro"> Empregador
+                    <input type="radio" id="inputCadastroFreelancer" value="freelancer" name="tipoCadastro"> Freelancer
+                </div>
+                
+            </form>
+            <button class="btn btn-primary my-3" id="enviaCadastro">Realizar Cadastro</button>
+        </div>
+    </main>
+
+    <footer class="fixed-bottom text-center">
+        <ul>
+            <li>Perguntas Frequentes</li>
+            <li>Termos de Uso</li>
+            <li>Fale conosco</li>
+        </ul>
+    </footer>
+
+    <script src="../cadastroLogin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
