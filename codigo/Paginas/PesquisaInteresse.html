@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>UaiJobs - Pesquisa de Interesses</title> 
+  <link rel="stylesheet" href="../pesquisaInteresse.css"> 
+  
+</head>
+
+<body> 
+
+  <!-- Cabeçalho com logo e navegação -->
+  <header> 
+    <img src="../img/logoPNG.png" alt="Logo UaiJobs" class="logo"> <!-- Imagem do logo -->
+    <h1>UaiJobs</h1> <!-- Título do cabeçalho -->
+    <nav> 
+      <ul> 
+        <li><a href="Home.html">Home</a></li>
+        <!-- Texto "Menu do Usuario" com link para a página do usuário -->
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal com os cards selecionáveis -->
+  <main> 
+    <h1 class="titulo-interesse">Tenho interesse em...</h1> 
+    <div class="grid" id="grid"> <!-- Divisão com classe e ID para estilização e manipulação no JavaScript -->
+      <!-- Os cards serão inseridos aqui pelo JavaScript -->
+    </div>
+
+    <!-- Botões de ação para os cards -->
+    <div class="button-container"> 
+      <button id="botao-pular">Pular</button> <!-- Botão para pular -->
+      <button id="botao-limpar" onclick="clearSelection()">Limpar Seleção</button>
+      <!-- Botão limpar e função: "clear/limpar" quando clicado -->
+      <button id="botao-confirmar" onclick="confirmSelection()" disabled>Confirmar</button>
+      <!-- Botão confirmar e função: "confirmar", obs: ele inicialmente fica desativado -->
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer> 
+    <ul> 
+      <li>Perguntas Frequentes</li> 
+      <li>Termos de Uso</li> 
+      <li>Fale conosco</li> 
+    </ul>
+  </footer>
+  <script src="../pesquisaInteresse.js"></script> 
+</body>
+
+</html>
