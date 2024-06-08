@@ -194,22 +194,6 @@ function IncluirVagaLS(){
     }
 }
 
-// const usuarioLogado = 
-//     {
-//         id: 1,
-//         nome: 'Victor Schneider',
-//         dataNascimento: '16/09/2004',
-//         cpf: '123.456.789-10',
-//         telefone: '(31) 99999-9999',
-//         cidade: 'Contagem',
-//         linkedin: 'linkedin.com/exemplo',
-//         email: 'victor.schneider@email.com',
-//         senha: 'victor123',
-//         interesses: ['Jurídico', 'Mídias Sociais', 'Limpeza', 'Computação', 'Culinária'],
-//         tipo: "usuario",
-//     }
-
-
 // Função que publica todas as vagas na pagina de Vagas Abertas
 function PublicaVagas(){
    

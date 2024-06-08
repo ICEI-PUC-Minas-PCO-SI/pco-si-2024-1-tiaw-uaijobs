@@ -112,6 +112,8 @@ function SalvarUsuarioLS(objUsuarios){
     localStorage.setItem('Usuarios', JSON.stringify(objUsuarios));
 }
 
+SalvarUsuarioLS(leUsuariosLS());
+
 /*Função que SALVA o usuário LOGADO no momento */
 function SalvarUsuarioCorrenteLS(usuario){
     localStorage.setItem('UsuarioCorrente', JSON.stringify(usuario));
@@ -133,14 +135,11 @@ function CadastraUsuarioLS(){
     let email = document.getElementById('inputEmailCadastro').value;
     let confEmail = document.getElementById('inputEmailConfirmacaoCadastro').value;
     let senha = document.getElementById('inputSenhaCadastro').value;
-    let tipo = document.querySelector('input[name="tipoCadastro"]:checked').value;
-
-    console.log(tipo)
-
+    let tipo = document.querySelector('input[name="tipoCadastro"]:checked');
     let id = objUsuarios.usuario.length;
     
     if(nome === '' || telefone === '' || cep === '' || email === '' || confEmail === '' || senha === '' || dataNasc === '' || cpf === ''){
-        window.alert("Dados incompletos")
+        window.alert("Por Favor, certifique de que os seguintes dados estão preenchidos:\nNome, Telefone, CEP, Email, Confirmação de Email, Senha, Data de Nascimento, CPF e Tipo de Cadastro")
     }
     else{
         
@@ -214,15 +213,22 @@ function LoginUsuario(){
     let senhaLogin = document.getElementById("inputSenhaLogin").value;
 
     objUsuarios.usuario.forEach(user => {
-        if (user.email == emailLogin){
+        if (user.email === emailLogin){
             if(user.senha == senhaLogin){
                 SalvarUsuarioCorrenteLS(user)
                 window.location.href = "Home.html";
 
             }
+            else{
+                window.alert(`A senha para o email: "${emailLogin}" está incorreta!`)
+            }
         }
     })
 }
 
+let btnLogin = document.getElementById('enviaLogin')
+btnLogin.addEventListener('click', LoginUsuario)
+
 let btnCadastro = document.getElementById('enviaCadastro');
 btnCadastro.addEventListener('click', CadastraUsuarioLS);
+
