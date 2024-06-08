@@ -1,17 +1,122 @@
-// Função para gerar dados fictícios JSON - Será substituido nas proximas sprints para uma funcão de buscar dados no JSON criado no cadastro
-// function gerarDadosFicticios() {
-//     const dadosGerados = {
-//         id: '1',
-//         nome: 'Pedro Felipe',
-//         email: 'pedrinhoF@email.com',
-//         senha: 'Pedro123',
-//         interesses: [],
-//         cidade: 'Contagem',
-//         telefone: '31-1234-5678',
-//         Linkedin: 'linkedin.com/PedroFelps'
-//     };
-//     return dadosGerados;
-// }
+function leUsuariosLS(){
+    let strUsuarios = localStorage.getItem('Usuarios');
+    var objUsuarios = {};
+
+    if(strUsuarios){
+        objUsuarios = JSON.parse(strUsuarios);
+    }
+    else{
+        objUsuarios = { usuario: [
+                {
+                    id: '0',
+                    nome: 'Victor Schneider',
+                    dataNasc: '2004-09-16',
+                    cpf: '13521637646',
+                    email: 'victor.schneider@uaijobs.com',
+                    senha: 'victor123',
+                    interesses: ['Culinária', 'Marketing'],
+                    cep: '32315-060',
+                    telefone: '31 99874-1609',
+                    Linkedin: '',
+                    tipo: "adm",
+                    vagasPublicadas: []
+                },
+                {
+                    id: '1',
+                    nome: 'Igor Maia',
+                    dataNasc: 'dd/mm/aaaa',
+                    cpf: '123.456.789-10',
+                    email: 'igor@uaijobs.com',
+                    senha: 'igor123',
+                    interesses: [],
+                    cep: 'xxxxx-xxx',
+                    telefone: '31 99999-9999',
+                    Linkedin: '',
+                    tipo: "adm",
+                    vagasPublicadas: []
+                },
+                {
+                    id: '2',
+                    nome: 'Guilherme',
+                    dataNasc: 'dd/mm/aaaa',
+                    cpf: '123.456.789-10',
+                    email: 'guilherme@uaijobs.com',
+                    senha: 'guilherme123',
+                    interesses: [],
+                    cep: 'xxxxx-xxx',
+                    telefone: '31 99999-9999',
+                    Linkedin: '',
+                    tipo: "adm",
+                    vagasPublicadas: []
+                },
+                {
+                    id: '3',
+                    nome: 'Luis',
+                    dataNasc: 'dd/mm/aaaa',
+                    cpf: '123.456.789-10',
+                    email: 'luis@uaijobs.com',
+                    senha: 'luis123',
+                    interesses: [],
+                    cep: 'xxxxx-xxx',
+                    telefone: '31 99999-9999',
+                    Linkedin: '',
+                    tipo: "adm",
+                    vagasPublicadas: []
+                },
+                {
+                    id: '4',
+                    nome: 'Thiago',
+                    dataNasc: 'dd/mm/aaaa',
+                    cpf: '123.456.789-10',
+                    email: 'thiago@uaijobs.com',
+                    senha: 'thiago123',
+                    interesses: [],
+                    cep: 'xxxxx-xxx',
+                    telefone: '31 99999-9999',
+                    Linkedin: '',
+                    tipo: "adm",
+                    vagasPublicadas: []
+                },
+                {
+                    id: '5',
+                    nome: 'Vitor Prates',
+                    dataNasc: 'dd/mm/aaaa',
+                    cpf: '123.456.789-10',
+                    email: 'vitor.prates@uaijobs.com',
+                    senha: 'vitor123',
+                    interesses: [],
+                    cep: 'xxxxx-xxx',
+                    telefone: '31 99999-9999',
+                    Linkedin: '',
+                    tipo: "adm",
+                    vagasPublicadas: []
+                }
+            ]
+        }
+    }  
+    
+    return objUsuarios;
+    
+}
+
+//Função que LÊ o usuário LOGADO no momento
+function leUsuarioCorrenteLS(){
+    let strUsuarios = localStorage.getItem('UsuarioCorrente');
+    let usuarioLogado = JSON.parse(strUsuarios);
+
+    return usuarioLogado;
+}
+
+/*Função que SALVA um novo USUÁRIO no LOCAL STORAGE */
+function SalvarUsuarioLS(objUsuarios){
+    localStorage.setItem('Usuarios', JSON.stringify(objUsuarios));
+}
+
+/*Função que SALVA o usuário LOGADO no momento */
+function SalvarUsuarioCorrenteLS(usuario){
+    localStorage.setItem('UsuarioCorrente', JSON.stringify(usuario));
+}
+
 
 // Função para salvar as seleções no Local Storage
 function saveSelections() {
@@ -19,9 +124,9 @@ function saveSelections() {
     document.querySelectorAll('.card.selected').forEach(card => { // Para cada card selecionado
         selectedSubjects.push(card.textContent.trim()); // Adiciona o texto do card (interesse) ao array
     });
-    const userData = gerarDadosFicticios();
-    userData.interesses = selectedSubjects; // Adiciona os interesses selecionados aos interesses do usuário fictício
-    localStorage.setItem('userData', JSON.stringify(userData)); // Salva os dados do usuário fictício no Local Storage
+    const usuarioLogado = leUsuarioCorrenteLS();
+    usuarioLogado.interesses = selectedSubjects; // Adiciona os interesses selecionados aos interesses do usuário fictício
+    SalvarUsuarioCorrenteLS(usuarioLogado); // Salva os dados do usuário fictício no Local Storage
 }
 
 // Ao carregar a página, adiciona a geração de dados fictícios e o salvamento no Local Storage 

@@ -26,15 +26,15 @@
 
     <main>
         <div class="container m-0" id="divForm">
-            <div class="row">
+            <div class="row"> 
 
                 <!-- Título do formulário -->
-                <div class="divTituloForm">
+                <!-- <div class="divTituloForm">
                     <h2 class="tituloForm">Informações da Vaga</h2>
-                </div>  
+                </div>   -->
 
                 <!-- Formulário com informações da vaga -->
-                <form action="" id="formInfoVaga" class="formPublicar py-4">
+                <!-- <form action="" id="formInfoVaga" class="formPublicar py-4">
                     
                     <div  id="divInputNomeVaga">
                         <label for="nomeVaga">Nome da vaga:</label>
@@ -77,13 +77,13 @@
     
                         <div class="" id="divInputTurnoVaga">
                             <label for="turnoVaga">Turno:</label>
-                        <select id="turnoVaga">
-                            <option value="---">Selecione um Turno</option>
-                            <option value="Manhã">Manhã (06:00 às 12:00)</option>
-                            <option value="Tarde">Tarde (12:00 às 18:00)</option>
-                            <option value="Noite">Noite (18:00 às 00:00)</option>
-                            <option value="Madrugada">Madrugada (00:00 às 06:00)</option>
-                        </select> 
+                            <select id="turnoVaga">
+                                <option value="---">Selecione um Turno</option>
+                                <option value="Manhã">Manhã (06:00 às 12:00)</option>
+                                <option value="Tarde">Tarde (12:00 às 18:00)</option>
+                                <option value="Noite">Noite (18:00 às 00:00)</option>
+                                <option value="Madrugada">Madrugada (00:00 às 06:00)</option>
+                            </select> 
                         </div>  
                     </div>
 
@@ -100,18 +100,18 @@
                     <div class="d-block" id="divInputDescricaoVaga">
                         <label for="descricaoVaga" class="d-block">Descrição:</label>
                     <input type="text" name="descricaoVaga" id="descricaoVaga" placeholder="Insira uma breve descrição sobre o trabalho realizado">
-                    </div>
+                    </div> -->
 
                     
-                </form>
+                <!-- </form> -->
 
                  <!-- Título do formulário -->
-                <div class="divTituloForm">
+                <!-- <div class="divTituloForm">
                     <h2 class="tituloForm">Informações do Contratante (Pessoa Física ou Jurídica)</h2>
-                </div>
+                </div> -->
 
                 <!-- Formulário contendo informações do Contratante -->
-                <form action="" id="infoEmpresa" class="formPublicar">
+                <!-- <form action="" id="infoEmpresa" class="formPublicar">
                     
                     <div>
                         <label for="nomeEmpresa">Nome:</label>
@@ -134,10 +134,78 @@
                     </div>
                     
                 </form>
+            </div> -->
+
+            
+
+            <div class="divLoginCadastro m-5 ">
+
+                <div class="">
+                    <h2 class="">Informações da Vaga</h2>
+                </div> 
+
+                <form  class="formCadastroFreelancer border border-2 border-black p-3">
+                    <div class="form-group">
+                        <label for="nomeVaga">Nome da vaga:</label>
+                        <input type="text" name="nomeVaga" id="nomeVaga" class="form-control" placeholder="Insira o nome/título da vaga" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="localVaga">Local da Vaga:</label>
+                        <input type="number" name="localVaga" id="localVaga" placeholder="Insira o CEP" class=" form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="dataVaga">Data da Vaga:</label>
+                        <input type="date" name="dataVaga" id="dataVaga" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="categoriaVaga">Categoria:</label>
+                            <select name="categoriaVaga" id="categoriaVaga" class="form-control" required>
+                                <option value="Categoria" selected>Categoria...</option>
+                                <option value="Jurídico">Jurídico</option>
+                                <option value="Culinária">Culinária</option>
+                                <option value="Design">Design</option>
+                                <option value="Finanças">Finanças</option>
+                                <option value="Fotografia">Fotografia</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Redação">Redação</option>
+                                <option value="Construção">Construção</option>
+                                <option value="Tradução">Tradução</option>
+                                <option value="Vídeo Clipes">Vídeo Clipes</option>
+                                <option value="Computação">Computação</option>
+                                <option value="Mídias Sociais">Mídias Sociais</option>
+                                <option value="Limpeza">Limpeza</option>
+                                <option value="Trabalhos Manuais">Trabalhos Manuais</option>
+                                <option value="Outros">Outro</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="turnoVaga">Turno:</label>
+                            <select id="turnoVaga" class="form-control">
+                                <option value="---">Selecione um Turno</option>
+                                <option value="Manhã">Manhã (06:00 às 12:00)</option>
+                                <option value="Tarde">Tarde (12:00 às 18:00)</option>
+                                <option value="Noite">Noite (18:00 às 00:00)</option>
+                                <option value="Madrugada">Madrugada (00:00 às 06:00)</option>
+                            </select> 
+                    </div>
+                    <div class="form-group">
+                        <label for="valorVaga">Valor da Vaga:</label>
+                        <input type="number" name="valorVaga" id="valorVaga" placeholder="Insira o valor ofertado" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="habilidadesVaga">Habilidades:</label>
+                        <input type="text" name="habilidadesVaga" id="habilidadesVaga" class="form-control" placeholder="Digite os requisitos para a vaga">
+                    </div>
+                    <div class="form-group">
+                        <label for="descricaoVaga" class="d-block">Descrição:</label>
+                        <input type="text" name="descricaoVaga" id="descricaoVaga" class="form-control" placeholder="Insira uma breve descrição sobre o trabalho realizado">
+                       
+                    </div>                    
+                </form>
             </div>
 
-            <div id="divBotaoPublicar">
-                <button id="botaoPublicarVaga" class="btn btn-primary mb-3" onclick="IncluirVagaLS()">Publicar vaga</button>
+            <div class="divBotaoPublicar">
+                <button id="botaoPublicarVaga" class="btn btn-primary mb-3 botaoEnviaForm" onclick="IncluirVagaLS()">Publicar vaga</button>
             </div>
             
         </div>

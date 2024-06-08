@@ -170,7 +170,7 @@ function CadastraUsuarioLS(){
                 objUsuarios.usuario.push(novoUsuario);
                 SalvarUsuarioLS(objUsuarios)
                 SalvarUsuarioCorrenteLS(novoUsuario);
-                    window.location.href = "PesquisaInteresse.html"
+                window.location.href = "PesquisaInteresse.html"
             }
         }
         else{
@@ -226,9 +226,18 @@ function LoginUsuario(){
     })
 }
 
-let btnLogin = document.getElementById('enviaLogin')
-btnLogin.addEventListener('click', LoginUsuario)
+let paginaAtual = window.location.href;
 
-let btnCadastro = document.getElementById('enviaCadastro');
-btnCadastro.addEventListener('click', CadastraUsuarioLS);
+if(paginaAtual.includes('Cadastro.html')){
+    let btnCadastro = document.getElementById('enviaCadastro');
+    btnCadastro.addEventListener('click', CadastraUsuarioLS);
+}
+else {
+    let btnLogin = document.getElementById('enviaLogin');
+    btnLogin.addEventListener('click', LoginUsuario)
+}
+
+
+
+
 
