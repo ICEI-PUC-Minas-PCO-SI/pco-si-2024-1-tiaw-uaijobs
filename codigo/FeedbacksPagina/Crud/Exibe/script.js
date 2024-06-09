@@ -30,7 +30,7 @@ function mostraFeedbacks() {
                         <div class="feedbackAvaliacao mt-3">
                             <div class="fundoFeedback border rounded-4 shadow-lg border-opacity-50 p-3">
                                 <div class="textoFeedback p-4 text-center pt-5">
-                                    <p>${feedback.descricao}</p>
+                                    <textarea class="form-control" readonly>${feedback.descricao}</textarea>
                                 </div>
                             </div>
                         </div>
