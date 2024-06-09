@@ -109,9 +109,44 @@ header a{
 .feedbackAvaliacao {
     display: flex;
     justify-content: center;
-    margin-top: 5%;
     font-size: 100%;
     color: black;
+}
+.boxAvaliacao {
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+.textoFeedback {
+    word-wrap: break-word;
+}
+
+textarea.form-control::-webkit-scrollbar {
+    width: 10px; 
+}
+
+textarea.form-control::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px; 
+}
+
+textarea.form-control::-webkit-scrollbar-thumb {
+    background: #583030; 
+    border-radius: 10px;
+}
+
+textarea.form-control::-webkit-scrollbar-thumb:hover {
+    background: #8d4949; 
+}
+
+textarea.form-control {
+    width: 100%;
+    min-height: 100px; 
+    resize: none; 
+    border: none; 
+    box-shadow: none; 
+    background-color: transparent;
 }
 
 /* Ajustes do fundo da descrição */
