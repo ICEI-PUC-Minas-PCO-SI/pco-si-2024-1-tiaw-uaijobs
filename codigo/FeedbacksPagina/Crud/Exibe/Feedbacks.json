@@ -1,0 +1,11 @@
+[{
+    "feedback_id": 1,
+    "usuario": {
+        "nome": "Nome do usuario",
+        "email": "Emaildousuario@exemplo.com"
+    },
+    "data": "Data do feedback",
+    "descricao": "Descrição do feedback do usuario",
+    "Avaliação": "Avaliação da página de 1 a 5",
+    "categoria": "Positivo"
+}]
