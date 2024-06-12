@@ -1,0 +1,53 @@
+html {
+    font-size: 12px;
+}
+
+body {
+    margin: 0px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+/* Esqueleto da Página */
+
+/* HEADER  */
+header {
+    background-color: #4e2525;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: antiquewhite;
+    font-size: 3rem;
+    vertical-align: middle;
+}
+
+header .logo {
+    width: 8vw;
+    height: auto;
+    border: 5px solid antiquewhite;
+    border-radius: 100%;
+    margin-right: 50px;
+}
+
+/* FOOTER */
+footer {
+    border-top: 2px solid rgb(58, 58, 58);
+}
+
+footer ul {
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 0px;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 15px;
+    margin-left: 15px;
+}

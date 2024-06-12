@@ -1,0 +1,88 @@
+html {
+    font-size: 12px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER  */
+header {
+    background-color: #4e2525;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: antiquewhite;
+    font-size: 3rem;
+    vertical-align: middle;
+}
+
+header .logo {
+    width: 8vw;
+    height: auto;
+    border: 5px solid antiquewhite;
+    border-radius: 100%;
+    margin-right: 50px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+
+ /* Estilos adicionais */
+.profile-picture-wrapper {
+    padding-top: 100px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.edit-profile-form img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.edit-profile-form img:hover {
+    opacity: 0.8;
+}
+
+/* Adicionando estilos ao formulário */
+.edit-profile-form form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.edit-profile-form .form-group {
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+    border-top: 2px solid rgb(58, 58, 58);
+}
+
+footer ul {
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 0px;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 15px;
+    margin-left: 15px;
+}
