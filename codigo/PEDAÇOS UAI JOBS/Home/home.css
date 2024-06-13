@@ -1,0 +1,195 @@
+/* Estilos básicos para o corpo do documento */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para o cabeçalho */
+.cabecalho {
+    background-color: #4e2525;
+    color: antiquewhite;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilo para o logo no cabeçalho */
+.logo {
+    width: 4vw;
+    height: auto;
+    border: 5px solid antiquewhite;
+    border-radius: 100%;
+    margin-right: 50px;
+    min-width: 60px; /* Define um tamanho mínimo */
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 60px; /* Define um tamanho fixo para telas menores */
+    }
+}
+
+/* Estilos para a navegação no cabeçalho */
+.navegacao {
+    margin-left: auto;
+}
+
+.lista-navegacao {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+}
+
+.item-navegacao {
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 5%;
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+.link-navegacao {
+    color: black;
+    text-decoration: none;
+}
+
+/* Estilos para o título do site */
+.titulo-link {
+    text-decoration: none;
+}
+
+.titulo {
+    font-size: 2rem;
+    color: antiquewhite;
+    margin-left: 20px;
+}
+
+/* Estilos para o conteúdo principal */
+.conteudo-principal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    background-color: #fcfcfc;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+}
+
+.botoes {
+    margin: 20px 0;
+}
+
+.botao-acao {
+    background-color: antiquewhite;
+    color: black;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.botao-acao:hover {
+    background-color: #4e2525;
+    color: antiquewhite;
+}
+
+.imagem-texto-dinamico {
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+.imagem-texto-dinamico img {
+    width: 100%;
+    height: auto;
+}
+
+.texto-dinamico-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Removido o fundo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.texto-dinamico {
+    font-size: 2rem;
+    color: white;
+}
+
+.digitacao {
+    border-right: 2px solid white;
+    animation: piscar 0.75s steps(2, start) infinite;
+}
+
+@keyframes piscar {
+    to {
+        border-color: transparent;
+    }
+}
+
+.feedbacks, .como_funciona {
+    background: #fcfcfc;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.rodape {
+    border-top: 2px solid rgb(58, 58, 58);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.lista-rodape {
+    list-style: none;
+    display: flex;
+}
+
+.item-rodape {
+    display: inline;
+    margin: 0 10px;
+}
+
+.link-rodape {
+    color: #333; /* Cor cinza */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link-rodape:hover {
+    color: #4e2525; /* Cor ao passar o mouse */
+}

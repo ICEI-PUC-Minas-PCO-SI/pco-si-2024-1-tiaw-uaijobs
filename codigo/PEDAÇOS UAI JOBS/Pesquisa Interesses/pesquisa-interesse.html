@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UaiJobs - Pesquisa de Interesses</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Inclusão da biblioteca Faker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+</head>
+
+<body>
+  <!-- Cabeçalho com logo e navegação -->
+  <header class="cabecalho">
+    <img src="Imagens/logoPNG.png" alt="Logo UaiJobs" class="logo"> <!-- Imagem do logo -->
+    <h1 class="titulo">UaiJobs</h1>
+    <nav class="navegacao">
+      <ul class="lista-navegacao">
+        <li class="item-navegacao">
+          <button class="hamburger" onclick="toggleMenu()">☰ Menu</button>
+          <div id="menu-usuario" class="menu-usuario">
+            <a href="meu-perfil.html">Meu Perfil</a>
+            <a href="pesquisa-interesse.html">Pesquisa de Interesse</a>
+            <a href="sair.html">Sair</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal com os cards selecionáveis -->
+  <main class="conteudo-principal">
+    <h1 class="titulo-interesses">Tenho interesse em...</h1>
+    <div class="grade-interesses" id="grade-interesses"></div> <!-- Contêiner dos cards -->
+
+    <!-- Botões de ação para os cards -->
+    <div class="container-botoes">
+      <button id="botao-pular" class="botao-acao">Pular</button> <!-- Botão para pular -->
+      <button id="botao-limpar" class="botao-acao" onclick="limparSelecaoInteresses()">Limpar Seleção</button> <!-- Botão para limpar seleção -->
+      <button id="botao-confirmar" class="botao-acao" onclick="confirmarSelecaoInteresses()" disabled>Confirmar</button> <!-- Botão para confirmar seleção -->
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <ul class="lista-rodape">
+      <li class="item-rodape">Perguntas Frequentes</li>
+      <li class="item-rodape">Termos de Uso</li>
+      <li class="item-rodape">Fale conosco</li>
+    </ul>
+  </footer>
+
+  <!-- Inclusão do script JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>
