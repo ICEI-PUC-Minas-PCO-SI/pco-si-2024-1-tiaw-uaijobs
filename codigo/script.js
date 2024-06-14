@@ -122,16 +122,10 @@ function updateDropdownButton(dropdownId, value) {
     button.innerHTML = value + ' <span class="caret"></span>';
 }
 
-function changeData(){
-    filters.dataIni = '01/02/2001'
-    filters.dataFim = '20/02/2001'
-    applyFilters()
-}
-
 // Define o filtro e aplica os filtros
 function setFilter(filterType, value, dropdownId) {
     filters[filterType] = value;
-    console.log(filters)
+    console.log(filters);
     updateDropdownButton(dropdownId, value);
     applyFilters();
 }
@@ -145,20 +139,16 @@ function updatavalorHoraLabel(value) {
 
 // Aplica os filtros aos itens
 function applyFilters() {
-    filteredItems = object.items.filter(item =>  {
+    filteredItems = object.items.filter(item => {
 
         if(filters.dataIni && filters.dataFim){
-            var dateFrom = filters.dataIni;
-            var dateTo = filters.dataFim;
-            var dateCheck = item.dataLiteral;
+            var dateFrom = filters.dataIni.split("/");
+            var dateTo = filters.dataFim.split("/");
+            var dateCheck = item.dataLiteral.split("/");
 
-            var d1 = dateFrom.split("/");
-            var d2 = dateTo.split("/");
-            var c = dateCheck.split("/");
-
-            var from = new Date(d1[2], parseInt(d1[1])-1, d1[0]);  // -1 because months are from 0 to 11
-            var to   = new Date(d2[2], parseInt(d2[1])-1, d2[0]);
-            var check = new Date(c[2], parseInt(c[1])-1, c[0]);
+            var from = new Date(dateFrom[2], parseInt(dateFrom[1])-1, dateFrom[0]);  // -1 porque meses são de 0 a 11
+            var to   = new Date(dateTo[2], parseInt(dateTo[1])-1, dateTo[0]);
+            var check = new Date(dateCheck[2], parseInt(dateCheck[1])-1, dateCheck[0]);
 
             if(!(check >= from && check <= to)){
                 return false;
@@ -170,8 +160,8 @@ function applyFilters() {
         (!filters.data || item.data === filters.data) &&
         (!filters.cidade || item.cidade === filters.cidade) &&
         (item.valorHora <= filters.valorHora);
-    } 
-    );
+    });
+    
     console.log(filteredItems)
     numberOfPages = Math.ceil(filteredItems.length / object.sizePage);
     currentPage = 1;
@@ -180,10 +170,12 @@ function applyFilters() {
 
 function resetFilters() {
     filters = {
-        categoria: null,
-        periodo: null,
-        data: null,
-        cidade: null,
+        categoria: '',
+        periodo: '',
+        data: '',
+        dataIni: '',
+        dataFim: '',
+        cidade: '',
         valorHora: 1000
     };
 
@@ -216,9 +208,9 @@ function selectPage(page) {
             title.innerHTML = item.title;
             img.src = item.image;
             description.innerHTML = item.description;
-            card.style.display = 'block'; // Show the card
+            card.style.display = 'block'; // Mostra o card
         } else {
-            card.style.display = 'none'; // Hide the card
+            card.style.display = 'none'; // Esconde o card
         }
     }
 }
@@ -240,11 +232,17 @@ function fowardPage() {
 document.addEventListener('DOMContentLoaded', () => {
     selectPage(1);
 
-    // Adiciona os event listeners aos itens do dropdown
-    document.querySelectorAll('.dropdown-menu a').forEach(item => {
-        item.addEventListener('click', event => {
-            const filterType = item.parentElement.parentElement.previousElementSibling.id.replace('dropdown', '').toLowerCase();
-            setFilter(filterType, item.textContent, item.parentElement.parentElement.previousElementSibling.id);
-        });
+    // Inicializa o Flatpickr
+    flatpickr("#dateRange", {
+        mode: "range",
+        dateFormat: "d/m/Y",
+        locale: "pt",
+        onChange: function(selectedDates, dateStr, instance) {
+            if (selectedDates.length === 2) {
+                filters.dataIni = selectedDates[0].toLocaleDateString("pt-BR");
+                filters.dataFim = selectedDates[1].toLocaleDateString("pt-BR");
+                applyFilters();
+            }
+        }
     });
 });
