@@ -1,0 +1,22 @@
+{
+  "ratings": [
+    {
+      "workerId": "1",
+      "rating": 3,
+      "comment": "ele é um bosta",
+      "id": "9c9f"
+    },
+    {
+      "workerId": "3",
+      "rating": 3,
+      "comment": "ruim mas bom",
+      "id": "148c"
+    },
+    {
+      "workerId": "2",
+      "rating": 4,
+      "comment": "sei la vei ruiom demais",
+      "id": "1327"
+    }
+  ]
+}
