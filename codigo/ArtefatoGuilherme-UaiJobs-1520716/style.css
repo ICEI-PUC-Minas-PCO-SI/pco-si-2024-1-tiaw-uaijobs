@@ -1,0 +1,159 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+/* Esqueleto da Página */
+
+/* HEADER  */
+header {
+    background-color: #4e2525;
+    display: block;
+}
+
+header h1 {
+    color: antiquewhite;
+    font-size: 3rem;
+    vertical-align: middle;
+}
+
+header .logo {
+    width: 8vw;
+    height: auto;
+    border: 5px solid antiquewhite;
+    border-radius: 100%;
+    margin-right: 50px;
+}
+
+header ul {
+    padding-left: 0px;
+    position: fixed;
+    top: calc((8vw + 20px)/2);
+
+}
+
+header ul li {
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 5%;
+    list-style: none;
+    display: inline;
+    font-size: 1rem;
+}
+
+header div {
+    position: absolute;
+    vertical-align: middle;
+    height: 100%;
+    padding: 0px;
+    top: 0px;
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+}
+
+/* MAIN */
+/*Perfil do trabalhador ficticio */
+
+
+
+
+.profile {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-top: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    /* Adicionando para organizar em coluna */
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    /* Espaçamento abaixo da imagem */
+}
+
+.profile p {
+    color: #333;
+    margin-bottom: 10px;
+    /* Espaçamento entre as informações */
+    text-align: center;
+    /* Centralizando o texto */
+}
+
+/*Fim do perfil ficticio*/
+
+/*Sistema de avaliacao*/
+.container-ratingStars {
+    display: flex;
+    justify-content: center;
+    /* Adicionando para centralizar horizontalmente */
+    align-items: center;
+    font-size: 3vh;
+    margin-top: 2%;
+    cursor: pointer;
+}
+
+.container-ratingStars p {
+    margin-right: 10px;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.container-ratingStars i {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.container-ratingStars i:hover {
+    color: #fc0;
+}
+
+.container-ratingStars i:hover~i {
+    color: #000;
+}
+
+.container-ratingStars i:last-child {
+    margin-right: 0;
+}
+
+.container-ratingStars i:last-child {
+    margin-right: 0;
+}
+
+/*Fim sistema de avaliacao*/
+
+/* FOOTER */
+footer {
+    border-top: 2px solid rgb(58, 58, 58);
+}
+
+footer ul {
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 0px;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 15px;
+    margin-left: 15px;
+}
