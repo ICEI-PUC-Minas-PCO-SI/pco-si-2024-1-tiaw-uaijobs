@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const comment = document.querySelector(`textarea[data-id='${workerId}']`).value;
         if (ratingValue) {
             saveToLocalStorage(workerId, parseInt(ratingValue), comment);
+            alert('Avaliação salva com sucesso!');
         } else {
             alert("Por favor, selecione uma avaliação antes de confirmar.");
         }
