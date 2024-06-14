@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Container onde a lista de trabalhadores será exibida
     const workersListContainer = document.getElementById('uai-jobs-workers-list');
-    // URL do servidor para salvar e carregar avaliações
-    const serverUrl = 'http://localhost:3000/ratings';
     // Dados dos trabalhadores
     const workersData = [
         { id: 1, name: 'Elder Franco', competencies: 'Developer Front End, sou freelancer.' },
@@ -56,34 +54,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Função para enviar a avaliação ao servidor e salvar no Local Storage
-    async function submitRating(e) {
+    // Função para enviar a avaliação e salvar no Local Storage
+    function submitRating(e) {
         const workerId = e.target.getAttribute('data-id');
         const ratingContainer = document.querySelector(`.rating[data-id='${workerId}']`);
         const ratingValue = ratingContainer.getAttribute('data-selected-rating');
         const comment = document.querySelector(`textarea[data-id='${workerId}']`).value;
         if (ratingValue) {
-            await saveRating(workerId, parseInt(ratingValue), comment);
             saveToLocalStorage(workerId, parseInt(ratingValue), comment);
         } else {
             alert("Por favor, selecione uma avaliação antes de confirmar.");
         }
-    }
-
-    // Função para salvar a avaliação no servidor
-    async function saveRating(workerId, ratingValue, comment) {
-        const ratingData = { workerId, rating: ratingValue, comment };
-        const response = await fetch(serverUrl);
-        const ratings = await response.json();
-        const existingRating = ratings.find(r => r.workerId == workerId);
-        const method = existingRating ? 'PUT' : 'POST';
-        const url = existingRating ? `${serverUrl}/${existingRating.id}` : serverUrl;
-        await fetch(url, {
-            method,
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(ratingData),
-        });
-        loadRatings();
     }
 
     // Função para salvar a avaliação no Local Storage
@@ -97,15 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
             ratings.push(ratingData);
         }
         localStorage.setItem('uaiJobsRatings', JSON.stringify(ratings));
+        loadRatings();
     }
 
-    // Função para carregar as avaliações salvas do servidor e do Local Storage
-    async function loadRatings() {
-        const response = await fetch(serverUrl);
-        const ratings = await response.json();
-        const localRatings = JSON.parse(localStorage.getItem('uaiJobsRatings')) || [];
-        const combinedRatings = [...ratings, ...localRatings];
-        combinedRatings.forEach(rating => {
+    // Função para carregar as avaliações salvas do Local Storage
+    function loadRatings() {
+        const ratings = JSON.parse(localStorage.getItem('uaiJobsRatings')) || [];
+        ratings.forEach(rating => {
             const ratingContainer = document.querySelector(`.rating[data-id='${rating.workerId}']`);
             const commentElement = document.querySelector(`textarea[data-id='${rating.workerId}']`);
             if (ratingContainer) {
