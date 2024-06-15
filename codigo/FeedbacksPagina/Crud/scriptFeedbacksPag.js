@@ -25,7 +25,7 @@ function storeFeedback(event) {
     // Determina a categoria com base no valor das estrelas
     const categoria = estrelas >= 3 ? 'positivo' : 'negativo';
 
-    // Cria um objeto de avaliação que será enviado para o localStorage
+    // Cria um objeto de avaliação que será enviado para o servidor JSON
     const feedback = {
         nome: nome,
         email: email,
@@ -35,25 +35,20 @@ function storeFeedback(event) {
         categoria: categoria
     };
 
-    // Verifica se já existe algum feedback armazenado
-    let feedbackList = localStorage.getItem('feedbacks');
-    if (feedbackList) {
-        feedbackList = JSON.parse(feedbackList);
-    } else {
-        feedbackList = [];
-    }
-
-    // Adiciona o novo feedback à lista
-    feedbackList.push(feedback);
-
-    // Armazena a lista atualizada no localStorage
-    localStorage.setItem('feedbacks', JSON.stringify(feedbackList));
-
-    // Limpa os campos do formulário após o envio
-    document.getElementById('inserirNome').value = '';
-    document.getElementById('inserirEmail').value = '';
-    document.getElementById('inserirDescricao').value = '';
-    document.querySelector('input[name="rate"]:checked').checked = false;
-
-    alert('Feedback enviado com sucesso!');
+    // Envia o feedback para o servidor JSON
+    axios.post('http://localhost:3000/feedbacks', feedback) // Substitua pela URL do seu JSON server
+        .then(response => {
+            console.log('Feedback enviado com sucesso:', response.data);
+            alert('Feedback enviado com sucesso!');
+            
+            // Limpa os campos do formulário após o envio
+            document.getElementById('inserirNome').value = '';
+            document.getElementById('inserirEmail').value = '';
+            document.getElementById('inserirDescricao').value = '';
+            document.querySelector('input[name="rate"]:checked').checked = false;
+        })
+        .catch(error => {
+            console.error('Erro ao enviar feedback:', error);
+            alert('Erro ao enviar feedback. Por favor, tente novamente.');
+        });
 }
