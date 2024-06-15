@@ -1,0 +1,103 @@
+
+.botoes {
+    margin: 20px 0;
+}
+
+.botao-acao {
+    background-color: antiquewhite;
+    color: black;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.botao-acao:hover {
+    background-color: #4e2525;
+    color: antiquewhite;
+}
+
+.imagem-texto-dinamico {
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+.imagem-texto-dinamico img {
+    width: 100%;
+    height: auto;
+}
+
+.texto-dinamico-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Removido o fundo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.texto-dinamico {
+    font-size: 2rem;
+    color: white;
+}
+
+.digitacao {
+    border-right: 2px solid white;
+    animation: piscar 0.75s steps(2, start) infinite;
+}
+
+@keyframes piscar {
+    to {
+        border-color: transparent;
+    }
+}
+
+.feedbacks, .como_funciona {
+    background: #fcfcfc;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.rodape {
+    border-top: 2px solid rgb(58, 58, 58);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.lista-rodape {
+    list-style: none;
+    display: flex;
+}
+
+.item-rodape {
+    display: inline;
+    margin: 0 10px;
+}
+
+.link-rodape {
+    color: #333; /* Cor cinza */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link-rodape:hover {
+    color: #4e2525; /* Cor ao passar o mouse */
+}

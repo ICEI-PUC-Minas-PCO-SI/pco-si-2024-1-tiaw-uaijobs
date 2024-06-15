@@ -1,0 +1,149 @@
+/* Estilos básicos para o corpo do documento */
+
+/* Estilos para o conteúdo principal */
+.conteudo-principal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    background-color: #fcfcfc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: auto;
+    max-width: 80vw;
+    margin: 20px auto;
+}
+
+/* Estilos para o título da pesquisa de interesses */
+.titulo-interesses {
+    margin-top: 50px;
+    font-size: 2rem;
+}
+
+/* Estilos para o layout dos cards */
+.grade-interesses {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: auto;
+    max-width: 60vw;
+    padding-top: 30px;
+}
+
+/* Estilos para os cards individuais */
+.card-interesse {
+    border: 3px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+/* Efeito de hover para os cards */
+.card-interesse:hover {
+    transform: scale(1.05);
+    border-color: #4e2525;
+}
+
+/* Estilo para os cards selecionados */
+.card-interesse.selecionado {
+    border-color: #4e2525;
+}
+
+/* Estilos para as imagens dentro dos cards */
+.card-interesse img {
+    max-width: 40%;
+    height: auto;
+}
+
+/* Estilos para o container dos botões */
+.container-botoes {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Estilos para os botões */
+.botao-acao {
+    padding: 15px 30px;
+    font-size: 1rem;
+    width: auto;
+    min-width: 150px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Efeito de hover para os botões */
+.botao-acao:hover {
+    background-color: #4e2525;
+    color: antiquewhite;
+}
+
+/* Estilos para o rodapé */
+.rodape {
+    border-top: 2px solid rgb(58, 58, 58);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.lista-rodape {
+    list-style: none;
+    display: flex;
+}
+
+.item-rodape {
+    display: inline;
+    margin: 0 10px;
+}
+
+/* Estilos para os links do rodapé */
+.link-rodape {
+    color: #333; /* Cor cinza */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link-rodape:hover {
+    color: #4e2525; /* Cor ao passar o mouse */
+}
+/* Estilo do botão hamburger */
+.hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  
+  /* Estilo do menu do usuário */
+  .menu-usuario {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .menu-usuario a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .menu-usuario a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Exibir o menu quando ativo */
+  .menu-usuario.show {
+    display: block;
+  }
+  
