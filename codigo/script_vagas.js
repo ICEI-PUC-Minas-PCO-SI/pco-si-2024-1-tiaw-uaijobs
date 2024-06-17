@@ -6,9 +6,7 @@ const jobData = [
         "lat": "-19.945820",
         "lgt": "-44.041089",
         "categoria": "Tecnologia",
-        "periodo": "Manhã",
-        "data": "Hoje",
-        "dataLiteral": "10/01/2001",
+        "periodo": "Manhã",       "dataLiteral": "10/01/2001",
         "cidade": "Belo Horizonte",
         "valorHora": 100
     },
@@ -20,7 +18,6 @@ const jobData = [
         "lgt": "-44.037770",
         "categoria": "Tecnologia",
         "periodo": "Tarde",
-        "data": "Esta semana",
         "dataLiteral": "10/01/2001",
         "cidade": "Contagem",
         "valorHora": 80
@@ -33,7 +30,6 @@ const jobData = [
         "lgt": "-44.034519",
         "categoria": "Tecnologia",
         "periodo": "Noite",
-        "data": "Este mês",
         "dataLiteral": "10/01/2001",
         "cidade": "Betim",
         "valorHora": 120
@@ -45,9 +41,7 @@ const jobData = [
         "lat": "-19.946582",
         "lgt": "-44.029358",
         "categoria": "Serviços Gerais",
-        "periodo": "Manhã",
-        "data": "Hoje",
-        "dataLiteral": "10/01/2001",
+        "periodo": "Manhã",       "dataLiteral": "10/01/2001",
         "cidade": "Belo Horizonte",
         "valorHora": 40
     },
@@ -58,9 +52,7 @@ const jobData = [
         "lat": "-19.932234",
         "lgt": "-44.014335",
         "categoria": "Serviços Gerais",
-        "periodo": "Noite",
-        "data": "Hoje",
-        "dataLiteral": "10/02/2001",
+        "periodo": "Noite",       "dataLiteral": "10/02/2001",
         "cidade": "Belo Horizonte",
         "valorHora": 35
     },
@@ -72,7 +64,6 @@ const jobData = [
         "lgt": "-44.046036",
         "categoria": "Serviços Gerais",
         "periodo": "Tarde",
-        "data": "Esta semana",
         "dataLiteral": "10/01/2001",
         "cidade": "Contagem",
         "valorHora": 50
@@ -84,9 +75,7 @@ const jobData = [
         "lat": "-19.940820",
         "lgt": "-44.042089",
         "categoria": "Tecnologia",
-        "periodo": "Manhã",
-        "data": "Hoje",
-        "dataLiteral": "10/01/2001",
+        "periodo": "Manhã",       "dataLiteral": "10/01/2001",
         "cidade": "Belo Horizonte",
         "valorHora": 100
     },
@@ -98,7 +87,6 @@ const jobData = [
         "lgt": "-44.032770",
         "categoria": "Vendas",
         "periodo": "Tarde",
-        "data": "Esta semana",
         "dataLiteral": "10/01/2001",
         "cidade": "Contagem",
         "valorHora": 50
@@ -111,7 +99,6 @@ const jobData = [
         "lgt": "-44.034519",
         "categoria": "Tecnologia",
         "periodo": "Noite",
-        "data": "Este mês",
         "dataLiteral": "10/01/2001",
         "cidade": "Betim",
         "valorHora": 120
@@ -124,7 +111,6 @@ const jobData = [
         "lgt": "-44.029358",
         "categoria": "Serviços Gerais",
         "periodo": "Manhã",
-        "data": "Este mês",
         "dataLiteral": "10/01/2001",
         "cidade": "Belo Horizonte",
         "valorHora": 30
@@ -137,7 +123,6 @@ const jobData = [
         "lgt": "-44.042089",
         "categoria": "Tecnologia",
         "periodo": "Tarde",
-        "data": "Esta semana",
         "dataLiteral": "10/01/2001",
         "cidade": "Contagem",
         "valorHora": 80
@@ -149,9 +134,7 @@ const jobData = [
         "lat": "-19.950878",
         "lgt": "-44.034519",
         "categoria": "Tecnologia",
-        "periodo": "Noite",
-        "data": "Hoje",
-        "dataLiteral": "10/01/2001",
+        "periodo": "Noite",       "dataLiteral": "10/01/2001",
         "cidade": "Belo Horizonte",
         "valorHora": 150
     },
@@ -163,7 +146,6 @@ const jobData = [
         "lgt": "-44.034519",
         "categoria": "Construção",
         "periodo": "Manhã",
-        "data": "Este mês",
         "dataLiteral": "10/01/2001",
         "cidade": "Betim",
         "valorHora": 70
@@ -176,73 +158,66 @@ const jobData = [
         "lgt": "-44.046036",
         "categoria": "Serviços Gerais",
         "periodo": "Tarde",
-        "data": "Esta semana",
         "dataLiteral": "10/01/2001",
         "cidade": "Contagem",
         "valorHora": 40
     }
 ];
 
+
 let currentPage = 1;
 let filteredItems = jobData;
+let numberOfPages = Math.ceil(filteredItems.length / 3);
 
 let filters = {
     categoria: '',
     periodo: '',
-    data: '',
     dataIni: '',
     dataFim: '',
     cidade: '',
     valorHora: 1000
 };
 
-// Atualiza o botão do dropdown com o valor selecionado
 function updateDropdownButton(dropdownId, value) {
     const button = document.getElementById(dropdownId);
     button.innerHTML = value + ' <span class="caret"></span>';
 }
 
-// Define o filtro e aplica os filtros
 function setFilter(filterType, value, dropdownId) {
     filters[filterType] = value;
-    console.log(filters);
     updateDropdownButton(dropdownId, value);
     applyFilters();
 }
 
-// Atualiza o valor do filtro de valor por hora
 function updatavalorHoraLabel(value) {
     filters.valorHora = parseInt(value);
     document.getElementById('valorHoraMaxLabel').innerText = value;
     applyFilters();
 }
 
-// Aplica os filtros aos itens
 function applyFilters() {
     filteredItems = jobData.filter(item => {
+        if (filters.dataIni && filters.dataFim) {
+            const dateFrom = filters.dataIni.split("/");
+            const dateTo = filters.dataFim.split("/");
+            const dateCheck = item.dataLiteral.split("/");
 
-        if(filters.dataIni && filters.dataFim){
-            var dateFrom = filters.dataIni.split("/");
-            var dateTo = filters.dataFim.split("/");
-            var dateCheck = item.dataLiteral.split("/");
+            const from = new Date(dateFrom[2], parseInt(dateFrom[1]) - 1, dateFrom[0]);
+            const to = new Date(dateTo[2], parseInt(dateTo[1]) - 1, dateTo[0]);
+            const check = new Date(dateCheck[2], parseInt(dateCheck[1]) - 1, dateCheck[0]);
 
-            var from = new Date(dateFrom[2], parseInt(dateFrom[1])-1, dateFrom[0]);  // -1 porque meses são de 0 a 11
-            var to   = new Date(dateTo[2], parseInt(dateTo[1])-1, dateTo[0]);
-            var check = new Date(dateCheck[2], parseInt(dateCheck[1])-1, dateCheck[0]);
-
-            if(!(check >= from && check <= to)){
+            if (!(check >= from && check <= to)) {
                 return false;
             }
         }
 
         return (!filters.categoria || item.categoria === filters.categoria) &&
-        (!filters.periodo || item.periodo === filters.periodo) &&
-        (!filters.data || item.data === filters.data) &&
-        (!filters.cidade || item.cidade === filters.cidade) &&
-        (item.valorHora <= filters.valorHora);
+               (!filters.periodo || item.periodo === filters.periodo) &&
+               (!filters.data || item.data === filters.data) &&
+               (!filters.cidade || item.cidade === filters.cidade) &&
+               (item.valorHora <= filters.valorHora);
     });
-    
-    console.log(filteredItems);
+
     numberOfPages = Math.ceil(filteredItems.length / 3);
     currentPage = 1;
     selectPage(1);
@@ -252,7 +227,6 @@ function resetFilters() {
     filters = {
         categoria: '',
         periodo: '',
-        data: '',
         dataIni: '',
         dataFim: '',
         cidade: '',
@@ -261,24 +235,28 @@ function resetFilters() {
 
     document.getElementById('dropdownCategory').innerText = 'Categoria';
     document.getElementById('dropdownPeriod').innerText = 'Período';
-    document.getElementById('dropdownDate').innerText = 'Data';
     document.getElementById('dropdownCity').innerText = 'Cidade';
     document.getElementById('valorHora').value = 1000;
     document.getElementById('valorHoraMinLabel').innerText = 0;
     document.getElementById('valorHoraMaxLabel').innerText = 1000;
 
+    document.getElementById('dateRange').value = '';  // Reset date range input
+
     applyFilters();
 }
 
-// Seleciona a página
-function selectPage(page) {
+function selectPage(page, event) {
+    if (event) {
+        event.preventDefault();
+    }
+
     currentPage = page;
     const start = (page - 1) * 3;
     const end = start + 3;
     const pageItems = filteredItems.slice(start, end);
 
     const jobCardsContainer = document.getElementById('job-cards-container');
-    jobCardsContainer.innerHTML = ''; // Limpa os cartões anteriores
+    jobCardsContainer.innerHTML = '';
 
     pageItems.forEach(item => {
         const card = document.createElement('div');
@@ -289,7 +267,7 @@ function selectPage(page) {
         link.className = 'd-flex flex-row align-items-center text-decoration-none text-dark bg-light';
 
         link.innerHTML = `
-            <img src="${item.image}" class="card-img-left" alt="${item.title}" style="width: 30%; height: auto;">
+            <img src="${item.image}" class="card-img-left" alt="${item.title}" style="width: 25%; height: auto;">
             <div class="card-body">
                 <h5 class="card-title">${item.title}</h5>
                 <p class="card-text">${item.description}</p>
@@ -299,17 +277,48 @@ function selectPage(page) {
         card.appendChild(link);
         jobCardsContainer.appendChild(card);
     });
+
+    updatePagination();
 }
 
-// Muda para a página anterior
-function backPage() {
+function updatePagination() {
+    const pagination = document.querySelector('.pagination');
+    pagination.innerHTML = `
+        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+            <a class="page-link page-link-custom" href="#" onclick="backPage(event)">Anterior</a>
+        </li>
+    `;
+
+    for (let i = 1; i <= numberOfPages; i++) {
+        pagination.innerHTML += `
+            <li class="page-item ${currentPage === i ? 'active' : ''}">
+                <a class="page-link page-link-custom" href="#" onclick="selectPage(${i}, event)">${i}</a>
+            </li>
+        `;
+    }
+
+    pagination.innerHTML += `
+        <li class="page-item ${currentPage === numberOfPages ? 'disabled' : ''}">
+            <a class="page-link page-link-custom" href="#" onclick="fowardPage(event)">Próximo</a>
+        </li>
+    `;
+}
+
+function backPage(event) {
+    if (event) {
+        event.preventDefault();
+    }
+
     if (currentPage > 1) {
         selectPage(currentPage - 1);
     }
 }
 
-// Muda para a próxima página
-function fowardPage() {
+function fowardPage(event) {
+    if (event) {
+        event.preventDefault();
+    }
+
     if (currentPage < numberOfPages) {
         selectPage(currentPage + 1);
     }
@@ -318,12 +327,11 @@ function fowardPage() {
 document.addEventListener('DOMContentLoaded', () => {
     selectPage(1);
 
-    // Inicializa o Flatpickr
     flatpickr("#dateRange", {
         mode: "range",
         dateFormat: "d/m/Y",
         locale: "pt",
-        onChange: function(selectedDates, dateStr, instance) {
+        onChange: function(selectedDates) {
             if (selectedDates.length === 2) {
                 filters.dataIni = selectedDates[0].toLocaleDateString("pt-BR");
                 filters.dataFim = selectedDates[1].toLocaleDateString("pt-BR");
@@ -332,7 +340,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    //-----------------------------MAPA-----------------------------------------
     const params = new URLSearchParams(window.location.search);
     const userCep = params.get('cep');
     const userAddress = params.get('address');
@@ -344,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.getElementById('change-cep').addEventListener('click', () => {
-        window.location.href = 'cep_input.html';
+        window.location.href = 'input_cep.html';
     });
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiaWdvcm1tZiIsImEiOiJjbHd3cnl4dzExNHpsMmlvOHdzMzN3aTBiIn0.BOMzGXeX4cjnW2X-qpYzJw';
@@ -360,7 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .setLngLat([location.lgt, location.lat])
             .setPopup(new mapboxgl.Popup().setHTML(`<h3>${location.title}</h3>`))
             .addTo(map);
-    }); // cria os cards com base na lat e lgn no JSON
+    });
 
     if (userLat && userLng) {
         new mapboxgl.Marker({ color: 'yellow' })
@@ -378,10 +385,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, () => {
             alert('Erro ao obter localização.');
         });
-    } // cria sua localização com base no CEP
-
-    //----------------------------------------------------------------------
-    function mostrarAlerta() {
-        alert("Perdão, função ainda em desenvolvimento!");
     }
 });
+
+function mostrarAlerta() {
+    alert("Perdão, função ainda em desenvolvimento!");
+}
