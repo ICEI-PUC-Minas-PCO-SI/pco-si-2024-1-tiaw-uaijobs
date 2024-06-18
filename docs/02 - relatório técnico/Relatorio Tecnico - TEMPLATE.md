@@ -382,11 +382,29 @@ Quanto à gerência dos issues, seguimos:
 
 # Projeto da Solução
 
-......  COLOQUE AQUI O SEU TEXTO ......
+A solução proposta pela UaiJobs envolve a criação de uma plataforma digital robusta e intuitiva para conectar trabalhadores informais e empregadores. A plataforma permitirá que trabalhadores busquem e se candidatem a vagas de trabalho esporádico e que empregadores divulguem suas necessidades de contratação de forma eficiente.
+
+**Funcionalidades Principais:**
+* Cadastro de Usuários: Trabalhadores e empregadores poderão se cadastrar na plataforma, criando perfis detalhados que incluem habilidades e interesses favoritos.
+* Busca de Vagas e Trabalhadores: Ferramentas de busca avançada para encontrar vagas de acordo com critérios específicos, como localização, tipo de trabalho e remuneração.
+* Sistema de Avaliação e Feedback: Após a conclusão de um trabalho, tanto empregadores quanto trabalhadores poderão avaliar uns aos outros, ajudando a manter um padrão de qualidade.
+* Geolocalização: Utilização de geolocalização para facilitar a busca de vagas próximas ao usuário.
+* Anúncios no site: Espaço dedicado para patrocinadores ou investidores postarem seus produtos.
 
 ## Tecnologias Utilizadas
 
-......  COLOQUE AQUI O SEU TEXTO ......
+Para desenvolver a UaiJobs, utilizaremos uma combinação de tecnologias modernas que garantem a funcionalidade e usabilidade da plataforma.
+
+**Tecnologias e Ferramentas:**
+* Linguagens de Programação: HTML, CSS, JavaScript.
+* Frameworks e Bibliotecas:
+  * Front-end: boostrap para construção de interfaces dinâmicas e responsivas.
+* Geolocalização: API do MapBox para fornecer serviços de localização.
+* IDEs de Desenvolvimento: Visual Studio Code (VS Code).
+* Ferramentas de Controle de Versão: GitHub para versionamento de código e colaboração entre os membros da equipe.
+* Prototipagem e Design:
+  * Figma: Para criar wireframes e protótipos interativos.
+  * Miro: Para brainstorming e design thinking.
 
 > Descreva aqui qual(is) tecnologias você vai usar para resolver o seu
 > problema, ou seja, implementar a sua solução. Liste todas as
@@ -415,7 +433,13 @@ Quanto à gerência dos issues, seguimos:
 
 # Avaliação da Aplicação
 
-......  COLOQUE AQUI O SEU TEXTO ......
+Para garantir que a aplicação atende aos requisitos e funciona corretamente, diversos cenários de teste foram planejados e executados.
+
+**Cenários de Teste:**
+* Teste de Cadastro de Usuário: Verificar se os usuários podem se cadastrar como freelancers ou empregadores e se todos os campos obrigatórios são validados corretamente.
+* Teste de Busca de Vagas: Validar a funcionalidade de busca, incluindo filtros por localização, tipo de trabalho e remuneração.
+* Teste de Sistema de Avaliação: Avaliar se o sistema de feedback funciona corretamente após a conclusão de um trabalho.
+* Teste de Responsividade: Garantir que a aplicação é responsiva e funciona bem em diferentes dispositivos e tamanhos de tela.
 
 > Apresente os cenários de testes utilizados na realização dos testes da
 > sua aplicação. Escolha cenários de testes que demonstrem os requisitos
@@ -457,10 +481,13 @@ Quanto à gerência dos issues, seguimos:
 
 # Referências
 
-**161,6 milhões de pessoas com 10 anos ou mais de idade utilizaram a Internet no país, em 2022.** Disponível em: <https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/38307-161-6-milhoes-de-pessoas-com-10-anos-ou-mais-de-idade-utilizaram-a-internet-no-pais-em-2022>. Acesso em: 15 mar. 2024.
-**Divulgação trimestral.** Disponível em: <https://www.ibge.gov.br/estatisticas/sociais/trabalho/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html?t=resultados>. Acesso em: 12 mar. 2024.
-**Divulgação trimestral.** Disponível em: <https://www.ibge.gov.br/estatisticas/sociais/populacao/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html?>. Acesso em: 3 abr. 2024.
-**Sistema IBGE de Recuperação Automática - SIDRA.** Disponível em: <https://sidra.ibge.gov.br/home/pnadct/brasil>. Acesso em: 21 mar. 2024.
+INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. **Pesquisa Nacional por Amostra de Domicílios Contínua - PNAD Contínua.** Disponível em: https://www.ibge.gov.br/estatisticas/sociais/trabalho/9171-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html. Acesso em: 10 jun. 2024.
+
+INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. **161,6 milhões de pessoas com 10 anos ou mais de idade utilizaram a Internet no país, em 2022.** Disponível em: https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/38307-161-6-milhoes-de-pessoas-com-10-anos-ou-mais-de-idade-utilizaram-a-internet-no-pais-em-2022. Acesso em: 15 mar. 2024.
+
+INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. **Divulgação trimestral.** Disponível em: https://www.ibge.gov.br/estatisticas/sociais/populacao/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html?. Acesso em: 3 abr. 2024.
+
+INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. **Sistema IBGE de Recuperação Automática - SIDRA.** Disponível em: https://sidra.ibge.gov.br/home/pnadct/brasil. Acesso em: 21 mar. 2024.
 
 > Inclua todas as referências (livros, artigos, sites, etc) utilizados
 > no desenvolvimento do trabalho.
