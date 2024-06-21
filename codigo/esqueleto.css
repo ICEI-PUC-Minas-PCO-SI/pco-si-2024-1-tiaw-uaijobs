@@ -114,3 +114,23 @@ main {
 .link-rodape:hover {
     color: #4e2525; /* Cor dos links ao passar o mouse */
 }
+
+/* Botões gerais (inseridos por Luis, documentação tá na cabeça dele */
+.botoes {
+    margin: 20px 0;
+}
+
+.botao-acao {
+    background-color: antiquewhite;
+    color: black;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.botao-acao:hover {
+    background-color: #4e2525;
+    color: antiquewhite;
+}

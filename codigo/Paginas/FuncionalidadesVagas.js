@@ -1,7 +1,8 @@
+//Cards das vagas abertas
 document.addEventListener("DOMContentLoaded", function () {
-    const vagasContainer = document.getElementById('cards-vagas-abertas');
-    
-    axios.get('http://localhost:3000/vagas') // Substitua pela URL do seu JSON server
+    const vagasContainer = document.getElementById('container-vagas-abertas');
+    //Criação dos cards
+    axios.get('http://localhost:3000/vagas') // Substitua pela URL do JSON server
         .then(response => {
             const vagas = response.data;
 
