@@ -133,7 +133,7 @@
   ],
   "feedbacks": [
     {
-      "id": "1",
+      "id": 1,
       "nome": "João Silva",
       "email": "joao@example.com",
       "estrelas": 5,
@@ -142,7 +142,7 @@
       "categoria": "positivo"
     },
     {
-      "id": "2",
+      "id": 2,
       "nome": "Maria Oliveira",
       "email": "maria@example.com",
       "estrelas": 2,
@@ -151,7 +151,7 @@
       "categoria": "negativo"
     },
     {
-      "id": "5515",
+      "id": 3,
       "nome": "Luis",
       "email": "Luis@gmail.com",
       "estrelas": "5",

@@ -52,3 +52,137 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicia a atualização do texto dinâmico após 2 segundos
     setTimeout(atualizarTextoDinamico, 2000);
 });
+
+
+//Carrossel dinamico de feedbacks
+document.addEventListener('DOMContentLoaded', () => {
+    mostraFeedbacks();
+    setupCarousel();
+});
+//Construção dinamica do carrossel
+function mostraFeedbacks() {
+    axios.get('http://localhost:3000/feedbacks') // Substituir pela URL do JSon server
+        .then(response => {
+            const feedbacks = response.data;
+            const carouselInner = document.querySelector('.carousel-inner');
+
+            if (feedbacks.length > 0) {
+                for (let i = 0; i < feedbacks.length; i += 3) {
+                    const feedbackDiv = document.createElement('div');
+                    feedbackDiv.classList.add('carousel-item');
+                    if (i === 0) {
+                        feedbackDiv.classList.add('active');
+                    }
+
+                    const feedbackGroup = document.createElement('div');
+                    feedbackGroup.classList.add('d-flex', 'justify-content-around');
+
+                    for (let j = 0; j < 3 && i + j < feedbacks.length; j++) {
+                        const feedback = feedbacks[i + j];
+                        const feedbackCard = `
+                            <div class="boxAvaliacao rounded-4 shadow-lg border border-opacity-50 p-4 m-3">
+                                <div class="nomeAvaliacao fw-semibold text-center pt-4">
+                                    <p>${feedback.nome}</p>
+                                </div>
+                                <div class="notaAvaliacao text-center fw-medium">
+                                    <p>Avaliação: ${feedback.estrelas}/5</p>
+                                </div>
+                                <div class="estrelasAvaliacao fw-medium text-center">
+                                    ${geraEstrelas(feedback.estrelas)}
+                                </div>
+                                <div class="feedbackAvaliacao mt-3">
+                                    <div class="fundoFeedback border rounded-4 shadow-lg border-opacity-50 p-3">
+                                        <div class="textoFeedback p-4 text-center pt-5">
+                                            <textarea class="form-control" readonly>${feedback.descricao}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        feedbackGroup.innerHTML += feedbackCard;
+                    }
+
+                    feedbackDiv.appendChild(feedbackGroup);
+                    carouselInner.appendChild(feedbackDiv);
+                }
+            } else {
+                carouselInner.innerHTML = '<div class="carousel-item active"><p>Nenhum feedback disponível.</p></div>';
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao buscar feedbacks do servidor:', error);
+            const carouselInner = document.querySelector('.carousel-inner');
+            carouselInner.innerHTML = '<div class="carousel-item active"><p>Erro ao carregar feedbacks.</p></div>';
+        });
+}
+//Geração de estrelas
+function geraEstrelas(rating) {
+    let starsHTML = '';
+    for (let i = 1; i <= 5; i++) {
+        starsHTML += `<span class="fa fa-star ${i <= rating ? 'checked' : ''}"></span>`;
+    }
+    return starsHTML;
+}
+//Tempo do carrossel
+function setupCarousel() {
+    const feedbackCarousel = new bootstrap.Carousel(document.getElementById('feedbackCarousel'), {
+        interval: 5000 // Define o intervalo de 5 segundos
+    });
+}
+
+//CRUD dos feedbacks
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const feedbackForm = document.querySelector('form');
+    feedbackForm.addEventListener('submit', ArmazenaFeedback);
+});
+
+function ArmazenaFeedback(event) {
+    event.preventDefault();
+
+    // Captura os valores dos campos do formulário
+    const nome = document.getElementById('inserirNome').value.trim();
+    const email = document.getElementById('inserirEmail').value.trim();
+    const descricao = document.getElementById('inserirDescricao').value.trim();
+    const estrelasElem = document.querySelector('input[name="rate"]:checked');
+    const estrelas = estrelasElem ? estrelasElem.value : 0;
+
+    // Verifica se todos os campos estão preenchidos
+    if (!nome || !email || !descricao || !estrelas) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+    }
+
+    // Obtém a data atual do dispositivo
+    const data = new Date().toLocaleString();
+
+    // Determina a categoria com base no valor das estrelas
+    const categoria = estrelas >= 3 ? 'positivo' : 'negativo';
+
+    // Cria um objeto de avaliação que será enviado para o servidor JSON
+    const feedback = {
+        nome: nome,
+        email: email,
+        estrelas: estrelas,
+        descricao: descricao,
+        data: data,
+        categoria: categoria
+    };
+
+    // Envia o feedback para o servidor JSON
+    axios.post('http://localhost:3000/feedbacks', feedback) // Substitua pela URL do seu JSON server
+        .then(response => {
+            console.log('Feedback enviado com sucesso:', response.data);
+            alert('Feedback enviado com sucesso!');
+            
+            // Limpa os campos do formulário após o envio
+            document.getElementById('inserirNome').value = '';
+            document.getElementById('inserirEmail').value = '';
+            document.getElementById('inserirDescricao').value = '';
+            document.querySelector('input[name="rate"]:checked').checked = false;
+        })
+        .catch(error => {
+            console.error('Erro ao enviar feedback:', error);
+            alert('Erro ao enviar feedback. Por favor, tente novamente.');
+        });
+}
