@@ -166,6 +166,35 @@ async function candidatarVaga(vagaId) {
         usuarioCorrente.vagasCandidatadas = freelancer.vagasCandidatadas;
         localStorage.setItem('UsuarioCorrente', JSON.stringify(usuarioCorrente));
 
+        // Obter os dados da vaga
+        const vagaResponse = await fetch(`${JSON_SERVER_URL_VAGAS}/${vagaId}`);
+        if (!vagaResponse.ok) {
+            throw new Error('Erro ao obter dados da vaga');
+        }
+
+        const vaga = await vagaResponse.json();
+        if (!vaga.candidatos) {
+            vaga.candidatos = [];
+        }
+
+        // Adicionar o ID do freelancer ao array de candidatos, se ainda não estiver presente
+        if (!vaga.candidatos.includes(usuarioCorrente.id)) {
+            vaga.candidatos.push(usuarioCorrente.id);
+        }
+
+        // Atualizar a vaga no JSON Server
+        const updateVagaResponse = await fetch(`${JSON_SERVER_URL_VAGAS}/${vagaId}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ candidatos: vaga.candidatos })
+        });
+
+        if (!updateVagaResponse.ok) {
+            throw new Error('Erro ao atualizar candidatos da vaga');
+        }
+
         window.alert('Você se candidatou com sucesso!');
     } catch (error) {
         console.error("Erro ao candidatar-se à vaga:", error);

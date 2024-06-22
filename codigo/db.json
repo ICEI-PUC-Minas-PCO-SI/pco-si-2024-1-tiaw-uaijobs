@@ -132,14 +132,37 @@
     },
     {
       "id": "9fd3",
-      "nome": "Vaga editada",
-      "categoria": "Construção",
-      "descricao": "a",
+      "nome": null,
+      "categoria": "Construçãoaa",
+      "descricao": "aaa",
       "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719077409/rvsybhlz5xvojjgs12xa.jpg",
-      "valor": "105",
+      "valor": "1055",
       "turno": "Manhã",
       "local": 32687405,
       "data": "2024-06-23",
+      "habilidades": [
+        "Culinaria"
+      ],
+      "empregador": "Teste",
+      "email": "luis325@gmail.com",
+      "telefone": "31985494832",
+      "cnpj": "5615120800",
+      "publicado": true,
+      "publicacao": "22/06/2024",
+      "candidatos": [
+        "8cbf"
+      ]
+    },
+    {
+      "id": "3596",
+      "nome": "Vaga teste3",
+      "categoria": "Design",
+      "descricao": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719080603/phgcmiagrpx2cvyhitat.jpg",
+      "valor": "100100",
+      "turno": "Manhã",
+      "local": 32687405,
+      "data": "2024-06-27",
       "habilidades": [
         "Constução civil."
       ],
@@ -286,7 +309,8 @@
       "interesses": [],
       "tipo": "empregador",
       "vagasPublicadas": [
-        "9fd3"
+        "9fd3",
+        "3596"
       ],
       "UserPremium": true
     }
@@ -304,13 +328,9 @@
       "senha": "123456789987654321",
       "interesses": [],
       "tipo": "freelancer",
-      "UserPremium": false,
+      "UserPremium": true,
       "vagasCandidatadas": [
-        "dd32",
-        "90db",
-        2,
-        "2ee9",
-        "9fd3"
+        "3596"
       ]
     }
   ]
