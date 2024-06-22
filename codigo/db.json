@@ -131,14 +131,14 @@
       "publicado": true
     },
     {
-      "id": "90db",
-      "nome": "Vaga teste",
-      "categoria": "Design",
-      "descricao": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719072722/fhzgjsusly8hkhg2zuau.jpg",
-      "valor": "100",
-      "turno": "Tarde",
-      "CEP": "32687405",
+      "id": "9fd3",
+      "nome": "Vaga editada",
+      "categoria": "Construção",
+      "descricao": "a",
+      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719077409/rvsybhlz5xvojjgs12xa.jpg",
+      "valor": "105",
+      "turno": "Manhã",
+      "local": 32687405,
       "data": "2024-06-23",
       "habilidades": [
         "Constução civil."
@@ -148,7 +148,10 @@
       "telefone": "31985494832",
       "cnpj": "5615120800",
       "publicado": true,
-      "publicacao": "22/06/2024"
+      "publicacao": "22/06/2024",
+      "candidatos": [
+        "8cbf"
+      ]
     }
   ],
   "feedbacks": [
@@ -199,7 +202,7 @@
       "UserPremium": true
     },
     {
-      "id": 1,
+      "id": "1",
       "nome": "Igor Maia",
       "dataNasc": "dd/mm/aaaa",
       "cpf": "123.456.789-10",
@@ -213,7 +216,7 @@
       "UserPremium": true
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Guilherme",
       "dataNasc": "dd/mm/aaaa",
       "cpf": "123.456.789-10",
@@ -227,7 +230,7 @@
       "UserPremium": true
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "Luis",
       "dataNasc": "dd/mm/aaaa",
       "cpf": "123.456.789-10",
@@ -241,7 +244,7 @@
       "UserPremium": true
     },
     {
-      "id": 4,
+      "id": "4",
       "nome": "Thiago",
       "dataNasc": "dd/mm/aaaa",
       "cpf": "123.456.789-10",
@@ -255,7 +258,7 @@
       "UserPremium": true
     },
     {
-      "id": 5,
+      "id": "5",
       "nome": "Vitor Prates",
       "dataNasc": "dd/mm/aaaa",
       "cpf": "123.456.789-10",
@@ -283,7 +286,7 @@
       "interesses": [],
       "tipo": "empregador",
       "vagasPublicadas": [
-        "90db"
+        "9fd3"
       ],
       "UserPremium": true
     }
@@ -303,9 +306,11 @@
       "tipo": "freelancer",
       "UserPremium": false,
       "vagasCandidatadas": [
-        "0",
-        1,
-        "b801"
+        "dd32",
+        "90db",
+        2,
+        "2ee9",
+        "9fd3"
       ]
     }
   ]
