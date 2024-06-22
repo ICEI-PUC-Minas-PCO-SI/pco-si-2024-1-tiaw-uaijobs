@@ -87,9 +87,15 @@ async function cadastrarUsuarioLS() {
         senha: senha,
         interesses: [],
         tipo: tipo,
-        vagasPublicadas: [],
         UserPremium: false
     };
+
+    // Adiciona o atributo específico baseado no tipo de usuário
+    if (tipo === 'empregador') {
+        novoUsuario.vagasPublicadas = [];
+    } else if (tipo === 'freelancer') {
+        novoUsuario.vagasCandidatadas = [];
+    }
 
     // Salva o novo usuário no JSON server e armazena o usuário corrente no local storage
     let usuarioSalvo = await saveUsuario(novoUsuario, tipo);
