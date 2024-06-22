@@ -186,3 +186,106 @@ function ArmazenaFeedback(event) {
             alert('Erro ao enviar feedback. Por favor, tente novamente.');
         });
 }
+
+//Funções de pagamento
+
+document.addEventListener('DOMContentLoaded', () => {
+    const JSON_SERVER_URL_EMPREGADORES = 'http://localhost:3000/empregadores';
+    const JSON_SERVER_URL_FREELANCERS = 'http://localhost:3000/freelancers';
+
+    // Seleciona o botão de pagamento no modal
+    const btnPagamento = document.getElementById('payment-button');
+    const btnPremium = document.querySelector('.link-navegacao.premium').parentElement;
+
+    // Esconde o botão "Tornar-se usuário premium" se o usuário já for premium
+    function verificarUsuarioPremium() {
+        const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
+        if (usuarioCorrente && usuarioCorrente.UserPremium) {
+            btnPremium.style.display = 'none';
+        }
+    }
+
+    verificarUsuarioPremium(); // Chama a função ao carregar a página
+
+    btnPagamento.addEventListener('click', () => {
+        // Exibe a área de conteúdo de pagamento
+        const paymentContent = document.getElementById('payment-content');
+        paymentContent.style.display = 'block';
+
+        // Inicia o contador de 5 segundos
+        let countdownElement = document.getElementById('countdown');
+        let countdown = 5;
+        countdownElement.innerText = countdown;
+
+        let interval = setInterval(async () => {
+            countdown--;
+            countdownElement.innerText = countdown;
+            if (countdown <= 0) {
+                clearInterval(interval);
+                //adicional para o final do contador
+                window.alert('Pagamento realizado com sucesso!');
+                
+                // Atualiza o usuário para UserPremium
+                await atualizarUsuarioParaPremium();
+                
+                // Fechar o modal após a ação de pagamento
+                const premiumModal = document.getElementById('premiumModal');
+                const modal = bootstrap.Modal.getInstance(premiumModal);
+                modal.hide();
+                paymentContent.style.display = 'none'; // Reseta a visibilidade do conteúdo de pagamento
+                removeModalBackdrop(); // Remove manualmente a classe do backdrop
+            }
+        }, 1000);
+    });
+
+    // Função para remover manualmente o backdrop do modal
+    function removeModalBackdrop() {
+        document.body.classList.remove('modal-open');
+        document.body.style = '';
+        const modalBackdrops = document.getElementsByClassName('modal-backdrop');
+        while (modalBackdrops[0]) {
+            modalBackdrops[0].parentNode.removeChild(modalBackdrops[0]);
+        }
+    }
+
+    // Listener para o evento de fechamento do modal, garantindo que as classes do corpo sejam removidas
+    const premiumModal = document.getElementById('premiumModal');
+    premiumModal.addEventListener('hidden.bs.modal', () => {
+        removeModalBackdrop();
+    });
+
+    // Função para atualizar o usuário corrente para premium
+    async function atualizarUsuarioParaPremium() {
+        const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
+        if (!usuarioCorrente) {
+            console.error("Nenhum usuário corrente encontrado no local storage.");
+            return;
+        }
+
+        const url = usuarioCorrente.tipo === 'empregador' ? `${JSON_SERVER_URL_EMPREGADORES}/${usuarioCorrente.id}` : `${JSON_SERVER_URL_FREELANCERS}/${usuarioCorrente.id}`;
+        console.log(`Atualizando usuário para premium. URL: ${url}`);
+
+        try {
+            const response = await fetch(url, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ UserPremium: true })
+            });
+
+            if (response.ok) {
+                const updatedUser = await response.json();
+                usuarioCorrente.UserPremium = updatedUser.UserPremium;
+                localStorage.setItem('UsuarioCorrente', JSON.stringify(usuarioCorrente));
+                btnPremium.style.display = 'none'; // Esconde o botão após o pagamento ser concluído
+                console.log("Usuário atualizado para premium com sucesso.");
+            } else {
+                const errorText = await response.text();
+                console.error("Falha ao atualizar usuário para premium. Status:", response.status, "Mensagem:", errorText);
+            }
+        } catch (error) {
+            console.error("Erro ao atualizar usuário para premium:", error);
+        }
+    }
+});

@@ -87,7 +87,8 @@ async function cadastrarUsuarioLS() {
         senha: senha,
         interesses: [],
         tipo: tipo,
-        vagasPublicadas: []
+        vagasPublicadas: [],
+        UserPremium: false
     };
 
     // Salva o novo usuário no JSON server e armazena o usuário corrente no local storage

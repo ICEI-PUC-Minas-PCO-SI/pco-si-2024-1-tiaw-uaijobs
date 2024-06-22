@@ -251,34 +251,20 @@
   ],
   "empregadores": [
     {
-      "id": 0,
-      "nome": "Luis Henrique2",
-      "dataNascimento": "2005-02-17",
-      "cpf": "12312312352",
+      "id": "0210",
+      "nome": "Teste",
+      "dataNascimento": "2000-08-25",
+      "cpf": "5615120800",
       "telefone": "31985494832",
       "cep": "32687405",
-      "linkedin": "aa",
-      "email": "luis2@gmail.com",
-      "senha": "12345678910",
+      "linkedin": "ea",
+      "email": "luis325@gmail.com",
+      "senha": "123456789123456789",
       "interesses": [],
       "tipo": "empregador",
-      "vagasPublicadas": []
+      "vagasPublicadas": [],
+      "UserPremium": true
     }
   ],
-  "freelancers": [
-    {
-      "id": 0,
-      "nome": "Luis Henrique",
-      "dataNascimento": "2005-02-17",
-      "cpf": "12312312351",
-      "telefone": "31985494832",
-      "cep": "32687405",
-      "linkedin": "aa",
-      "email": "luis@gmail.com",
-      "senha": "123456789lh",
-      "interesses": [],
-      "tipo": "freelancer",
-      "vagasPublicadas": []
-    }
-  ]
+  "freelancers": []
 }

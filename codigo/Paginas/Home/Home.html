@@ -25,11 +25,40 @@
         <nav class="navegacao">
             <ul class="lista-navegacao">
                 <li class="item-navegacao"><a href="../LoginCadastro/Login.html" class="link-navegacao">Login</a></li>
-                <li class="item-navegacao"><a href="../LoginCadastro/Cadastro.html"
-                        class="link-navegacao">Cadastre-se</a></li>
+                <li class="item-navegacao"><a href="../LoginCadastro/Cadastro.html" class="link-navegacao">Cadastre-se</a></li>
+                <li class="item-navegacao"><a href="#" class="link-navegacao premium" data-bs-toggle="modal" data-bs-target="#premiumModal">Torna-se usuário premium</a></li>
             </ul>
         </nav>
     </header>
+
+     <!-- Modal Usuario premium-->
+     <div class="modal fade" id="premiumModal" tabindex="-1" aria-labelledby="premiumModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="premiumModalLabel">Tornar-se Usuário Premium</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Ao tornar-se um usuário premium, você terá acesso a funcionalidades exclusivas e benefícios adicionais. 
+                        Para o freelancer: 
+                        Você poderá se candidatar até 6 vagas ao mesmo tempo;
+                        Para o empregador:
+                        Você poderá postar até 10 vagas e mante-las ativa ao mesmo tempo;
+                        O valor da assinatura é de R$ 49,90 por mês.</p>
+                    <div id="payment-content" style="display: none;">
+                        <img src="../../img/Qr-code.png" alt="Pagamento" class="img-fluid mb-3">
+                        <p>Processando pagamento, por favor aguarde...</p>
+                        <p id="countdown">5</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="payment-button">Fazer Pagamento</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <main class="conteudo-principal">
         <section class="botoes py-4 text-center">
@@ -168,7 +197,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    
+    <script src="../scriptGeral.js"></script>
+
 
 </body>
 
