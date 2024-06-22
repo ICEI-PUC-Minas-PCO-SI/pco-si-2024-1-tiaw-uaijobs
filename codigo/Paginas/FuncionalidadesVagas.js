@@ -159,6 +159,7 @@ async function candidatarVaga(vagaId) {
 
 // Página de publicar vagas
 const JSON_SERVER_URL_VAGAS = 'http://localhost:3000/vagas';
+const JSON_SERVER_URL_EMPREGADORES = 'http://localhost:3000/empregadores';
 
 // Função para buscar o endereço pelo CEP
 async function buscarEnderecoPorCEP(cep) {
@@ -172,7 +173,7 @@ async function buscarEnderecoPorCEP(cep) {
 }
 
 // Função para salvar a vaga no JSON Server
-async function salvarVagaNoJSONServer(vaga) {
+async function salvarVagaNoJSONServer(vaga, empregadorId) {
     try {
         console.log("Salvando vaga no servidor:", vaga);
         let response = await fetch(JSON_SERVER_URL_VAGAS, {
@@ -185,6 +186,7 @@ async function salvarVagaNoJSONServer(vaga) {
 
         if (response.ok) {
             let novaVaga = await response.json();
+            await atualizarEmpregadorComVaga(empregadorId, novaVaga.id);
             window.alert('A vaga foi publicada! Para acessá-la, visite a aba de "Vagas em Aberto"');
             return novaVaga;
         } else {
@@ -193,6 +195,42 @@ async function salvarVagaNoJSONServer(vaga) {
     } catch (error) {
         console.error(error);
         window.alert('Falha ao salvar vaga no servidor. Por favor, tente novamente.');
+    }
+}
+
+// Função para atualizar o empregador com a nova vaga publicada
+async function atualizarEmpregadorComVaga(empregadorId, vagaId) {
+    try {
+        // Obter dados do empregador
+        const response = await fetch(`${JSON_SERVER_URL_EMPREGADORES}/${empregadorId}`);
+        if (!response.ok) {
+            throw new Error('Erro ao obter dados do empregador');
+        }
+
+        const empregador = await response.json();
+        if (!empregador.vagasPublicadas) {
+            empregador.vagasPublicadas = [];
+        }
+
+        // Adicionar a nova vaga ao array de vagasPublicadas
+        empregador.vagasPublicadas.push(vagaId);
+
+        // Atualizar o empregador no JSON Server
+        const updateResponse = await fetch(`${JSON_SERVER_URL_EMPREGADORES}/${empregadorId}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ vagasPublicadas: empregador.vagasPublicadas })
+        });
+
+        if (!updateResponse.ok) {
+            throw new Error('Erro ao atualizar dados do empregador');
+        }
+
+        console.log(`Empregador ${empregadorId} atualizado com a nova vaga ${vagaId}`);
+    } catch (error) {
+        console.error('Erro ao atualizar empregador com a nova vaga:', error);
     }
 }
 
@@ -213,6 +251,7 @@ async function uploadImagem(file) {
 
     try {
         console.log("Iniciando upload da imagem para Cloudinary");
+        //NÃO MUDAR LINK ABAIXO PELO AMOR DE DEUS
         const response = await fetch('https://api.cloudinary.com/v1_1/df7rlfmhg/image/upload', {
             method: 'POST',
             body: formData
@@ -270,7 +309,7 @@ async function IncluirVagaLS() {
         imagem: imagemVagaUrl,
         valor: valorVaga,
         turno: turnoVaga,
-        local: CEP,
+        CEP: CEP,
         data: dataVaga,
         habilidades: habilidadesVaga,
         empregador: usuarioCorrente.nome,
@@ -282,5 +321,5 @@ async function IncluirVagaLS() {
     };
 
     console.log("Nova vaga:", novaVaga);
-    salvarVagaNoJSONServer(novaVaga);
+    salvarVagaNoJSONServer(novaVaga, usuarioCorrente.id);
 }

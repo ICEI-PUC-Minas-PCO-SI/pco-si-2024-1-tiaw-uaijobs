@@ -129,6 +129,26 @@
       "cpf": "987.654.321-09",
       "cnpj": "34.567.890/0001-23",
       "publicado": true
+    },
+    {
+      "id": "90db",
+      "nome": "Vaga teste",
+      "categoria": "Design",
+      "descricao": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719072722/fhzgjsusly8hkhg2zuau.jpg",
+      "valor": "100",
+      "turno": "Tarde",
+      "CEP": "32687405",
+      "data": "2024-06-23",
+      "habilidades": [
+        "Constução civil."
+      ],
+      "empregador": "Teste",
+      "email": "luis325@gmail.com",
+      "telefone": "31985494832",
+      "cnpj": "5615120800",
+      "publicado": true,
+      "publicacao": "22/06/2024"
     }
   ],
   "feedbacks": [
@@ -262,7 +282,9 @@
       "senha": "123456789123456789",
       "interesses": [],
       "tipo": "empregador",
-      "vagasPublicadas": [],
+      "vagasPublicadas": [
+        "90db"
+      ],
       "UserPremium": true
     }
   ],
