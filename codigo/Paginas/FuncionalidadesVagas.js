@@ -2,6 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const vagasContainer = document.getElementById('container-vagas-abertas');
     const JSON_SERVER_URL_VAGAS = 'http://localhost:3000/vagas';
 
+    // Verifique se axios está disponível
+    if (typeof axios === 'undefined') {
+        console.error('Axios não está definido. Verifique se o script axios está incluído no HTML.');
+        return;
+    }
+
     // Criação dos cards
     axios.get(JSON_SERVER_URL_VAGAS)
         .then(response => {
@@ -29,6 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     img.classList.add('rounded-3');
                     img.src = vagaItem.imagem;
                     img.alt = 'Imagem da vaga';
+                    img.onerror = function () {
+                        console.error('Erro ao carregar a imagem:', vagaItem.imagem);
+                        img.src = 'fallback_image_url.jpg'; // Imagem de fallback
+                    };
                     imagem.appendChild(img);
 
                     const descricao = document.createElement('div');
@@ -66,8 +76,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
-function mostrarDetalhesVaga(vaga) {
+async function mostrarDetalhesVaga(vaga) {
     const vagaDetalhes = document.getElementById('vagaDetalhes');
+    
+    const endereco = await buscarEnderecoPorCEP(vaga.local);
+    const enderecoTexto = endereco ? `${endereco.logradouro}, ${endereco.bairro}, ${endereco.localidade} - ${endereco.uf}` : 'Endereço não encontrado.';
+
     vagaDetalhes.innerHTML = `
         <h5>${vaga.nome}</h5>
         <p><strong>Categoria:</strong> ${vaga.categoria}</p>
@@ -76,23 +90,29 @@ function mostrarDetalhesVaga(vaga) {
         <p><strong>Valor:</strong> R$ ${vaga.valor}</p>
         <p><strong>Turno:</strong> ${vaga.turno}</p>
         <p><strong>Data:</strong> ${vaga.data}</p>
-        <p><strong>Local:</strong> ${vaga.local}</p>
-        <p><strong>Empresa:</strong> ${vaga.empresa}</p>
-        <p><strong>Email:</strong> ${vaga.email}</p>
+        <p><strong>Local:</strong> ${enderecoTexto}</p>
+        <p><strong>Empresa:</strong> ${vaga.empregador}</p>
         <p><strong>Telefone:</strong> ${vaga.telefone}</p>
         <p><strong>Habilidades:</strong> ${vaga.habilidades.join(', ')}</p>
-        <p><strong>CPF:</strong> ${vaga.cpf}</p>
-        <p><strong>CNPJ:</strong> ${vaga.cnpj}</p>
     `;
 
     const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
     const candidatarButton = document.getElementById('candidatarButton');
     
     if (usuarioCorrente && usuarioCorrente.tipo === 'freelancer') {
+        if (usuarioCorrente.vagasCandidatadas && usuarioCorrente.vagasCandidatadas.includes(vaga.id)) {
+            candidatarButton.textContent = 'Candidatado';
+            candidatarButton.classList.add('btn-success');
+            candidatarButton.disabled = true;
+        } else {
+            candidatarButton.textContent = 'Candidatar';
+            candidatarButton.classList.remove('btn-success');
+            candidatarButton.disabled = false;
+            candidatarButton.onclick = function() {
+                candidatarVaga(vaga.id);
+            };
+        }
         candidatarButton.style.display = 'block';
-        candidatarButton.onclick = function() {
-            candidatarVaga(vaga.id);
-        };
     } else {
         candidatarButton.style.display = 'none';
     }
@@ -108,7 +128,6 @@ async function candidatarVaga(vagaId) {
         window.alert("Apenas freelancers podem se candidatar a vagas.");
         return;
     }
-
     // Adiciona o ID da vaga ao array de vagasCandidatadas
     if (!usuarioCorrente.vagasCandidatadas) {
         usuarioCorrente.vagasCandidatadas = [];
@@ -138,13 +157,24 @@ async function candidatarVaga(vagaId) {
     }
 }
 
-//Página de publicar vagas
-
+// Página de publicar vagas
 const JSON_SERVER_URL_VAGAS = 'http://localhost:3000/vagas';
 
-// Função para salvar uma nova vaga no JSON Server
+// Função para buscar o endereço pelo CEP
+async function buscarEnderecoPorCEP(cep) {
+    try {
+        const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+        return response.data;
+    } catch (error) {
+        console.error('Erro ao buscar endereço:', error);
+        return null;
+    }
+}
+
+// Função para salvar a vaga no JSON Server
 async function salvarVagaNoJSONServer(vaga) {
     try {
+        console.log("Salvando vaga no servidor:", vaga);
         let response = await fetch(JSON_SERVER_URL_VAGAS, {
             method: 'POST',
             headers: {
@@ -166,97 +196,91 @@ async function salvarVagaNoJSONServer(vaga) {
     }
 }
 
-function IncluirVagaLS() {
-    // Verifica se há um usuário corrente no local storage
+// Função para obter a data atual no formato DD/MM/AAAA
+function obterDataAtual() {
+    const hoje = new Date();
+    const dia = String(hoje.getDate()).padStart(2, '0');
+    const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+    const ano = hoje.getFullYear();
+    return `${dia}/${mes}/${ano}`;
+}
+
+// Função para fazer upload da imagem para Cloudinary
+async function uploadImagem(file) {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'Imagens_UAIJobs'); // Use o nome exato do seu upload preset
+
+    try {
+        console.log("Iniciando upload da imagem para Cloudinary");
+        const response = await fetch('https://api.cloudinary.com/v1_1/df7rlfmhg/image/upload', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            console.log("Imagem enviada com sucesso:", data.secure_url);
+            return data.secure_url; // URL da imagem
+        } else {
+            const errorText = await response.text();
+            console.error("Erro ao fazer upload da imagem. Status:", response.status, "Mensagem:", errorText);
+            throw new Error('Erro ao fazer upload da imagem');
+        }
+    } catch (error) {
+        console.error("Erro ao fazer upload da imagem:", error);
+        return null;
+    }
+}
+
+// Função para incluir uma vaga
+async function IncluirVagaLS() {
+    console.log("Iniciando inclusão de vaga...");
     const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
     if (!usuarioCorrente || usuarioCorrente.tipo !== 'empregador') {
         window.alert('Apenas empregadores podem publicar vagas.');
         return;
     }
 
-    // Recolhendo dados no formulário
     let nomeVaga = document.getElementById('nomeVaga').value;
     let categoriaVaga = document.getElementById('categoriaVaga').value;
     let descricaoVaga = document.getElementById('descricaoVaga').value;
     let valorVaga = document.getElementById('valorVaga').value;
     let turnoVaga = document.getElementById('turnoVaga').value;
-    let localVaga = document.getElementById('localVaga').value;
+    let CEP = document.getElementById('localVaga').value;
     let dataVaga = document.getElementById('dataVaga').value;
     let habilidadesVaga = document.getElementById('habilidadesVaga').value.split(',');
+    let imagemInput = document.getElementById('imagemVaga').files[0];
 
-    // Condicional que verifica se as categorias obrigatórias foram preenchidas
     if (nomeVaga === '' || categoriaVaga === '' || valorVaga === '' || descricaoVaga === '') {
         window.alert("Por favor, tenha certeza que todos os campos abaixos estão preenchidos: \n\nVaga: Nome, Categoria, Valor e Descrição \nContratante: Nome, E-mail e CPF/CNPJ");
         return;
     }
 
-    // Switch que confere a categoria selecionada e completa o caminho da imagem
-    let imagemVaga = '../img/imgVagas/';
-    switch (categoriaVaga) {
-        case 'Jurídico':
-            imagemVaga += 'juridico.jpg';
-            break;
-        case 'Culinária':
-            imagemVaga += 'culinaria.jpg';
-            break;
-        case 'Design':
-            imagemVaga += 'design.jpg';
-            break;
-        case 'Finanças':
-            imagemVaga += 'financas.jpg';
-            break;
-        case 'Fotografia':
-            imagemVaga += 'fotografia.jpg';
-            break;
-        case 'Marketing':
-            imagemVaga += 'marketing.png';
-            break;
-        case 'Redação':
-            imagemVaga += 'redacao.jpg';
-            break;
-        case 'Tradução':
-            imagemVaga += 'traducao.jpg';
-            break;
-        case 'Vídeo Clipes':
-            imagemVaga += 'videoClipes.jpg';
-            break;
-        case 'Computação':
-            imagemVaga += 'computacao.jpg';
-            break;
-        case 'Mídias Sociais':
-            imagemVaga += 'midiasSociais.jpg';
-            break;
-        case 'Limpeza':
-            imagemVaga += 'limpeza.jpg';
-            break;
-        case 'Trabalhos Manuais':
-            imagemVaga += 'trabalhosManuais.jpg';
-            break;
-        case 'Construção':
-            imagemVaga += 'construcao.jpg';
-            break;
-        default:
-            imagemVaga += 'outro.png';
+    let imagemVagaUrl = await uploadImagem(imagemInput);
+    if (!imagemVagaUrl) {
+        window.alert('Erro ao fazer upload da imagem. Por favor, tente novamente.');
+        return;
     }
 
-    // Criação de um novo objeto com a estrutura da vaga usando os dados recolhidos no formulário
     let novaVaga = {
         nome: nomeVaga,
         categoria: categoriaVaga,
         descricao: descricaoVaga,
-        imagem: imagemVaga,
+        imagem: imagemVagaUrl,
         valor: valorVaga,
         turno: turnoVaga,
-        local: localVaga,
+        local: CEP,
         data: dataVaga,
         habilidades: habilidadesVaga,
         empregador: usuarioCorrente.nome,
         email: usuarioCorrente.email,
         telefone: usuarioCorrente.telefone,
         cnpj: usuarioCorrente.cpf,
-        publicado: true
+        publicado: true,
+        publicacao: obterDataAtual()
     };
 
-    // Salvar a vaga no JSON Server
+    console.log("Nova vaga:", novaVaga);
     salvarVagaNoJSONServer(novaVaga);
 }
