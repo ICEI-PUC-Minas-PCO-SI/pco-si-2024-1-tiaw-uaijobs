@@ -270,7 +270,7 @@ async function IncluirVagaLS() {
         imagem: imagemVagaUrl,
         valor: valorVaga,
         turno: turnoVaga,
-        local: CEP,
+        CEP: CEP,
         data: dataVaga,
         habilidades: habilidadesVaga,
         empregador: usuarioCorrente.nome,
