@@ -289,3 +289,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+//Muda botão da home de acordo com o tipo de usuario
+
+// Função para obter o tipo de usuário do local storage
+function obterTipoUsuarioDoLocalStorage() {
+    var dadosUsuario = localStorage.getItem('UsuarioCorrente');
+    if (dadosUsuario) {
+        var usuario = JSON.parse(dadosUsuario);
+        return usuario.tipo;
+    }
+    return null;
+}
+
+// Função para ajustar o comportamento do botão com base no tipo de usuário
+function ajustarComportamentoBotao() {
+    var tipoUsuario = obterTipoUsuarioDoLocalStorage();
+    var botaoAcao = document.getElementById("botao-acao-home");
+
+    
+    if (tipoUsuario === "freelancer") {
+        botaoAcao.innerText = "Vagas candidatadas";
+        botaoAcao.onclick = function() {
+            location.href = '../PagDinamicaPostCand.html';
+        };
+    } else {
+        botaoAcao.innerText = "Publicar Vaga";
+        botaoAcao.onclick = function() {
+            location.href = '../PublicarVaga.html';
+        };
+    }
+}
+
+// Chama a função para ajustar o comportamento do botão quando a página carregar
+window.onload = ajustarComportamentoBotao;
