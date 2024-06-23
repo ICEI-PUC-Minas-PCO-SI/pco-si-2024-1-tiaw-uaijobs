@@ -1,0 +1,131 @@
+/*Vagas abertas começa aqui*/
+
+/*Cards*/
+.Card{
+    width: 500px;
+    height: 500px;
+}
+.Cards-vagas-imagem img{
+    min-height: 175px;
+    width: 85%;
+    height: 80%;
+}
+/*Container*/
+.Vagas-abertas{
+    width: 100%;
+    height: 40%;
+    padding-left: 20%;/*Provisório*/
+}
+/*Vagas abertas termina aqui*/
+
+/*Publicar vagas começa aqui */
+
+/* FORMULÁRIO PUBLICAR VAGA*/
+
+.divTituloForm{
+    margin-left: 3vw;
+    padding-left: 15px;
+    min-width: 94vw;
+    max-width: 100vw;
+    border-bottom: 3px solid rgb(141, 134, 134);
+}
+
+.tituloForm{
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+
+.formPublicar{
+    min-width: 94vw;
+    max-width: 100vw;
+    margin-top: 20px;
+    margin-left: 3vw;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid rgb(141, 134, 134);
+    background-color: #f0f0f0;
+}
+
+.formPublicar label{
+    font-weight: bold;
+    padding: 5px;
+    padding-bottom: 10px;
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+.formPublicar div{
+    display: inline-block;
+    margin: 0;
+}
+
+#divBotaoPublicar{
+    min-width: 100vw;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#botaoPublicarVaga{
+    background-color: #4e2525;
+    color: antiquewhite;
+    padding: 10px;
+    margin: 0px,10px, 0px;
+}
+
+/*DIVs dos inputs e inputs do FORMULÁRIO PUBLICAR VAGA*/
+
+.formPublicar input, .formPublicar select{
+    margin-right: 15px;
+    padding-left: 5px;
+}
+
+
+
+#divInputNomeVaga, #divInputLocalVaga{
+    width: 49%;
+}
+#divInputNomeVaga input, #divInputLocalVaga input{
+    min-width: 80%;
+}
+
+
+
+#divInputSelecionavel{
+    width: 49%;
+}
+
+#divInputSelecionavel div{
+    width: 33%;
+}
+
+#divInputSelecionavel div input{
+    width: 60%;
+}
+
+
+
+ #divInputValorVaga, #divInputHabilidadesVaga{
+    min-width: 24%;
+}
+ #divInputValorVaga input, #divInputHabilidadesVaga input{
+    width: 70%;
+}
+
+
+
+#descricaoVaga{
+    min-width: 100%;
+    height: 10rem;
+}
+
+
+#infoEmpresa div{
+   width: 24%; 
+}
+
+#infoEmpresa div input{
+    width: 70%;
+}
+
+/*Publicar vagas termina aqui */

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../esqueleto.css">
+    <link rel="stylesheet" href="loginCadastro.css">
+    <title>UaiJobs</title>
+
+</head>
+<body>
+
+    <header class="cabecalho">
+        <a href="../Home/Home.html">
+            <img src="../../img/logoPNG.png" alt="Logo UaiJobs" class="logo">
+        </a>
+        <a href="Home.html" class="titulo-link">
+            <h1 class="titulo">UaiJobs</h1>
+        </a>
+        <nav class="navegacao">
+            <ul class="lista-navegacao">
+                <li class="item-navegacao"><a href="../LoginCadastro/Login.html" class="link-navegacao">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contato py-4">
+            <h2 class="text-center">Insira seus dados:</h2> <!-- Título da seção de contato -->
+            <div class="container">
+                <form>
+                    <div class="mb-3">
+                        <label for="inputNomeCadastro" class="form-label">Nome Completo:</label>
+                        <input type="text" class="form-control" placeholder="Seu nome completo" id="inputNomeCadastro" >
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="inputNascimentoCadastro">Data de Nascimento:</label>
+                    <input type="date" class="form-control" placeholder="Seu Aniversário" id="inputNascimentoCadastro" >
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="inputCPFCadastro">Seu CPF ou CNPJ:</label>
+                        <input type="number" class="form-control" placeholder="xxx.xxx.xxx-xx" id="inputCPFCadastro" >
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="inputTelefoneCadastro">Telefone:</label>
+                        <input type="tel" class="form-control" placeholder="(xx) xxxxx-xxxx" id="inputTelefoneCadastro" >
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="inputCEPCadastro">Seu CEP:</label>
+                        <input type="number" class="form-control" placeholder="xxxxx-xxx" id="inputCEPCadastro" >
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="inputLinkedinCadastro">Linkedin:</label>
+                        <input type="text" class="form-control" placeholder="Seu Linkedin" id="inputLinkedinCadastro">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="inputEmailCadastro">Endereço de email:</label>
+                        <input type="email" class="form-control" placeholder="Seu email" id="inputEmailCadastro" >
+                        <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="inputEmailConfirmacaoCadastro">Confirmação de email:</label>
+                        <input type="email" class="form-control" placeholder="Confirme seu email" id="inputEmailConfirmacaoCadastro" >
+                        <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="inputSenhaCadastro">Senha:</label>
+                        <input type="password" class="form-control" placeholder="Senha" id="inputSenhaCadastro">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label d-block">Tipo de Cadastro:</label>
+                        <input type="radio" id="inputCadastroEmpregador" value="empregador" name="tipoCadastro"> Empregador
+                        <input type="radio" id="inputCadastroFreelancer" value="freelancer" name="tipoCadastro"> Freelancer 
+                        <small id="emailHelp" class="form-text text-muted d-block">Você NÃO poderá alterar essa opção futuramente.</small>        
+                    </div>
+                    <button type="submit" class="botao-envia" id="enviaCadastro">Cadastrar-se</button> <!-- Botão de envio -->
+                </form>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <ul class="lista-rodape">
+            <li class="item-rodape"><a href="../Footer/faq.html" class="link-rodape">Perguntas Frequentes</a></li>
+            <li class="item-rodape"><a href="../Footer/termos.html" class="link-rodape">Termos de Uso</a></li>
+            <li class="item-rodape"><a href="../Footer/contato.html" class="link-rodape">Fale conosco</a></li>
+        </ul>
+    </footer>
+
+    <script src="LoginCadastro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
