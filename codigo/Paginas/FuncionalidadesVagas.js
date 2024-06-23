@@ -141,6 +141,14 @@ async function candidatarVaga(vagaId) {
             freelancer.vagasCandidatadas = [];
         }
 
+        // Verificar o limite de vagas candidatas
+        //6 para userPremium = true  3 Para userPremium = false
+        const limiteVagas = usuarioCorrente.userPremium ? 3 : 6;
+        if (freelancer.vagasCandidatadas.length >= limiteVagas) {
+            window.alert(`Você atingiu o limite de ${limiteVagas} candidaturas.`);
+            return;
+        }
+
         // Adicionar o ID da vaga ao array de vagasCandidatadas, se ainda não estiver presente
         if (!freelancer.vagasCandidatadas.includes(vagaId)) {
             freelancer.vagasCandidatadas.push(vagaId);
@@ -314,12 +322,44 @@ async function uploadImagem(file) {
     }
 }
 
+// Função para verificar o limite de vagas
+async function verificarLimiteVagas(empregadorId) {
+    try {
+        const response = await fetch(`${JSON_SERVER_URL_EMPREGADORES}/${empregadorId}`);
+        if (!response.ok) {
+            throw new Error('Erro ao obter dados do empregador');
+        }
+
+        const empregador = await response.json();
+        if (!empregador.vagasPublicadas) {
+            empregador.vagasPublicadas = [];
+        }
+        //10 para userPremium = true  5 Para userPremium = false
+        const limiteVagas = empregador.UserPremium ? 10 : 5;
+        if (empregador.vagasPublicadas.length >= limiteVagas) {
+            return false;
+        }
+
+        return true;
+    } catch (error) {
+        console.error('Erro ao verificar limite de vagas:', error);
+        return false;
+    }
+}
+
 // Função para incluir uma vaga
 async function IncluirVagaLS() {
     console.log("Iniciando inclusão de vaga...");
     const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
     if (!usuarioCorrente || usuarioCorrente.tipo !== 'empregador') {
         window.alert('Apenas empregadores podem publicar vagas.');
+        return;
+    }
+
+    // Verificar o limite de vagas
+    const podePublicar = await verificarLimiteVagas(usuarioCorrente.id);
+    if (!podePublicar) {
+        window.alert(`Você atingiu o limite de vagas publicadas.`);
         return;
     }
 
@@ -366,6 +406,15 @@ async function IncluirVagaLS() {
     console.log("Nova vaga:", novaVaga);
     salvarVagaNoJSONServer(novaVaga, usuarioCorrente.id);
 }
+
+// Adicionar event listener ao botão de publicação de vaga
+document.addEventListener('DOMContentLoaded', function() {
+    const btnPublicarVaga = document.getElementById('btnPublicarVaga');
+    if (btnPublicarVaga) {
+        btnPublicarVaga.addEventListener('click', IncluirVagaLS);
+    }
+});
+
 
 //Vagas candidatadas / vagas postadas
 

@@ -23,10 +23,13 @@
       "cnpj": "41.831.589/0001-57",
       "publicador": "id do publicador",
       "interessados": [],
-      "publicado": true
+      "publicado": true,
+      "candidatos": [
+        "8cbf"
+      ]
     },
     {
-      "id": 1,
+      "id": "1",
       "nome": "Assistente de Recursos Humanos",
       "categoria": "Recursos Humanos",
       "descricao": "Assistente de Recursos Humanos: Domine a Arte da Organização e Comunicação! Cansado da rotina monótona? Deseja um desafio dinâmico que te transformará em um mestre da organização e da comunicação? Então junte-se à nossa equipe como Assistente de Recursos Humanos e embarque em uma jornada profissional empolgante! Nessa missão você será: O guardião da organização, dominando a arte de gerenciar documentos, processos e prazos; Um ninja da comunicação, interagindo com colaboradores, candidatos e fornecedores; Um especialista em folha de pagamento, garantindo que todos recebam seus direitos com precisão; Um desvendador de segredos, auxiliando na seleção de novos talentos; E muito mais! Habilidades para a missão: Organização e produtividade impecáveis; Comunicação clara e eficaz, verbal e escrita; Multitarefas e prazos apertados sem estresse; Conhecimento básico em legislação trabalhista e folha de pagamento; Experiência em RH é um diferencial. Oferecemos: Ambiente de trabalho dinâmico e acolhedor; Oportunidade de desenvolver e aprimorar suas habilidades em RH; Salário compatível com a responsabilidade da função; Vale-transporte e vale-refeição para seu bem-estar; A chance de se tornar um Assistente de Recursos Humanos lendário!",
@@ -44,10 +47,13 @@
       "telefone": "(31) 91234-5678",
       "cpf": "987.654.321-98",
       "cnpj": "12.345.678/0001-90",
-      "publicado": true
+      "publicado": true,
+      "candidatos": [
+        "8cbf"
+      ]
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Secretário Executivo",
       "categoria": "Secretariado",
       "descricao": "Secretário Executivo: Domine a Arte da Excelência e Eficiência! Cansado do comum? Busca um desafio dinâmico que te transformará em um maestro da organização e do tempo? Então junte-se à nossa equipe como Secretário Executivo e embarque em uma jornada profissional extraordinária! Nessa missão você será: O maestro da organização, regendo documentos, agendas e prazos com maestria; Um ninja da comunicação, interagindo com CEOs, diretores e clientes com excelência; Um guardião da informação, gerenciando dados confidenciais com segurança; Um solucionador de problemas, pronto para desafios inesperados; Um diplomata das relações interpessoais, construindo pontes entre diferentes áreas; E muito mais! Habilidades para a missão: Talento nato para organização e produtividade impecáveis; Comunicação clara, concisa e persuasiva, verbal e escrita; Habilidade para lidar com múltiplas tarefas e prazos apertados sem perder a calma; Discrição e profissionalismo impecáveis; Conhecimento de ferramentas de produtividade e gestão de tempo; Experiência na área de secretaria executiva é um diferencial. Oferecemos: Ambiente de trabalho dinâmico e desafiador, onde você será valorizado; Oportunidade de desenvolver e aprimorar suas habilidades como Secretário Executivo; Salário compatível com a responsabilidade da função; Vale-transporte e vale-refeição para garantir seu bem-estar; A chance de se tornar um Secretário Executivo lendário, reconhecido por sua excelência e profissionalismo!",
@@ -65,10 +71,13 @@
       "telefone": "(31) 99876-5432",
       "cpf": "543.210.987-65",
       "cnpj": "78.901.234/0001-23",
-      "publicado": true
+      "publicado": true,
+      "candidatos": [
+        "8cbf"
+      ]
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "Assistente Financeiro",
       "categoria": "Finanças",
       "descricao": "Buscamos um Assistente Financeiro detalhista e organizado para gerenciar processos contábeis, realizar conciliação bancária, auxiliar no fechamento mensal e apoiar na elaboração de relatórios financeiros. Excel avançado é essencial.” Espero que seja útil para o que você precisa! ",
@@ -86,10 +95,13 @@
       "telefone": "(31) 98765-4321",
       "cpf": "321.654.987-54",
       "cnpj": "56.789.012/0001-34",
-      "publicado": true
+      "publicado": true,
+      "candidatos": [
+        "8cbf"
+      ]
     },
     {
-      "id": 4,
+      "id": "4",
       "nome": "Assistente de Marketing",
       "categoria": "Marketing",
       "descricao": "Procuramos um Assistente de Marketing criativo e analítico para se juntar à nossa equipe dinâmica. O candidato ideal deve ter experiência com marketing digital, incluindo SEO/SEM, gestão de redes sociais e campanhas de e-mail marketing. Responsabilidades incluem a colaboração no desenvolvimento de estratégias de marketing, execução de campanhas publicitárias, análise de métricas de desempenho e otimização de conteúdo para aumentar o engajamento. Habilidades em design gráfico e ferramentas de automação de marketing são um plus.",
@@ -110,7 +122,7 @@
       "publicado": true
     },
     {
-      "id": 5,
+      "id": "5",
       "nome": "Assistente de Logística",
       "categoria": "Logística",
       "descricao": "Estamos em busca de um Assistente de Logística proativo e eficiente para otimizar nossa cadeia de suprimentos. O candidato ideal deve ter conhecimento em gestão de estoque, expedição e recebimento de mercadorias, e controle de transportes. É essencial ter habilidade para trabalhar com sistemas de gestão logística e realizar análises de custo-benefício para redução de despesas operacionais. Experiência com logística internacional e domínio de Excel são diferenciais.",
@@ -131,38 +143,15 @@
       "publicado": true
     },
     {
-      "id": "9fd3",
-      "nome": null,
-      "categoria": "Construçãoaa",
-      "descricao": "aaa",
-      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719077409/rvsybhlz5xvojjgs12xa.jpg",
-      "valor": "1055",
-      "turno": "Manhã",
-      "local": 32687405,
-      "data": "2024-06-23",
-      "habilidades": [
-        "Culinaria"
-      ],
-      "empregador": "Teste",
-      "email": "luis325@gmail.com",
-      "telefone": "31985494832",
-      "cnpj": "5615120800",
-      "publicado": true,
-      "publicacao": "22/06/2024",
-      "candidatos": [
-        "8cbf"
-      ]
-    },
-    {
-      "id": "3596",
-      "nome": "Vaga teste3",
-      "categoria": "Design",
+      "id": "92b1",
+      "nome": "teste limite 0",
+      "categoria": "Culinária",
       "descricao": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719080603/phgcmiagrpx2cvyhitat.jpg",
-      "valor": "100100",
+      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719150869/suvsqir0dqdtm3bgejr0.jpg",
+      "valor": "100",
       "turno": "Manhã",
       "local": 32687405,
-      "data": "2024-06-27",
+      "data": "2024-06-25",
       "habilidades": [
         "Constução civil."
       ],
@@ -171,15 +160,13 @@
       "telefone": "31985494832",
       "cnpj": "5615120800",
       "publicado": true,
-      "publicacao": "22/06/2024",
-      "candidatos": [
-        "8cbf"
-      ]
+      "publicacao": "23/06/2024",
+      "candidatos": []
     }
   ],
   "feedbacks": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "João Silva",
       "email": "joao@example.com",
       "estrelas": 5,
@@ -188,7 +175,7 @@
       "categoria": "positivo"
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Maria Oliveira",
       "email": "maria@example.com",
       "estrelas": 2,
@@ -197,7 +184,7 @@
       "categoria": "negativo"
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "Luis",
       "email": "Luis@gmail.com",
       "estrelas": "5",
@@ -208,7 +195,7 @@
   ],
   "admin": [
     {
-      "id": 0,
+      "id": "0",
       "nome": "Victor Schneider",
       "dataNasc": "2004-09-16",
       "cpf": "13521637646",
@@ -309,10 +296,9 @@
       "interesses": [],
       "tipo": "empregador",
       "vagasPublicadas": [
-        "9fd3",
-        "3596"
+        "92b1"
       ],
-      "UserPremium": true
+      "UserPremium": false
     }
   ],
   "freelancers": [
@@ -330,7 +316,12 @@
       "tipo": "freelancer",
       "UserPremium": true,
       "vagasCandidatadas": [
-        "3596"
+        "3596",
+        "9fd3",
+        "1",
+        "0",
+        "2",
+        "3"
       ]
     }
   ]

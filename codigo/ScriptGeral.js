@@ -4,7 +4,7 @@ const usuarioCorrente = localStorage.getItem('UsuarioCorrente');
 if (usuarioCorrente) {
     // Parse o JSON para obter o nome do usuário
     const usuarioObj = JSON.parse(usuarioCorrente);
-    const nomeUsuario = usuarioObj.nome; // Supondo que o objeto tem uma propriedade "nome"
+    const nomeUsuario = usuarioObj.nome;
     
     // Se houver, atualize o nome do usuário no elemento <a>
     document.getElementById('NomeUser').textContent = nomeUsuario;
@@ -18,7 +18,7 @@ if (usuarioCorrente) {
     
     // Adicione um evento de clique ao botão de logout
     document.getElementById('logoutLink').addEventListener('click', function(event) {
-        event.preventDefault(); // Previne o comportamento padrão do link
+        event.preventDefault();
         
         console.log('Botão de logout clicado'); // Log para depuração
         
@@ -61,7 +61,7 @@ document.getElementById('logoutLink').addEventListener('click', function(event) 
     const paginaAtual = window.location.pathname;
 
     // Verifique se a página atual é a Home (ajuste conforme necessário)
-    const isHomePage = paginaAtual === '/Home/Home.html'
+    const isHomePage = paginaAtual === '/codigo/Paginas/Home/Home.html'
     if (!isHomePage) {
         // Esconda o botão se não for a Home
         premiumButton.style.display = 'none';
