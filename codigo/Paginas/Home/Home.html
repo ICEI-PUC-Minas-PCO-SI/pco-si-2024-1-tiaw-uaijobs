@@ -24,15 +24,17 @@
         </a>
         <nav class="navegacao">
             <ul class="lista-navegacao">
-                <li class="item-navegacao"><a href="../LoginCadastro/Login.html" class="link-navegacao">Login</a></li>
-                <li class="item-navegacao"><a href="../LoginCadastro/Cadastro.html" class="link-navegacao">Cadastre-se</a></li>
-                <li class="item-navegacao"><a href="#" class="link-navegacao premium" data-bs-toggle="modal" data-bs-target="#premiumModal">Torna-se usuário premium</a></li>
+                <li class="item-navegacao" id="loginItem"><a href="../LoginCadastro/Login.html" class="link-navegacao">Login</a></li>
+                <li class="item-navegacao" id="cadastroItem"><a href="../LoginCadastro/Cadastro.html" class="link-navegacao">Cadastre-se</a></li>
+                <li class="item-navegacao" id="premiumButton"><a href="#" class="link-navegacao premium" data-bs-toggle="modal" data-bs-target="#premiumModal">Torna-se usuário premium</a></li>
+                <li class="NomeUsuario"><a id="NomeUser"></a></li>
+                <li class="item-navegacao" id="logoutItem"><a href="#" class="link-navegacao" id="logoutLink">LogOut</a></li>
             </ul>
         </nav>
     </header>
 
-     <!-- Modal Usuario premium-->
-     <div class="modal fade" id="premiumModal" tabindex="-1" aria-labelledby="premiumModalLabel" aria-hidden="true">
+    <!-- Modal Usuario premium-->
+    <div class="modal fade" id="premiumModal" tabindex="-1" aria-labelledby="premiumModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -40,8 +42,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Ao tornar-se um usuário premium, você terá acesso a funcionalidades exclusivas e benefícios adicionais. 
-                        Para o freelancer: 
+                    <p>Ao tornar-se um usuário premium, você terá acesso a funcionalidades exclusivas e benefícios
+                        adicionais.
+                        Para o freelancer:
                         Você poderá se candidatar até 6 vagas ao mesmo tempo;
                         Para o empregador:
                         Você poderá postar até 10 vagas e mante-las ativa ao mesmo tempo;
@@ -197,7 +200,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../scriptGeral.js"></script>
+    <script src="../../ScriptGeral.js"></script>
 
 
 </body>

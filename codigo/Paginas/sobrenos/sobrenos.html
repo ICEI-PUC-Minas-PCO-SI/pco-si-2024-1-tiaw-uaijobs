@@ -17,37 +17,23 @@
 <body>
 
 
-    <div class="container-fluid"><!-- CONTAINER Header -->
-
-        <header>
-            <div class="row" id="header"> <!-- ROW HEADER -->
-
-                <nav class="navbar navbar-expand-lg">
-                    <div class="container-fluid">
-                        <img src="../../img/logoPNG.png" alt="UaiJobs Logo">
-                        <a class="navbar-brand" href="sobrenos.html">
-                            <h1>UaiJobs</h1>
-                        </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <!--<a class="nav-link active" aria-current="page" href="#">Login</a> -->
-                                </li>
-                                <li class="nav-item">
-                                    <!-- <a class="nav-link" href="#">Cadastre-se</a> -->
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-
-            </div> <!-- ROW HEADER FIM -->
-
+    <header class="cabecalho">
+        <a href="../Home/Home.html">
+            <img src="../../img/logoPNG.png" alt="Logo UaiJobs" class="logo">
+        </a>
+        <a href="Home.html" class="titulo-link">
+            <h1 class="titulo">UaiJobs</h1>
+        </a>
+        <nav class="navegacao">
+            <ul class="lista-navegacao">
+                <li class="item-navegacao" id="loginItem"><a href="LoginCadastro/Login.html" class="link-navegacao">Login</a></li>
+                <li class="item-navegacao" id="cadastroItem"><a href="LoginCadastro/Cadastro.html" class="link-navegacao">Cadastre-se</a></li>
+                <li class="item-navegacao" id="premiumButton"><a href="#" class="link-navegacao premium" data-bs-toggle="modal" data-bs-target="#premiumModal">Torna-se usuário premium</a></li>
+                <li class="NomeUsuario"><a id="NomeUser"></a></li>
+                <li class="item-navegacao" id="logoutItem"><a href="#" class="link-navegacao" id="logoutLink">LogOut</a></li>
+            </ul>
+        </nav>
+    </header>
 
     </div> <!-- CONTAINER header FIM -->
 
@@ -182,6 +168,7 @@
         </ul>
     </footer>
     <script src="sobrenos.js"></script>
+    <script src="../../ScriptGeral.js"></script>
 </body>
 
 </html>

@@ -23,7 +23,10 @@ body {
     width: 100%; /* Largura total do cabeçalho */
     box-sizing: border-box; /* Inclui padding e border na largura e altura */
 }
-
+/*Nome do usuario*/
+.NomeUsuario{
+    padding-top: 10px;
+}
 .logo {
     width: 4vw; /* Largura da logo em viewport width */
     height: auto; /* Altura automática para manter proporção */
