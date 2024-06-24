@@ -1,5 +1,6 @@
 const JSON_SERVER_URL_EMPREGADORES = 'http://localhost:3000/empregadores';
 const JSON_SERVER_URL_FREELANCERS = 'http://localhost:3000/freelancers';
+const JSON_SERVER_URL_ADMIN = 'http://localhost:3000/admin';
 
 // Função para buscar todos os usuários do JSON server, tanto empregadores quanto freelancers
 async function fetchUsuarios() {
@@ -8,10 +9,14 @@ async function fetchUsuarios() {
     
     let responseFreelancers = await fetch(JSON_SERVER_URL_FREELANCERS);
     let freelancers = await responseFreelancers.json();
+
+    let responseAdmin = await fetch(JSON_SERVER_URL_ADMIN);
+    let admin = await responseAdmin.json();
     
     return {
         empregadores: empregadores,
-        freelancers: freelancers
+        freelancers: freelancers,
+        admin: admin
     };
 }
 
@@ -61,7 +66,7 @@ async function cadastrarUsuarioLS() {
 
     // Busca todos os usuários (empregadores e freelancers)
     let usuarios = await fetchUsuarios();
-    let todosUsuarios = [...usuarios.empregadores, ...usuarios.freelancers];
+    let todosUsuarios = [...usuarios.empregadores, ...usuarios.freelancers, ...usuarios.admin];
 
     // Verifica se o CPF já está cadastrado
     if (todosUsuarios.some(user => user.cpf === cpf)) {
@@ -110,7 +115,7 @@ async function loginUsuario() {
 
     // Busca todos os usuários (empregadores e freelancers)
     let usuarios = await fetchUsuarios();
-    let todosUsuarios = [...usuarios.empregadores, ...usuarios.freelancers];
+    let todosUsuarios = [...usuarios.empregadores, ...usuarios.freelancers, ...usuarios.admin];
     let usuarioEncontrado = todosUsuarios.find(user => user.email === emailLogin);
 
     // Verifica se o email existe e se a senha está correta

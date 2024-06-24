@@ -1,3 +1,4 @@
+//Função que carrega as vagas do JSON-Server na página
 document.addEventListener("DOMContentLoaded", function () {
     const vagasContainer = document.getElementById('container-vagas-abertas');
     const JSON_SERVER_URL_VAGAS = 'http://localhost:3000/vagas';
@@ -76,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
+//Função que abre modal com os detalhes da vaga desejada
 async function mostrarDetalhesVaga(vaga) {
     const vagaDetalhes = document.getElementById('vagaDetalhes');
     
@@ -99,6 +101,7 @@ async function mostrarDetalhesVaga(vaga) {
     const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
     const candidatarButton = document.getElementById('candidatarButton');
     
+    //Verifica se o usuário já se candidatou//pode se candidatar na vaga e altera o conteúdo do botão
     if (usuarioCorrente && usuarioCorrente.tipo === 'freelancer') {
         if (usuarioCorrente.vagasCandidatadas && usuarioCorrente.vagasCandidatadas.includes(vaga.id)) {
             candidatarButton.textContent = 'Candidatado';

@@ -25,7 +25,8 @@
       "interessados": [],
       "publicado": true,
       "candidatos": [
-        "8cbf"
+        "8cbf",
+        "4ca4"
       ]
     },
     {
@@ -140,7 +141,10 @@
       "telefone": "(31) 98765-6789",
       "cpf": "987.654.321-09",
       "cnpj": "34.567.890/0001-23",
-      "publicado": true
+      "publicado": true,
+      "candidatos": [
+        "4ca4"
+      ]
     },
     {
       "id": "92b1",
@@ -190,6 +194,15 @@
       "estrelas": "5",
       "descricao": "a",
       "data": "15/06/2024, 15:02:29",
+      "categoria": "positivo"
+    },
+    {
+      "id": "d1cc",
+      "nome": "Victor Schneider",
+      "email": "victor.schneider@uaijobs.com",
+      "estrelas": "5",
+      "descricao": "Site top",
+      "data": "24/06/2024, 00:54:00",
       "categoria": "positivo"
     }
   ],
@@ -298,7 +311,7 @@
       "vagasPublicadas": [
         "92b1"
       ],
-      "UserPremium": false
+      "UserPremium": true
     }
   ],
   "freelancers": [
@@ -322,6 +335,24 @@
         "0",
         "2",
         "3"
+      ]
+    },
+    {
+      "id": "4ca4",
+      "nome": "Vitin Freelancer",
+      "dataNascimento": "2004-09-16",
+      "cpf": "99999999999",
+      "telefone": "31998741609",
+      "cep": "32315060",
+      "linkedin": "linkedin.com",
+      "email": "victorfreelancer@uaijobs.com",
+      "senha": "victor123",
+      "interesses": [],
+      "tipo": "freelancer",
+      "UserPremium": false,
+      "vagasCandidatadas": [
+        "0",
+        "5"
       ]
     }
   ]

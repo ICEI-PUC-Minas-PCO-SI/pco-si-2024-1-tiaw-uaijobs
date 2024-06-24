@@ -11,7 +11,7 @@
     height: 80%;
 }
 /*Container*/
-.Vagas-abertas{
+.Vagas-abertas, .Vagas-candidatada-postada{
     width: 100%;
     height: 40%;
     padding-left: 20%;/*Provisório*/
