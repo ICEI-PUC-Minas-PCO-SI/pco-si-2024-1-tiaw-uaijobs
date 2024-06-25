@@ -1,0 +1,15 @@
+.Card{
+    width: 500px;
+    height: 500px;
+}
+.Cards-freelancer-imagem img{
+    min-height: 175px;
+    width: 85%;
+    height: 80%;
+}
+/*Container*/
+.container-freelancers-disponiveis{
+    width: 100%;
+    height: 40%;
+    padding-left: 20%;/*Provisório*/
+}

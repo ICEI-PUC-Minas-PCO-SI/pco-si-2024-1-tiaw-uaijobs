@@ -308,10 +308,29 @@
       "senha": "123456789123456789",
       "interesses": [],
       "tipo": "empregador",
+      "imagem": "img/Usuarios/iconeUsuario.png",
+      "bio": "",
       "vagasPublicadas": [
         "92b1"
       ],
       "UserPremium": true
+    },
+    {
+      "id": "c8f1",
+      "nome": "Victor Empregators",
+      "dataNascimento": "2004-09-16",
+      "cpf": "12345676152",
+      "telefone": "3199999999",
+      "cep": "31315060",
+      "linkedin": "linkedin",
+      "email": "empregos@gmail.com",
+      "senha": "12345",
+      "interesses": [],
+      "tipo": "empregador",
+      "imagem": "img/Usuarios/iconeUsuario.png",
+      "bio": "",
+      "UserPremium": false,
+      "vagasPublicadas": []
     }
   ],
   "freelancers": [
@@ -327,6 +346,8 @@
       "senha": "123456789987654321",
       "interesses": [],
       "tipo": "freelancer",
+      "imagem": "img/Usuarios/iconeUsuario.png",
+      "bio": "",
       "UserPremium": true,
       "vagasCandidatadas": [
         "3596",
@@ -349,6 +370,8 @@
       "senha": "victor123",
       "interesses": [],
       "tipo": "freelancer",
+      "imagem": "img/Usuarios/iconeUsuario.png",
+      "bio": "",
       "UserPremium": false,
       "vagasCandidatadas": [
         "0",

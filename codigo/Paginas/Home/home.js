@@ -309,15 +309,20 @@ function ajustarComportamentoBotao() {
 
     
     if (tipoUsuario === "freelancer") {
+        botaoAcao.style.display = 'block';
         botaoAcao.innerText = "Vagas candidatadas";
         botaoAcao.onclick = function() {
-            location.href = '../PagDinamicaPostCand.html';
+            location.href = '../Vagas/PagDinamicaPostCand.html';
         };
-    } else {
+    } else if (tipoUsuario === "empregador") {
+        botaoAcao.style.display = 'block';
         botaoAcao.innerText = "Publicar Vaga";
         botaoAcao.onclick = function() {
-            location.href = '../PublicarVaga.html';
+            location.href = '../Vagas/PublicarVaga.html';
         };
+    }
+    else {
+        botaoAcao.style.display = 'none';
     }
 }
 
