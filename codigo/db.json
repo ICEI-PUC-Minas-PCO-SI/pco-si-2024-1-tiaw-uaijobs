@@ -287,6 +287,7 @@
       "cep": "32315-060",
       "telefone": "31 99874-1609",
       "Linkedin": "",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "vagasPublicadas": [],
       "UserPremium": true
     },
@@ -301,6 +302,7 @@
       "cep": "xxxxx-xxx",
       "telefone": "31 99999-9999",
       "Linkedin": "",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "vagasPublicadas": [],
       "UserPremium": true
     },
@@ -315,6 +317,7 @@
       "cep": "xxxxx-xxx",
       "telefone": "31 99999-9999",
       "Linkedin": "",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "vagasPublicadas": [],
       "UserPremium": true
     },
@@ -329,6 +332,7 @@
       "cep": "xxxxx-xxx",
       "telefone": "31 99999-9999",
       "Linkedin": "",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "vagasPublicadas": [],
       "UserPremium": true
     },
@@ -343,6 +347,7 @@
       "cep": "xxxxx-xxx",
       "telefone": "31 99999-9999",
       "Linkedin": "",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "vagasPublicadas": [],
       "UserPremium": true
     },
@@ -357,6 +362,7 @@
       "cep": "xxxxx-xxx",
       "telefone": "31 99999-9999",
       "Linkedin": "",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "vagasPublicadas": [],
       "UserPremium": true
     }
@@ -374,7 +380,7 @@
       "senha": "123456789123456789",
       "interesses": [],
       "tipo": "empregador",
-      "imagem": "img/Usuarios/iconeUsuario.png",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "bio": "A Uaijobs é meu a melhor do mundo",
       "UserPremium": true,
       "vagasPublicadas": [
@@ -408,7 +414,7 @@
       "senha": "12345",
       "interesses": [],
       "tipo": "empregador",
-      "imagem": "img/Usuarios/iconeUsuario.png",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "bio": "",
       "UserPremium": false,
       "vagasPublicadas": []
@@ -430,7 +436,7 @@
         "Tradução"
       ],
       "tipo": "empregador",
-      "imagem": "img/Usuarios/iconeUsuario.png",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "bio": "",
       "UserPremium": false,
       "vagasPublicadas": []
@@ -451,7 +457,7 @@
         "Computação"
       ],
       "tipo": "empregador",
-      "imagem": "img/Usuarios/iconeUsuario.png",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "bio": "",
       "UserPremium": false,
       "vagasPublicadas": [
@@ -484,7 +490,7 @@
         "Mídias Sociais"
       ],
       "tipo": "freelancer",
-      "imagem": "img/Usuarios/iconeUsuario.png",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "bio": "",
       "UserPremium": true,
       "vagasCandidatadas": [
@@ -508,7 +514,7 @@
       "senha": "victor123",
       "interesses": [],
       "tipo": "freelancer",
-      "imagem": "img/Usuarios/iconeUsuario.png",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "bio": "",
       "UserPremium": false,
       "vagasCandidatadas": [
@@ -536,7 +542,7 @@
         "Mídias Sociais"
       ],
       "tipo": "freelancer",
-      "imagem": "img/Usuarios/iconeUsuario.png",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "bio": "",
       "UserPremium": false,
       "vagasCandidatadas": [
@@ -561,7 +567,7 @@
         "Construção"
       ],
       "tipo": "freelancer",
-      "imagem": "img/Usuarios/iconeUsuario.png",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "bio": "Homem prestador de serviço, fiel e bem humorado",
       "UserPremium": false,
       "vagasCandidatadas": [
