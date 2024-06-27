@@ -54,6 +54,7 @@ document.getElementById('logoutLink').addEventListener('click', function(event) 
 
     // Remova o usuarioCorrente do local storage
     localStorage.removeItem('UsuarioCorrente');
+    window.location.replace("../Home/Home.html")
     console.log('UsuarioCorrente removido do local storage'); // Log para confirmar a remoção
 
 });
@@ -83,3 +84,8 @@ document.getElementById('logoutLink').addEventListener('click', function(event) 
        
 }
 
+function Dropdown(){
+    let ulDrop = document.getElementById('ulDropdown');
+
+    ulDrop.classList.toggle('d-none');
+}
