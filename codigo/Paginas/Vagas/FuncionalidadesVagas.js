@@ -818,3 +818,24 @@ function mostrarContato(button) {
     contatoInfo.style.display = 'block';
     button.style.display = 'none';
 }
+
+//Botão que deve sumir se usuario for freelancer
+// Função que lê o usuário logado no momento
+function lerUsuarioCorrenteLS() {
+    let strUsuario = localStorage.getItem('UsuarioCorrente');
+    return strUsuario ? JSON.parse(strUsuario) : null;
+}
+
+// Função que oculta o botão "Publicar Vaga" se o usuário corrente for um freelancer
+function ocultarBotaoParaFreelancer() {
+    const usuarioCorrente = lerUsuarioCorrenteLS();
+    if (usuarioCorrente && usuarioCorrente.tipo === 'freelancer') {
+        const botaoVagasAbertas = document.getElementById('botaoVagasAbertas');
+        if (botaoVagasAbertas) {
+            botaoVagasAbertas.style.display = 'none';
+        }
+    }
+}
+
+// Chama a função para ocultar o botão ao carregar a página
+document.addEventListener('DOMContentLoaded', ocultarBotaoParaFreelancer);

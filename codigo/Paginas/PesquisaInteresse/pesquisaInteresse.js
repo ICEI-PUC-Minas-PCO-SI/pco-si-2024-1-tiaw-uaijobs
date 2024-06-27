@@ -1,148 +1,74 @@
-function leUsuariosLS(){
+const JSON_SERVER_URL_FREELANCERS = 'http://localhost:3000/freelancers';
+
+// Função que lê os usuários do Local Storage
+function lerUsuariosLS() {
     let strUsuarios = localStorage.getItem('Usuarios');
     var objUsuarios = {};
 
-    if(strUsuarios){
+    if (strUsuarios) {
         objUsuarios = JSON.parse(strUsuarios);
+    } else {
+        objUsuarios = {
+            usuario: []
+        };
     }
-    else{
-        objUsuarios = { usuario: [
-                {
-                    id: '0',
-                    nome: 'Victor Schneider',
-                    dataNasc: '2004-09-16',
-                    cpf: '13521637646',
-                    email: 'victor.schneider@uaijobs.com',
-                    senha: 'victor123',
-                    interesses: ['Culinária', 'Marketing'],
-                    cep: '32315-060',
-                    telefone: '31 99874-1609',
-                    Linkedin: '',
-                    tipo: "adm",
-                    vagasPublicadas: []
-                },
-                {
-                    id: '1',
-                    nome: 'Igor Maia',
-                    dataNasc: 'dd/mm/aaaa',
-                    cpf: '123.456.789-10',
-                    email: 'igor@uaijobs.com',
-                    senha: 'igor123',
-                    interesses: [],
-                    cep: 'xxxxx-xxx',
-                    telefone: '31 99999-9999',
-                    Linkedin: '',
-                    tipo: "adm",
-                    vagasPublicadas: []
-                },
-                {
-                    id: '2',
-                    nome: 'Guilherme',
-                    dataNasc: 'dd/mm/aaaa',
-                    cpf: '123.456.789-10',
-                    email: 'guilherme@uaijobs.com',
-                    senha: 'guilherme123',
-                    interesses: [],
-                    cep: 'xxxxx-xxx',
-                    telefone: '31 99999-9999',
-                    Linkedin: '',
-                    tipo: "adm",
-                    vagasPublicadas: []
-                },
-                {
-                    id: '3',
-                    nome: 'Luis',
-                    dataNasc: 'dd/mm/aaaa',
-                    cpf: '123.456.789-10',
-                    email: 'luis@uaijobs.com',
-                    senha: 'luis123',
-                    interesses: [],
-                    cep: 'xxxxx-xxx',
-                    telefone: '31 99999-9999',
-                    Linkedin: '',
-                    tipo: "adm",
-                    vagasPublicadas: []
-                },
-                {
-                    id: '4',
-                    nome: 'Thiago',
-                    dataNasc: 'dd/mm/aaaa',
-                    cpf: '123.456.789-10',
-                    email: 'thiago@uaijobs.com',
-                    senha: 'thiago123',
-                    interesses: [],
-                    cep: 'xxxxx-xxx',
-                    telefone: '31 99999-9999',
-                    Linkedin: '',
-                    tipo: "adm",
-                    vagasPublicadas: []
-                },
-                {
-                    id: '5',
-                    nome: 'Vitor Prates',
-                    dataNasc: 'dd/mm/aaaa',
-                    cpf: '123.456.789-10',
-                    email: 'vitor.prates@uaijobs.com',
-                    senha: 'vitor123',
-                    interesses: [],
-                    cep: 'xxxxx-xxx',
-                    telefone: '31 99999-9999',
-                    Linkedin: '',
-                    tipo: "adm",
-                    vagasPublicadas: []
-                }
-            ]
-        }
-    }  
-    
+
     return objUsuarios;
-    
 }
 
-//Função que LÊ o usuário LOGADO no momento
-function leUsuarioCorrenteLS(){
+// Função que lê o usuário logado no momento
+function lerUsuarioCorrenteLS() {
     let strUsuarios = localStorage.getItem('UsuarioCorrente');
     let usuarioLogado = JSON.parse(strUsuarios);
 
     return usuarioLogado;
 }
 
-/*Função que SALVA um novo USUÁRIO no LOCAL STORAGE */
-function SalvarUsuarioLS(objUsuarios){
+// Função que salva um novo usuário no Local Storage
+function salvarUsuariosLS(objUsuarios) {
     localStorage.setItem('Usuarios', JSON.stringify(objUsuarios));
 }
 
-/*Função que SALVA o usuário LOGADO no momento */
-function SalvarUsuarioCorrenteLS(usuario){
+// Função que salva o usuário logado no momento
+function salvarUsuarioCorrenteLS(usuario) {
     localStorage.setItem('UsuarioCorrente', JSON.stringify(usuario));
 }
 
-function AtualizaInteressesLS(usuarioLogado){
-    let objUsuarios = leUsuariosLS();
-    
-    objUsuarios.usuario.forEach(user => {
-        if(user.id === usuarioLogado.id){
-            user.interesses = usuarioLogado.interesses
-        }
-    })
+// Função que atualiza os interesses do usuário no Local Storage e no JSON server
+async function atualizarInteressesLS(usuarioLogado) {
+    let objUsuarios = lerUsuariosLS();
 
-    SalvarUsuarioLS(objUsuarios);
+    objUsuarios.usuario.forEach(user => {
+        if (user.id === usuarioLogado.id) {
+            user.interesses = usuarioLogado.interesses;
+        }
+    });
+
+    salvarUsuariosLS(objUsuarios);
+
+    try {
+        // Atualiza os interesses no JSON server usando PATCH
+        const response = await axios.patch(`${JSON_SERVER_URL_FREELANCERS}/${usuarioLogado.id}`, { interesses: usuarioLogado.interesses });
+        console.log('Resposta do servidor:', response.data);
+    } catch (error) {
+        console.error('Erro ao atualizar os interesses no JSON server:', error);
+    }
 }
 
-// Função para salvar as seleções no Local Storage
-function saveSelections() {
-    const selectedSubjects = []; // Array para armazenar os interesses selecionados
+// Função para salvar as seleções no Local Storage e no JSON server
+function salvarSelecoes() {
+    const interessesSelecionados = []; // Array para armazenar os interesses selecionados
     document.querySelectorAll('.card-interesse.selecionado').forEach(card => { // Para cada card selecionado
-        selectedSubjects.push(card.textContent.trim()); // Adiciona o texto do card (interesse) ao array
+        interessesSelecionados.push(card.textContent.trim()); // Adiciona o texto do card (interesse) ao array
     });
-    const usuarioLogado = leUsuarioCorrenteLS();
-    usuarioLogado.interesses = selectedSubjects; // Adiciona os interesses selecionados aos interesses do usuário fictício
-    SalvarUsuarioCorrenteLS(usuarioLogado); // Salva os dados do usuário fictício no Local Storage
-    AtualizaInteressesLS(usuarioLogado);
+    const usuarioLogado = lerUsuarioCorrenteLS();
+    usuarioLogado.interesses = interessesSelecionados; // Adiciona os interesses selecionados aos interesses do usuário fictício
+    salvarUsuarioCorrenteLS(usuarioLogado); // Salva os dados do usuário fictício no Local Storage
+    atualizarInteressesLS(usuarioLogado); // Atualiza os interesses no Local Storage e no JSON server
 }
 
 // Nomes dos interesses e caminhos das imagens
-const subjects = [
+const interesses = [
     { name: 'Jurídico', imageUrl: '../../img/imgCardsPesquisaInteresse/justica.png' },
     { name: 'Culinária', imageUrl: '../../img/imgCardsPesquisaInteresse/culinaria.png' },
     { name: 'Design', imageUrl: '../../img/imgCardsPesquisaInteresse/design.png' },
@@ -158,46 +84,45 @@ const subjects = [
 ];
 
 // Função para criar um card com uma imagem específica e nome do interesse
-function createCard(subject) {
+function criarCard(interesse) {
     const card = document.createElement('div'); // Cria uma div
-    card.classList.add('card-interesse'); // Adiciona a classe 'card' na div
-    card.innerHTML = '<img src="' + subject.imageUrl + '" alt="' + subject.name + '">' + // Adiciona uma imagem ao card
-        '<div>' + subject.name + '</div>'; // Adiciona o nome do interesse no card
+    card.classList.add('card-interesse'); // Adiciona a classe 'card-interesse' na div
+    card.innerHTML = '<img src="' + interesse.imageUrl + '" alt="' + interesse.name + '">' + // Adiciona uma imagem ao card
+        '<div>' + interesse.name + '</div>'; // Adiciona o nome do interesse no card
     card.onclick = function () { // Quando o usuario clicar no card:
         card.classList.toggle('selecionado'); // Alterna a classe 'selecionado' do card (seleciona ou desseleciona)
-        updateConfirmButtonState(); // Atualiza o estado do botão Confirmar (habilita ou desabilita)
+        atualizarEstadoBotaoConfirmar(); // Atualiza o estado do botão Confirmar (habilita ou desabilita)
     };
     return card;
 }
 
 // Inicializa os cards
-const grid = document.getElementById('grade-interesses');
-subjects.forEach(subject => { // Para cada interesse
-    grid.appendChild(createCard(subject)); // Adiciona um card ao grid
+const gradeInteresses = document.getElementById('grade-interesses');
+interesses.forEach(interesse => { // Para cada interesse
+    gradeInteresses.appendChild(criarCard(interesse)); // Adiciona um card ao grid
 });
-updateConfirmButtonState();
-
+atualizarEstadoBotaoConfirmar();
 
 // Função para limpar a seleção dos cards
-function clearSelection() {
-    document.querySelectorAll('.cardcard-interesse.selecionado').forEach(card => { // Para cada card selecionado
+function limparSelecao() {
+    document.querySelectorAll('.card-interesse.selecionado').forEach(card => { // Para cada card selecionado
         card.classList.remove('selecionado'); // Remove a classe 'selecionado' do card
     });
-    updateConfirmButtonState();
+    atualizarEstadoBotaoConfirmar();
 }
 
 // Função para atualizar o estado do botão Confirmar baseado na seleção dos cards
-function updateConfirmButtonState() {
+function atualizarEstadoBotaoConfirmar() {
     const selectedCards = document.querySelectorAll('.card-interesse.selecionado').length; // Conta o número de cards selecionados
     const botaoConfirmar = document.getElementById('botao-confirmar');
     botaoConfirmar.disabled = selectedCards === 0; // Desativa o botão Confirmar se nenhum card estiver selecionado
 }
 
-// Incrementa a função confirmSelection (confirmar) para salvar as seleções de interesses antes de redirecionar para a home
-function confirmSelection() {
+// Função para confirmar a seleção e salvar as seleções de interesses antes de redirecionar para a home
+function confirmarSelecao() {
     const confirmacao = confirm('Você deseja confirmar suas escolhas?'); // Pergunta ao usuário se ele deseja confirmar as escolhas
     if (confirmacao) { // Se o usuário confirmar
-        saveSelections(); // Salva as seleções no Local Storage
+        salvarSelecoes(); // Salva as seleções no Local Storage e no JSON server
         window.location.href = '../Home/Home.html'; // Redireciona para a home
     }
 }
@@ -205,7 +130,7 @@ function confirmSelection() {
 // Adiciona função de clique ao botão Pular
 document.getElementById('botao-pular').addEventListener('click', function () {
     const confirmacao = confirm('Você tem certeza que deseja pular a pesquisa de interesses?'); // Pergunta ao usuário se ele deseja pular a pesquisa
-    if (confirmacao) { // Se o usuário confirmar
+     if (confirmacao) { // Se o usuário confirmar
         window.location.href = 'Home.html'; // Redireciona para a página inicial
     }
 });

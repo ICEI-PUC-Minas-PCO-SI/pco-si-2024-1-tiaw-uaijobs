@@ -45,9 +45,11 @@ document.addEventListener("DOMContentLoaded", async function () {
         bttn.classList.add('Cards-freelancer-bttn', 'd-grid', 'gap-2', 'col-6', 'mx-auto');
         const button = document.createElement('button');
         button.classList.add('btn', 'btn-outline-danger');
+        button.setAttribute('data-bs-toggle', 'modal');
+        button.setAttribute('data-bs-target', '#userModal');
         button.textContent = 'Ver detalhes';
         button.onclick = function() {
-            mostrarDetalhesVaga(vagaItem);
+            preencherModal(freelancer);
         };
         bttn.appendChild(button);
         
@@ -58,7 +60,45 @@ document.addEventListener("DOMContentLoaded", async function () {
     
         freelancerContainer.appendChild(freelancerCard);
     });
-    
 });
 
+async function preencherModal(freelancer) {
+    document.getElementById('nomeUsuario').querySelector('h2').textContent = freelancer.nome;
+    document.querySelector('.img_usuario img').src = '../../' + freelancer.imagem;
+    document.getElementById('DataNascUsuario').textContent = freelancer.dataNascimento || 'Data de nascimento não disponível';
 
+    // Fetch location based on CEP
+    const location = await buscarLocalizacao(freelancer.cep);
+    document.getElementById('localizacaoUsuario').textContent = location || 'Localização não disponível';
+    
+    document.getElementById('descricaoUsuario').textContent = freelancer.bio || 'Biografia não disponível';
+    
+    const listaInteresses = document.getElementById('listaInteresses');
+    listaInteresses.innerHTML = '';
+    if (freelancer.interesses && freelancer.interesses.length > 0) {
+        freelancer.interesses.forEach(interesse => {
+            const li = document.createElement('li');
+            li.textContent = interesse;
+            listaInteresses.appendChild(li);
+        });
+    } else {
+        const li = document.createElement('li');
+        li.textContent = 'Nenhum interesse disponível';
+        listaInteresses.appendChild(li);
+    }
+}
+
+async function buscarLocalizacao(cep) {
+    if (!cep) return 'CEP não disponível';
+    try {
+        const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+        if (response.data.erro) {
+            return 'Localização não encontrada';
+        }
+        const { localidade, uf } = response.data;
+        return `${localidade} - ${uf}`;
+    } catch (error) {
+        console.error('Erro ao buscar localização:', error);
+        return 'Erro ao buscar localização';
+    }
+}
