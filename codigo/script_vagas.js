@@ -165,6 +165,18 @@ const jobData = [
 ];
 
 
+
+function calculateDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Raio da Terra em km
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+              Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+}
+
 let currentPage = 1;
 let filteredItems = jobData;
 let numberOfPages = Math.ceil(filteredItems.length / 3);
@@ -174,8 +186,10 @@ let filters = {
     periodo: '',
     dataIni: '',
     dataFim: '',
-    cidade: '',
-    valorHora: 1000
+    valorHora: 1000,
+    lat: null,
+    lng: null,
+    distance: null
 };
 
 function updateDropdownButton(dropdownId, value) {
@@ -197,6 +211,9 @@ function updatavalorHoraLabel(value) {
 
 function applyFilters() {
     filteredItems = jobData.filter(item => {
+        const distance = calculateDistance(filters.lat, filters.lng, parseFloat(item.lat), parseFloat(item.lgt));
+        const withinDistance = !filters.distance || distance <= filters.distance;
+
         if (filters.dataIni && filters.dataFim) {
             const dateFrom = filters.dataIni.split("/");
             const dateTo = filters.dataFim.split("/");
@@ -213,9 +230,8 @@ function applyFilters() {
 
         return (!filters.categoria || item.categoria === filters.categoria) &&
                (!filters.periodo || item.periodo === filters.periodo) &&
-               (!filters.data || item.data === filters.data) &&
-               (!filters.cidade || item.cidade === filters.cidade) &&
-               (item.valorHora <= filters.valorHora);
+               (item.valorHora <= filters.valorHora) &&
+               withinDistance;
     });
 
     numberOfPages = Math.ceil(filteredItems.length / 3);
@@ -229,13 +245,15 @@ function resetFilters() {
         periodo: '',
         dataIni: '',
         dataFim: '',
-        cidade: '',
-        valorHora: 1000
+        valorHora: 1000,
+        lat: null,
+        lng: null,
+        distance: null
     };
 
     document.getElementById('dropdownCategory').innerText = 'Categoria';
     document.getElementById('dropdownPeriod').innerText = 'Período';
-    document.getElementById('dropdownCity').innerText = 'Cidade';
+    document.getElementById('dropdownDistance').innerText = 'Distância';
     document.getElementById('valorHora').value = 1000;
     document.getElementById('valorHoraMinLabel').innerText = 0;
     document.getElementById('valorHoraMaxLabel').innerText = 1000;
@@ -341,35 +359,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const params = new URLSearchParams(window.location.search);
-    const userCep = params.get('cep');
-    const userAddress = params.get('address');
     const userLat = parseFloat(params.get('lat'));
     const userLng = parseFloat(params.get('lng'));
-
-    if (userAddress) {
-        document.getElementById('user-address').textContent = decodeURIComponent(userAddress);
-    }
-
-    document.getElementById('change-cep').addEventListener('click', () => {
-        window.location.href = 'input_cep.html';
-    });
-
-    mapboxgl.accessToken = 'pk.eyJ1IjoiaWdvcm1tZiIsImEiOiJjbHd3cnl4dzExNHpsMmlvOHdzMzN3aTBiIn0.BOMzGXeX4cjnW2X-qpYzJw';
-    const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v12',
-        center: [userLng, userLat],
-        zoom: 12
-    });
-
-    jobData.forEach(location => {
-        const marker = new mapboxgl.Marker()
-            .setLngLat([location.lgt, location.lat])
-            .setPopup(new mapboxgl.Popup().setHTML(`<h3>${location.title}</h3>`))
-            .addTo(map);
-    });
+    const distance = parseFloat(params.get('distance'));
 
     if (userLat && userLng) {
+        filters.lat = userLat;
+        filters.lng = userLng;
+        filters.distance = distance;
+
+        applyFilters();
+
+        mapboxgl.accessToken = 'pk.eyJ1IjoiaWdvcm1tZiIsImEiOiJjbHd3cnl4dzExNHpsMmlvOHdzMzN3aTBiIn0.BOMzGXeX4cjnW2X-qpYzJw';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v12',
+            center: [userLng, userLat],
+            zoom: 12
+        });
+
+        jobData.forEach(location => {
+            const marker = new mapboxgl.Marker()
+                .setLngLat([parseFloat(location.lgt), parseFloat(location.lat)])
+                .setPopup(new mapboxgl.Popup().setHTML(`<h3>${location.title}</h3>`))
+                .addTo(map);
+        });
+
         new mapboxgl.Marker({ color: 'yellow' })
             .setLngLat([userLng, userLat])
             .setPopup(new mapboxgl.Popup().setHTML(`<h3>Você está aqui</h3>`))
@@ -386,6 +401,10 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Erro ao obter localização.');
         });
     }
+
+    document.getElementById('change-cep').addEventListener('click', () => {
+        window.location.href = 'input_cep.html';
+    });
 });
 
 function mostrarAlerta() {
