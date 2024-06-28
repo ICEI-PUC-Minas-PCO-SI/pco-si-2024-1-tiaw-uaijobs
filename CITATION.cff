@@ -2,11 +2,11 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
 title: 
-authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
+authors: 
+  - family-names: Prates de Souza Lima
+    given-names: Vitor
+  - family-names: Moreira de Queiroz
+    given-names: Thiago
   - family-names: 
     given-names: 
   - family-names: 
