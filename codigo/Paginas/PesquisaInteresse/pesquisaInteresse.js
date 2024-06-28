@@ -1,6 +1,20 @@
 const JSON_SERVER_URL_FREELANCERS = 'http://localhost:3000/freelancers';
-const JSON_SERVER_URL_EMPREGADORES = 'http://localhost:3000/empregadores';
-const JSON_SERVER_URL_ADMIN = 'http://localhost:3000/admin';
+
+// Função que lê os usuários do Local Storage
+function lerUsuariosLS() {
+    let strUsuarios = localStorage.getItem('Usuarios');
+    var objUsuarios = {};
+
+    if (strUsuarios) {
+        objUsuarios = JSON.parse(strUsuarios);
+    } else {
+        objUsuarios = {
+            usuario: []
+        };
+    }
+
+    return objUsuarios;
+}
 
 // Função que lê o usuário logado no momento
 function lerUsuarioCorrenteLS() {
@@ -10,6 +24,11 @@ function lerUsuarioCorrenteLS() {
     return usuarioLogado;
 }
 
+// Função que salva um novo usuário no Local Storage
+function salvarUsuariosLS(objUsuarios) {
+    localStorage.setItem('Usuarios', JSON.stringify(objUsuarios));
+}
+
 // Função que salva o usuário logado no momento
 function salvarUsuarioCorrenteLS(usuario) {
     localStorage.setItem('UsuarioCorrente', JSON.stringify(usuario));
@@ -17,37 +36,23 @@ function salvarUsuarioCorrenteLS(usuario) {
 
 // Função que atualiza os interesses do usuário no Local Storage e no JSON server
 async function atualizarInteressesLS(usuarioLogado) {
+    let objUsuarios = lerUsuariosLS();
 
-    if(usuarioLogado.tipo === "freelancer"){
-        try {
-            // Atualiza os interesses no JSON server usando PATCH
-            const response = await axios.patch(`${JSON_SERVER_URL_FREELANCERS}/${usuarioLogado.id}`, { interesses: usuarioLogado.interesses });
-            console.log('Resposta do servidor:', response.data);
-        } catch (error) {
-            console.error('Erro ao atualizar os interesses no JSON server:', error);
+    objUsuarios.usuario.forEach(user => {
+        if (user.id === usuarioLogado.id) {
+            user.interesses = usuarioLogado.interesses;
         }
-    }
-    else if(usuarioLogado.tipo === "empregador"){
-        try {
-            // Atualiza os interesses no JSON server usando PATCH
-            const response = await axios.patch(`${JSON_SERVER_URL_EMPREGADORES}/${usuarioLogado.id}`, { interesses: usuarioLogado.interesses });
-            console.log('Resposta do servidor:', response.data);
-        } catch (error) {
-            console.error('Erro ao atualizar os interesses no JSON server:', error);
-        }
-    }
-    else if(usuarioLogado.tipo === "admin"){
-        try {
-            // Atualiza os interesses no JSON server usando PATCH
-            const response = await axios.patch(`${JSON_SERVER_URL_ADMIN}/${usuarioLogado.id}`, { interesses: usuarioLogado.interesses });
-            console.log('Resposta do servidor:', response.data);
-        } catch (error) {
-            console.error('Erro ao atualizar os interesses no JSON server:', error);
-        }
-    }
+    });
 
+    salvarUsuariosLS(objUsuarios);
 
-    
+    try {
+        // Atualiza os interesses no JSON server usando PATCH
+        const response = await axios.patch(`${JSON_SERVER_URL_FREELANCERS}/${usuarioLogado.id}`, { interesses: usuarioLogado.interesses });
+        console.log('Resposta do servidor:', response.data);
+    } catch (error) {
+        console.error('Erro ao atualizar os interesses no JSON server:', error);
+    }
 }
 
 // Função para salvar as seleções no Local Storage e no JSON server

@@ -350,7 +350,7 @@ async function verificarLimiteVagas(empregadorId) {
     }
 }
 
-// Função para incluir uma vaga no Json Server
+// Função para incluir uma vaga
 async function IncluirVagaLS() {
     console.log("Iniciando inclusão de vaga...");
     const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
@@ -421,7 +421,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //Vagas candidatadas / vagas postadas
 
-//Função que modifica o botão de página dinâmica dependendo do tipo de usuário (Se freelancer = vagas candidatadas // se empregador = vagas publicadas)
 //Botão para acessar a página
 document.addEventListener("DOMContentLoaded", function() {
     const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
@@ -513,7 +512,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error('Container para vagas não encontrado.');
         return;
     }
-    
 //Carrega vagas
     vagas.forEach(vagaItem => {
         const vagaCard = document.createElement('div');
@@ -818,24 +816,3 @@ function mostrarContato(button) {
     contatoInfo.style.display = 'block';
     button.style.display = 'none';
 }
-
-//Botão que deve sumir se usuario for freelancer
-// Função que lê o usuário logado no momento
-function lerUsuarioCorrenteLS() {
-    let strUsuario = localStorage.getItem('UsuarioCorrente');
-    return strUsuario ? JSON.parse(strUsuario) : null;
-}
-
-// Função que oculta o botão "Publicar Vaga" se o usuário corrente for um freelancer
-function ocultarBotaoParaFreelancer() {
-    const usuarioCorrente = lerUsuarioCorrenteLS();
-    if (usuarioCorrente && usuarioCorrente.tipo === 'freelancer') {
-        const botaoVagasAbertas = document.getElementById('botaoVagasAbertas');
-        if (botaoVagasAbertas) {
-            botaoVagasAbertas.style.display = 'none';
-        }
-    }
-}
-
-// Chama a função para ocultar o botão ao carregar a página
-document.addEventListener('DOMContentLoaded', ocultarBotaoParaFreelancer);

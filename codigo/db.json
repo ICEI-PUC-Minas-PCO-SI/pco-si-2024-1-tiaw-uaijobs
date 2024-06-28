@@ -26,8 +26,7 @@
       "publicado": true,
       "candidatos": [
         "8cbf",
-        "4ca4",
-        "4472"
+        "4ca4"
       ]
     },
     {
@@ -167,71 +166,6 @@
       "publicado": true,
       "publicacao": "23/06/2024",
       "candidatos": []
-    },
-    {
-      "id": "81ba",
-      "nome": "sdas",
-      "categoria": "Construção",
-      "descricao": "askjcbiab",
-      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719518859/i6vclbycablst3iastq2.jpg",
-      "valor": "1237846",
-      "turno": "Tarde",
-      "local": 3212567315,
-      "data": "2024-09-16",
-      "habilidades": [
-        "ashdah"
-      ],
-      "empregador": "Luisin do Job",
-      "email": "luis325@gmail.com",
-      "telefone": "31985494832",
-      "cnpj": "5615120800",
-      "publicado": true,
-      "publicacao": "27/06/2024",
-      "candidatos": []
-    },
-    {
-      "id": "5c84",
-      "nome": "Limpeza",
-      "categoria": "Limpeza",
-      "descricao": "Preciso que alguém limpe meu apartamento novo",
-      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719520529/qfie777mkkffneskbder.png",
-      "valor": "250",
-      "turno": "Tarde",
-      "local": 32315060,
-      "data": "2024-06-28",
-      "habilidades": [
-        "Passar pano"
-      ],
-      "empregador": "Suely Schneider",
-      "email": "suely@gmail.com",
-      "telefone": "31996021004",
-      "cnpj": "63612852604",
-      "publicado": true,
-      "publicacao": "27/06/2024",
-      "candidatos": [
-        "1490"
-      ]
-    },
-    {
-      "id": "5d70",
-      "nome": "Limpeza",
-      "categoria": "Limpeza",
-      "descricao": "Preciso que alguém limpe meu apartamento novo",
-      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719520529/ewumjtbyralqhbjuqyeo.png",
-      "valor": "250",
-      "turno": "Tarde",
-      "local": 32315060,
-      "data": "2024-06-28",
-      "habilidades": [
-        "Passar pano"
-      ],
-      "empregador": "Suely Schneider",
-      "email": "suely@gmail.com",
-      "telefone": "31996021004",
-      "cnpj": "63612852604",
-      "publicado": true,
-      "publicacao": "27/06/2024",
-      "candidatos": []
     }
   ],
   "feedbacks": [
@@ -287,7 +221,6 @@
       "cep": "32315-060",
       "telefone": "31 99874-1609",
       "Linkedin": "",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "vagasPublicadas": [],
       "UserPremium": true
     },
@@ -302,7 +235,6 @@
       "cep": "xxxxx-xxx",
       "telefone": "31 99999-9999",
       "Linkedin": "",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "vagasPublicadas": [],
       "UserPremium": true
     },
@@ -317,7 +249,6 @@
       "cep": "xxxxx-xxx",
       "telefone": "31 99999-9999",
       "Linkedin": "",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "vagasPublicadas": [],
       "UserPremium": true
     },
@@ -332,7 +263,6 @@
       "cep": "xxxxx-xxx",
       "telefone": "31 99999-9999",
       "Linkedin": "",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "vagasPublicadas": [],
       "UserPremium": true
     },
@@ -347,7 +277,6 @@
       "cep": "xxxxx-xxx",
       "telefone": "31 99999-9999",
       "Linkedin": "",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "vagasPublicadas": [],
       "UserPremium": true
     },
@@ -362,7 +291,6 @@
       "cep": "xxxxx-xxx",
       "telefone": "31 99999-9999",
       "Linkedin": "",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
       "vagasPublicadas": [],
       "UserPremium": true
     }
@@ -370,7 +298,7 @@
   "empregadores": [
     {
       "id": "0210",
-      "nome": "Luisin do Job",
+      "nome": "Teste",
       "dataNascimento": "2000-08-25",
       "cpf": "5615120800",
       "telefone": "31985494832",
@@ -380,89 +308,29 @@
       "senha": "123456789123456789",
       "interesses": [],
       "tipo": "empregador",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
-      "bio": "A Uaijobs é meu a melhor do mundo",
-      "UserPremium": true,
+      "imagem": "img/Usuarios/iconeUsuario.png",
+      "bio": "",
       "vagasPublicadas": [
-        "81ba"
-      ]
+        "92b1"
+      ],
+      "UserPremium": true
     },
     {
       "id": "c8f1",
-      "nome": "Victor Empregos",
+      "nome": "Victor Empregators",
       "dataNascimento": "2004-09-16",
       "cpf": "12345676152",
+      "telefone": "3199999999",
       "cep": "31315060",
       "linkedin": "linkedin",
       "email": "empregos@gmail.com",
       "senha": "12345",
       "interesses": [],
       "tipo": "empregador",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
-      "bio": "",
-      "UserPremium": false
-    },
-    {
-      "id": "c9c6",
-      "nome": "Teste Empregador 2",
-      "dataNascimento": "2004-09-16",
-      "cpf": "123561287781729",
-      "telefone": "128371238127",
-      "cep": "32315060",
-      "linkedin": "linkedin.com",
-      "email": "empregador@gmail.com",
-      "senha": "12345",
-      "interesses": [],
-      "tipo": "empregador",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
+      "imagem": "img/Usuarios/iconeUsuario.png",
       "bio": "",
       "UserPremium": false,
       "vagasPublicadas": []
-    },
-    {
-      "id": "2af3",
-      "nome": "a",
-      "dataNascimento": "2004-09-16",
-      "cpf": "123",
-      "telefone": "123",
-      "cep": "123",
-      "linkedin": "1",
-      "email": "a@g",
-      "senha": "123",
-      "interesses": [
-        "Culinária",
-        "Fotografia",
-        "Redação",
-        "Tradução"
-      ],
-      "tipo": "empregador",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
-      "bio": "",
-      "UserPremium": false,
-      "vagasPublicadas": []
-    },
-    {
-      "id": "30c9",
-      "nome": "Suely Schneider",
-      "dataNascimento": "1966-10-15",
-      "cpf": "63612852604",
-      "telefone": "31996021004",
-      "cep": "32315060",
-      "linkedin": "linkedin",
-      "email": "suely@gmail.com",
-      "senha": "12345",
-      "interesses": [
-        "Culinária",
-        "Videoclipes",
-        "Computação"
-      ],
-      "tipo": "empregador",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
-      "bio": "",
-      "UserPremium": false,
-      "vagasPublicadas": [
-        "5c84"
-      ]
     }
   ],
   "freelancers": [
@@ -490,7 +358,7 @@
         "Mídias Sociais"
       ],
       "tipo": "freelancer",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
+      "imagem": "img/Usuarios/iconeUsuario.png",
       "bio": "",
       "UserPremium": true,
       "vagasCandidatadas": [
@@ -514,64 +382,12 @@
       "senha": "victor123",
       "interesses": [],
       "tipo": "freelancer",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
+      "imagem": "img/Usuarios/iconeUsuario.png",
       "bio": "",
       "UserPremium": false,
       "vagasCandidatadas": [
         "0",
         "5"
-      ]
-    },
-    {
-      "id": "4472",
-      "nome": "Vitin Freelas",
-      "dataNascimento": "2004-09-16",
-      "cpf": "12345678910",
-      "telefone": "31998741609",
-      "cep": "32315060",
-      "linkedin": "linkedin.com",
-      "email": "email@g",
-      "senha": "123456",
-      "interesses": [
-        "Culinária",
-        "Design",
-        "Finanças",
-        "Redação",
-        "Videoclipes",
-        "Computação",
-        "Mídias Sociais"
-      ],
-      "tipo": "freelancer",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
-      "bio": "",
-      "UserPremium": false,
-      "vagasCandidatadas": [
-        "0"
-      ]
-    },
-    {
-      "id": "1490",
-      "nome": "Fezin do Job",
-      "dataNascimento": "1999-10-27",
-      "cpf": "786346213",
-      "telefone": "872141724",
-      "cep": "32315060",
-      "linkedin": "linkedin",
-      "email": "fernando@gmail.com",
-      "senha": "12345",
-      "interesses": [
-        "Culinária",
-        "Fotografia",
-        "Marketing",
-        "Redação",
-        "Construção"
-      ],
-      "tipo": "freelancer",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
-      "bio": "Homem prestador de serviço, fiel e bem humorado",
-      "UserPremium": false,
-      "vagasCandidatadas": [
-        "5c84"
       ]
     }
   ]
