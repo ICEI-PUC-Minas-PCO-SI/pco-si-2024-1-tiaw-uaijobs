@@ -301,3 +301,29 @@ function obterTipoUsuarioDoLocalStorage() {
     }
     return null;
 }
+
+// Adiciona um evento que será executado quando o DOM estiver completamente carregado
+document.addEventListener('DOMContentLoaded', function() {
+    // Função para verificar o tipo de usuário e ocultar o botão se não for freelancer
+    function ocultarBotaoSeNaoForFreelancer() {
+        // Obtém os dados do usuário corrente do localStorage
+        var dadosUsuario = localStorage.getItem('UsuarioCorrente');
+        
+        // Verifica se os dados do usuário existem
+        if (dadosUsuario) {
+            var usuarioCorrente = JSON.parse(dadosUsuario);
+            
+            // Verifica se o tipo de usuário não é freelancer
+            if (usuarioCorrente.tipo !== 'freelancer') {
+                // Oculta o botão "Vagas para Você!"
+                document.getElementById('botao-vagas-para-voce').style.display = 'none';
+            }
+        } else {
+            // Caso não haja dados de usuário, oculta o botão por precaução
+            document.getElementById('botao-vagas-para-voce').style.display = 'none';
+        }
+    }
+
+    // Chama a função para ocultar o botão se necessário
+    ocultarBotaoSeNaoForFreelancer();
+});
