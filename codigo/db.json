@@ -8,7 +8,7 @@
       "publicacao": "11/05/2024",
       "imagem": "https://www.digitow.com.br/wp-content/uploads/2022/04/curso-para-auxiliar-administrativo.jpg",
       "valor": 300,
-      "turno": "Dia",
+      "turno": "Manhã",
       "CEP": "32687405",
       "data": "01/06/2024",
       "habilidades": [
@@ -232,6 +232,26 @@
       "publicado": true,
       "publicacao": "27/06/2024",
       "candidatos": []
+    },
+    {
+      "id": "8676",
+      "nome": "VagaLonge",
+      "categoria": "Outros",
+      "descricao": "vaga legal",
+      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719678555/rp0qlj0yudh8zp1qfl2e.jpg",
+      "valor": "550",
+      "turno": "Manhã",
+      "local": 15076610,
+      "data": "2024-06-30",
+      "habilidades": [
+        "Direção"
+      ],
+      "empregador": "Victor Empregos",
+      "email": "empregos@gmail.com",
+      "cnpj": "12345676152",
+      "publicado": true,
+      "publicacao": "29/06/2024",
+      "candidatos": []
     }
   ],
   "feedbacks": [
@@ -400,7 +420,10 @@
       "tipo": "empregador",
       "imagem": "../../img/Usuarios/iconeUsuario.png",
       "bio": "",
-      "UserPremium": false
+      "UserPremium": false,
+      "vagasPublicadas": [
+        "8676"
+      ]
     },
     {
       "id": "c9c6",

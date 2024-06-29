@@ -1,4 +1,20 @@
-//Função que carrega as vagas do JSON-Server na página
+// Variáveis globais
+let jobData = [];
+let filteredItems = [];
+let currentPage = 1;
+const itensPorPagina = 4;
+let filters = {
+    categoria: '',
+    periodo: '',
+    dataIni: '',
+    dataFim: '',
+    valorHora: 1000,
+    lat: null,
+    lng: null,
+    distance: null
+};
+
+// Função que carrega as vagas do JSON-Server na página
 document.addEventListener("DOMContentLoaded", function () {
     const vagasContainer = document.getElementById('container-vagas-abertas');
     const JSON_SERVER_URL_VAGAS = 'http://localhost:3000/vagas';
@@ -12,72 +28,291 @@ document.addEventListener("DOMContentLoaded", function () {
     // Criação dos cards
     axios.get(JSON_SERVER_URL_VAGAS)
         .then(response => {
-            const vagas = response.data;
+            jobData = response.data;
+            console.log('Dados recebidos:', jobData); // Log para verificar dados recebidos
+            filteredItems = jobData; // Inicialmente todas as vagas são exibidas
 
             if (!vagasContainer) {
                 console.error('Container para vagas não encontrado.');
                 return;
             }
 
-            vagas.forEach(vagaItem => {
-                if (vagaItem.publicado) {
-                    const vagaCard = document.createElement('div');
-                    vagaCard.classList.add('Container', 'border', 'p-3', 'rounded-4', 'shadow-lg', 'p-3', 'mb-5', 'bg-body-tertiary', 'mx-5', 'col-xxl-4');
-
-                    const title = document.createElement('div');
-                    title.classList.add('Cards-vagas-title', 'text-center', 'pb-2');
-                    const h2 = document.createElement('h2');
-                    h2.textContent = vagaItem.nome;
-                    title.appendChild(h2);
-
-                    const imagem = document.createElement('div');
-                    imagem.classList.add('Cards-vagas-imagem', 'pb-2', 'ps-5');
-                    const img = document.createElement('img');
-                    img.classList.add('rounded-3');
-                    img.src = vagaItem.imagem;
-                    img.alt = 'Imagem da vaga';
-                    img.onerror = function () {
-                        console.error('Erro ao carregar a imagem:', vagaItem.imagem);
-                        img.src = 'fallback_image_url.jpg'; // Imagem de fallback
-                    };
-                    imagem.appendChild(img);
-
-                    const descricao = document.createElement('div');
-                    descricao.classList.add('Cards-vagas-descrição');
-                    const p = document.createElement('p');
-                    const maxLength = 500;
-                    if (vagaItem.descricao) {
-                        p.textContent = vagaItem.descricao.substring(0, maxLength) + '...';
-                    } else {
-                        p.textContent = 'Descrição não disponível.';
-                    }
-                    descricao.appendChild(p);
-
-                    const bttn = document.createElement('div');
-                    bttn.classList.add('Cards-vagas-bttn', 'd-grid', 'gap-2', 'col-6', 'mx-auto');
-                    const button = document.createElement('button');
-                    button.classList.add('btn', 'btn-outline-danger');
-                    button.textContent = 'Ver detalhes';
-                    button.onclick = function() {
-                        mostrarDetalhesVaga(vagaItem);
-                    };
-                    bttn.appendChild(button);
-                    
-                    vagaCard.appendChild(title);
-                    vagaCard.appendChild(imagem);
-                    vagaCard.appendChild(descricao);
-                    vagaCard.appendChild(bttn);
-
-                    vagasContainer.appendChild(vagaCard);
-                }
-            });
+            populateCategoryDropdown(); // Preencher dropdown de categorias
+            applyFilters(); // Aplicar filtros (mesmo que inicialmente não haja filtros)
         })
         .catch(error => {
             console.error('Erro ao buscar dados do servidor:', error);
         });
 });
 
-//Função que abre modal com os detalhes da vaga desejada
+// Função para preencher o dropdown de categorias
+function populateCategoryDropdown() {
+    const dropdownCategory = document.getElementById('dropdownCategory');
+    const uniqueCategories = [...new Set(jobData.map(item => item.categoria))];
+
+    const dropdownMenu = document.createElement('ul');
+    dropdownMenu.classList.add('dropdown-menu');
+    dropdownMenu.setAttribute('aria-labelledby', 'dropdownCategory');
+
+    uniqueCategories.forEach(category => {
+        const listItem = document.createElement('li');
+        const linkItem = document.createElement('a');
+        linkItem.classList.add('dropdown-item');
+        linkItem.href = '#';
+        linkItem.textContent = category;
+        linkItem.onclick = () => setFilter('categoria', category, 'dropdownCategory');
+        listItem.appendChild(linkItem);
+        dropdownMenu.appendChild(listItem);
+    });
+
+    // Remove any existing dropdown-menu and append the new one
+    const existingDropdownMenu = dropdownCategory.nextElementSibling;
+    if (existingDropdownMenu) {
+        dropdownCategory.parentNode.removeChild(existingDropdownMenu);
+    }
+    dropdownCategory.parentNode.appendChild(dropdownMenu);
+}
+
+// Função para calcular a distância entre dois pontos (usando a fórmula de Haversine)
+function calcularDistancia(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Raio da Terra em km
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = 
+        0.5 - Math.cos(dLat)/2 + 
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+        (1 - Math.cos(dLon)) / 2;
+
+    return R * 2 * Math.asin(Math.sqrt(a));
+}
+
+// Função para buscar coordenadas por CEP
+async function buscarCoordenadasPorCEP(cep) {
+    const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+    const data = await response.json();
+    if (data.erro) {
+        throw new Error('CEP não encontrado');
+    }
+    const coordenadas = await fetch(`https://nominatim.openstreetmap.org/search?postalcode=${cep}&country=Brazil&format=json&addressdetails=1`);
+    const geoData = await coordenadas.json();
+    if (geoData.length === 0) {
+        throw new Error('Coordenadas não encontradas para o CEP fornecido');
+    }
+    return {
+        lat: parseFloat(geoData[0].lat),
+        lon: parseFloat(geoData[0].lon)
+    };
+}
+
+// Função para aplicar filtros e exibir os resultados
+async function applyFilters() {
+    console.log('Aplicando filtros:', filters); // Log para verificar filtros
+    const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
+
+    let userCoordinates = null;
+    if (usuarioCorrente && usuarioCorrente.cep) {
+        try {
+            userCoordinates = await buscarCoordenadasPorCEP(usuarioCorrente.cep);
+        } catch (error) {
+            console.error('Erro ao buscar coordenadas do usuário:', error);
+        }
+    }
+
+    // Filtrar itens
+    filteredItems = [];
+    for (let item of jobData) {
+        const itemDate = new Date(item.data.split('/').reverse().join('-'));
+        const dataIni = filters.dataIni ? new Date(filters.dataIni.split('/').reverse().join('-')) : null;
+        const dataFim = filters.dataFim ? new Date(filters.dataFim.split('/').reverse().join('-')) : null;
+
+        let distanciaValida = true;
+        if (filters.distance && userCoordinates && item.CEP) {
+            try {
+                const jobCoordinates = await buscarCoordenadasPorCEP(item.CEP);
+                const distancia = calcularDistancia(userCoordinates.lat, userCoordinates.lon, jobCoordinates.lat, jobCoordinates.lon);
+                distanciaValida = distancia <= filters.distance;
+            } catch (error) {
+                console.error('Erro ao calcular distância:', error);
+                distanciaValida = false;
+            }
+        }
+
+        if (
+            (!filters.categoria || item.categoria === filters.categoria) &&
+            (!filters.periodo || item.turno === filters.periodo) &&
+            (item.valor <= filters.valorHora) && // Comparação correta do valor
+            (!dataIni || itemDate >= dataIni) &&
+            (!dataFim || itemDate <= dataFim) &&
+            distanciaValida
+        ) {
+            filteredItems.push(item);
+        }
+    }
+
+    currentPage = 1; // Resetar para a primeira página após aplicar filtros
+    renderPage(currentPage);
+}
+// Função para renderizar a página atual
+function renderPage(page) {
+    const vagasContainer = document.getElementById('container-vagas-abertas');
+    if (!vagasContainer) {
+        console.error('Container para vagas não encontrado.');
+        return;
+    }
+
+    vagasContainer.innerHTML = '';
+
+    const start = (page - 1) * itensPorPagina;
+    const end = start + itensPorPagina;
+    const pageItems = filteredItems.slice(start, end);
+
+    console.log('Itens da página:', pageItems); // Log para verificar itens da página
+
+    pageItems.forEach(vagaItem => {
+        if (vagaItem.publicado) {
+            const vagaCard = document.createElement('div');
+            vagaCard.classList.add('Container', 'border', 'p-3', 'rounded-4', 'shadow-lg', 'p-3', 'mb-5', 'bg-body-tertiary', 'mx-5', 'col-xxl-4');
+
+            const title = document.createElement('div');
+            title.classList.add('Cards-vagas-title', 'text-center', 'pb-2');
+            const h2 = document.createElement('h2');
+            h2.textContent = vagaItem.nome;
+            title.appendChild(h2);
+
+            const imagem = document.createElement('div');
+            imagem.classList.add('Cards-vagas-imagem', 'pb-2', 'ps-5');
+            const img = document.createElement('img');
+            img.classList.add('rounded-3');
+            img.src = vagaItem.imagem;
+            img.alt = 'Imagem da vaga';
+            img.onerror = function () {
+                console.error('Erro ao carregar a imagem:', vagaItem.imagem);
+                img.src = 'fallback_image_url.jpg'; // Imagem de fallback
+            };
+            imagem.appendChild(img);
+
+            const descricao = document.createElement('div');
+            descricao.classList.add('Cards-vagas-descrição');
+            const p = document.createElement('p');
+            const maxLength = 500;
+            if (vagaItem.descricao) {
+                p.textContent = vagaItem.descricao.substring(0, maxLength) + '...';
+            } else {
+                p.textContent = 'Descrição não disponível.';
+            }
+            descricao.appendChild(p);
+
+            const bttn = document.createElement('div');
+            bttn.classList.add('Cards-vagas-bttn', 'd-grid', 'gap-2', 'col-6', 'mx-auto');
+            const button = document.createElement('button');
+            button.classList.add('btn', 'btn-outline-danger');
+            button.textContent = 'Ver detalhes';
+            button.onclick = function () {
+                mostrarDetalhesVaga(vagaItem);
+            };
+            bttn.appendChild(button);
+
+            vagaCard.appendChild(title);
+            vagaCard.appendChild(imagem);
+            vagaCard.appendChild(descricao);
+            vagaCard.appendChild(bttn);
+
+            vagasContainer.appendChild(vagaCard);
+        }
+    });
+
+    updatePagination();
+}
+
+// Função para atualizar a paginação
+function updatePagination() {
+    const pagination = document.querySelector('.pagination');
+    pagination.innerHTML = '';
+
+    const totalPages = Math.ceil(filteredItems.length / itensPorPagina);
+
+    pagination.innerHTML += `
+        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+            <a class="page-link" href="#" onclick="selectPage(${currentPage - 1})">Anterior</a>
+        </li>
+    `;
+
+    for (let i = 1; i <= totalPages; i++) {
+        pagination.innerHTML += `
+            <li class="page-item ${currentPage === i ? 'active' : ''}">
+                <a class="page-link" href="#" onclick="selectPage(${i})">${i}</a>
+            </li>
+        `;
+    }
+
+    pagination.innerHTML += `
+        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+            <a class="page-link" href="#" onclick="selectPage(${currentPage + 1})">Próximo</a>
+        </li>
+    `;
+}
+
+// Função para selecionar uma página
+function selectPage(page) {
+    if (page < 1 || page > Math.ceil(filteredItems.length / itensPorPagina)) return;
+    currentPage = page;
+    renderPage(page);
+}
+
+// Funções para aplicar filtros específicos
+function setFilter(filterType, value, dropdownId) {
+    filters[filterType] = value;
+    document.getElementById(dropdownId).innerText = value;
+    applyFilters();
+}
+
+function resetFilters() {
+    filters = {
+        categoria: '',
+        periodo: '',
+        dataIni: '',
+        dataFim: '',
+        valorHora: 1000,
+        lat: null,
+        lng: null,
+        distance: null
+    };
+    document.getElementById('dropdownCategory').innerText = 'Categoria';
+    document.getElementById('dropdownPeriod').innerText = 'Período';
+    document.getElementById('dropdownDistance').innerText = 'Distância';
+    document.getElementById('valorHora').value = 1000; // Ajuste aqui para garantir que o valor é resetado
+    document.getElementById('valorHoraMinLabel').innerText = 0;
+    document.getElementById('valorHoraMaxLabel').innerText = 1000;
+    document.getElementById('dateRange').value = '';  // Reset date range input
+    applyFilters();
+}
+
+// Inicializa os filtros e flatpickr
+document.addEventListener('DOMContentLoaded', () => {
+    applyFilters();
+
+    flatpickr("#dateRange", {
+        mode: "range",
+        dateFormat: "d/m/Y",
+        locale: "pt",
+        onChange: function (selectedDates) {
+            if (selectedDates.length === 2) {
+                filters.dataIni = selectedDates[0].toLocaleDateString("pt-BR");
+                filters.dataFim = selectedDates[1].toLocaleDateString("pt-BR");
+                applyFilters();
+            }
+        }
+    });
+});
+// Função para atualizar o rótulo do valor e aplicar os filtros
+function updatavalorHoraLabel(value) {
+    document.getElementById('valorHoraMaxLabel').innerText = value;
+    filters.valorHora = parseInt(value, 10);
+    applyFilters();
+}
+
+
+// Função que abre modal com os detalhes da vaga desejada
 async function mostrarDetalhesVaga(vaga) {
     const vagaDetalhes = document.getElementById('vagaDetalhes');
     
@@ -101,7 +336,7 @@ async function mostrarDetalhesVaga(vaga) {
     const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
     const candidatarButton = document.getElementById('candidatarButton');
     
-    //Verifica se o usuário já se candidatou//pode se candidatar na vaga e altera o conteúdo do botão
+    // Verifica se o usuário já se candidatou//pode se candidatar na vaga e altera o conteúdo do botão
     if (usuarioCorrente && usuarioCorrente.tipo === 'freelancer') {
         if (usuarioCorrente.vagasCandidatadas && usuarioCorrente.vagasCandidatadas.includes(vaga.id)) {
             candidatarButton.textContent = 'Candidatado';
@@ -146,7 +381,7 @@ async function candidatarVaga(vagaId) {
 
         // Verificar o limite de vagas candidatas
         //6 para userPremium = true  3 Para userPremium = false
-        const limiteVagas = usuarioCorrente.userPremium ? 3 : 6;
+        const limiteVagas = usuarioCorrente.userPremium ? 6 : 3;
         if (freelancer.vagasCandidatadas.length >= limiteVagas) {
             window.alert(`Você atingiu o limite de ${limiteVagas} candidaturas.`);
             return;
@@ -211,6 +446,36 @@ async function candidatarVaga(vagaId) {
         console.error("Erro ao candidatar-se à vaga:", error);
         window.alert('Erro ao candidatar-se à vaga. Por favor, tente novamente.');
     }
+}
+// Função para calcular a distância entre dois pontos (usando a fórmula de Haversine)
+function calcularDistancia(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Raio da Terra em km
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = 
+        0.5 - Math.cos(dLat)/2 + 
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+        (1 - Math.cos(dLon)) / 2;
+
+    return R * 2 * Math.asin(Math.sqrt(a));
+}
+
+// Função para buscar coordenadas por CEP
+async function buscarCoordenadasPorCEP(cep) {
+    const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+    const data = await response.json();
+    if (data.erro) {
+        throw new Error('CEP não encontrado');
+    }
+    const coordenadas = await fetch(`https://nominatim.openstreetmap.org/search?postalcode=${cep}&country=Brazil&format=json&addressdetails=1`);
+    const geoData = await coordenadas.json();
+    if (geoData.length === 0) {
+        throw new Error('Coordenadas não encontradas para o CEP fornecido');
+    }
+    return {
+        lat: parseFloat(geoData[0].lat),
+        lon: parseFloat(geoData[0].lon)
+    };
 }
 
 // Página de publicar vagas

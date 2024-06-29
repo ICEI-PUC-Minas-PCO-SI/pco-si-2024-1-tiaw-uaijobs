@@ -129,3 +129,103 @@
 }
 
 /*Publicar vagas termina aqui */
+
+
+.page-link-custom {
+    cursor: pointer;
+}
+
+.highlight-card:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters-container {
+    background-color: #704040;
+    z-index: 999;
+    padding: 10px 0;
+}
+
+.filters-container .dropdown .dropdown-toggle {
+    background-color: #4e2525;
+    border-color: #4e2525;
+    color: white;
+}
+
+.filters-container .dropdown .dropdown-menu {
+    background-color: #4e2525;
+}
+
+.filters-container .dropdown .dropdown-item {
+    color: white;
+}
+
+.filters-container .dropdown .dropdown-item:hover {
+    background-color: #703838;
+}
+
+.filters-container .range-container {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.filters-container .range-container input[type="range"] {
+    margin: 0 10px;
+    flex: 1;
+}
+
+.filters-container .range-container input[type="range"]::-webkit-slider-thumb {
+    background-color: black;
+}
+
+.filters-container .range-container span {
+    font-weight: bold;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+}
+
+#left div {
+    background-color: rgb(226, 226, 226);
+}
+
+#Desc {
+    background-color: rgb(226, 226, 226);
+}
+
+#header {
+    background-color: rgb(66, 16, 16);
+}
+
+.navbar img {
+    width: 100px;
+    border-radius: 100%;
+    border: 5px solid antiquewhite;
+    margin: 10px;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: antiquewhite !important;
+}
+
+#titulo-imagem {
+    text-align: center;
+}
+
+.card-img-left {
+    object-fit: cover;
+    width: 25% !important;
+}
+
+.card {
+    width: 95%; /* Ajuste conforme necessário */
+}
+
+.img-fluid-custom {
+    height: 160px; /* Ajuste um pouco a altura */
+    object-fit: cover;
+}
