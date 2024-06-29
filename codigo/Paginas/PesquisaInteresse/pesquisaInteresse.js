@@ -126,6 +126,6 @@ function confirmarSelecao() {
 document.getElementById('botao-pular').addEventListener('click', function () {
     const confirmacao = confirm('Você tem certeza que deseja pular a pesquisa de interesses?'); // Pergunta ao usuário se ele deseja pular a pesquisa
      if (confirmacao) { // Se o usuário confirmar
-        window.location.href = 'Home.html'; // Redireciona para a página inicial
+        window.location.href = '../Home/Home.html'; // Redireciona para a página inicial
     }
 });

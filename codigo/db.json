@@ -463,6 +463,23 @@
       "vagasPublicadas": [
         "5c84"
       ]
+    },
+    {
+      "id": "6815",
+      "nome": "Teste redirecionamento",
+      "dataNascimento": "2005-02-17",
+      "cpf": "12312312345",
+      "telefone": "3185494832",
+      "cep": "32687405",
+      "linkedin": "a",
+      "email": "luishsampaioviera@gmail.com",
+      "senha": "12345",
+      "interesses": [],
+      "tipo": "empregador",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
+      "bio": "",
+      "UserPremium": false,
+      "vagasPublicadas": []
     }
   ],
   "freelancers": [
@@ -573,6 +590,27 @@
       "vagasCandidatadas": [
         "5c84"
       ]
+    },
+    {
+      "id": "3da9",
+      "nome": "Teste redirecionamento2",
+      "dataNascimento": "2005-02-17",
+      "cpf": "12312312346",
+      "telefone": "3185494832",
+      "cep": "32687405",
+      "linkedin": "a",
+      "email": "luishsampaiovieraaaa@gmail.com",
+      "senha": "12345",
+      "interesses": [
+        "Tradução",
+        "Videoclipes",
+        "Computação"
+      ],
+      "tipo": "freelancer",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
+      "bio": "",
+      "UserPremium": false,
+      "vagasCandidatadas": []
     }
   ]
 }
