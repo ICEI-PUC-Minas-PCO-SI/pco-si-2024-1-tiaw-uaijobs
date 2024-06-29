@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         imagem.classList.add('Cards-freelancer-imagem', 'pb-2', 'ps-5');
         const img = document.createElement('img');
         img.classList.add('rounded-3');
-        img.src = '../../' + freelancer.imagem;
+        img.src = freelancer.imagem;
         img.alt = 'Imagem do freelancer';
         // img.onerror = function () {
         //     console.error('Erro ao carregar a imagem:', freelancer.imagem);
