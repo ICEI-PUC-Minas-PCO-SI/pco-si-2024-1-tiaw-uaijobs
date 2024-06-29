@@ -43,18 +43,19 @@ function salvarUsuarioCorrenteLS(usuario) {
 async function cadastrarUsuarioLS() {
     let nome = document.getElementById('inputNomeCadastro').value;
     let dataNasc = document.getElementById('inputNascimentoCadastro').value;
-    let cpf = document.getElementById('inputCPFCadastro').value;
+    let cpfOuCnpj = document.getElementById('inputCPFCadastro').value;
     let telefone = document.getElementById('inputTelefoneCadastro').value;
     let cep = document.getElementById('inputCEPCadastro').value;
     let linkedin = document.getElementById('inputLinkedinCadastro').value;
     let email = document.getElementById('inputEmailCadastro').value;
     let confEmail = document.getElementById('inputEmailConfirmacaoCadastro').value;
     let senha = document.getElementById('inputSenhaCadastro').value;
+    let confSenha = document.getElementById('confirmaSenhaCadastro').value;
     let tipo = document.querySelector('input[name="tipoCadastro"]:checked').value;
 
     // Verifica se todos os campos obrigatórios estão preenchidos
-    if (nome === '' || telefone === '' || cep === '' || email === '' || confEmail === '' || senha === '' || dataNasc === '' || cpf === '') {
-        window.alert("Por favor, certifique de que os seguintes dados estão preenchidos:\nNome, Telefone, CEP, Email, Confirmação de Email, Senha, Data de Nascimento, CPF e Tipo de Cadastro");
+    if (nome === '' || telefone === '' || cep === '' || email === '' || confEmail === '' || senha === '' || confSenha === '' || dataNasc === '' || cpfOuCnpj === '') {
+        window.alert("Por favor, certifique-se de que todos os dados obrigatórios estão preenchidos.");
         return;
     }
 
@@ -64,13 +65,29 @@ async function cadastrarUsuarioLS() {
         return;
     }
 
+    // Verifica se as senhas coincidem
+    if (senha !== confSenha) {
+        window.alert("A Senha e sua Confirmação precisam ser iguais! Favor reenviar o formulário!");
+        return;
+    }
+
+    // Verifica se o CNPJ ou CPF está adequado ao tipo de usuário
+    if (tipo === 'empregador' && !isValidCNPJ(cpfOuCnpj)) {
+        window.alert("Por favor, insira um CNPJ válido para empregadores.");
+        return;
+    }
+    if (tipo === 'freelancer' && !isValidCPF(cpfOuCnpj)) {
+        window.alert("Por favor, insira um CPF válido para freelancers.");
+        return;
+    }
+
     // Busca todos os usuários (empregadores e freelancers)
     let usuarios = await fetchUsuarios();
     let todosUsuarios = [...usuarios.empregadores, ...usuarios.freelancers, ...usuarios.admin];
 
-    // Verifica se o CPF já está cadastrado
-    if (todosUsuarios.some(user => user.cpf === cpf)) {
-        window.alert("O CPF inserido já está Cadastrado!");
+    // Verifica se o CPF ou CNPJ já está cadastrado
+    if (todosUsuarios.some(user => user.cpf === cpfOuCnpj)) {
+        window.alert("O CPF ou CNPJ inserido já está Cadastrado!");
         return;
     }
 
@@ -84,7 +101,7 @@ async function cadastrarUsuarioLS() {
     let novoUsuario = {
         nome: nome,
         dataNascimento: dataNasc,
-        cpf: cpf,
+        cpf: cpfOuCnpj,
         telefone: telefone,
         cep: cep,
         linkedin: linkedin,
@@ -114,6 +131,18 @@ async function cadastrarUsuarioLS() {
     } else {
         window.location.href = "../Home/Home.html";
     }
+}
+
+// Função para verificar a validade de um CPF (básica)
+function isValidCPF(cpf) {
+    // Implementação simples, pode ser expandida com uma verificação mais completa
+    return cpf.length === 11;
+}
+
+// Função para verificar a validade de um CNPJ (básica)
+function isValidCNPJ(cnpj) {
+    // Implementação simples, pode ser expandida com uma verificação mais completa
+    return cnpj.length === 14;
 }
 
 // Função para verificar as credenciais do login e logar o usuário
