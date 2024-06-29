@@ -529,7 +529,10 @@
       "linkedin": "linkedin.com",
       "email": "victorfreelancer@uaijobs.com",
       "senha": "victor123",
-      "interesses": [],
+      "interesses": [
+        "Culinária",
+        "Fotografia"
+      ],
       "tipo": "freelancer",
       "imagem": "../../img/Usuarios/iconeUsuario.png",
       "bio": "",
