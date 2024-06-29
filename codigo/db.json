@@ -480,17 +480,34 @@
       "bio": "",
       "UserPremium": false,
       "vagasPublicadas": []
+    },
+    {
+      "id": "349e",
+      "nome": "Luis Henrique",
+      "dataNascimento": "1985-02-22",
+      "cpf": "12345678912345",
+      "telefone": "31985494832",
+      "cep": "32687405",
+      "linkedin": "",
+      "email": "luishs@gmail.com",
+      "senha": "12345",
+      "interesses": [],
+      "tipo": "empregador",
+      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719666793/seta57pfemkj6zhtqaqm.jpg",
+      "bio": "Estudante de Analise e desenvolvimento de sistemas, dedicado, vencedor de inumeros premios.",
+      "UserPremium": false,
+      "vagasPublicadas": []
     }
   ],
   "freelancers": [
     {
       "id": "8cbf",
-      "nome": "Teste Freelancer",
+      "nome": "Perfil Luis Sampaio",
       "dataNascimento": "2000-02-02",
       "cpf": "12312312354",
       "telefone": "31985494832",
       "cep": "32687405",
-      "linkedin": "aa",
+      "linkedin": "https://www.linkedin.com/in/luis-henrique-sampaio-vieira-030565216/",
       "email": "luishsampaiovieraa@gmail.com",
       "senha": "123456789987654321",
       "interesses": [
@@ -507,8 +524,8 @@
         "Mídias Sociais"
       ],
       "tipo": "freelancer",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
-      "bio": "",
+      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719668900/thup0kyj2yymbsipxybf.jpg",
+      "bio": "O ultimo romantico da Terra, especialista em amar, doutor em paixão, mestre em sentimentos, o homem que tem como o auge da sua vida, sua mulher, sua felicidade.",
       "UserPremium": true,
       "vagasCandidatadas": [
         "3596",

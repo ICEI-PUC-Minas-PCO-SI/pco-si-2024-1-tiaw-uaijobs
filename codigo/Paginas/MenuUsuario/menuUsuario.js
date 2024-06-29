@@ -16,6 +16,33 @@ document.addEventListener('DOMContentLoaded', () => {
         salvaNovosDados();
     });
 
+    document.getElementById('saveButtonImagem').addEventListener('click', async () => {
+        const fileInput = document.getElementById('imagemUsuario');
+        const file = fileInput.files[0];
+
+        if (file) {
+            const imageUrl = await uploadImagem(file);
+            if (imageUrl) {
+                let usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
+                if (usuarioCorrente) {
+                    usuarioCorrente.imagem = imageUrl;
+                    try {
+                        const updatedUsuario = await updateUsuario(usuarioCorrente, usuarioCorrente.tipo);
+                        localStorage.setItem('UsuarioCorrente', JSON.stringify(updatedUsuario));
+                        console.log("URL da imagem salva no usuário corrente e no JSON server");
+                        document.getElementById('userImage').src = imageUrl;
+                        document.getElementById('divEditaImagemUsuario').classList.add('d-none');
+                    } catch (error) {
+                        console.error("Erro ao atualizar o usuário:", error);
+                    }
+                } else {
+                    console.error("Nenhum usuário corrente encontrado no local storage");
+                }
+            }
+        } else {
+            console.error("Nenhum arquivo selecionado para upload");
+        }
+    });
 });
 
 function carregaDadosUsuarioCorrente() {
@@ -26,8 +53,7 @@ function carregaDadosUsuarioCorrente() {
         document.getElementById('userEmail').innerHTML = `<strong>E-mail:</strong> ${userData.email}` || 'E-mail';
         document.getElementById('userSenha').innerHTML = `<strong>Senha:</strong> ${userData.senha}` || 'E-mail';
         document.getElementById('userDob').innerHTML = `<strong>Data de Nascimento:</strong> ${userData.dataNascimento || ''}`;
-        document.getElementById('userType').innerHTML = `<strong>Tipo de Usuário:</strong> ${userData.type || ''}`;
-        document.getElementById('userInterests').innerHTML = `<strong>Interesses:</strong> ${userData.interesses || ''}`;
+        document.getElementById('userType').innerHTML = `<strong>Tipo de Usuário:</strong> ${userData.tipo || ''}`;
         document.getElementById('userBio').innerHTML = `<strong>Biografia:</strong> ${userData.bio || ''}`;
         document.getElementById('userCpf').innerHTML = `<strong>CPF:</strong> ${userData.cpf || ''}`;
         document.getElementById('userPhone').innerHTML = `<strong>Telefone:</strong> ${userData.telefone || ''}`;
@@ -48,7 +74,6 @@ function editaDadosUsuario() {
 
     document.getElementById('saveButton').classList.remove('d-none');
 }
-
 
 function salvaNovosDados(){
     let userData = JSON.parse(localStorage.getItem('UsuarioCorrente'))
@@ -99,71 +124,13 @@ function salvaNovosDados(){
             console.error('Erro ao atualizar os dados do usuário no servidor:', error);
         });
 
-    
-
     document.getElementById('saveButton').classList.add('d-none');
-}
-
-function salvaImagemUsuario(imagem){
-    if(imagem == null){
-        imagem = "../../img/Usuarios/iconeUsuario.png";
-    }
-
-    let userData = JSON.parse(localStorage.getItem('UsuarioCorrente'))
-    let usuarioAtualizado = {
-        id: userData.id,
-        nome: userData.nome,
-        dataNascimento: userData.dataNascimento,
-        cpf: userData.cpf,
-        telefone: userData.Telefone,
-        cep: userData.cep,
-        linkedin: userData.linkedin,
-        email: userData.email,
-        senha: userData.senha,
-        interesses: userData.interesses,
-        tipo: userData.tipo,
-        imagem: imagem,
-        bio: userData.bio,
-        UserPremium: userData.UserPremium
-    }
-
-    if(userData.tipo === "admin"){
-        urltipo = 'admin'
-    }
-    else if(userData.tipo === "freelancer"){
-        urltipo = 'freelancers'
-        usuarioAtualizado.vagasCandidatadas = userData.vagasCandidatadas;
-    }
-    else if(userData.tipo === "empregador"){
-        urltipo = 'empregadores'
-        usuarioAtualizado.vagasPublicadas = userData.vagasPublicadas;
-    }
-
-    axios.put(`http://localhost:3000/${urltipo}/${userData.id}`, usuarioAtualizado)
-        .then(response => {
-            console.log('Dados do usuário atualizados com sucesso no servidor:', response.data);
-            localStorage.setItem('UsuarioCorrente', JSON.stringify(usuarioAtualizado));
-        })
-        .catch(error => {
-            console.error('Erro ao atualizar os dados do usuário no servidor:', error);
-        });
-
 }
 
 function editaImagemUsuario(){
     let divInputImagem = document.getElementById("divEditaImagemUsuario")
     divInputImagem.classList.remove('d-none');
-    
-
-    document.getElementById('saveButtonImagem').addEventListener('click', async () => {
-        let inputImagem = document.getElementById("imagemUsuario");
-        let novaImagem = await uploadImagem(inputImagem);
-        // salvaImagemUsuario(novaImagem);
-        console.log(`A imagem é: ${novaImagem}`)
-    });
-
 }
-
 
 async function uploadImagem(file) {
     const formData = new FormData();
@@ -189,5 +156,28 @@ async function uploadImagem(file) {
     } catch (error) {
         console.error("Erro ao fazer upload da imagem:", error);
         return null;
+    }
+}
+
+async function updateUsuario(usuario, tipo) {
+    let url = tipo === 'empregador' ? JSON_SERVER_URL_EMPREGADORES : JSON_SERVER_URL_FREELANCERS;
+    url += `/${usuario.id}`;
+
+    const response = await fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(usuario)
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        console.log("Usuário atualizado com sucesso:", data);
+        return data;
+    } else {
+        const errorText = await response.text();
+        console.error("Erro ao atualizar o usuário. Status:", response.status, "Mensagem:", errorText);
+        throw new Error('Erro ao atualizar o usuário');
     }
 }

@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         img.classList.add('rounded-3');
         img.src = freelancer.imagem;
         img.alt = 'Imagem do freelancer';
-        // img.onerror = function () {
-        //     console.error('Erro ao carregar a imagem:', freelancer.imagem);
-        //     img.src = 'fallback_image_url.jpg'; // Imagem de fallback
-        // };
+        img.onerror = function () {
+            console.error('Erro ao carregar a imagem:', freelancer.imagem);
+            img.src = 'fallback_image_url.jpg'; // Imagem de fallback
+        };
         imagem.appendChild(img);
     
         const descricao = document.createElement('div');
@@ -63,8 +63,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 async function preencherModal(freelancer) {
+    // Limpar informações de contato anteriores
+    document.getElementById('contatoInformacoes').classList.add('d-none');
+    document.getElementById('telefoneContato').textContent = '';
+    document.getElementById('emailContato').textContent = '';
+    document.getElementById('linkedinContato').textContent = '';
+
     document.getElementById('nomeUsuario').querySelector('h2').textContent = freelancer.nome;
-    document.querySelector('.img_usuario img').src = '../../' + freelancer.imagem;
+    document.querySelector('.img_usuario img').src = freelancer.imagem;
     document.getElementById('DataNascUsuario').textContent = freelancer.dataNascimento || 'Data de nascimento não disponível';
 
     // Fetch location based on CEP
@@ -86,6 +92,22 @@ async function preencherModal(freelancer) {
         li.textContent = 'Nenhum interesse disponível';
         listaInteresses.appendChild(li);
     }
+
+    // Add event listener for the contact button
+    document.getElementById('botaoContato').onclick = function() {
+        exibeInformacoesContato(freelancer);
+    };
+}
+
+function exibeInformacoesContato(freelancer) {
+    document.getElementById('telefoneContato').textContent = `Telefone: ${freelancer.telefone}`;
+    document.getElementById('emailContato').textContent = `Email: ${freelancer.email}`;
+    if (freelancer.linkedin) {
+        document.getElementById('linkedinContato').innerHTML = `LinkedIn: <a href="${freelancer.linkedin}" target="_blank">${freelancer.linkedin}</a>`;
+    } else {
+        document.getElementById('linkedinContato').textContent = 'LinkedIn: Não disponível';
+    }
+    document.getElementById('contatoInformacoes').classList.remove('d-none');
 }
 
 async function buscarLocalizacao(cep) {
