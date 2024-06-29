@@ -92,7 +92,7 @@ async function cadastrarUsuarioLS() {
         senha: senha,
         interesses: [],
         tipo: tipo,
-        imagem: "../../img/Usuarios/iconeUsuario.png",
+        imagem: "img/Usuarios/iconeUsuario.png",
         bio: "",
         UserPremium: false
     };

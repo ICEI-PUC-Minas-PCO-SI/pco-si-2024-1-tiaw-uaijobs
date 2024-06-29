@@ -54,7 +54,6 @@ document.getElementById('logoutLink').addEventListener('click', function(event) 
 
     // Remova o usuarioCorrente do local storage
     localStorage.removeItem('UsuarioCorrente');
-    window.location.replace("../Home/Home.html")
     console.log('UsuarioCorrente removido do local storage'); // Log para confirmar a remoção
 
 });
@@ -84,35 +83,3 @@ document.getElementById('logoutLink').addEventListener('click', function(event) 
        
 }
 
-function Dropdown(){
-    let ulDrop = document.getElementById('ulDropdown');
-
-    ulDrop.classList.toggle('d-none');
-}
-
-// Função para ajustar o comportamento do botão com base no tipo de usuário
-function ajustarComportamentoBotao() {
-    var tipoUsuario = obterTipoUsuarioDoLocalStorage();
-    var botaoAcao = document.getElementById("botao-acao-home");
-
-    
-    if (tipoUsuario === "freelancer") {
-        botaoAcao.style.display = 'block';
-        botaoAcao.innerText = "Vagas candidatadas";
-        botaoAcao.onclick = function() {
-            location.href = '../Vagas/PagDinamicaPostCand.html';
-        };
-    } else if (tipoUsuario === "empregador") {
-        botaoAcao.style.display = 'block';
-        botaoAcao.innerText = "Publicar Vaga";
-        botaoAcao.onclick = function() {
-            location.href = '../Vagas/PublicarVaga.html';
-        };
-    }
-    else {
-        botaoAcao.style.display = 'none';
-    }
-}
-
-// Chama a função para ajustar o comportamento do botão quando a página carregar
-window.onload = ajustarComportamentoBotao;

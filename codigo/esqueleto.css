@@ -137,18 +137,3 @@ main {
     background-color: #4e2525;
     color: antiquewhite;
 }
-
-.ulDropdown{
-    list-style: none;
-    padding: 0;
-    border: 1 solid black;
-}
-
-.ulDropdown li{
-    background-color: antiquewhite;
-    color: #333;
-}
-
-.logout{
-    color: #4e2525;
-}
