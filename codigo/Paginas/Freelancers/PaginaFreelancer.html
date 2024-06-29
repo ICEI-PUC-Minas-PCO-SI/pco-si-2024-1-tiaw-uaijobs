@@ -24,10 +24,18 @@
         </a>
         <nav class="navegacao">
             <ul class="lista-navegacao">
-                <li class="item-navegacao" id="premiumButton"><a href="#" class="link-navegacao premium"
-                        data-bs-toggle="modal" data-bs-target="#premiumModal">Torna-se usuário premium</a></li>
+                <li class="item-navegacao" id="loginItem"><a href="../LoginCadastro/Login.html" class="link-navegacao">Login</a></li>
+                <li class="item-navegacao" id="cadastroItem"><a href="../LoginCadastro/Cadastro.html" class="link-navegacao">Cadastre-se</a></li>
+                <li class="item-navegacao" id="premiumButton"><a href="#" class="link-navegacao premium" data-bs-toggle="modal" data-bs-target="#premiumModal">Torna-se usuário premium</a></li>
                 <li class="NomeUsuario"><a id="NomeUser"></a></li>
-                <li class="item-navegacao" id="logoutItem"><a href="#" class="link-navegacao" id="logoutLink">LogOut</a>
+                <li class="item-navegacao" id="logoutItem">
+                    <button class="btn dropdown-toggle" onclick="Dropdown()">Menu</button>
+                    <div>
+                        <ul class="d-none ulDropdown" id="ulDropdown">
+                            <li class=""><a href="../MenuUsuario/MenuUsuario.html" class="link-navegacao">Página do Usuário</a></li>
+                            <li class="logout item-navegacao"><a href="#" class="link-navegacao" id="logoutLink">LogOut</a></li>
+                        </ul>
+                    </div>   
                 </li>
             </ul>
         </nav>
