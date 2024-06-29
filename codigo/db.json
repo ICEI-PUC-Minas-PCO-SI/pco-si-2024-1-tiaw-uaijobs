@@ -480,6 +480,23 @@
       "bio": "",
       "UserPremium": false,
       "vagasPublicadas": []
+    },
+    {
+      "id": "8e71",
+      "nome": "Luis Henrique 1234",
+      "dataNascimento": "2022-06-12",
+      "cpf": "12345678912345",
+      "telefone": "31985494832",
+      "cep": "32687405",
+      "linkedin": "",
+      "email": "luis3256@gmail.com",
+      "senha": "1234",
+      "interesses": [],
+      "tipo": "empregador",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
+      "bio": "",
+      "UserPremium": false,
+      "vagasPublicadas": []
     }
   ],
   "freelancers": [
