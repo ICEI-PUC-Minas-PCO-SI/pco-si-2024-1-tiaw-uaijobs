@@ -413,41 +413,56 @@ O projeto UaiJobs foi desenvolvido pela equipe para a criação de uma plataform
 
 Para desenvolver a UaiJobs, utilizaremos uma combinação de tecnologias modernas que garantem a funcionalidade e usabilidade da plataforma. Abaixo, detalhamos cada tecnologia utilizada e sua aplicação no projeto:
 
-### Linguagens de Programação
+**Tecnologias e Ferramentas:**
 
-1. **HTML (HyperText Markup Language)**
-   - **Descrição**: Utilizado para estruturar o conteúdo do site.
-   - **Aplicação**: Todas as páginas do site são criadas usando HTML para definir a estrutura básica dos elementos.
+* HTML (HyperText Markup Language)
+Descrição: Linguagem de marcação usada para estruturar o conteúdo das páginas web.
+Uso no Projeto: Define a estrutura básica das páginas, incluindo cabeçalhos, parágrafos, links, botões e formulários.
 
-2. **CSS (Cascading Style Sheets)**
-   - **Descrição**: Utilizado para estilizar e melhorar a aparência visual do site.
-   - **Aplicação**: CSS é utilizado para aplicar estilos personalizados às páginas, garantindo um design atraente e consistente.
+* CSS (Cascading Style Sheets)
+Descrição: Linguagem de estilo usada para descrever a apresentação dos documentos HTML.
+Uso no Projeto: Estiliza os elementos HTML, criando um design agradável e responsivo, definindo layouts, cores e fontes.
 
-3. **JavaScript**
-   - **Descrição**: Linguagem de programação usada para adicionar interatividade e lógica ao site.
-   - **Aplicação**: JavaScript é implementado para funcionalidades dinâmicas como validação de formulários, manipulação do DOM, e comunicação assíncrona com o servidor.
+* JavaScript
+Descrição: Linguagem de programação que permite a criação de conteúdo dinâmico e interativo na web.
+Uso no Projeto: Adiciona interatividade, manipula o DOM, faz requisições assíncronas e atualiza o conteúdo da página dinamicamente.
 
-### Frameworks e Bibliotecas
+* Bootstrap
+Descrição: Framework CSS de código aberto para desenvolvimento de interfaces web responsivas.
+Uso no Projeto: Fornece estilos predefinidos e componentes como botões, formulários e barras de navegação para acelerar o desenvolvimento e garantir um design consistente.
 
-1. **Bootstrap**
-   - **Descrição**: Framework front-end para desenvolver interfaces responsivas.
-   - **Aplicação**: Bootstrap é utilizado para criar interfaces dinâmicas e responsivas, garantindo a compatibilidade do design em diferentes dispositivos.
+* jQuery e jQuery UI
+Descrição: Biblioteca JavaScript que simplifica a manipulação do DOM e a criação de interações dinâmicas. jQuery UI adiciona widgets e efeitos visuais.
+Uso no Projeto: Facilita a manipulação de eventos, animações e a implementação de componentes interativos como sliders.
 
-2. **API do MapBox**
-   - **Descrição**: Serviço de geolocalização.
-   - **Aplicação**: Utilizado para fornecer serviços de localização, facilitando a busca de vagas próximas ao usuário.
+* Axios
+Descrição: Biblioteca JavaScript para fazer requisições HTTP baseadas em Promises.
+Uso no Projeto: Utilizada para comunicação com o JSON Server, permitindo buscar, criar, atualizar e excluir dados de forma assíncrona.
+Ferramentas Utilizadas
 
-### IDEs de Desenvolvimento
+* Visual Studio Code (VS Code)
+Descrição: Editor de código-fonte desenvolvido pela Microsoft, altamente extensível e personalizável.
+Uso no Projeto: Edita código com suporte para diversas extensões, como Live Server e Prettier, para desenvolvimento mais eficiente.
 
-1. **Visual Studio Code (VS Code)**
-   - **Descrição**: Ambiente de desenvolvimento integrado.
-   - **Aplicação**: Utilizado para escrever, depurar e testar o código, proporcionando um ambiente de desenvolvimento eficiente.
+* Git e GitHub
+Descrição: Git é um sistema de controle de versão distribuído. GitHub é uma plataforma de hospedagem de código-fonte que usa Git.
+Uso no Projeto: Gerencia o código-fonte, facilita a colaboração, controle de versão e revisão de código.
 
-### Ferramentas de Controle de Versão
+* Postman
+Descrição: Ferramenta de colaboração para desenvolvimento de APIs que permite criar, testar e documentar APIs.
+Uso no Projeto: Testa as APIs desenvolvidas com o JSON Server para verificar se as requisições estão corretas.
 
-1. **GitHub**
-   - **Descrição**: Plataforma de hospedagem de código e controle de versão.
-   - **Aplicação**: Utilizado para versionamento de código e colaboração entre os membros da equipe, permitindo um desenvolvimento organizado e colaborativo.
+* JSON Server
+Descrição: Ferramenta que cria uma API RESTful falsa a partir de um arquivo JSON.
+Uso no Projeto: Simula um backend durante o desenvolvimento, fornecendo dados de exemplo para testes.
+
+* npm (Node Package Manager)
+Descrição: Gerenciador de pacotes para Node.js, usado para instalar, compartilhar e gerenciar dependências.
+Uso no Projeto: Instala e gerencia pacotes como axios, json-server, jQuery e Bootstrap.
+
+* Browsers para Testes (Chrome, Opera)
+Descrição: Navegadores web usados para testar a aplicação em diferentes ambientes.
+Uso no Projeto: Garantem compatibilidade e responsividade em diversas plataformas e dispositivos.
 
 ### Prototipagem e Design
 
@@ -490,14 +505,77 @@ Para desenvolver a UaiJobs, utilizaremos uma combinação de tecnologias moderna
 Para garantir que a aplicação atende aos requisitos e funciona corretamente, diversos cenários de teste foram planejados e executados.
 
 **Cenários de Teste:**
-* Teste de Cadastro de Usuário: Verificar se os usuários podem se cadastrar como freelancers ou empregadores e se todos os campos obrigatórios são validados corretamente.
-* Teste de Busca de Vagas: Validar a funcionalidade de busca, incluindo filtros por localização, tipo de trabalho e remuneração.
-* Teste de Sistema de Avaliação: Avaliar se o sistema de feedback funciona corretamente após a conclusão de um trabalho.
-* Teste de Responsividade: Garantir que a aplicação é responsiva e funciona bem em diferentes dispositivos e tamanhos de tela.
+* Cadastro de Usuário
+  
+Descrição: Permite que novos usuários se registrem na plataforma, seja como freelancers ou empregadores.
+Detalhes: Campos obrigatórios: nome, email, senha, tipo de usuário (freelancer ou empregador).
+Validação de campos e confirmação de senha.
 
-> Apresente os cenários de testes utilizados na realização dos testes da
-> sua aplicação. Escolha cenários de testes que demonstrem os requisitos
-> sendo satisfeitos.
+
+* Login de Usuário
+Descrição: Autentica usuários registrados, permitindo acesso às suas contas.
+Detalhes: Campos obrigatórios: email e senha.
+Validação de credenciais.
+Opção de recuperação de senha.
+
+* Perfil de Usuário
+Descrição: Permite que usuários visualizem e editem suas informações de perfil.
+Detalhes: Atualização de dados pessoais como nome, localização, foto de perfil, e descrição.
+Adição de habilidades (para freelancers).
+
+* Publicação de Vagas
+Descrição: Empregadores podem criar e publicar novas vagas de trabalho.
+Detalhes: Campos obrigatórios: título da vaga, descrição, requisitos, localização, remuneração.
+Definição de categorias e habilidades necessárias.
+
+* Busca de Vagas
+Descrição: Permite que freelancers busquem por vagas disponíveis.
+Detalhes: Filtros de busca por localização, categoria, habilidades, e faixa de remuneração.
+Exibição de resultados correspondentes aos critérios de busca.
+
+* Aplicação para Vagas
+Descrição: Freelancers podem aplicar para as vagas publicadas.
+Detalhes: Envio de mensagem ou carta de apresentação junto com a aplicação.
+Visualização do status da aplicação (pendente, aceita, rejeitada).
+
+* Sistema de Avaliação
+Descrição: Permite que empregadores e freelancers avaliem uns aos outros após a conclusão de um trabalho.
+Detalhes: Avaliação com estrelas e comentários.
+Exibição de avaliações no perfil do usuário.
+
+* Notificações
+Descrição: Sistema de notificações para manter os usuários informados sobre atividades importantes.
+Detalhes: Notificações sobre novas mensagens, aplicações recebidas, avaliações, e atualizações de status de vagas.
+
+* Mensagens Internas
+Descrição: Sistema de mensagens internas para comunicação entre freelancers e empregadores.
+Detalhes: Envio e recebimento de mensagens dentro da plataforma.
+Histórico de conversas.
+
+* Painel de Controle
+Descrição: Interface de gerenciamento para freelancers e empregadores.
+Detalhes: Freelancers: visualização de aplicações, mensagens, e avaliações.
+Empregadores: gerenciamento de vagas publicadas, aplicações recebidas, e avaliações.
+
+* Responsividade
+Descrição: Garantia de que a plataforma funciona bem em diferentes dispositivos e tamanhos de tela.
+Detalhes: Layouts adaptáveis para desktops, tablets, e dispositivos móveis.
+ Testes para garantir a funcionalidade em navegadores modernos.
+
+* Administração
+Descrição: Painel administrativo para gerenciamento de usuários e conteúdo.
+Detalhes: Gerenciamento de contas de usuários.
+Moderação de conteúdo (vagas, avaliações, mensagens).
+
+* Limites de Aplicações para Freelancers
+Descrição: Define o número máximo de vagas às quais freelancers podem se candidatar com base em seu status de assinatura.
+Detalhes: Freelancers Premium: Podem se candidatar a até 6 vagas simultaneamente.
+Freelancers Não-Premium: Podem se candidatar a até 3 vagas simultaneamente.
+
+* Limites de Publicações para Empregadores
+Descrição: Define o número máximo de vagas que empregadores podem publicar com base em seu status de assinatura.
+Detalhes: Empregadores Premium: Podem publicar até 10 vagas simultaneamente.
+Empregadores Não-Premium: Podem publicar até 5 vagas simultaneamente.
 
 ## Plano de Testes
 
