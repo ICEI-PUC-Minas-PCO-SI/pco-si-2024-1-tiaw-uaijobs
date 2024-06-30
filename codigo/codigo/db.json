@@ -164,6 +164,27 @@
       "candidatos": []
     },
     {
+      "id": "81ba",
+      "nome": "sdas",
+      "categoria": "Construção",
+      "descricao": "askjcbiab",
+      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719518859/i6vclbycablst3iastq2.jpg",
+      "valor": "1237846",
+      "turno": "Tarde",
+      "local": 32687405,
+      "data": "2024-09-16",
+      "habilidades": [
+        "ashdah"
+      ],
+      "empregador": "Luisin do Job",
+      "email": "luis325@gmail.com",
+      "telefone": "31985494832",
+      "cnpj": "5615120800",
+      "publicado": true,
+      "publicacao": "27/06/2024",
+      "candidatos": []
+    },
+    {
       "id": "5c84",
       "nome": "Limpeza",
       "categoria": "Limpeza",
@@ -246,9 +267,7 @@
       "cnpj": "5615120800",
       "publicado": true,
       "publicacao": "30/06/2024",
-      "candidatos": [
-        "8cbf"
-      ]
+      "candidatos": []
     }
   ],
   "feedbacks": [
@@ -410,6 +429,7 @@
       "bio": "A Uaijobs é meu a melhor do mundo",
       "UserPremium": true,
       "vagasPublicadas": [
+        "81ba",
         "6fa2"
       ]
     },
@@ -559,8 +579,7 @@
       "vagasCandidatadas": [
         "3596",
         "9fd3",
-        "3",
-        "6fa2"
+        "3"
       ]
     },
     {
