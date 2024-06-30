@@ -180,7 +180,7 @@ function renderPage(page) {
             title.appendChild(h2);
     
             const imagem = document.createElement('div');
-            imagem.classList.add('Cards-vagas-imagem', 'pb-2', 'ps-5');
+            imagem.classList.add('Cards-vagas-imagem');
             const img = document.createElement('img');
             img.classList.add('rounded-3');
             img.src = vagaItem.imagem;
@@ -846,7 +846,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         title.appendChild(h2);
 
         const imagem = document.createElement('div');
-        imagem.classList.add('Cards-vagas-imagem', 'pb-2', 'ps-5');
+        imagem.classList.add('Cards-vagas-imagem');
         const img = document.createElement('img');
         img.classList.add('rounded-3');
         img.src = vagaItem.imagem;
