@@ -82,3 +82,7 @@
     border: 3px solid #4e2525;
     border-radius: 2%;
 }
+
+#divForm {
+    margin: 0 auto;
+}
