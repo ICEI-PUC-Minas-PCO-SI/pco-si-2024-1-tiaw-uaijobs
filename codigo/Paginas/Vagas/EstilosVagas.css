@@ -7,6 +7,7 @@
 }
 .Cards-vagas-imagem img{
     min-height: 175px;
+    min-width: 100%;
     width: 85%;
     height: 80%;
 }
@@ -14,7 +15,44 @@
 .Vagas-abertas, .Vagas-candidatada-postada{
     width: 100%;
     height: 40%;
-    padding-left: 20%;/*Provisório*/
+
+}
+.Vagas-abertas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 1200px) {
+    .vagas-container .Container {
+        flex: 0 1 calc(50% - 20px); /* 2 cards por linha */
+        max-width: calc(50% - 20px); /* 2 cards por linha */
+    }
+}
+
+@media (max-width: 768px) {
+    .vagas-container .Container {
+        flex: 0 1 calc(100% - 20px); /* 1 card por linha */
+        max-width: calc(100% - 20px); /* 1 card por linha */
+    }
+}
+/* Ajuste dos cards de vagas */
+.Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 15px;
+    max-width: 100%; /* Garante que os cards não excedam a largura */
+}
+
+.Cards-vagas-title h2 {
+    font-size: 1.5rem;
+}
+
+.Cards-vagas-descrição p {
+    font-size: 1rem;
 }
 /*Vagas abertas termina aqui*/
 
@@ -226,3 +264,4 @@
     height: 160px; /* Ajuste um pouco a altura */
     object-fit: cover;
 }
+
