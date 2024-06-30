@@ -164,9 +164,9 @@ function renderPage(page) {
     console.log('Itens da página:', pageItems); // Log para verificar itens da página
 
     pageItems.forEach(vagaItem => {
-        if (vagaItem.publicado) {
+        if (vagaItem.publicado && vagaItem.online) {
             const vagaCard = document.createElement('div');
-            vagaCard.classList.add('Container', 'border', 'p-3', 'rounded-4', 'shadow-lg', 'p-3', 'mb-5', 'bg-body-tertiary', 'col-12', 'col-md-6', 'col-lg-4');
+            vagaCard.classList.add('Container', 'border', 'p-3', 'rounded-4', 'shadow-lg', 'p-3', 'mb-5', 'bg-body-tertiary', 'col-12', 'col-md-6', 'col-lg-4', 'm-3', 'w-25');
     
             const title = document.createElement('div');
             title.classList.add('Cards-vagas-title', 'text-center', 'pb-2');
@@ -690,6 +690,7 @@ async function IncluirVagaLS() {
     let dataVaga = document.getElementById('dataVaga').value;
     let habilidadesVaga = document.getElementById('habilidadesVaga').value.split(',');
     let imagemInput = document.getElementById('imagemVaga').files[0];
+    console.log(imagemInput)
 
     if (nomeVaga === '' || categoriaVaga === '' || valorVaga === '' || descricaoVaga === '') {
         window.alert("Por favor, tenha certeza que todos os campos abaixos estão preenchidos: \n\nVaga: Nome, Categoria, Valor e Descrição \nContratante: Nome, E-mail e CPF/CNPJ");
@@ -718,7 +719,9 @@ async function IncluirVagaLS() {
         cnpj: usuarioCorrente.cpf,
         publicado: true,
         publicacao: obterDataAtual(),
-        candidatos: [] // Inicializa com um array vazio para os candidatos
+        candidatos: [], // Inicializa com um array vazio para os candidatos
+        online: true,
+        IDfreelancerEscolhido: null
     };
 
     console.log("Nova vaga:", novaVaga);
@@ -1145,32 +1148,96 @@ async function mostrarCandidatos(vagaId) {
         const vagaResponse = await fetch(`${JSON_SERVER_URL_VAGAS}/${vagaId}`);
         const vaga = await vagaResponse.json();
         
-        if (vaga.candidatos && vaga.candidatos.length > 0) {
-            for (let candidatoId of vaga.candidatos) {
-                const candidatoResponse = await fetch(`${JSON_SERVER_URL_FREELANCERS}/${candidatoId}`);
-                const candidato = await candidatoResponse.json();
-                const candidatoCard = document.createElement('div');
-                candidatoCard.classList.add('col-12', 'col-md-6', 'col-lg-4', 'mb-3');
-                candidatoCard.innerHTML = `
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">${candidato.nome}</h5>
-                            <img src="${candidato.foto}" alt="Foto de ${candidato.nome}" class="img-fluid mb-3">
-                            <p class="card-text"><strong>Habilidades:</strong> ${candidato.interesses.join(', ')}</p>
-                            <button class="btn btn-info" onclick="mostrarContato(this)">Entrar em contato</button>
-                            <div class="contato-info" style="display:none;">
-                                <p class="card-text"><strong>Email:</strong> ${candidato.email}</p>
-                                <p class="card-text"><strong>Telefone:</strong> ${candidato.telefone}</p>
-                                <p class="card-text"><strong>LinkedIn:</strong> <a href="${candidato.linkedin}" target="_blank">${candidato.linkedin}</a></p>
+
+        console.log("Candidatos da vaga:", vaga.candidatos)
+        console.log(vaga)
+        if(vaga.online){
+            if (vaga.candidatos && vaga.candidatos.length > 0) {
+                for (let candidatoId of vaga.candidatos) {
+
+                    const candidatoResponse = await fetch(`${JSON_SERVER_URL_FREELANCERS}/${candidatoId}`);
+                    const candidato = await candidatoResponse.json();
+                    const candidatoCard = document.createElement('div');
+                    const smallModalCandidato = document.getElementById("smallCandidato")
+                    candidatoCard.classList.add('col-12', 'col-md-6', 'col-lg-4', 'mb-3');
+                    candidatoCard.innerHTML = `
+                        <div class="card cardCandidato">
+                            <div class="card-body cardCandidatoSelecao">
+                                <input class="idCandidato" style="display: none" value="${candidato.id}">
+                                <input class="idVaga" style="display: none" value="${vagaId}">
+                                <h5 class="card-title">${candidato.nome}</h5>
+                                <img src="${candidato.imagem}" alt="Foto de ${candidato.nome}" class="img-fluid mb-3">
+                                <p class="card-text"><strong>Habilidades:</strong> ${candidato.interesses.join(', ')}</p>
+                                <div class="contato-info" style="display:none;">
+                                    <p class="card-text"><strong>Email:</strong> ${candidato.email}</p>
+                                    <p class="card-text"><strong>Telefone:</strong> ${candidato.telefone}</p>
+                                    <p class="card-text"><strong>LinkedIn:</strong> <a href="${candidato.linkedin}" target="_blank">${candidato.linkedin}</a></p>
+                                </div>
+                                
                             </div>
                         </div>
-                    </div>
-                `;
-                candidatosContainer.appendChild(candidatoCard);
+                    `;
+                    candidatosContainer.appendChild(candidatoCard);
+                    smallModalCandidato.textContent = `Selecione o candidato de sua preferência e em sequência a vaga será encerrada. Você terá acesso aos dados de contato do freelancer escolhido.`
+
+                    //Função que habilita seleção de candidato nas vagas publicadas
+                    let candidatoCardSelecao = document.querySelectorAll(".cardCandidatoSelecao")
+                    let cardCandidato = document.querySelectorAll(".cardCandidato")
+                    var btnSelecionaCandidato = document.getElementById("btnSelecionaCandidato")
+    
+                    cardCandidato.forEach(card => {
+                        card.addEventListener("click", () => {
+    
+                            btnSelecionaCandidato.style.display = "block"
+    
+                            
+                            candidatoCardSelecao.forEach(divInterna => {
+                                divInterna.classList.remove("selecionado")
+                            })
+    
+                            const cardCandidatoSelecaoClicado = card.querySelector('.cardCandidatoSelecao')
+    
+                            if(cardCandidatoSelecaoClicado){
+                                cardCandidatoSelecaoClicado.classList.add("selecionado")
+                            }
+                        } )
+    
+    
+                    })
+    
+                }
+            } else {
+                candidatosContainer.textContent = 'Nenhum candidato para esta vaga.';
             }
         } else {
-            candidatosContainer.textContent = 'Nenhum candidato para esta vaga.';
+            const response = await fetch(`${JSON_SERVER_URL_FREELANCERS}/${vaga.IDfreelancerEscolhido}`);
+            const candidatoSelecionado = await response.json();
+
+            const candidatoCard = document.createElement('div');
+            const smallModalCandidato = document.getElementById("smallCandidato")
+
+            candidatoCard.classList.add('col-12','m-3');
+            candidatoCard.innerHTML = `
+                                        <div class="card cardCandidato p-0 m-4">
+                                            <div class="card-body cardCandidatoSelecao">
+                                                <h5 class="card-title">${candidatoSelecionado.nome}</h5>
+                                                <img src="${candidatoSelecionado.imagem}" alt="Foto de ${candidatoSelecionado.nome}" class="img-fluid mb-3 w-25">
+                                                <p class="card-text"><strong>Habilidades:</strong> ${candidatoSelecionado.interesses.join(', ')}</p>
+                                                <div class="contato-info">
+                                                    <p class="card-text"><strong>Email:</strong> ${candidatoSelecionado.email}</p>
+                                                    <p class="card-text"><strong>Telefone:</strong> ${candidatoSelecionado.telefone}</p>
+                                                    <p class="card-text"><strong>LinkedIn:</strong> <a href="${candidatoSelecionado.linkedin}" target="_blank">${candidatoSelecionado.linkedin}</a></p>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>`;
+            candidatosContainer.appendChild(candidatoCard);
+
+            smallModalCandidato.textContent = `Você escolheu o ${candidatoSelecionado.nome} como seu Freelancer! Entre em contato com ele e resolva suas demandas! Obrigado por confiar na UaiJobs!`
+
+            console.log(candidatoSelecionado)
         }
+        
     } catch (error) {
         console.error('Erro ao buscar candidatos:', error);
         candidatosContainer.textContent = 'Erro ao buscar candidatos.';
@@ -1256,3 +1323,62 @@ function ocultarBotaoParaFreelancer() {
 
 // Chama a função para ocultar o botão ao carregar a página
 document.addEventListener('DOMContentLoaded', ocultarBotaoParaFreelancer);
+
+function selecionaCandidato(){
+    let candidatoId = document.querySelector(".cardCandidato .selecionado .idCandidato").value
+    let vagaId = document.querySelector(".cardCandidato .selecionado .idVaga").value
+  
+    const vagaAtualizada = {
+        online: false,
+        IDfreelancerEscolhido: candidatoId
+    };
+
+    const candidatoAtualizado = {
+        vagasRealizadas: vagaId
+    }
+    updateVagaOnline(vagaId, vagaAtualizada);
+    updateCandidato(candidatoId, candidatoAtualizado);
+
+
+    console.log(candidatoId, vagaId)
+}
+
+async function updateVagaOnline(vagaId, vagaAtualizada) {
+    try {
+        const response = await fetch(`${JSON_SERVER_URL_VAGAS}/${vagaId}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(vagaAtualizada)
+        });
+
+        if (response.ok) {
+            alert("Candidato selecionado com sucesso! Informações disponíveis na área dos candidatos!");
+            window.location.reload(); // Recarrega a página para atualizar a lista de vagas
+        } else {
+            throw new Error('Erro ao atualizar a vaga');
+        }
+    } catch (error) {
+        console.error("Erro ao atualizar a vaga:", error);
+        alert('Erro ao atualizar a vaga. Por favor, tente novamente.');
+    }
+}
+
+async function updateCandidato(candidatoId, candidatoAtualizado) {
+    try {
+        const response = await fetch(`${JSON_SERVER_URL_FREELANCERS}/${candidatoId}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(candidatoAtualizado)
+        });
+
+        if (response.ok) {
+            window.location.reload(); // Recarrega a página para atualizar a lista de vagas
+        }
+    } catch (error) {
+        console.error("Erro ao atualizar a vaga:", error);
+    }
+}

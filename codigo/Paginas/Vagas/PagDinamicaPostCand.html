@@ -95,16 +95,20 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="candidatosModalLabel">Candidatos</h5>
+                        <h5 class="modal-title w-100" id="candidatosModalLabel">Candidatos</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div id="candidatosContainer" class="row">
                             <!-- Lista dos candidatos será inserida aqui -->
                         </div>
+                        <small id="smallCandidato" class="text-muted">Selecione o candidato de sua preferência e em sequência a vaga será encerrada. Você terá acesso aos dados de contato do freelancer escolhido.</small>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        
+                        <button type="button" class="btn btn-uaijobs" id="btnSelecionaCandidato" style="display: none;" onclick="selecionaCandidato()">Selecionar Candidato</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="    document.getElementById('btnSelecionaCandidato').style.display = 'none'
+">Fechar</button>
                     </div>
                 </div>
             </div>

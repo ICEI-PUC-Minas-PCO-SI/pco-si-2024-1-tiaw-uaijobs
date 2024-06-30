@@ -135,7 +135,7 @@ function editaImagemUsuario(){
 async function uploadImagem(file) {
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('upload_preset', 'Imagens_UAIJobs'); // Use o nome exato do seu upload preset
+    formData.append('upload_preset', 'Imagens'); // Use o nome exato do seu upload preset
 
     try {
         console.log("Iniciando upload da imagem para Cloudinary");

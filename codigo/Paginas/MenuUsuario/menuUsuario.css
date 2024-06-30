@@ -2,3 +2,37 @@
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
+.user-card {
+    border: 1px solid #ddd;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+}
+
+.left-side {
+    flex: 1;
+    text-align: center;
+}
+
+.right-side {
+    flex: 2;
+    padding-left: 20px;
+}
+
+#userImage {
+    border: 5px solid #4e2525;
+    width: 180px;
+    height: 180px;
+}
+
+.btn-custom {
+    background-color: #4e2525;
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-custom:hover {
+    background-color: #3c1d1d;
+}
