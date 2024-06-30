@@ -588,25 +588,88 @@ async function salvarVagaNoJSONServer(vaga, empregadorId) {
         }
     } catch (error) {
         console.error(error);
-        window.alert('Falha ao salvar vaga no servidor. Por favor, tente novamente.');
+        if (error.message.includes('limite de vagas')) {
+            window.alert('Limite atingido');
+        } else {
+            window.alert('OK.');
+        }
     }
 }
 
-// Função para atualizar o empregador com a nova vaga publicada
+async function atualizarVagasPublicadasParaUsuarioCorrente() {
+    try {
+        const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
+        if (!usuarioCorrente || usuarioCorrente.tipo !== 'empregador') {
+            console.error('Usuário corrente não é um empregador ou não está logado.');
+            return;
+        }
+
+        const responseVagas = await fetch(JSON_SERVER_URL_VAGAS);
+        if (!responseVagas.ok) {
+            throw new Error('Erro ao obter dados das vagas');
+        }
+
+        const vagas = await responseVagas.json();
+        const vagasPublicadasIds = vagas
+            .filter(vaga => vaga.email === usuarioCorrente.email)
+            .map(vaga => vaga.id);
+
+        if (!usuarioCorrente.vagasPublicadas) {
+            usuarioCorrente.vagasPublicadas = [];
+        }
+
+        usuarioCorrente.vagasPublicadas = [...new Set([...usuarioCorrente.vagasPublicadas, ...vagasPublicadasIds])];
+        localStorage.setItem('UsuarioCorrente', JSON.stringify(usuarioCorrente));
+
+        const responseEmpregador = await fetch(`${JSON_SERVER_URL_EMPREGADORES}/${usuarioCorrente.id}`);
+        if (!responseEmpregador.ok) {
+            throw new Error('Erro ao obter dados do empregador');
+        }
+
+        const empregador = await responseEmpregador.json();
+        if (!empregador.vagasPublicadas) {
+            empregador.vagasPublicadas = [];
+        }
+
+        empregador.vagasPublicadas = [...new Set([...empregador.vagasPublicadas, ...vagasPublicadasIds])];
+
+        const updateResponse = await fetch(`${JSON_SERVER_URL_EMPREGADORES}/${usuarioCorrente.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ vagasPublicadas: empregador.vagasPublicadas })
+        });
+
+        if (!updateResponse.ok) {
+            throw new Error('Erro ao atualizar dados do empregador');
+        }
+
+        console.log(`Empregador ${usuarioCorrente.id} atualizado com as vagas publicadas: ${vagasPublicadasIds}`);
+    } catch (error) {
+        console.error('Erro ao atualizar vagas publicadas para o usuário corrente:', error);
+    }
+}
+
 async function atualizarEmpregadorComVaga(empregadorId, vagaId) {
     try {
+        // Obter os dados do empregador do JSON Server
         const response = await fetch(`${JSON_SERVER_URL_EMPREGADORES}/${empregadorId}`);
         if (!response.ok) {
             throw new Error('Erro ao obter dados do empregador');
         }
 
         const empregador = await response.json();
+
+        // Verificar e inicializar o array de vagasPublicadas se necessário
         if (!empregador.vagasPublicadas) {
             empregador.vagasPublicadas = [];
         }
 
+        // Adicionar o ID da nova vaga ao array
         empregador.vagasPublicadas.push(vagaId);
 
+        // Atualizar os dados do empregador no JSON Server
         const updateResponse = await fetch(`${JSON_SERVER_URL_EMPREGADORES}/${empregadorId}`, {
             method: 'PATCH',
             headers: {
@@ -620,11 +683,19 @@ async function atualizarEmpregadorComVaga(empregadorId, vagaId) {
         }
 
         console.log(`Empregador ${empregadorId} atualizado com a nova vaga ${vagaId}`);
+
+        // Atualizar os dados do empregador no localStorage
+        const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
+        if (usuarioCorrente && usuarioCorrente.id === empregadorId) {
+            usuarioCorrente.vagasPublicadas = empregador.vagasPublicadas;
+            localStorage.setItem('UsuarioCorrente', JSON.stringify(usuarioCorrente));
+            console.log(`LocalStorage atualizado para o empregador ${empregadorId} com a nova vaga ${vagaId}`);
+        }
+
     } catch (error) {
         console.error('Erro ao atualizar empregador com a nova vaga:', error);
     }
 }
-
 // Função para obter a data atual no formato DD/MM/AAAA
 function obterDataAtual() {
     const hoje = new Date();
@@ -649,15 +720,16 @@ async function verificarLimiteVagas(empregadorId) {
         // 10 para userPremium = true, 5 para userPremium = false
         const limiteVagas = empregador.UserPremium ? 10 : 5;
         if (empregador.vagasPublicadas.length >= limiteVagas) {
-            return false;
+            throw new Error('Limite de vagas publicadas atingido');
         }
 
         return true;
     } catch (error) {
         console.error('Erro ao verificar limite de vagas:', error);
-        return false;
+        throw error;
     }
 }
+
 
 // Função para incluir uma vaga no Json Server
 async function IncluirVagaLS() {
@@ -727,7 +799,10 @@ async function IncluirVagaLS() {
 document.addEventListener('DOMContentLoaded', function() {
     const btnPublicarVaga = document.getElementById('btnPublicarVaga');
     if (btnPublicarVaga) {
-        btnPublicarVaga.addEventListener('click', IncluirVagaLS);
+        btnPublicarVaga.addEventListener('click', async function() {
+            await IncluirVagaLS();
+            window.location.href = '../Home/Home.html';
+        });
     }
 });
 
@@ -754,6 +829,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         dynamicButton.style.display = 'block';
     }
+    
 });
 
 //Botão para redirecionamento

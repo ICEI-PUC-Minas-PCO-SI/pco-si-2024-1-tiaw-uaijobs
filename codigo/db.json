@@ -293,6 +293,169 @@
       "candidatos": [],
       "online": true,
       "IDfreelancerEscolhido": null
+    },
+    {
+      "id": "3167",
+      "nome": "Teste da imagem 2",
+      "categoria": "Trabalhos Manuais",
+      "descricao": "aaaaaaaaaaaaaaa",
+      "imagem": "https://ucarecdn.com/aefc27f2-4b2b-4a42-aa87-7d5f4d275aef/",
+      "valor": "500",
+      "turno": "Tarde",
+      "local": 32687,
+      "data": "2024-07-01",
+      "habilidades": [
+        "aaa"
+      ],
+      "empregador": "Conta nova",
+      "email": "luishsampaiovier5w1a@gmail.com",
+      "telefone": "3185494832",
+      "cnpj": "98732165425123",
+      "publicado": true,
+      "publicacao": "30/06/2024",
+      "candidatos": [],
+      "online": true,
+      "IDfreelancerEscolhido": null
+    },
+    {
+      "id": "9671",
+      "nome": "teste 3",
+      "categoria": "Trabalhos Manuais",
+      "descricao": "aaaaa",
+      "imagem": "https://ucarecdn.com/f4cbc715-7d83-4d1c-b1e9-6a6c61a423a2/",
+      "valor": "500",
+      "turno": "Manhã",
+      "local": 32687,
+      "data": "2024-07-01",
+      "habilidades": [
+        "Fotografia",
+        " proatividade"
+      ],
+      "empregador": "Conta nova",
+      "email": "luishsampaiovier5w1a@gmail.com",
+      "telefone": "3185494832",
+      "cnpj": "98732165425123",
+      "publicado": true,
+      "publicacao": "30/06/2024",
+      "candidatos": [],
+      "online": true,
+      "IDfreelancerEscolhido": null
+    },
+    {
+      "id": "de40",
+      "nome": "Teste da imagem 2",
+      "categoria": "Trabalhos Manuais",
+      "descricao": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "imagem": "https://ucarecdn.com/fc128a92-71fe-4b36-858c-e8aa4f4e1ab6/-/crop/916x676/183,27/-/preview/",
+      "valor": "100",
+      "turno": "Manhã",
+      "local": 32687,
+      "data": "2024-07-05",
+      "habilidades": [
+        "AAA"
+      ],
+      "empregador": "Conta nova",
+      "email": "luishsampaiovier5w1a@gmail.com",
+      "telefone": "3185494832",
+      "cnpj": "98732165425123",
+      "publicado": true,
+      "publicacao": "30/06/2024",
+      "candidatos": [],
+      "online": true,
+      "IDfreelancerEscolhido": null
+    },
+    {
+      "id": "02e6",
+      "nome": "CCCCCCCCCCCCCC",
+      "categoria": "Categoria",
+      "descricao": "AAAAAAAAAAAAAAAA",
+      "imagem": "https://ucarecdn.com/8611585d-aefe-4a7d-9553-5c2f85c26b02/",
+      "valor": "750",
+      "turno": "Tarde",
+      "local": 32687,
+      "data": "2024-07-04",
+      "habilidades": [
+        "BWEAF"
+      ],
+      "empregador": "Conta nova",
+      "email": "luishsampaiovier5w1a@gmail.com",
+      "telefone": "3185494832",
+      "cnpj": "98732165425123",
+      "publicado": true,
+      "publicacao": "30/06/2024",
+      "candidatos": [],
+      "online": true,
+      "IDfreelancerEscolhido": null
+    },
+    {
+      "id": "ffc1",
+      "nome": "ultimo teste",
+      "categoria": "Outros",
+      "descricao": "AAAAAAAAAAAAAAAAAAAAAAAA",
+      "imagem": "https://ucarecdn.com/3f51c01f-62d5-4557-a78d-929f2f7f79a5/",
+      "valor": "750",
+      "turno": "Manhã",
+      "local": 32687,
+      "data": "2024-07-02",
+      "habilidades": [
+        "Fotografia",
+        " proatividade"
+      ],
+      "empregador": "Conta nova",
+      "email": "luishsampaiovier5w1a@gmail.com",
+      "telefone": "3185494832",
+      "cnpj": "98732165425123",
+      "publicado": true,
+      "publicacao": "30/06/2024",
+      "candidatos": [],
+      "online": true,
+      "IDfreelancerEscolhido": null
+    },
+    {
+      "id": "24f6",
+      "nome": "Teste da imagem",
+      "categoria": "Design",
+      "descricao": "QDAWFF",
+      "imagem": "https://ucarecdn.com/f6f7338b-51bc-497a-9f8d-ca4587aebf9f/",
+      "valor": "750",
+      "turno": "Noite",
+      "local": 32687,
+      "data": "2024-06-22",
+      "habilidades": [
+        "BWEAF"
+      ],
+      "empregador": "Conta nova",
+      "email": "luishsampaiovier5w1a@gmail.com",
+      "telefone": "3185494832",
+      "cnpj": "98732165425123",
+      "publicado": true,
+      "publicacao": "30/06/2024",
+      "candidatos": [],
+      "online": true,
+      "IDfreelancerEscolhido": null
+    },
+    {
+      "id": "2c75",
+      "nome": "Teste da imagem 3",
+      "categoria": "Finanças",
+      "descricao": "ASAAA",
+      "imagem": "https://ucarecdn.com/ea197e4c-3634-4087-bc09-2de8981e414c/",
+      "valor": "100",
+      "turno": "Noite",
+      "local": 32687,
+      "data": "2024-07-05",
+      "habilidades": [
+        "aaa"
+      ],
+      "empregador": "Conta nova",
+      "email": "luishsampaiovier5w1a@gmail.com",
+      "telefone": "3185494832",
+      "cnpj": "98732165425123",
+      "publicado": true,
+      "publicacao": "30/06/2024",
+      "candidatos": [],
+      "online": true,
+      "IDfreelancerEscolhido": null
     }
   ],
   "feedbacks": [
@@ -571,6 +734,25 @@
       "bio": "Estudante de Analise e desenvolvimento de sistemas, dedicado, vencedor de inumeros premios.",
       "UserPremium": false,
       "vagasPublicadas": []
+    },
+    {
+      "id": "b30a",
+      "nome": "Conta nova",
+      "dataNascimento": "2005-02-17",
+      "cpf": "98732165425123",
+      "telefone": "3185494832",
+      "cep": "32687405",
+      "linkedin": "",
+      "email": "luishsampaiovier5w1a@gmail.com",
+      "senha": "12345",
+      "interesses": [],
+      "tipo": "empregador",
+      "imagem": "../../img/Usuarios/iconeUsuario.png",
+      "bio": "",
+      "UserPremium": true,
+      "vagasPublicadas": [
+        "3167"
+      ]
     }
   ],
   "freelancers": [

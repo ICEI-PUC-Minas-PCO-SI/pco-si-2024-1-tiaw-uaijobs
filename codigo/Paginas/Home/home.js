@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(atualizarTextoDinamico, 2000);
 });
 
-
 //Carrossel dinamico de feedbacks
 document.addEventListener('DOMContentLoaded', () => {
     const isMobile = window.innerWidth <= 768;
