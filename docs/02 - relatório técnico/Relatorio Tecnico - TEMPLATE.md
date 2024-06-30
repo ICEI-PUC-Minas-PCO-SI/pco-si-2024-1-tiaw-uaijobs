@@ -1,4 +1,7 @@
- HEAD:docs/02 - relatório técnico/Relatorio Tecnico - TEMPLATE.md
+
+![logoPNG](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/assets/160742926/5ffc81e7-cbfe-43a5-bd39-5d4ea7af339f)
+
+
 # Informações do Projeto
 `TÍTULO DO PROJETO`  
 
