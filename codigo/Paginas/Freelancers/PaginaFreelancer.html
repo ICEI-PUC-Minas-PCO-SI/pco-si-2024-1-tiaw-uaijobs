@@ -24,18 +24,23 @@
         </a>
         <nav class="navegacao">
             <ul class="lista-navegacao">
-                <li class="item-navegacao" id="loginItem"><a href="../LoginCadastro/Login.html" class="link-navegacao">Login</a></li>
-                <li class="item-navegacao" id="cadastroItem"><a href="../LoginCadastro/Cadastro.html" class="link-navegacao">Cadastre-se</a></li>
-                <li class="item-navegacao" id="premiumButton"><a href="#" class="link-navegacao premium" data-bs-toggle="modal" data-bs-target="#premiumModal">Torna-se usuário premium</a></li>
+                <li class="item-navegacao" id="loginItem"><a href="../LoginCadastro/Login.html"
+                        class="link-navegacao">Login</a></li>
+                <li class="item-navegacao" id="cadastroItem"><a href="../LoginCadastro/Cadastro.html"
+                        class="link-navegacao">Cadastre-se</a></li>
+                <li class="item-navegacao" id="premiumButton"><a href="#" class="link-navegacao premium"
+                        data-bs-toggle="modal" data-bs-target="#premiumModal">Torna-se usuário premium</a></li>
                 <li class="NomeUsuario"><a id="NomeUser"></a></li>
                 <li class="item-navegacao" id="logoutItem">
                     <button class="btn dropdown-toggle" onclick="Dropdown()">Menu</button>
                     <div>
                         <ul class="d-none ulDropdown" id="ulDropdown">
-                            <li class=""><a href="../MenuUsuario/MenuUsuario.html" class="link-navegacao">Página do Usuário</a></li>
-                            <li class="logout item-navegacao"><a href="#" class="link-navegacao" id="logoutLink">LogOut</a></li>
+                            <li class=""><a href="../MenuUsuario/MenuUsuario.html" class="link-navegacao">Página do
+                                    Usuário</a></li>
+                            <li class="logout item-navegacao"><a href="#" class="link-navegacao"
+                                    id="logoutLink">LogOut</a></li>
                         </ul>
-                    </div>   
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -46,10 +51,51 @@
             <div class="btn-group" role="group">
                 <button class="botao-acao btn btn-light" onclick="location.href='../Vagas/VagaAberto.html'">Vagas em
                     Aberto</button>
-                <button class="botao-acao btn btn-light" onclick="location.href='../Vagas/VagaRecomendada.html'">Vagas para Você!</button>
-                <button id="botao-acao" class="botao-acao btn btn-light" onclick="location.href='../Vagas/PagDinamicaPostCand.html'">Vagas Publicadas</button>
+                <button class="botao-acao btn btn-light" onclick="location.href='../Vagas/VagaRecomendada.html'">Vagas
+                    para Você!</button>
+                <button id="botao-acao" class="botao-acao btn btn-light"
+                    onclick="location.href='../Vagas/PagDinamicaPostCand.html'">Vagas Publicadas</button>
             </div>
         </section>
+
+        <!-- Filtros -->
+        <div class="filters-container mb-3 rounded-5">
+            <div class="row g-3 justify-content-center pt-2">
+                <div class="col-auto">
+                    <button class="btn btn-light" type="button" onclick="resetFilters()">Resetar Filtros</button>
+                </div>
+                <div class="col-auto">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownCategory"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Categoria
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownCategory" id="dropdownCategoryMenu">
+                            <!-- Categorias serão carregadas dinamicamente -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownDistance"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Distância
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownDistance">
+                            <li><a class="dropdown-item" href="#"
+                                    onclick="setFilter('distance', 2, 'dropdownDistance')">2 km</a></li>
+                            <li><a class="dropdown-item" href="#"
+                                    onclick="setFilter('distance', 5, 'dropdownDistance')">5 km</a></li>
+                            <li><a class="dropdown-item" href="#"
+                                    onclick="setFilter('distance', 10, 'dropdownDistance')">10 km</a></li>
+                            <li><a class="dropdown-item" href="#"
+                                    onclick="setFilter('distance', 20, 'dropdownDistance')">20 km</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <div class="Freelancers">
             <div class="row" id="container-freelancers-disponiveis">
@@ -109,7 +155,10 @@
                 </div>
             </div>
         </div>
-
+        <!-- Controle de paginação -->
+        <nav class="mt-4">
+            <ul class="pagination justify-content-center"></ul>
+        </nav>
     </main>
 
     <footer class="rodape">
@@ -120,7 +169,7 @@
         </ul>
     </footer>
 
-    
+
     <script src="../../ScriptGeral.js"></script>
     <script src="freelancers.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

@@ -65,7 +65,6 @@ function populateCategoryDropdown() {
         dropdownMenu.appendChild(listItem);
     });
 
-    // Remove any existing dropdown-menu and append the new one
     const existingDropdownMenu = dropdownCategory.nextElementSibling;
     if (existingDropdownMenu) {
         dropdownCategory.parentNode.removeChild(existingDropdownMenu);
@@ -205,7 +204,7 @@ function renderPage(page) {
             const bttn = document.createElement('div');
             bttn.classList.add('Cards-vagas-bttn', 'd-grid', 'gap-2', 'col-6', 'mx-auto');
             const button = document.createElement('button');
-            button.classList.add('btn', 'btn-outline-danger');
+            button.classList.add('btn');
             button.textContent = 'Ver detalhes';
             button.onclick = function () {
                 mostrarDetalhesVaga(vagaItem);
@@ -816,7 +815,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const bttn = document.createElement('div');
         bttn.classList.add('Cards-vagas-bttn', 'd-grid', 'gap-2', 'col-6', 'mx-auto');
         const button = document.createElement('button');
-        button.classList.add('btn', 'btn-outline-danger');
+        button.classList.add('btn');
         button.textContent = 'Ver detalhes';
         button.onclick = function() {
             mostrarDetalhesVaga(vagaItem);
@@ -858,7 +857,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     
         if (usuarioCorrente && usuarioCorrente.tipo === 'freelancer') {
             if (usuarioCorrente.vagasCandidatadas && usuarioCorrente.vagasCandidatadas.includes(vaga.id)) {
-                candidatarButton.textContent = 'Candidatado';
+                candidatarButton.textContent = 'Candidatado!';
                 candidatarButton.classList.add('btn-success');
                 candidatarButton.disabled = true;
             } else {

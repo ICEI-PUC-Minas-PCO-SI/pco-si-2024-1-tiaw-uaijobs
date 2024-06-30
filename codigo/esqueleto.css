@@ -152,3 +152,14 @@ main {
 .logout{
     color: #4e2525;
 }
+
+/* Estilos para todos os botões */
+button {
+    background-color: antiquewhite !important; /* Muda a cor de fundo do botão */
+    color: #333 !important; /* Muda a cor do texto do botão */
+}
+
+button:hover {
+    background-color: #4e2525 !important; /* Muda a cor de fundo do botão ao passar o mouse */
+    color: antiquewhite !important; /* Mantém a cor do texto do botão ao passar o mouse */
+}
