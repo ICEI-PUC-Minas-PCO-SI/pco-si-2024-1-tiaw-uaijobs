@@ -269,6 +269,30 @@
       "candidatos": [],
       "online": true,
       "IDfreelancerEscolhido": null
+    },
+    {
+      "id": "be25",
+      "nome": "Teste da imagem 2",
+      "categoria": "Design",
+      "descricao": "aaaaaaaaaaaaaaaaaaa",
+      "imagem": "https://ucarecdn.com/fee4efa1-a8e7-48af-8cd5-37b135be865c/",
+      "valor": "500",
+      "turno": "Manhã",
+      "local": 32687,
+      "data": "2024-07-02",
+      "habilidades": [
+        "Fotografia",
+        " proatividade"
+      ],
+      "empregador": "Luisin do Job",
+      "email": "luis325@gmail.com",
+      "telefone": "31985494832",
+      "cnpj": "5615120800",
+      "publicado": true,
+      "publicacao": "30/06/2024",
+      "candidatos": [],
+      "online": true,
+      "IDfreelancerEscolhido": null
     }
   ],
   "feedbacks": [

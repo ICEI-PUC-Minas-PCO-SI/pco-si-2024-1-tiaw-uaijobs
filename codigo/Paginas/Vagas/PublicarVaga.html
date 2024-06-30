@@ -126,7 +126,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="imagemVaga" class="form-label">Imagem da Vaga:</label>
-                                <input type="file" class="form-control" id="imagemVaga" accept="image/*">
+                                <input type="hidden" role="uploadcare-uploader" class="form-control" data-public-key="a075f581d190705ab583" data-crop="free,4:3" id="imagemVaga">
                             </div>
                         </div>
                         <div class="text-center mt-4">
@@ -151,7 +151,8 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../../ScriptGeral.js"></script>
-
+    <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+    <link rel="stylesheet" href="https://ucarecdn.com/libs/widget/3.x/uploadcare.min.css">
 </body>
 
 </html>

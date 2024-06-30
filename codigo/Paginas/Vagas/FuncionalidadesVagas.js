@@ -93,6 +93,19 @@ async function buscarCoordenadasPorCEP(cep) {
     }
 }
 
+// Função para calcular a distância entre duas coordenadas
+function calcularDistancia(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Raio da Terra em km
+    const dLat = (lat2 - lat1) * (Math.PI / 180);
+    const dLon = (lon2 - lon1) * (Math.PI / 180);
+    const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+}
+
 // Função para aplicar filtros e exibir os resultados
 async function applyFilters() {
     console.log('Aplicando filtros:', filters); // Log para verificar filtros
@@ -163,21 +176,27 @@ function renderPage(page) {
 
     console.log('Itens da página:', pageItems); // Log para verificar itens da página
 
+    const row = document.createElement('div');
+    row.classList.add('row', 'gx-3', 'gy-3'); // Define a row com gap entre os cartões
+
     pageItems.forEach(vagaItem => {
         if (vagaItem.publicado && vagaItem.online) {
+            const col = document.createElement('div');
+            col.classList.add('col-12', 'col-md-6'); // Define duas colunas por linha
+
             const vagaCard = document.createElement('div');
-            vagaCard.classList.add('Container', 'border', 'p-3', 'rounded-4', 'shadow-lg', 'p-3', 'mb-5', 'bg-body-tertiary', 'col-12', 'col-md-6', 'col-lg-4', 'm-3', 'w-25');
-    
+            vagaCard.classList.add('Container', 'border', 'p-3', 'rounded-4', 'shadow-lg', 'bg-body-tertiary');
+
             const title = document.createElement('div');
             title.classList.add('Cards-vagas-title', 'text-center', 'pb-2');
             const h2 = document.createElement('h2');
             h2.textContent = vagaItem.nome;
             title.appendChild(h2);
-    
+
             const imagem = document.createElement('div');
             imagem.classList.add('Cards-vagas-imagem');
             const img = document.createElement('img');
-            img.classList.add('rounded-3');
+            img.classList.add('rounded-3', 'img-fluid'); // img-fluid para ajustar a largura
             img.src = vagaItem.imagem;
             img.alt = 'Imagem da vaga';
             img.onerror = function () {
@@ -185,7 +204,7 @@ function renderPage(page) {
                 img.src = 'fallback_image_url.jpg'; // Imagem de fallback
             };
             imagem.appendChild(img);
-    
+
             const descricao = document.createElement('div');
             descricao.classList.add('Cards-vagas-descrição');
             const p = document.createElement('p');
@@ -196,7 +215,7 @@ function renderPage(page) {
                 p.textContent = 'Descrição não disponível.';
             }
             descricao.appendChild(p);
-    
+
             const bttn = document.createElement('div');
             bttn.classList.add('Cards-vagas-bttn', 'd-grid', 'gap-2', 'col-6', 'mx-auto');
             const button = document.createElement('button');
@@ -206,16 +225,19 @@ function renderPage(page) {
                 mostrarDetalhesVaga(vagaItem);
             };
             bttn.appendChild(button);
-    
+
             vagaCard.appendChild(title);
             vagaCard.appendChild(imagem);
             vagaCard.appendChild(descricao);
             vagaCard.appendChild(bttn);
-    
-            vagasContainer.appendChild(vagaCard);
+
+            col.appendChild(vagaCard);
+            row.appendChild(col);
         }
     });
-    
+
+    vagasContainer.appendChild(row);
+
     updatePagination();
 }
 
@@ -612,34 +634,6 @@ function obterDataAtual() {
     return `${dia}/${mes}/${ano}`;
 }
 
-// Função para fazer upload da imagem para Cloudinary
-async function uploadImagem(file) {
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('upload_preset', 'Imagens'); // Use o nome exato do seu upload preset
-
-    try {
-        console.log("Iniciando upload da imagem para Cloudinary");
-        const response = await fetch('https://api.cloudinary.com/v1_1/df7rlfmhg/image/upload', {
-            method: 'POST',
-            body: formData
-        });
-
-        if (response.ok) {
-            const data = await response.json();
-            console.log("Imagem enviada com sucesso:", data.secure_url);
-            return data.secure_url; // URL da imagem
-        } else {
-            const errorText = await response.text();
-            console.error("Erro ao fazer upload da imagem. Status:", response.status, "Mensagem:", errorText);
-            throw new Error('Erro ao fazer upload da imagem');
-        }
-    } catch (error) {
-        console.error("Erro ao fazer upload da imagem:", error);
-        return null;
-    }
-}
-
 // Função para verificar o limite de vagas
 async function verificarLimiteVagas(empregadorId) {
     try {
@@ -652,7 +646,7 @@ async function verificarLimiteVagas(empregadorId) {
         if (!empregador.vagasPublicadas) {
             empregador.vagasPublicadas = [];
         }
-        //10 para userPremium = true  5 Para userPremium = false
+        // 10 para userPremium = true, 5 para userPremium = false
         const limiteVagas = empregador.UserPremium ? 10 : 5;
         if (empregador.vagasPublicadas.length >= limiteVagas) {
             return false;
@@ -689,17 +683,12 @@ async function IncluirVagaLS() {
     let CEP = parseInt(document.getElementById('localVaga').value, 10);
     let dataVaga = document.getElementById('dataVaga').value;
     let habilidadesVaga = document.getElementById('habilidadesVaga').value.split(',');
-    let imagemInput = document.getElementById('imagemVaga').files[0];
-    console.log(imagemInput)
+    let imagemInput = document.getElementById('imagemVaga').value; // Obter o valor do campo oculto do Uploadcare
+
+    console.log("Imagem selecionada:", imagemInput);
 
     if (nomeVaga === '' || categoriaVaga === '' || valorVaga === '' || descricaoVaga === '') {
         window.alert("Por favor, tenha certeza que todos os campos abaixos estão preenchidos: \n\nVaga: Nome, Categoria, Valor e Descrição \nContratante: Nome, E-mail e CPF/CNPJ");
-        return;
-    }
-
-    let imagemVagaUrl = await uploadImagem(imagemInput);
-    if (!imagemVagaUrl) {
-        window.alert('Erro ao fazer upload da imagem. Por favor, tente novamente.');
         return;
     }
 
@@ -707,7 +696,7 @@ async function IncluirVagaLS() {
         nome: nomeVaga,
         categoria: categoriaVaga,
         descricao: descricaoVaga,
-        imagem: imagemVagaUrl,
+        imagem: imagemInput, // URL da imagem do Uploadcare
         valor: valorVaga,
         turno: turnoVaga,
         local: CEP,
@@ -725,7 +714,13 @@ async function IncluirVagaLS() {
     };
 
     console.log("Nova vaga:", novaVaga);
-    salvarVagaNoJSONServer(novaVaga, usuarioCorrente.id);
+    try {
+        const vagaCriada = await salvarVagaNoJSONServer(novaVaga, usuarioCorrente.id);
+        console.log("Vaga criada:", vagaCriada);
+    } catch (error) {
+        console.error("Erro ao incluir a vaga:", error);
+        window.alert('Falha ao salvar vaga no servidor. Por favor, tente novamente.');
+    }
 }
 
 // Adicionar event listener ao botão de publicação de vaga
@@ -735,6 +730,7 @@ document.addEventListener('DOMContentLoaded', function() {
         btnPublicarVaga.addEventListener('click', IncluirVagaLS);
     }
 });
+
 
 
 //Vagas candidatadas / vagas postadas
