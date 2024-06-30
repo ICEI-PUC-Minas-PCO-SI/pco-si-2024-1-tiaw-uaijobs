@@ -41,6 +41,8 @@ function salvarUsuarioCorrenteLS(usuario) {
 
 // Função para cadastrar um novo usuário, verificando campos obrigatórios e salvando no JSON server
 async function cadastrarUsuarioLS() {
+    let tipo = document.querySelector('input[name="tipoCadastro"]:checked').value;
+    alteraInputCadastro(tipo);
     let nome = document.getElementById('inputNomeCadastro').value;
     let dataNasc = document.getElementById('inputNascimentoCadastro').value;
     let cpfOuCnpj = document.getElementById('inputCPFCadastro').value;
@@ -51,7 +53,6 @@ async function cadastrarUsuarioLS() {
     let confEmail = document.getElementById('inputEmailConfirmacaoCadastro').value;
     let senha = document.getElementById('inputSenhaCadastro').value;
     let confSenha = document.getElementById('confirmaSenhaCadastro').value;
-    let tipo = document.querySelector('input[name="tipoCadastro"]:checked').value;
 
     // Verifica se todos os campos obrigatórios estão preenchidos
     if (nome === '' || telefone === '' || cep === '' || email === '' || confEmail === '' || senha === '' || confSenha === '' || dataNasc === '' || cpfOuCnpj === '') {
@@ -131,6 +132,10 @@ async function cadastrarUsuarioLS() {
     } else {
         window.location.href = "../Home/Home.html";
     }
+}
+
+function alteraInputCadastro(tipo){
+
 }
 
 // Função para verificar a validade de um CPF (básica)

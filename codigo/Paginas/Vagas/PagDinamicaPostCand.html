@@ -30,7 +30,7 @@
                     <div>
                         <ul class="d-none ulDropdown" id="ulDropdown">
                             <li class=""><a href="../MenuUsuario/MenuUsuario.html" class="link-navegacao">Página do Usuário</a></li>
-                            <li class="logout item-navegacao"><a href="#" class="link-navegacao" id="logoutLink">Logout</a></li>
+                            <li class="logout item-navegacao"><a href="#" class="link-navegacao" id="logoutLink">Sair da Conta</a></li>
                         </ul>
                     </div>   
                 </li>
@@ -45,7 +45,8 @@
                 <button class="botao-acao btn btn-light" onclick="location.href='../Freelancers/PaginaFreelancer.html'">Freelancers
                     Disponíveis</button>
                 <button id="botaoAcao" class="botao-acao btn btn-light" onclick="acaoBotao()">Publicar Vaga</button>
-                <button class="botao-acao btn btn-light" onclick="location.href='../sobrenos/sobrenos.html'">Sobre os Criadores</button>
+                <button class="botao-acao btn btn-light" onclick="location.href='../sobrenos/sobrenos.html'">Sobre
+                    Nos</button>
             </div>
         </section>
 
@@ -74,7 +75,6 @@
                         <button type="button" class="btn btn-danger" id="excluirButton" style="display: none;">Excluir Vaga</button>
                         <button type="button" class="btn btn-warning" id="editarButton" style="display: none;">Editar Vaga</button>
                         <button type="button" class="btn btn-primary" id="verCandidatosButton" style="display: none;">Ver Candidatos</button>
-                        <button id="retirarCandidaturaButton" class="btn" style="display: none;">Retirar candidatura</button>
                     </div>
                 </div>
             </div>
@@ -87,16 +87,19 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="candidatosModalLabel">Candidatos</h5>
+                        <h5 class="modal-title w-100" id="candidatosModalLabel">Candidatos</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div id="candidatosContainer" class="row">
                             <!-- Lista dos candidatos será inserida aqui -->
                         </div>
+                        <small id="smallCandidato" class="text-muted">Selecione o candidato de sua preferência e em sequência a vaga será encerrada. Você terá acesso aos dados de contato do freelancer escolhido.</small>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        
+                        <button type="button" class="btn btn-uaijobs" id="btnSelecionaCandidato" style="display: none;" onclick="selecionaCandidato()">Selecionar Candidato</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="document.getElementById('btnSelecionaCandidato').style.display = 'none'">Fechar</button>
                     </div>
                 </div>
             </div>

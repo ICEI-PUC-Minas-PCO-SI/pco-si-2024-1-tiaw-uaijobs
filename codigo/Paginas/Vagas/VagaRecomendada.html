@@ -23,8 +23,8 @@
         </a>
         <nav class="navegacao">
             <ul class="lista-navegacao">
-                <li class="item-navegacao" id="loginItem"><a href="LoginCadastro/Login.html" class="link-navegacao">Login</a></li>
-                <li class="item-navegacao" id="cadastroItem"><a href="LoginCadastro/Cadastro.html" class="link-navegacao">Cadastre-se</a></li>
+                <li class="item-navegacao" id="loginItem"><a href="../LoginCadastro/Login.html" class="link-navegacao">Login</a></li>
+                <li class="item-navegacao" id="cadastroItem"><a href="../LoginCadastro/Cadastro.html" class="link-navegacao">Cadastre-se</a></li>
                 <li class="item-navegacao" id="premiumButton"><a href="#" class="link-navegacao premium" data-bs-toggle="modal" data-bs-target="#premiumModal">Torna-se usuário premium</a></li>
                 <li class="NomeUsuario"><a id="NomeUser"></a></li>
                 <li class="item-navegacao" id="logoutItem">
@@ -32,7 +32,7 @@
                     <div>
                         <ul class="d-none ulDropdown" id="ulDropdown">
                             <li class=""><a href="../MenuUsuario/MenuUsuario.html" class="link-navegacao">Página do Usuário</a></li>
-                            <li class="logout item-navegacao"><a href="#" class="link-navegacao" id="logoutLink">Logout</a></li>
+                            <li class="logout item-navegacao"><a href="#" class="link-navegacao" id="logoutLink">Sair da Conta</a></li>
                         </ul>
                     </div>   
                 </li>
@@ -45,11 +45,14 @@
         <section class="botoes py-4 text-center">
             <div class="btn-group" role="group">
                 <button class="botao-acao btn btn-light" onclick="location.href='../Home/Home.html'">Home</button>
-                <button class="botao-acao btn btn-light"
-                    onclick="location.href='../Freelancers/PaginaFreelancer.html'">Freelancers Disponíveis</button>
-                <button class="botao-acao btn btn-light" onclick="location.href='../Vagas/VagaAberto.html'">Vagas em Aberto</button>
-                <button class="botao-acao btn btn-light" onclick="location.href='../sobrenos/sobrenos.html'">Sobre os Criadores</button>
-            </div>
+                <button class="botao-acao btn btn-light" onclick="location.href='../Freelancers/PaginaFreelancer.html'">Freelancers
+                    Disponíveis</button>
+                <button class="botao-acao btn btn-light" id="botaoVagasAbertas" onclick="location.href='PublicarVaga.html'">Publicar
+                    Vaga</button>
+                <button class="botao-acao btn btn-light" onclick="location.href='../sobrenos/sobrenos.html'">Sobre
+                    Nos</button>
+                    <button id="dynamicButton" class="botao-acao btn btn-light" style="display: none;"></button>
+                </div>
         </section>
         <!-- Container a ser preenchido com os cards das vagas em aberto-->
         <div class="Vagas-abertas">
@@ -58,13 +61,9 @@
             </div>
         </div>
 
-        <!-- Controle de paginação -->
-        <nav class="Paginacao mt-4">
-            <ul class="pagination justify-content-center pagination-centered"></ul>
-        </nav>
-        
-         <!-- Modal detalhamento-->
-         <div class="modal fade" id="vagaModal" tabindex="-1" aria-labelledby="vagaModalLabel" aria-hidden="true">
+        <!-- Modal detalhamento-->
+
+        <div class="modal fade" id="vagaModal" tabindex="-1" aria-labelledby="vagaModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -79,11 +78,11 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                         <button type="button" class="btn btn-primary" id="candidatarButton" style="display: none;">Candidatar-se</button>
-                        <button id="retirarCandidaturaButton" class="btn btn-outline-danger" style="display: none;">Retirar candidatura</button>
                     </div>
                 </div>
             </div>
         </div>
+
     </main>
 
     <footer class="rodape">
@@ -101,6 +100,5 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 <script src="../../ScriptGeral.js"></script>
-<script src="FuncionalidadesVagas.js"></script>
 
 </html>

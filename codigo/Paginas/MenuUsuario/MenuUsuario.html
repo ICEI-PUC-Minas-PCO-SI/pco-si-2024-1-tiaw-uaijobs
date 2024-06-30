@@ -23,13 +23,13 @@
                 <li class="item-navegacao" id="loginItem"><a href="../LoginCadastro/Login.html" class="link-navegacao">Login</a></li>
                 <li class="item-navegacao" id="cadastroItem"><a href="../LoginCadastro/Cadastro.html" class="link-navegacao">Cadastre-se</a></li>
                 <li class="item-navegacao" id="premiumButton"><a href="#" class="link-navegacao premium" data-bs-toggle="modal" data-bs-target="#premiumModal">Torna-se usuário premium</a></li>
-                <li class="NomeUsuario "><a id="NomeUser"></a></li>
+                <li class="NomeUsuario"><a id="NomeUser"></a></li>
                 <li class="item-navegacao" id="logoutItem">
                     <button class="btn dropdown-toggle" onclick="Dropdown()">Menu</button>
                     <div>
                         <ul class="d-none ulDropdown" id="ulDropdown">
-                            <li class=""><a href="../MenuUsuario/MenuUsuario.html" class="link-navegacao"></a>Página do Usuário</li>
-                            <li class="logout item-navegacao"><a href="#" class="link-navegacao" id="logoutLink">Logout</a></li>
+                            <li><a href="../MenuUsuario/MenuUsuario.html" class="link-navegacao">Página do Usuário</a></li>
+                            <li class="logout item-navegacao"><a href="#" class="link-navegacao" id="logoutLink">Sair da Conta</a></li>
                         </ul>
                     </div>   
                 </li>
@@ -39,40 +39,36 @@
 
     <main class="conteudo-principal">
         <div class="container mt-5">
-            <div class="row">
-                <div class="col-md-4">
-                    <img id="userImage" src="default.jpg" alt="User Image" class="img-fluid rounded-circle">
-                    <i id="btnEditaImagem" class="fas fa-edit" style="cursor:pointer;"><p class="editarUsuario">Editar imagem</p></i>
-                    <div id="divEditaImagemUsuario" class="d-none">
-                        <label for="imagemUsuario"><strong>Selecione uma imagem de perfil:</strong></label>
-                        <input type="file" id="imagemUsuario">
-                        <button id="saveButtonImagem" class="btn btn-success">Salvar</button>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="user-card">
+                        <div class="left-side">
+                            <img id="userImage" src="default.jpg" alt="User Image" class="img-fluid rounded-circle mb-3">
+                            <button id="btnEditaImagem" class="btn btn-custom">Editar Imagem</button>
+                            <div id="divEditaImagemUsuario" class="d-none mt-3">
+                                <label for="imagemUsuario"><strong>Selecione uma imagem de perfil:</strong></label>
+                                <input type="file" id="imagemUsuario" class="form-control mt-2">
+                                <button id="saveButtonImagem" class="btn btn-custom mt-2">Salvar</button>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            <h2 id="userName">Nome do Usuário</h2>
+                            <p id="userEmail"><strong>Email:</strong></p>
+                            <p id="userSenha"><strong>Senha:</strong></p>
+                            <p id="userBio"><strong>Biografia:</strong></p>
+                            <p id="userPhone"><strong>Telefone:</strong></p>
+                            <p id="userCep"><strong>CEP:</strong></p>
+                            <p id="userDob"><strong>Data de Nascimento:</strong></p>
+                            <p id="userType"><strong>Tipo de Usuário:</strong></p>
+                            <p id="userCpf"><strong>CPF:</strong></p>
+                            <button id="btnEditaDados" class="btn btn-custom mt-2">Editar Dados</button>
+                            <button id="saveButton" class="btn btn-custom d-none mt-2">Salvar</button>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-8" id="divFormUsuario">
-                    <h2 id="userName">Nome do Usuário</h2>
-                    <p id="userEmail">Email: </p>
-                    <p id="userSenha">Senha: </p>
-                    <p id="userBio">Biografia: </p>
-                    <p id="userPhone">Telefone: </p>
-                    <p id="userCep">CEP: </p>
-                    <p id="userDob">Data de Nascimento: </p>
-                    <p id="userType">Tipo de Usuário: </p>
-                    <p id="userCpf">CPF: </p>
-                    <i id="btnEditaDados" class="fas fa-edit" style="cursor:pointer;"><p class="editarUsuario">Editar imagem</p></i>
-                    <button id="saveButton" class="btn btn-success d-none">Salvar</button>
                 </div>
             </div>
         </div>
     </main>
-
-    <footer class="rodape">
-        <ul class="lista-rodape">
-            <li class="item-rodape"><a href="../Footer/faq.html" class="link-rodape">Perguntas Frequentes</a></li>
-            <li class="item-rodape"><a href="../Footer/termos.html" class="link-rodape">Termos de Uso</a></li>
-            <li class="item-rodape"><a href="../Footer/contato.html" class="link-rodape">Fale conosco</a></li>
-        </ul>
-    </footer>
 
     <script src="menuUsuario.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

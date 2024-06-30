@@ -1,285 +1,80 @@
-/* Cards */
+/*Vagas abertas começa aqui*/
+
+/*Cards*/
 .Card {
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
 }
+
 .Cards-vagas-imagem img {
     min-height: 175px;
     width: 100%;
-    height: 80%;
+    height: auto;
 }
 
-/* Container */
-.Vagas-abertas,
-.Vagas-candidatada-postada {
+/*Container*/
+.Vagas-abertas, .Vagas-candidatada-postada {
     width: 100%;
-    height: 40%;
-}
-.Vagas-abertas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
-/* Responsividade dos Cards */
-@media (max-width: 1200px) {
-    .vagas-container .Container {
-        flex: 0 1 calc(50% - 20px); /* 2 cards por linha */
-        max-width: calc(50% - 20px); /* 2 cards por linha */
-    }
-}
+/*Publicar vagas começa aqui */
 
-@media (max-width: 768px) {
-    .vagas-container .Container {
-        flex: 0 1 calc(100% - 20px); /* 1 card por linha */
-        max-width: calc(100% - 20px); /* 1 card por linha */
-    }
-}
+/* FORMULÁRIO PUBLICAR VAGA */
 
-/* Ajuste dos cards de vagas */
-.Container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 15px;
-    padding: 15px;
-    max-width: 70%; /* Define a largura máxima dos cards */
-}
-.Container:hover {
-    transform: scale(1.05);
-}
-
-.Cards-vagas-title h2 {
-    font-size: 1.5rem;
-}
-
-.Cards-vagas-descrição p {
-    font-size: 1rem;
-}
-
-/* Formulário Publicar Vaga */
 .divTituloForm {
-    margin-left: 3vw;
-    padding-left: 15px;
-    min-width: 94vw;
-    max-width: 100vw;
-    border-bottom: 3px solid rgb(141, 134, 134);
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 3px solid #8d8686; /* Altere a cor conforme necessário */
+    margin-bottom: 20px;
 }
 
 .tituloForm {
     font-size: 2rem;
-    margin-top: 10px;
-}
-
-.formPublicar {
-    min-width: 94vw;
-    max-width: 100vw;
-    margin-top: 20px;
-    margin-left: 3vw;
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 2px solid rgb(141, 134, 134);
-    background-color: #f0f0f0;
-}
-
-.formPublicar label {
-    font-weight: bold;
-    padding: 5px;
-    padding-bottom: 10px;
-    display: inline-block;
-    word-wrap: break-word;
-}
-
-.formPublicar div {
-    display: inline-block;
     margin: 0;
 }
 
-#divBotaoPublicar {
-    min-width: 100vw;
-    text-align: center;
-    margin-top: 15px;
+.formPublicar {
+    background-color: #f0f0f0; /* Altere a cor conforme necessário */
+    padding: 30px;
+    border: 2px solid #8d8686; /* Altere a cor conforme necessário */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adicione sombra discreta */
+    margin-bottom: 20px;
 }
 
-#botaoPublicarVaga {
-    background-color: #4e2525;
-    color: antiquewhite;
-    padding: 10px;
-    margin: 0 10px;
-}
-
-/* DIVs dos inputs e inputs do Formulário Publicar Vaga */
-.formPublicar input,
-.formPublicar select {
-    margin-right: 15px;
-    padding-left: 5px;
-}
-
-#divInputNomeVaga,
-#divInputLocalVaga {
-    width: 49%;
-}
-
-#divInputNomeVaga input,
-#divInputLocalVaga input {
-    min-width: 80%;
-}
-
-#divInputSelecionavel {
-    width: 49%;
-}
-
-#divInputSelecionavel div {
-    width: 33%;
-}
-
-#divInputSelecionavel div input {
-    width: 60%;
-}
-
-#divInputValorVaga,
-#divInputHabilidadesVaga {
-    min-width: 24%;
-}
-
-#divInputValorVaga input,
-#divInputHabilidadesVaga input {
-    width: 70%;
-}
-
-#descricaoVaga {
-    min-width: 100%;
-    height: 10rem;
-}
-
-#infoEmpresa div {
-    width: 24%;
-}
-
-#infoEmpresa div input {
-    width: 70%;
-}
-
-/* Estilos adicionais */
-.page-link-custom {
-    cursor: pointer;
-}
-
-.highlight-card:hover {
-    background-color: #f8f9fa;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.filters-container {
-    background-color: #704040;
-    z-index: 999;
-    padding: 20px 20px;
-    width: 50%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.filters-container .dropdown .dropdown-toggle {
-    background-color: #4e2525;
-    border-color: #4e2525;
-    color: white;
-}
-
-.filters-container .dropdown .dropdown-menu {
-    background-color: #4e2525;
-}
-
-.filters-container .dropdown .dropdown-item {
-    color: white;
-}
-
-.filters-container .dropdown .dropdown-item:hover {
-    background-color: #703838;
-}
-
-.filters-container .range-container {
-    display: flex;
-    align-items: center;
-    color: white;
-}
-
-.filters-container .range-container input[type="range"] {
-    margin: 0 10px;
-    flex: 1;
-}
-
-.filters-container .range-container input[type="range"]::-webkit-slider-thumb {
-    background-color: black;
-}
-
-.filters-container .range-container span {
+.formPublicar .form-label {
     font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
 }
 
-#map {
+.formPublicar .form-control, .formPublicar .form-select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
     width: 100%;
-    height: 400px;
 }
 
-#left div {
-    background-color: rgb(226, 226, 226);
+#btnPublicarVaga {
+    background-color: #4e2525; /* Altere a cor conforme necessário */
+    color: antiquewhite; /* Altere a cor conforme necessário */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
-#Desc {
-    background-color: rgb(226, 226, 226);
+#btnPublicarVaga:hover {
+    background-color: #3b1d1d; /* Altere a cor conforme necessário */
 }
 
-#header {
-    background-color: rgb(66, 16, 16);
-}
+/*Publicar vagas termina aqui */
 
-.navbar img {
-    width: 100px;
-    border-radius: 100%;
-    border: 5px solid antiquewhite;
-    margin: 10px;
-}
+/* Estilo dos cards de candidato quando selecionado*/
 
-.navbar-brand,
-.navbar-nav .nav-link {
-    color: antiquewhite !important;
-}
-
-#titulo-imagem {
-    text-align: center;
-}
-
-.card-img-left {
-    object-fit: cover;
-    width: 25% !important;
-}
-
-.card {
-    width: 95%; /* Ajuste conforme necessário */
-}
-
-.img-fluid-custom {
-    height: 160px; /* Ajuste um pouco a altura */
-    object-fit: cover;
-}
-
-/* Página Dinamica */
-#vagasContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.Container {
-    max-width: 70%; /* Define a largura máxima dos cards */
-    margin: 15px; /* Espaçamento entre os cards */
-}
-
-.img-fluid {
-    max-width: 100%;
-    height: auto;
+.selecionado{
+    border: 3px solid #4e2525;
+    border-radius: 2%;
 }

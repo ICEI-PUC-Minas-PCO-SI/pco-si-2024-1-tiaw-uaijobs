@@ -1,151 +1,44 @@
-/* Estilos para o contêiner de freelancers */
-#container-freelancers-disponiveis {
+/* Define o tamanho do card */
+.Card {
+    width: 500px;
+    height: 500px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    flex-direction: column;
+    align-items: center; /* Alinha o conteúdo horizontalmente no centro */
+    justify-content: center; /* Alinha o conteúdo verticalmente no centro */
 }
 
-/* Estilos para os cartões de freelancer */
-.Container 
-{   
-    flex: 1 1 calc(33% - 40px); /* Para 2 colunas com margem de 20px */
-    max-width: calc(33% - 40px); /* Para 2 colunas com margem de 20px */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.2s ease-in-out;
-    background-color: #fff;
-    margin: 80px;
-}
-
-.Container:hover {
-    transform: scale(1.05);
-}
-
-.Cards-freelancer-title {
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
-}
-
-.Cards-freelancer-title h2 {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
-}
-
+/* Define o estilo do contêiner da imagem do freelancer */
 .Cards-freelancer-imagem {
-    text-align: center;
-    padding: 10px;
-}
-
-.Cards-freelancer-imagem img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%;
-}
-
-.Cards-freelancer-descrição {
-    padding: 10px;
-    font-size: 14px;
-    color: #555;
-}
-
-.Cards-freelancer-bttn {
-    text-align: center;
-    padding: 10px;
-}
-
-.Cards-freelancer-bttn button {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border: none;
-    background-color: #dc3545;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.Cards-freelancer-bttn button:hover {
-    background-color: #c82333;
-}
-
-/* Responsividade para 2 colunas */
-@media (max-width: 992px) {
-    .Container {
-        flex: 1 1 calc(50% - 40px); /* Para 2 colunas com margem de 20px */
-        max-width: calc(50% - 40px); /* Para 2 colunas com margem de 20px */
-    }
-}
-
-/* Responsividade para 1 coluna */
-@media (max-width: 576px) {
-    .Container {
-        flex: 1 1 calc(100% - 40px); /* Para 1 coluna com margem de 20px */
-        max-width: calc(100% - 40px); /* Para 1 coluna com margem de 20px */
-    }
-}
-
-/* Estilos para centralizar o cartão único */
-.single-card {
-    flex: 1 1 100%;
-    max-width: 100%;
-}
-/* Filtros */
-.page-link-custom {
-    cursor: pointer;
-}
-
-.highlight-card:hover {
-    background-color: #f8f9fa;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.filters-container {
-    background-color: #704040;
-    z-index: 999;
-    padding: 20px 20px;
-    width: 30%;
-}
-
-.filters-container .dropdown .dropdown-toggle {
-    background-color: #4e2525;
-    border-color: #4e2525;
-    color: white;
-}
-
-.filters-container .dropdown .dropdown-menu {
-    background-color: #4e2525;
-}
-
-.filters-container .dropdown .dropdown-item {
-    color: white;
-}
-
-.filters-container .dropdown .dropdown-item:hover {
-    background-color: #703838;
-}
-
-.filters-container .range-container {
+    max-width: 500px;
+    max-height: 500px;
     display: flex;
-    align-items: center;
-    color: white;
+    align-items: center; /* Alinha a imagem verticalmente no centro */
+    justify-content: center; /* Alinha a imagem horizontalmente no centro */
+    width: 100%;
 }
 
-.filters-container .range-container input[type="range"] {
-    margin: 0 10px;
-    flex: 1;
+/* Define o estilo da imagem do freelancer */
+.Cards-freelancer-imagem img {
+    min-height: 175px;
+    width: 85%;
+    height: 80%;
+    object-fit: cover; /* Garante que a imagem cubra o contêiner sem distorção */
 }
 
-.filters-container .range-container input[type="range"]::-webkit-slider-thumb {
-    background-color: black;
+/* Define o estilo do contêiner principal dos freelancers */
+.container-freelancers-disponiveis {
+    width: 100%;
+    height: 40%;
+    padding-left: 20%; /* Provisório - ajuste conforme necessário */
 }
 
-.filters-container .range-container span {
-    font-weight: bold;
+/* Define o tamanho do contêiner principal */
+.Container {
+    width: 700px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha o conteúdo horizontalmente no centro */
+    justify-content: center; /* Alinha o conteúdo verticalmente no centro */
 }
-
