@@ -59,8 +59,8 @@ document.getElementById('logoutLink').addEventListener('click', function(event) 
 
 });
 
- // Função para verificar a página atual e esconder o botão "premium" se não estiver na Home
- function controlarVisibilidadePremiumButton() {
+// Função para verificar a página atual e esconder o botão "premium" se não estiver na Home
+function controlarVisibilidadePremiumButton() {
     const premiumButton = document.getElementById('premiumButton');
     if (!premiumButton) {
         console.error('O elemento premiumButton não foi encontrado no DOM.');
@@ -94,7 +94,6 @@ function Dropdown(){
 function ajustarComportamentoBotao() {
     var tipoUsuario = obterTipoUsuarioDoLocalStorage();
     var botaoAcao = document.getElementById("botao-acao-home");
-
     
     if (tipoUsuario === "freelancer") {
         botaoAcao.style.display = 'block';
@@ -113,6 +112,10 @@ function ajustarComportamentoBotao() {
         botaoAcao.style.display = 'none';
     }
 }
+function obterTipoUsuarioDoLocalStorage(){
+    let usuarioLogado = localStorage.getItem('UsuarioCorrente');
 
+    return usuarioLogado.tipo; 
+}
 // Chama a função para ajustar o comportamento do botão quando a página carregar
-window.onload = ajustarComportamentoBotao;
+window.onload = ajustarComportamentoBotao();

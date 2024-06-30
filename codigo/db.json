@@ -9,7 +9,7 @@
       "imagem": "https://www.digitow.com.br/wp-content/uploads/2022/04/curso-para-auxiliar-administrativo.jpg",
       "valor": 300,
       "turno": "Manhã",
-      "local": 32687405,
+      "CEP": "32687405",
       "data": "01/06/2024",
       "habilidades": [
         "Comunicação",
@@ -25,9 +25,12 @@
       "interessados": [],
       "publicado": true,
       "candidatos": [
+        "8cbf",
         "4ca4",
         "4472"
-      ]
+      ],
+      "online": true,
+      "IDfreelancerEscolhido": null
     },
     {
       "id": "1",
@@ -38,7 +41,7 @@
       "imagem": "https://blog.orientu.com.br/wp-content/uploads/2021/03/assistente-de-recursos-humanos.jpeg",
       "valor": 250,
       "turno": "Manhã",
-      "local": 32687405,
+      "CEP": 32687405,
       "data": "15/06/2024",
       "habilidades": [
         "Organização"
@@ -49,7 +52,11 @@
       "cpf": "987.654.321-98",
       "cnpj": "12.345.678/0001-90",
       "publicado": true,
-      "candidatos": []
+      "candidatos": [
+        "8cbf"
+      ],
+      "online": true,
+      "IDfreelancerEscolhido": null
     },
     {
       "id": "2",
@@ -60,7 +67,7 @@
       "imagem": "https://blog.fecap.br/wp-content/uploads/fecap-secretariado-executivo.jpg",
       "valor": 350,
       "turno": "Tarde",
-      "local": 32687405,
+      "CEP": 123456789,
       "data": "03/06/2024",
       "habilidades": [
         "Organização"
@@ -71,7 +78,11 @@
       "cpf": "543.210.987-65",
       "cnpj": "78.901.234/0001-23",
       "publicado": true,
-      "candidatos": []
+      "candidatos": [
+        "8cbf"
+      ],
+      "online": true,
+      "IDfreelancerEscolhido": null
     },
     {
       "id": "3",
@@ -82,7 +93,7 @@
       "imagem": "https://portalidea.com.br/cursos/assistente-financeiro.webp",
       "valor": 280,
       "turno": "Integral",
-      "local": 32687405,
+      "CEP": 123456789,
       "data": "10/06/2024",
       "habilidades": [
         "Análise Financeira"
@@ -95,7 +106,9 @@
       "publicado": true,
       "candidatos": [
         "8cbf"
-      ]
+      ],
+      "online": true,
+      "IDfreelancerEscolhido": null
     },
     {
       "id": "4",
@@ -106,7 +119,7 @@
       "imagem": "https://edm2.b-cdn.net/blog/wp-content/uploads/2019/01/assistentedemarketing-1200x675.jpg",
       "valor": 320,
       "turno": "Noite",
-      "local": 32687405,
+      "CEP": 123456789,
       "data": "05/06/2024",
       "habilidades": [
         "Marketing Digital"
@@ -116,7 +129,10 @@
       "telefone": "(31) 97654-3210",
       "cpf": "789.012.345-67",
       "cnpj": "23.456.789/0001-12",
-      "publicado": true
+      "publicado": true,
+      "candidatos": [],
+      "online": true,
+      "IDfreelancerEscolhido": null
     },
     {
       "id": "5",
@@ -127,7 +143,7 @@
       "imagem": "https://www.totvs.com/wp-content/uploads/2023/11/assistente-de-logistica-salario.jpg",
       "valor": 300,
       "turno": "Tarde",
-      "local": 32687405,
+      "CEP": 123456789,
       "data": "07/06/2024",
       "habilidades": [
         "Gestão de Estoque"
@@ -140,7 +156,9 @@
       "publicado": true,
       "candidatos": [
         "4ca4"
-      ]
+      ],
+      "online": true,
+      "IDfreelancerEscolhido": null
     },
     {
       "id": "92b1",
@@ -161,11 +179,36 @@
       "cnpj": "5615120800",
       "publicado": true,
       "publicacao": "23/06/2024",
-      "candidatos": []
+      "candidatos": [],
+      "online": true,
+      "IDfreelancerEscolhido": null
+    },
+    {
+      "id": "81ba",
+      "nome": "sdas",
+      "categoria": "Construção",
+      "descricao": "askjcbiab",
+      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719518859/i6vclbycablst3iastq2.jpg",
+      "valor": "1237846",
+      "turno": "Tarde",
+      "local": 3212567315,
+      "data": "2024-09-16",
+      "habilidades": [
+        "ashdah"
+      ],
+      "empregador": "Luisin do Job",
+      "email": "luis325@gmail.com",
+      "telefone": "31985494832",
+      "cnpj": "5615120800",
+      "publicado": true,
+      "publicacao": "27/06/2024",
+      "candidatos": [],
+      "online": true,
+      "IDfreelancerEscolhido": null
     },
     {
       "id": "5c84",
-      "nome": "Limpeza",
+      "nome": "limp",
       "categoria": "Limpeza",
       "descricao": "Preciso que alguém limpe meu apartamento novo",
       "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719520529/qfie777mkkffneskbder.png",
@@ -183,29 +226,11 @@
       "publicado": true,
       "publicacao": "27/06/2024",
       "candidatos": [
-        "1490"
-      ]
-    },
-    {
-      "id": "5d70",
-      "nome": "Limpeza",
-      "categoria": "Limpeza",
-      "descricao": "Preciso que alguém limpe meu apartamento novo",
-      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719520529/ewumjtbyralqhbjuqyeo.png",
-      "valor": "250",
-      "turno": "Tarde",
-      "local": 32315060,
-      "data": "2024-06-28",
-      "habilidades": [
-        "Passar pano"
+        "1490",
+        "4ca4"
       ],
-      "empregador": "Suely Schneider",
-      "email": "suely@gmail.com",
-      "telefone": "31996021004",
-      "cnpj": "63612852604",
-      "publicado": true,
-      "publicacao": "27/06/2024",
-      "candidatos": []
+      "online": false,
+      "IDfreelancerEscolhido": "1490"
     },
     {
       "id": "8676",
@@ -225,30 +250,11 @@
       "cnpj": "12345676152",
       "publicado": true,
       "publicacao": "29/06/2024",
-      "candidatos": []
-    },
-    {
-      "id": "6fa2",
-      "nome": "Vaga teste",
-      "categoria": "Finanças",
-      "descricao": "teste",
-      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719731459/rvsd9fxvskbbnccx5ebo.jpg",
-      "valor": "100",
-      "turno": "Manhã",
-      "local": 32687405,
-      "data": "2024-07-01",
-      "habilidades": [
-        "Constução civil."
-      ],
-      "empregador": "Luisin do Job",
-      "email": "luis325@gmail.com",
-      "telefone": "31985494832",
-      "cnpj": "5615120800",
-      "publicado": true,
-      "publicacao": "30/06/2024",
       "candidatos": [
-        "8cbf"
-      ]
+        "1490"
+      ],
+      "online": false,
+      "IDfreelancerEscolhido": "1490"
     }
   ],
   "feedbacks": [
@@ -286,15 +292,6 @@
       "estrelas": "5",
       "descricao": "Site top",
       "data": "24/06/2024, 00:54:00",
-      "categoria": "positivo"
-    },
-    {
-      "id": "b167",
-      "nome": "Luis",
-      "email": "Luis@gmail.com",
-      "estrelas": "5",
-      "descricao": "Este é um teste da nossa funcionalidade de feedbacks",
-      "data": "30/06/2024, 03:10:13",
       "categoria": "positivo"
     }
   ],
@@ -396,21 +393,21 @@
   "empregadores": [
     {
       "id": "0210",
-      "nome": "Luisin do Job",
+      "nome": "Fogão do Job",
       "dataNascimento": "2000-08-25",
       "cpf": "5615120800",
       "telefone": "31985494832",
       "cep": "32687405",
       "linkedin": "ea",
-      "email": "luis325@gmail.com",
-      "senha": "123456789123456789",
+      "email": "botafogo.contrata@gmail.com",
+      "senha": "12345",
       "interesses": [],
       "tipo": "empregador",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
-      "bio": "A Uaijobs é meu a melhor do mundo",
+      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719722246/zj2xzh4p4dft1aixtcps.png",
+      "bio": "A Uaijobs é a segunda melhor do mundo, o maior é o FOGÃO!",
       "UserPremium": true,
       "vagasPublicadas": [
-        "6fa2"
+        "81ba"
       ]
     },
     {
@@ -559,8 +556,10 @@
       "vagasCandidatadas": [
         "3596",
         "9fd3",
-        "3",
-        "6fa2"
+        "1",
+        "0",
+        "2",
+        "3"
       ]
     },
     {
@@ -583,7 +582,8 @@
       "UserPremium": false,
       "vagasCandidatadas": [
         "0",
-        "5"
+        "5",
+        "5c84"
       ]
     },
     {
@@ -631,11 +631,12 @@
         "Construção"
       ],
       "tipo": "freelancer",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
+      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719726649/gsvajnsg2p4yptcsf82s.webp",
       "bio": "Homem prestador de serviço, fiel e bem humorado",
-      "UserPremium": false,
+      "UserPremium": true,
       "vagasCandidatadas": [
-        "5c84"
+        "5c84",
+        "8676"
       ]
     },
     {

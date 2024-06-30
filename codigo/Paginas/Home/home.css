@@ -181,7 +181,6 @@ textarea.form-control {
     width: 80%;
     height: 50%;
     padding: 10px;
-    min-width: 175px;
 }
 
 #feedbackContainer {
@@ -189,67 +188,47 @@ textarea.form-control {
     justify-content: center;
 }
 
-
-@media (max-width: 768px) {
-    .boxAvaliacao {
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    .carousel-inner {
-        align-items: center;
-        padding-left: 10%;
-    }
-}
 /*Aqui termina o carrossel dinamico de feedbacks*/
 
 /*Aqui começa o Crud para os feedbacks*/
 
-/* Texto de introdução */
-.textoIntroducao {
+/*Texto de introdução*/
+.textoIntroducao{
     font-size: 20px;
 }
 
-/* Centralizar container das estrelas */
-.estrelas {
-    text-align: center;
+/*Estrelas de avaliação*/
+.estrelas .p {
+    padding: -200;
 }
-
 .rate {
-    display: inline-block;
+    float: left;
     height: 40px;
-    padding: 0;
+    padding: 0 0 0 0px;
 }
-
-/* Estrelas de avaliação */
 .rate:not(:checked) > input {
-    position: absolute;
-    top: -9999px;
+    position:absolute;
+    top:-9999px;
 }
-
 .rate:not(:checked) > label {
-    float: right;
-    width: 1em;
-    overflow: hidden;
-    white-space: nowrap;
-    cursor: pointer;
-    font-size: 50px;
-    color: #ccc;
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:50px;
+    color:#ccc;
 }
-
 .rate:not(:checked) > label:before {
     content: '★ ';
 }
-
 .rate > input:checked ~ label {
-    color: #ffc700;
+    color: #ffc700;    
 }
-
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
-    color: #deb217;
+    color: #deb217;  
 }
-
 .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
 .rate > input:checked ~ label:hover,

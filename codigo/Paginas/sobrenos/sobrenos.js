@@ -20,3 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     atualizarTituloDescricao();
 });
+
+function mostrarAlerta() {
+    alert("Perdão, função ainda em desenvolvimento!");
+}

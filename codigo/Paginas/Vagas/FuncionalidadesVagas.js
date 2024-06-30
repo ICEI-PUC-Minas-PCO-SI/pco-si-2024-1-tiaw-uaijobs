@@ -65,26 +65,12 @@ function populateCategoryDropdown() {
         dropdownMenu.appendChild(listItem);
     });
 
+    // Remove any existing dropdown-menu and append the new one
     const existingDropdownMenu = dropdownCategory.nextElementSibling;
     if (existingDropdownMenu) {
         dropdownCategory.parentNode.removeChild(existingDropdownMenu);
     }
     dropdownCategory.parentNode.appendChild(dropdownMenu);
-}
-
-// Função para buscar as coordenadas por CEP usando a API do Google Maps
-async function buscarCoordenadasPorCEP(cep) {
-    const apiKey = 'AIzaSyDpyahm2yA-CCerVqOXj-xufJzQXbwA8D4';
-    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${cep}&key=${apiKey}`);
-    const data = await response.json();
-    if (data.status !== 'OK') {
-        throw new Error('CEP não encontrado');
-    }
-    const location = data.results[0].geometry.location;
-    return {
-        lat: location.lat,
-        lng: location.lng
-    };
 }
 
 // Função para calcular a distância entre dois pontos (usando a fórmula de Haversine)
@@ -100,6 +86,24 @@ function calcularDistancia(lat1, lon1, lat2, lon2) {
     return R * 2 * Math.asin(Math.sqrt(a));
 }
 
+// Função para buscar coordenadas por CEP
+async function buscarCoordenadasPorCEP(cep) {
+    const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+    const data = await response.json();
+    if (data.erro) {
+        throw new Error('CEP não encontrado');
+    }
+    const coordenadas = await fetch(`https://nominatim.openstreetmap.org/search?postalcode=${cep}&country=Brazil&format=json&addressdetails=1`);
+    const geoData = await coordenadas.json();
+    if (geoData.length === 0) {
+        throw new Error('Coordenadas não encontradas para o CEP fornecido');
+    }
+    return {
+        lat: parseFloat(geoData[0].lat),
+        lon: parseFloat(geoData[0].lon)
+    };
+}
+
 // Função para aplicar filtros e exibir os resultados
 async function applyFilters() {
     console.log('Aplicando filtros:', filters); // Log para verificar filtros
@@ -109,7 +113,6 @@ async function applyFilters() {
     if (usuarioCorrente && usuarioCorrente.cep) {
         try {
             userCoordinates = await buscarCoordenadasPorCEP(usuarioCorrente.cep);
-            console.log('Coordenadas do usuário:', userCoordinates);
         } catch (error) {
             console.error('Erro ao buscar coordenadas do usuário:', error);
         }
@@ -123,12 +126,10 @@ async function applyFilters() {
         const dataFim = filters.dataFim ? new Date(filters.dataFim.split('/').reverse().join('-')) : null;
 
         let distanciaValida = true;
-        if (filters.distance && userCoordinates && item.local) {
+        if (filters.distance && userCoordinates && item.CEP) {
             try {
-                const jobCoordinates = await buscarCoordenadasPorCEP(item.local);
-                console.log('Coordenadas da vaga:', item.local, jobCoordinates);
-                const distancia = calcularDistancia(userCoordinates.lat, userCoordinates.lng, jobCoordinates.lat, jobCoordinates.lng);
-                console.log('Distância calculada:', distancia);
+                const jobCoordinates = await buscarCoordenadasPorCEP(item.CEP);
+                const distancia = calcularDistancia(userCoordinates.lat, userCoordinates.lon, jobCoordinates.lat, jobCoordinates.lon);
                 distanciaValida = distancia <= filters.distance;
             } catch (error) {
                 console.error('Erro ao calcular distância:', error);
@@ -151,7 +152,6 @@ async function applyFilters() {
     currentPage = 1; // Resetar para a primeira página após aplicar filtros
     renderPage(currentPage);
 }
-
 // Função para renderizar a página atual
 function renderPage(page) {
     const vagasContainer = document.getElementById('container-vagas-abertas');
@@ -169,18 +169,18 @@ function renderPage(page) {
     console.log('Itens da página:', pageItems); // Log para verificar itens da página
 
     pageItems.forEach(vagaItem => {
-        if (vagaItem.publicado) {
+        if (vagaItem.publicado && vagaItem.online) {
             const vagaCard = document.createElement('div');
-            vagaCard.classList.add('Container', 'border', 'p-3', 'rounded-4', 'shadow-lg', 'p-3', 'mb-5', 'bg-body-tertiary', 'col-12', 'col-md-6', 'col-lg-4');
-    
+            vagaCard.classList.add('Container', 'border', 'p-3', 'rounded-4', 'shadow-lg', 'p-3', 'mb-5', 'bg-body-tertiary', 'mx-5', 'col-xxl-4');
+
             const title = document.createElement('div');
             title.classList.add('Cards-vagas-title', 'text-center', 'pb-2');
             const h2 = document.createElement('h2');
             h2.textContent = vagaItem.nome;
             title.appendChild(h2);
-    
+
             const imagem = document.createElement('div');
-            imagem.classList.add('Cards-vagas-imagem');
+            imagem.classList.add('Cards-vagas-imagem', 'pb-2', 'ps-5');
             const img = document.createElement('img');
             img.classList.add('rounded-3');
             img.src = vagaItem.imagem;
@@ -190,7 +190,7 @@ function renderPage(page) {
                 img.src = 'fallback_image_url.jpg'; // Imagem de fallback
             };
             imagem.appendChild(img);
-    
+
             const descricao = document.createElement('div');
             descricao.classList.add('Cards-vagas-descrição');
             const p = document.createElement('p');
@@ -201,26 +201,26 @@ function renderPage(page) {
                 p.textContent = 'Descrição não disponível.';
             }
             descricao.appendChild(p);
-    
+
             const bttn = document.createElement('div');
             bttn.classList.add('Cards-vagas-bttn', 'd-grid', 'gap-2', 'col-6', 'mx-auto');
             const button = document.createElement('button');
-            button.classList.add('btn');
+            button.classList.add('btn', 'btn-outline-danger');
             button.textContent = 'Ver detalhes';
             button.onclick = function () {
                 mostrarDetalhesVaga(vagaItem);
             };
             bttn.appendChild(button);
-    
+
             vagaCard.appendChild(title);
             vagaCard.appendChild(imagem);
             vagaCard.appendChild(descricao);
             vagaCard.appendChild(bttn);
-    
+
             vagasContainer.appendChild(vagaCard);
         }
     });
-    
+
     updatePagination();
 }
 
@@ -304,17 +304,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
+// Função para atualizar o rótulo do valor e aplicar os filtros
 function updatavalorHoraLabel(value) {
-    const maxRangeValue = 1000; // Valor máximo do controle deslizante
-    const valorHoraMaxLabel = document.getElementById('valorHoraMaxLabel');
-    if (value == maxRangeValue) {
-        valorHoraMaxLabel.innerText = 'Ilimitado';
-        filters.valorHora = Infinity; // Use Infinity para representar valor ilimitado
-    } else {
-        valorHoraMaxLabel.innerText = value;
-        filters.valorHora = parseInt(value, 10);
-    }
+    document.getElementById('valorHoraMaxLabel').innerText = value;
+    filters.valorHora = parseInt(value, 10);
     applyFilters();
 }
 
@@ -342,32 +335,29 @@ async function mostrarDetalhesVaga(vaga) {
 
     const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
     const candidatarButton = document.getElementById('candidatarButton');
-    const retirarCandidaturaButton = document.getElementById('retirarCandidaturaButton');
     
-    // Verifica se o usuário já se candidatou à vaga e altera o conteúdo dos botões
+    // Verifica se o usuário já se candidatou//pode se candidatar na vaga e altera o conteúdo do botão
     if (usuarioCorrente && usuarioCorrente.tipo === 'freelancer') {
         if (usuarioCorrente.vagasCandidatadas && usuarioCorrente.vagasCandidatadas.includes(vaga.id)) {
-            candidatarButton.style.display = 'none';
-            retirarCandidaturaButton.style.display = 'block';
-            retirarCandidaturaButton.onclick = function() {
-                retirarCandidatura(vaga.id);
-            };
+            candidatarButton.textContent = 'Candidatado';
+            candidatarButton.classList.add('btn-success');
+            candidatarButton.disabled = true;
         } else {
-            candidatarButton.style.display = 'block';
-            retirarCandidaturaButton.style.display = 'none';
+            candidatarButton.textContent = 'Candidatar';
+            candidatarButton.classList.remove('btn-success');
+            candidatarButton.disabled = false;
             candidatarButton.onclick = function() {
                 candidatarVaga(vaga.id, usuarioCorrente.id);
             };
         }
+        candidatarButton.style.display = 'block';
     } else {
         candidatarButton.style.display = 'none';
-        retirarCandidaturaButton.style.display = 'none';
     }
 
     const vagaModal = new bootstrap.Modal(document.getElementById('vagaModal'));
     vagaModal.show();
 }
-
 
 // Função para candidatar-se à vaga
 async function candidatarVaga(vagaId) {
@@ -391,7 +381,7 @@ async function candidatarVaga(vagaId) {
 
         // Verificar o limite de vagas candidatas
         //6 para userPremium = true  3 Para userPremium = false
-        const limiteVagas = usuarioCorrente.userPremium ? 3 : 6;
+        const limiteVagas = usuarioCorrente.userPremium ? 6 : 3;
         if (freelancer.vagasCandidatadas.length >= limiteVagas) {
             window.alert(`Você atingiu o limite de ${limiteVagas} candidaturas.`);
             return;
@@ -457,80 +447,35 @@ async function candidatarVaga(vagaId) {
         window.alert('Erro ao candidatar-se à vaga. Por favor, tente novamente.');
     }
 }
+// Função para calcular a distância entre dois pontos (usando a fórmula de Haversine)
+function calcularDistancia(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Raio da Terra em km
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = 
+        0.5 - Math.cos(dLat)/2 + 
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+        (1 - Math.cos(dLon)) / 2;
 
-// Função para retirar candidatura da vaga
-async function retirarCandidatura(vagaId) {
-    const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
-    if (!usuarioCorrente || usuarioCorrente.tipo !== 'freelancer') {
-        window.alert("Apenas freelancers podem retirar a candidatura.");
-        return;
+    return R * 2 * Math.asin(Math.sqrt(a));
+}
+
+// Função para buscar coordenadas por CEP
+async function buscarCoordenadasPorCEP(cep) {
+    const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+    const data = await response.json();
+    if (data.erro) {
+        throw new Error('CEP não encontrado');
     }
-
-    try {
-        // Obter os dados do freelancer
-        const freelancerResponse = await fetch(`${JSON_SERVER_URL_FREELANCERS}/${usuarioCorrente.id}`);
-        if (!freelancerResponse.ok) {
-            throw new Error('Erro ao obter dados do freelancer');
-        }
-
-        const freelancer = await freelancerResponse.json();
-        if (!freelancer.vagasCandidatadas) {
-            freelancer.vagasCandidatadas = [];
-        }
-
-        // Remover o ID da vaga do array de vagasCandidatadas
-        freelancer.vagasCandidatadas = freelancer.vagasCandidatadas.filter(id => id !== vagaId);
-
-        // Atualizar o freelancer no JSON Server
-        const updateFreelancerResponse = await fetch(`${JSON_SERVER_URL_FREELANCERS}/${usuarioCorrente.id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ vagasCandidatadas: freelancer.vagasCandidatadas })
-        });
-
-        if (!updateFreelancerResponse.ok) {
-            throw new Error('Erro ao atualizar vagas candidatas do freelancer');
-        }
-
-        // Atualizar o Local Storage
-        usuarioCorrente.vagasCandidatadas = freelancer.vagasCandidatadas;
-        localStorage.setItem('UsuarioCorrente', JSON.stringify(usuarioCorrente));
-
-        // Obter os dados da vaga
-        const vagaResponse = await fetch(`${JSON_SERVER_URL_VAGAS}/${vagaId}`);
-        if (!vagaResponse.ok) {
-            throw new Error('Erro ao obter dados da vaga');
-        }
-
-        const vaga = await vagaResponse.json();
-        if (!vaga.candidatos) {
-            vaga.candidatos = [];
-        }
-
-        // Remover o ID do freelancer do array de candidatos
-        vaga.candidatos = vaga.candidatos.filter(id => id !== usuarioCorrente.id);
-
-        // Atualizar a vaga no JSON Server
-        const updateVagaResponse = await fetch(`${JSON_SERVER_URL_VAGAS}/${vagaId}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ candidatos: vaga.candidatos })
-        });
-
-        if (!updateVagaResponse.ok) {
-            throw new Error('Erro ao atualizar candidatos da vaga');
-        }
-
-        window.alert('Você retirou sua candidatura com sucesso!');
-        mostrarDetalhesVaga(vaga); // Atualizar o modal
-    } catch (error) {
-        console.error("Erro ao retirar candidatura:", error);
-        window.alert('Erro ao retirar candidatura. Por favor, tente novamente.');
+    const coordenadas = await fetch(`https://nominatim.openstreetmap.org/search?postalcode=${cep}&country=Brazil&format=json&addressdetails=1`);
+    const geoData = await coordenadas.json();
+    if (geoData.length === 0) {
+        throw new Error('Coordenadas não encontradas para o CEP fornecido');
     }
+    return {
+        lat: parseFloat(geoData[0].lat),
+        lon: parseFloat(geoData[0].lon)
+    };
 }
 
 // Página de publicar vagas
@@ -723,7 +668,9 @@ async function IncluirVagaLS() {
         cnpj: usuarioCorrente.cpf,
         publicado: true,
         publicacao: obterDataAtual(),
-        candidatos: [] // Inicializa com um array vazio para os candidatos
+        candidatos: [], // Inicializa com um array vazio para os candidatos
+        online: true,
+        IDfreelancerEscolhido: null
     };
 
     console.log("Nova vaga:", novaVaga);
@@ -834,7 +781,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         return;
     }
     
-    //Carrega vagas
+//Carrega vagas
     vagas.forEach(vagaItem => {
         const vagaCard = document.createElement('div');
         vagaCard.classList.add('Container', 'border', 'p-3', 'rounded-4', 'shadow-lg', 'p-3', 'mb-5', 'bg-body-tertiary', 'mx-5', 'col-xxl-4');
@@ -846,7 +793,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         title.appendChild(h2);
 
         const imagem = document.createElement('div');
-        imagem.classList.add('Cards-vagas-imagem');
+        imagem.classList.add('Cards-vagas-imagem', 'pb-2', 'ps-5');
         const img = document.createElement('img');
         img.classList.add('rounded-3');
         img.src = vagaItem.imagem;
@@ -871,7 +818,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const bttn = document.createElement('div');
         bttn.classList.add('Cards-vagas-bttn', 'd-grid', 'gap-2', 'col-6', 'mx-auto');
         const button = document.createElement('button');
-        button.classList.add('btn');
+        button.classList.add('btn', 'btn-outline-danger');
         button.textContent = 'Ver detalhes';
         button.onclick = function() {
             mostrarDetalhesVaga(vagaItem);
@@ -886,157 +833,74 @@ document.addEventListener("DOMContentLoaded", async function () {
         vagasContainer.appendChild(vagaCard);
     });
 
-    // Função para mostrar detalhes da vaga
-async function mostrarDetalhesVaga(vaga) {
-    const vagaDetalhes = document.getElementById('vagaDetalhes');
+    async function mostrarDetalhesVaga(vaga) {
+        const vagaDetalhes = document.getElementById('vagaDetalhes');
+        
+        const endereco = await buscarEnderecoPorCEP(vaga.local);
+        const enderecoTexto = endereco ? `${endereco.logradouro}, ${endereco.bairro}, ${endereco.localidade} - ${endereco.uf}` : 'Endereço não encontrado.';
     
-    const endereco = await buscarEnderecoPorCEP(vaga.local);
-    const enderecoTexto = endereco ? `${endereco.logradouro}, ${endereco.bairro}, ${endereco.localidade} - ${endereco.uf}` : 'Endereço não encontrado.';
-
-    vagaDetalhes.innerHTML = `
-        <h5>${vaga.nome}</h5>
-        <p><strong>Categoria:</strong> ${vaga.categoria}</p>
-        <p><strong>Descrição:</strong> ${vaga.descricao || 'Descrição não disponível.'}</p>
-        <p><strong>Publicação:</strong> ${vaga.publicacao}</p>
-        <p><strong>Valor:</strong> R$ ${vaga.valor}</p>
-        <p><strong>Turno:</strong> ${vaga.turno}</p>
-        <p><strong>Data:</strong> ${vaga.data}</p>
-        <p><strong>Local:</strong> ${enderecoTexto}</p>
-        <p><strong>Empresa:</strong> ${vaga.empregador}</p>
-        <p><strong>Telefone:</strong> ${vaga.telefone}</p>
-        <p><strong>Habilidades:</strong> ${vaga.habilidades ? vaga.habilidades.join(', ') : 'Não especificado'}</p>
-    `;
-
-    const candidatarButton = document.getElementById('candidatarButton');
-    const retirarCandidaturaButton = document.getElementById('retirarCandidaturaButton');
-    const excluirButton = document.getElementById('excluirButton');
-    const editarButton = document.getElementById('editarButton');
-    const verCandidatosButton = document.getElementById('verCandidatosButton');
-
-    if (usuarioCorrente && usuarioCorrente.tipo === 'freelancer') {
-        if (usuarioCorrente.vagasCandidatadas && usuarioCorrente.vagasCandidatadas.includes(vaga.id)) {
-            candidatarButton.textContent = 'Candidatado!';
-            candidatarButton.classList.add('btn-success');
-            candidatarButton.disabled = true;
-            retirarCandidaturaButton.style.display = 'block';
-            retirarCandidaturaButton.onclick = function() {
-                retirarCandidatura(vaga.id);
+        vagaDetalhes.innerHTML = `
+            <h5>${vaga.nome}</h5>
+            <p><strong>Categoria:</strong> ${vaga.categoria}</p>
+            <p><strong>Descrição:</strong> ${vaga.descricao || 'Descrição não disponível.'}</p>
+            <p><strong>Publicação:</strong> ${vaga.publicacao}</p>
+            <p><strong>Valor:</strong> R$ ${vaga.valor}</p>
+            <p><strong>Turno:</strong> ${vaga.turno}</p>
+            <p><strong>Data:</strong> ${vaga.data}</p>
+            <p><strong>Local:</strong> ${enderecoTexto}</p>
+            <p><strong>Empresa:</strong> ${vaga.empregador}</p>
+            <p><strong>Telefone:</strong> ${vaga.telefone}</p>
+            <p><strong>Habilidades:</strong> ${vaga.habilidades ? vaga.habilidades.join(', ') : 'Não especificado'}</p>
+        `;
+    
+        const candidatarButton = document.getElementById('candidatarButton');
+        const excluirButton = document.getElementById('excluirButton');
+        const editarButton = document.getElementById('editarButton');
+        const verCandidatosButton = document.getElementById('verCandidatosButton');
+    
+        if (usuarioCorrente && usuarioCorrente.tipo === 'freelancer') {
+            if (usuarioCorrente.vagasCandidatadas && usuarioCorrente.vagasCandidatadas.includes(vaga.id)) {
+                candidatarButton.textContent = 'Candidatado';
+                candidatarButton.classList.add('btn-success');
+                candidatarButton.disabled = true;
+            } else {
+                candidatarButton.textContent = 'Candidatar';
+                candidatarButton.classList.remove('btn-success');
+                candidatarButton.disabled = false;
+                candidatarButton.onclick = function() {
+                    candidatarVaga(vaga.id);
+                };
+            }
+            candidatarButton.style.display = 'block';
+        } else {
+            candidatarButton.style.display = 'none';
+        }
+    
+        if (usuarioCorrente && usuarioCorrente.tipo === 'empregador' && usuarioCorrente.nome === vaga.empregador) {
+            excluirButton.style.display = 'block';
+            excluirButton.onclick = function() {
+                excluirVaga(vaga.id);
+            };
+    
+            editarButton.style.display = 'block';
+            editarButton.onclick = function() {
+                editarVaga(vaga);
+            };
+    
+            verCandidatosButton.style.display = 'block';
+            verCandidatosButton.onclick = function() {
+                mostrarCandidatos(vaga.id);
             };
         } else {
-            candidatarButton.textContent = 'Candidatar';
-            candidatarButton.classList.remove('btn-success');
-            candidatarButton.disabled = false;
-            candidatarButton.style.display = 'block';
-            retirarCandidaturaButton.style.display = 'none';
-            candidatarButton.onclick = function() {
-                candidatarVaga(vaga.id);
-            };
+            excluirButton.style.display = 'none';
+            editarButton.style.display = 'none';
+            verCandidatosButton.style.display = 'none';
         }
-    } else {
-        candidatarButton.style.display = 'none';
-        retirarCandidaturaButton.style.display = 'none';
-    }
-
-    if (usuarioCorrente && usuarioCorrente.tipo === 'empregador' && usuarioCorrente.nome === vaga.empregador) {
-        excluirButton.style.display = 'block';
-        excluirButton.onclick = function() {
-            excluirVaga(vaga.id);
-        };
-
-        editarButton.style.display = 'block';
-        editarButton.onclick = function() {
-            editarVaga(vaga);
-        };
-
-        verCandidatosButton.style.display = 'block';
-        verCandidatosButton.onclick = function() {
-            mostrarCandidatos(vaga.id);
-        };
-    } else {
-        excluirButton.style.display = 'none';
-        editarButton.style.display = 'none';
-        verCandidatosButton.style.display = 'none';
-    }
-
-    const vagaModal = new bootstrap.Modal(document.getElementById('vagaModal'));
-    vagaModal.show();
-}
     
-    // Função para retirar candidatura da vaga
-async function retirarCandidatura(vagaId) {
-    const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
-    if (!usuarioCorrente || usuarioCorrente.tipo !== 'freelancer') {
-        window.alert("Apenas freelancers podem retirar a candidatura.");
-        return;
+        const vagaModal = new bootstrap.Modal(document.getElementById('vagaModal'));
+        vagaModal.show();
     }
-
-    try {
-        // Obter os dados do freelancer
-        const freelancerResponse = await fetch(`${JSON_SERVER_URL_FREELANCERS}/${usuarioCorrente.id}`);
-        if (!freelancerResponse.ok) {
-            throw new Error('Erro ao obter dados do freelancer');
-        }
-
-        const freelancer = await freelancerResponse.json();
-        if (!freelancer.vagasCandidatadas) {
-            freelancer.vagasCandidatadas = [];
-        }
-
-        // Remover o ID da vaga do array de vagasCandidatadas
-        freelancer.vagasCandidatadas = freelancer.vagasCandidatadas.filter(id => id !== vagaId);
-
-        // Atualizar o freelancer no JSON Server
-        const updateFreelancerResponse = await fetch(`${JSON_SERVER_URL_FREELANCERS}/${usuarioCorrente.id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ vagasCandidatadas: freelancer.vagasCandidatadas })
-        });
-
-        if (!updateFreelancerResponse.ok) {
-            throw new Error('Erro ao atualizar vagas candidatas do freelancer');
-        }
-
-        // Atualizar o Local Storage
-        usuarioCorrente.vagasCandidatadas = freelancer.vagasCandidatadas;
-        localStorage.setItem('UsuarioCorrente', JSON.stringify(usuarioCorrente));
-
-        // Obter os dados da vaga
-        const vagaResponse = await fetch(`${JSON_SERVER_URL_VAGAS}/${vagaId}`);
-        if (!vagaResponse.ok) {
-            throw new Error('Erro ao obter dados da vaga');
-        }
-
-        const vaga = await vagaResponse.json();
-        if (!vaga.candidatos) {
-            vaga.candidatos = [];
-        }
-
-        // Remover o ID do freelancer do array de candidatos
-        vaga.candidatos = vaga.candidatos.filter(id => id !== usuarioCorrente.id);
-
-        // Atualizar a vaga no JSON Server
-        const updateVagaResponse = await fetch(`${JSON_SERVER_URL_VAGAS}/${vagaId}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ candidatos: vaga.candidatos })
-        });
-
-        if (!updateVagaResponse.ok) {
-            throw new Error('Erro ao atualizar candidatos da vaga');
-        }
-
-        window.alert('Candidatura retirada com sucesso!');
-        window.location.reload(); // Recarrega a página para atualizar a lista de vagas
-    } catch (error) {
-        console.error("Erro ao retirar candidatura:", error);
-        window.alert('Erro ao retirar candidatura. Por favor, tente novamente.');
-    }
-}
-
+    
     // Função para editar a vaga
     function editarVaga(vaga) {
         const nomeVaga = prompt("Nome da Vaga:", vaga.nome);
@@ -1082,64 +946,45 @@ async function retirarCandidatura(vagaId) {
     }
     
     // Função para excluir a vaga
-async function excluirVaga(vagaId) {
-    const confirmar = confirm("Tem certeza de que deseja excluir esta vaga?");
-    if (!confirmar) return;
-
-    try {
-        // Excluir a vaga do JSON Server
-        const response = await fetch(`${JSON_SERVER_URL_VAGAS}/${vagaId}`, {
-            method: 'DELETE'
-        });
-
-        if (response.ok) {
-            // Atualizar vagasPublicadas no JSON Server
-            const empregadorResponse = await axios.get(`${JSON_SERVER_URL_EMPREGADORES}/${usuarioCorrente.id}`);
-            const empregador = empregadorResponse.data;
-            empregador.vagasPublicadas = empregador.vagasPublicadas.filter(id => id !== vagaId);
-            
-            await fetch(`${JSON_SERVER_URL_EMPREGADORES}/${usuarioCorrente.id}`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ vagasPublicadas: empregador.vagasPublicadas })
+    async function excluirVaga(vagaId) {
+        const confirmar = confirm("Tem certeza de que deseja excluir esta vaga?");
+        if (!confirmar) return;
+    
+        try {
+            // Excluir a vaga do JSON Server
+            const response = await fetch(`${JSON_SERVER_URL_VAGAS}/${vagaId}`, {
+                method: 'DELETE'
             });
-
-            // Atualizar vagasPublicadas no localStorage
-            usuarioCorrente.vagasPublicadas = usuarioCorrente.vagasPublicadas.filter(id => id !== vagaId);
-            localStorage.setItem('UsuarioCorrente', JSON.stringify(usuarioCorrente));
-
-            // Obter todos os freelancers que se candidataram a esta vaga
-            const freelancersResponse = await axios.get(`${JSON_SERVER_URL_FREELANCERS}`);
-            const freelancers = freelancersResponse.data;
-
-            // Atualizar cada freelancer que se candidatou a esta vaga
-            for (let freelancer of freelancers) {
-                if (freelancer.vagasCandidatadas && freelancer.vagasCandidatadas.includes(vagaId)) {
-                    freelancer.vagasCandidatadas = freelancer.vagasCandidatadas.filter(id => id !== vagaId);
-
-                    await fetch(`${JSON_SERVER_URL_FREELANCERS}/${freelancer.id}`, {
-                        method: 'PATCH',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ vagasCandidatadas: freelancer.vagasCandidatadas })
-                    });
-                }
+    
+            if (response.ok) {
+                // Atualizar vagasPublicadas no JSON Server
+                const empregadorResponse = await axios.get(`${JSON_SERVER_URL_EMPREGADORES}/${usuarioCorrente.id}`);
+                const empregador = empregadorResponse.data;
+                empregador.vagasPublicadas = empregador.vagasPublicadas.filter(id => id !== vagaId);
+                
+                await fetch(`${JSON_SERVER_URL_EMPREGADORES}/${usuarioCorrente.id}`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ vagasPublicadas: empregador.vagasPublicadas })
+                });
+    
+                // Atualizar vagasPublicadas no localStorage
+                usuarioCorrente.vagasPublicadas = usuarioCorrente.vagasPublicadas.filter(id => id !== vagaId);
+                localStorage.setItem('UsuarioCorrente', JSON.stringify(usuarioCorrente));
+    
+                alert("Vaga excluída com sucesso.");
+                window.location.reload(); // Recarrega a página para atualizar a lista de vagas
+            } else {
+                throw new Error('Erro ao excluir a vaga');
             }
-
-            alert("Vaga excluída com sucesso.");
-            window.location.reload(); // Recarrega a página para atualizar a lista de vagas
-        } else {
-            throw new Error('Erro ao excluir a vaga');
+        } catch (error) {
+            console.error("Erro ao excluir a vaga:", error);
+            alert('Erro ao excluir a vaga. Por favor, tente novamente.');
         }
-    } catch (error) {
-        console.error("Erro ao excluir a vaga:", error);
-        alert('Erro ao excluir a vaga. Por favor, tente novamente.');
     }
-}
-
+    
 // Função para mostrar os candidatos da vaga
 async function mostrarCandidatos(vagaId) {
     const candidatosModal = new bootstrap.Modal(document.getElementById('candidatosModal'));
@@ -1150,32 +995,90 @@ async function mostrarCandidatos(vagaId) {
         const vagaResponse = await fetch(`${JSON_SERVER_URL_VAGAS}/${vagaId}`);
         const vaga = await vagaResponse.json();
         
-        if (vaga.candidatos && vaga.candidatos.length > 0) {
-            for (let candidatoId of vaga.candidatos) {
-                const candidatoResponse = await fetch(`${JSON_SERVER_URL_FREELANCERS}/${candidatoId}`);
-                const candidato = await candidatoResponse.json();
-                const candidatoCard = document.createElement('div');
-                candidatoCard.classList.add('col-12', 'col-md-6', 'col-lg-4', 'mb-3');
-                candidatoCard.innerHTML = `
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">${candidato.nome}</h5>
-                            <img src="${candidato.foto}" alt="Foto de ${candidato.nome}" class="img-fluid mb-3">
-                            <p class="card-text"><strong>Habilidades:</strong> ${candidato.interesses.join(', ')}</p>
-                            <button class="btn btn-info" onclick="mostrarContato(this)">Entrar em contato</button>
-                            <div class="contato-info" style="display:none;">
-                                <p class="card-text"><strong>Email:</strong> ${candidato.email}</p>
-                                <p class="card-text"><strong>Telefone:</strong> ${candidato.telefone}</p>
-                                <p class="card-text"><strong>LinkedIn:</strong> <a href="${candidato.linkedin}" target="_blank">${candidato.linkedin}</a></p>
+        if(vaga.online){
+            if (vaga.candidatos && vaga.candidatos.length > 0) {
+                for (let candidatoId of vaga.candidatos) {
+                    const candidatoResponse = await fetch(`${JSON_SERVER_URL_FREELANCERS}/${candidatoId}`);
+                    const candidato = await candidatoResponse.json();
+                    const candidatoCard = document.createElement('div');
+                    candidatoCard.classList.add('col-12', 'col-md-6', 'col-lg-4', 'mb-3');
+                    candidatoCard.innerHTML = `
+                        <div class="card cardCandidato">
+                            <div class="card-body cardCandidatoSelecao">
+                                <input class="idCandidato" style="display: none" value="${candidato.id}">
+                                <input class="idVaga" style="display: none" value="${vagaId}">
+                                <h5 class="card-title">${candidato.nome}</h5>
+                                <img src="${candidato.imagem}" alt="Foto de ${candidato.nome}" class="img-fluid mb-3">
+                                <p class="card-text"><strong>Habilidades:</strong> ${candidato.interesses.join(', ')}</p>
+                                <div class="contato-info" style="display:none;">
+                                    <p class="card-text"><strong>Email:</strong> ${candidato.email}</p>
+                                    <p class="card-text"><strong>Telefone:</strong> ${candidato.telefone}</p>
+                                    <p class="card-text"><strong>LinkedIn:</strong> <a href="${candidato.linkedin}" target="_blank">${candidato.linkedin}</a></p>
+                                </div>
+                                
                             </div>
                         </div>
-                    </div>
-                `;
-                candidatosContainer.appendChild(candidatoCard);
+                    `;
+                    candidatosContainer.appendChild(candidatoCard);
+    
+                    //Função que habilita seleção de candidato nas vagas publicadas
+                    let candidatoCardSelecao = document.querySelectorAll(".cardCandidatoSelecao")
+                    let cardCandidato = document.querySelectorAll(".cardCandidato")
+                    var btnSelecionaCandidato = document.getElementById("btnSelecionaCandidato")
+    
+                    cardCandidato.forEach(card => {
+                        card.addEventListener("click", () => {
+    
+                            btnSelecionaCandidato.style.display = "block"
+    
+                            
+                            candidatoCardSelecao.forEach(divInterna => {
+                                divInterna.classList.remove("selecionado")
+                            })
+    
+                            const cardCandidatoSelecaoClicado = card.querySelector('.cardCandidatoSelecao')
+    
+                            if(cardCandidatoSelecaoClicado){
+                                cardCandidatoSelecaoClicado.classList.add("selecionado")
+                            }
+                        } )
+    
+    
+                    })
+    
+                }
+            } else {
+                candidatosContainer.textContent = 'Nenhum candidato para esta vaga.';
             }
         } else {
-            candidatosContainer.textContent = 'Nenhum candidato para esta vaga.';
+            const response = await fetch(`${JSON_SERVER_URL_FREELANCERS}/${vaga.IDfreelancerEscolhido}`);
+            const candidatoSelecionado = await response.json();
+
+            const candidatoCard = document.createElement('div');
+            const smallModalCandidato = document.getElementById("smallCandidato")
+
+            candidatoCard.classList.add('col-12','m-3');
+            candidatoCard.innerHTML = `
+                                        <div class="card cardCandidato p-0 m-4">
+                                            <div class="card-body cardCandidatoSelecao">
+                                                <h5 class="card-title">${candidatoSelecionado.nome}</h5>
+                                                <img src="${candidatoSelecionado.imagem}" alt="Foto de ${candidatoSelecionado.nome}" class="img-fluid mb-3 w-25">
+                                                <p class="card-text"><strong>Habilidades:</strong> ${candidatoSelecionado.interesses.join(', ')}</p>
+                                                <div class="contato-info">
+                                                    <p class="card-text"><strong>Email:</strong> ${candidatoSelecionado.email}</p>
+                                                    <p class="card-text"><strong>Telefone:</strong> ${candidatoSelecionado.telefone}</p>
+                                                    <p class="card-text"><strong>LinkedIn:</strong> <a href="${candidatoSelecionado.linkedin}" target="_blank">${candidatoSelecionado.linkedin}</a></p>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>`;
+            candidatosContainer.appendChild(candidatoCard);
+
+            smallModalCandidato.textContent = `Você escolheu o ${candidatoSelecionado.nome} como seu Freelancer! Entre em contato com ele e resolva suas demandas! Obrigado por confiar na UaiJobs!`
+
+            console.log(candidatoSelecionado)
         }
+        
     } catch (error) {
         console.error('Erro ao buscar candidatos:', error);
         candidatosContainer.textContent = 'Erro ao buscar candidatos.';
@@ -1183,6 +1086,8 @@ async function mostrarCandidatos(vagaId) {
 
     candidatosModal.show();
 }
+
+
 
 // Função para excluir a vaga
 async function excluirVaga(vagaId) {
@@ -1261,3 +1166,62 @@ function ocultarBotaoParaFreelancer() {
 
 // Chama a função para ocultar o botão ao carregar a página
 document.addEventListener('DOMContentLoaded', ocultarBotaoParaFreelancer);
+
+function selecionaCandidato(){
+    let candidatoId = document.querySelector(".cardCandidato .selecionado .idCandidato").value
+    let vagaId = document.querySelector(".cardCandidato .selecionado .idVaga").value
+  
+    const vagaAtualizada = {
+        online: false,
+        IDfreelancerEscolhido: candidatoId
+    };
+
+    const candidatoAtualizado = {
+        vagasRealizadas: vagaId
+    }
+    updateVagaOnline(vagaId, vagaAtualizada);
+    updateCandidato(candidatoId, candidatoAtualizado);
+
+
+    console.log(candidatoId, vagaId)
+}
+
+async function updateVagaOnline(vagaId, vagaAtualizada) {
+    try {
+        const response = await fetch(`${JSON_SERVER_URL_VAGAS}/${vagaId}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(vagaAtualizada)
+        });
+
+        if (response.ok) {
+            alert("Candidato selecionado com sucesso! Informações disponíveis na área dos candidatos!");
+            window.location.reload(); // Recarrega a página para atualizar a lista de vagas
+        } else {
+            throw new Error('Erro ao atualizar a vaga');
+        }
+    } catch (error) {
+        console.error("Erro ao atualizar a vaga:", error);
+        alert('Erro ao atualizar a vaga. Por favor, tente novamente.');
+    }
+}
+
+async function updateCandidato(candidatoId, candidatoAtualizado) {
+    try {
+        const response = await fetch(`${JSON_SERVER_URL_FREELANCERS}/${candidatoId}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(candidatoAtualizado)
+        });
+
+        if (response.ok) {
+            window.location.reload(); // Recarrega a página para atualizar a lista de vagas
+        }
+    } catch (error) {
+        console.error("Erro ao atualizar a vaga:", error);
+    }
+}

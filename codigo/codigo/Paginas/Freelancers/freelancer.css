@@ -1,0 +1,151 @@
+/* Estilos para o contêiner de freelancers */
+#container-freelancers-disponiveis {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilos para os cartões de freelancer */
+.Container 
+{   
+    flex: 1 1 calc(33% - 40px); /* Para 2 colunas com margem de 20px */
+    max-width: calc(33% - 40px); /* Para 2 colunas com margem de 20px */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    background-color: #fff;
+    margin: 80px;
+}
+
+.Container:hover {
+    transform: scale(1.05);
+}
+
+.Cards-freelancer-title {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.Cards-freelancer-title h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.Cards-freelancer-imagem {
+    text-align: center;
+    padding: 10px;
+}
+
+.Cards-freelancer-imagem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.Cards-freelancer-descrição {
+    padding: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.Cards-freelancer-bttn {
+    text-align: center;
+    padding: 10px;
+}
+
+.Cards-freelancer-bttn button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    background-color: #dc3545;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.Cards-freelancer-bttn button:hover {
+    background-color: #c82333;
+}
+
+/* Responsividade para 2 colunas */
+@media (max-width: 992px) {
+    .Container {
+        flex: 1 1 calc(50% - 40px); /* Para 2 colunas com margem de 20px */
+        max-width: calc(50% - 40px); /* Para 2 colunas com margem de 20px */
+    }
+}
+
+/* Responsividade para 1 coluna */
+@media (max-width: 576px) {
+    .Container {
+        flex: 1 1 calc(100% - 40px); /* Para 1 coluna com margem de 20px */
+        max-width: calc(100% - 40px); /* Para 1 coluna com margem de 20px */
+    }
+}
+
+/* Estilos para centralizar o cartão único */
+.single-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+}
+/* Filtros */
+.page-link-custom {
+    cursor: pointer;
+}
+
+.highlight-card:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters-container {
+    background-color: #704040;
+    z-index: 999;
+    padding: 20px 20px;
+    width: 30%;
+}
+
+.filters-container .dropdown .dropdown-toggle {
+    background-color: #4e2525;
+    border-color: #4e2525;
+    color: white;
+}
+
+.filters-container .dropdown .dropdown-menu {
+    background-color: #4e2525;
+}
+
+.filters-container .dropdown .dropdown-item {
+    color: white;
+}
+
+.filters-container .dropdown .dropdown-item:hover {
+    background-color: #703838;
+}
+
+.filters-container .range-container {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.filters-container .range-container input[type="range"] {
+    margin: 0 10px;
+    flex: 1;
+}
+
+.filters-container .range-container input[type="range"]::-webkit-slider-thumb {
+    background-color: black;
+}
+
+.filters-container .range-container span {
+    font-weight: bold;
+}
+
