@@ -27,7 +27,9 @@
       "candidatos": [
         "4ca4",
         "4472"
-      ]
+      ],
+      "online": true,
+      "IDfreelancerEscolhido": null
     },
     {
       "id": "1",
@@ -49,7 +51,9 @@
       "cpf": "987.654.321-98",
       "cnpj": "12.345.678/0001-90",
       "publicado": true,
-      "candidatos": []
+      "candidatos": [],
+      "online": true,
+      "IDfreelancerEscolhido": null
     },
     {
       "id": "2",
@@ -71,7 +75,9 @@
       "cpf": "543.210.987-65",
       "cnpj": "78.901.234/0001-23",
       "publicado": true,
-      "candidatos": []
+      "candidatos": [],
+      "online": true,
+      "IDfreelancerEscolhido": null
     },
     {
       "id": "3",
@@ -95,7 +101,9 @@
       "publicado": true,
       "candidatos": [
         "8cbf"
-      ]
+      ],
+      "online": true,
+      "IDfreelancerEscolhido": null
     },
     {
       "id": "4",
@@ -140,7 +148,9 @@
       "publicado": true,
       "candidatos": [
         "4ca4"
-      ]
+      ],
+      "online": true,
+      "IDfreelancerEscolhido": null
     },
     {
       "id": "92b1",
@@ -161,28 +171,9 @@
       "cnpj": "5615120800",
       "publicado": true,
       "publicacao": "23/06/2024",
-      "candidatos": []
-    },
-    {
-      "id": "81ba",
-      "nome": "sdas",
-      "categoria": "Construção",
-      "descricao": "askjcbiab",
-      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719518859/i6vclbycablst3iastq2.jpg",
-      "valor": "1237846",
-      "turno": "Tarde",
-      "local": 32687405,
-      "data": "2024-09-16",
-      "habilidades": [
-        "ashdah"
-      ],
-      "empregador": "Luisin do Job",
-      "email": "luis325@gmail.com",
-      "telefone": "31985494832",
-      "cnpj": "5615120800",
-      "publicado": true,
-      "publicacao": "27/06/2024",
-      "candidatos": []
+      "candidatos": [],
+      "online": false,
+      "IDfreelancerEscolhido": "4472"
     },
     {
       "id": "5c84",
@@ -204,29 +195,11 @@
       "publicado": true,
       "publicacao": "27/06/2024",
       "candidatos": [
-        "1490"
-      ]
-    },
-    {
-      "id": "5d70",
-      "nome": "Limpeza",
-      "categoria": "Limpeza",
-      "descricao": "Preciso que alguém limpe meu apartamento novo",
-      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719520529/ewumjtbyralqhbjuqyeo.png",
-      "valor": "250",
-      "turno": "Tarde",
-      "local": 32315060,
-      "data": "2024-06-28",
-      "habilidades": [
-        "Passar pano"
+        "1490",
+        "4472"
       ],
-      "empregador": "Suely Schneider",
-      "email": "suely@gmail.com",
-      "telefone": "31996021004",
-      "cnpj": "63612852604",
-      "publicado": true,
-      "publicacao": "27/06/2024",
-      "candidatos": []
+      "online": false,
+      "IDfreelancerEscolhido": "1490"
     },
     {
       "id": "8676",
@@ -246,7 +219,9 @@
       "cnpj": "12345676152",
       "publicado": true,
       "publicacao": "29/06/2024",
-      "candidatos": []
+      "candidatos": [],
+      "online": true,
+      "IDfreelancerEscolhido": null
     },
     {
       "id": "6fa2",
@@ -267,7 +242,11 @@
       "cnpj": "5615120800",
       "publicado": true,
       "publicacao": "30/06/2024",
-      "candidatos": []
+      "candidatos": [
+        "4472"
+      ],
+      "online": true,
+      "IDfreelancerEscolhido": null
     },
     {
       "id": "b75d",
@@ -287,7 +266,9 @@
       "cnpj": "12345676152",
       "publicado": true,
       "publicacao": "30/06/2024",
-      "candidatos": []
+      "candidatos": [],
+      "online": true,
+      "IDfreelancerEscolhido": null
     }
   ],
   "feedbacks": [
@@ -445,11 +426,10 @@
       "senha": "123456789123456789",
       "interesses": [],
       "tipo": "empregador",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
+      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719760625/hvhnhlwgmv4ppgz7cayw.png",
       "bio": "A Uaijobs é meu a melhor do mundo",
       "UserPremium": true,
       "vagasPublicadas": [
-        "81ba",
         "6fa2"
       ]
     },
@@ -527,7 +507,7 @@
         "Computação"
       ],
       "tipo": "empregador",
-      "imagem": "../../img/Usuarios/iconeUsuario.png",
+      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719764251/kmujrvwcwqb4mp0rqb16.jpg",
       "bio": "",
       "UserPremium": false,
       "vagasPublicadas": [
@@ -648,10 +628,12 @@
       "tipo": "freelancer",
       "imagem": "../../img/Usuarios/iconeUsuario.png",
       "bio": "",
-      "UserPremium": false,
+      "UserPremium": true,
       "vagasCandidatadas": [
-        "0"
-      ]
+        "0",
+        "6fa2"
+      ],
+      "vagasRealizadas": "6fa2"
     },
     {
       "id": "1490",
@@ -676,7 +658,8 @@
       "UserPremium": false,
       "vagasCandidatadas": [
         "5c84"
-      ]
+      ],
+      "vagasRealizadas": "5c84"
     },
     {
       "id": "3da9",
