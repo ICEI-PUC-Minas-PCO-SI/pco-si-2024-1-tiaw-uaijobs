@@ -9,7 +9,7 @@ Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
 * Luis Henrique Sampaio Vieira
 * Thiago Moreira de Queiroz
 * Victor Schneider do Vale
-* Vitor Prates Souza Lima
+* Vitor Prates de Souza Lima
 
 ## Professores responsáveis
 
