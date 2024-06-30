@@ -1,0 +1,164 @@
+/* Estilos gerais para todas as páginas (P(perguntas frequentes) T(termos) F(fale conosco) S(sobre nos) */
+html,
+body {
+    min-height: 100vh; /* Define altura total para html e body */
+    margin: 0; /* Remove margem padrão */
+    padding: 0; /* Remove padding padrão */
+    width: 100%; /* Define largura total */
+}
+
+body {
+    display: flex; /* Utiliza flexbox para o layout do body */
+    flex-direction: column; /* Define direção da flexbox como coluna */
+}
+
+.cabecalho {
+    background-color: #4e2525; /* Cor de fundo do cabeçalho */
+    color: antiquewhite; /* Cor do texto no cabeçalho */
+    padding: 1rem; /* Espaçamento interno no cabeçalho */
+    display: flex; /* Utiliza flexbox para o layout do cabeçalho */
+    align-items: center; /* Alinha itens ao centro verticalmente */
+    justify-content: space-between; /* Espaça itens igualmente no cabeçalho */
+    font-size: 1rem; /* Tamanho da fonte no cabeçalho */
+    width: 100%; /* Largura total do cabeçalho */
+    box-sizing: border-box; /* Inclui padding e border na largura e altura */
+}
+/*Nome do usuario*/
+.NomeUsuario{
+    padding-top: 10px;
+}
+.logo {
+    width: 4vw; /* Largura da logo em viewport width */
+    height: auto; /* Altura automática para manter proporção */
+    border: 5px solid antiquewhite; /* Borda ao redor da logo */
+    border-radius: 100%; /* Torna a logo circular */
+    margin-right: 50px; /* Espaçamento à direita da logo */
+    min-width: 60px; /* Largura mínima para a logo */
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 60px; /* Ajusta largura da logo em telas menores */
+    }
+}
+
+.navegacao {
+    margin-left: auto; /* Move a navegação para a direita */
+}
+
+.lista-navegacao {
+    padding-left: 0; /* Remove padding à esquerda da lista */
+    list-style: none; /* Remove estilo de lista */
+    display: flex; /* Utiliza flexbox para layout da lista */
+}
+
+.item-navegacao {
+    background-color: antiquewhite; /* Cor de fundo dos itens de navegação */
+    padding: 10px; /* Espaçamento interno dos itens */
+    border-radius: 5%; /* Bordas arredondadas dos itens */
+    font-size: 1rem; /* Tamanho da fonte dos itens */
+    margin-left: 10px; /* Espaçamento à esquerda dos itens */
+}
+
+.link-navegacao {
+    color: black; /* Cor do texto dos links de navegação */
+    text-decoration: none; /* Remove sublinhado dos links */
+}
+
+.titulo-link {
+    text-decoration: none; /* Remove sublinhado do título do link */
+}
+
+.titulo {
+    font-size: 2rem; /* Tamanho da fonte do título */
+    color: antiquewhite; /* Cor do texto do título */
+    margin-left: 20px; /* Espaçamento à esquerda do título */
+}
+
+main {
+    flex: 1; /* Permite que o conteúdo principal cresça */
+    flex-direction: column; /* Direção da flexbox como coluna */
+    align-items: center; /* Alinha itens ao centro horizontalmente */
+    justify-content: flex-start; /* Alinha itens ao início verticalmente */
+    text-align: center; /* Centraliza texto */
+    background-color: #fcfcfc; /* Cor de fundo do conteúdo */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e border na largura e altura */
+    width: 100%; /* Largura total */
+    margin: 0; /* Remove margens */
+}
+
+.rodape {
+    border-top: 2px solid rgb(58, 58, 58); /* Borda superior do rodapé */
+    display: flex; /* Utiliza flexbox para layout */
+    justify-content: center; /* Centraliza itens horizontalmente */
+    align-items: center; /* Centraliza itens verticalmente */
+    padding: 1rem; /* Espaçamento interno */
+    width: 100%; /* Largura total */
+    box-sizing: border-box; /* Inclui padding e border na largura e altura */
+}
+
+.lista-rodape {
+    list-style: none; /* Remove estilo de lista */
+    display: flex; /* Utiliza flexbox para layout */
+}
+
+.item-rodape {
+    display: inline; /* Exibe itens inline */
+    margin: 0 10px; /* Espaçamento horizontal entre itens */
+}
+
+.link-rodape {
+    color: #333; /* Cor dos links no rodapé */
+    text-decoration: none; /* Remove sublinhado dos links */
+    transition: color 0.3s; /* Transição suave para cor */
+}
+
+.link-rodape:hover {
+    color: #4e2525; /* Cor dos links ao passar o mouse */
+}
+
+/* Botões gerais (inseridos por Luis, documentação tá na cabeça dele */
+.botoes {
+    margin: 20px 0;
+}
+
+.botao-acao {
+    background-color: antiquewhite;
+    color: black;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.botao-acao:hover {
+    background-color: #4e2525;
+    color: antiquewhite;
+}
+
+.ulDropdown{
+    list-style: none;
+    padding: 0;
+    border: 1 solid black;
+}
+
+.ulDropdown li{
+    background-color: antiquewhite;
+    color: #333;
+}
+
+.logout{
+    color: #4e2525;
+}
+
+.btn-uaijobs{
+    background-color: #4e2525; /* Altere a cor conforme necessário */
+    color: antiquewhite; /* Altere a cor conforme necessário */
+    padding: 7px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
