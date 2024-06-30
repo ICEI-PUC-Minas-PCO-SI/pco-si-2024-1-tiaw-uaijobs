@@ -653,13 +653,153 @@ Os cenários foram selecionados para cobrir as funcionalidades essenciais da pla
 
 ## Registros de Testes
 
-......  COLOQUE AQUI O SEU TEXTO ......
+Tela - Página Inicial
+Funcionalidade Avaliada: Exibição da página inicial e navegação básica.
+Grupo de Usuários: Todos os visitantes.
+Ferramentas Utilizadas: Testes manuais, Ferramentas de inspeção do navegador.
 
-> Discorra sobre os resultados do teste. Ressaltando pontos fortes e
-> fracos identificados na solução. Comente como o grupo pretende atacar
-> esses pontos nas próximas iterações. Apresente as falhas detectadas e
-> as melhorias geradas a partir dos resultados obtidos nos testes.
+Pontos Positivos:
 
+Interface Limpa e Atraente: A página inicial é bem organizada e visualmente atraente, facilitando a navegação dos usuários.
+Carregamento Rápido: A página inicial carrega rapidamente, proporcionando uma boa experiência inicial aos visitantes.
+Facilidade de Navegação: Links e menus são facilmente acessíveis, permitindo uma navegação intuitiva pelo site.
+Vídeo sobre o Projeto: Adicionar um vídeo explicativo sobre o UaiJobs na página inicial para apresentar a plataforma e suas funcionalidades de maneira mais envolvente e visualmente atraente.
+Pontos Negativos:
+
+Falta de Elementos Interativos: Podem ser adicionados mais elementos interativos, como vídeos introdutórios e tutoriais, para aumentar o engajamento dos usuários.
+
+Página de Login
+Funcionalidade Avaliada: Autenticação de usuários.
+Grupo de Usuários: Usuários registrados.
+Ferramentas Utilizadas: Testes manuais, Ferramentas de inspeção do navegador.
+
+Pontos Positivos:
+
+Processo de Login Simples: O processo de login é direto e fácil de usar.
+Validação Eficiente: A validação das credenciais de login é eficiente e rápida.
+Feedback Imediato: Os usuários recebem feedback imediato sobre a validade das credenciais inseridas.
+
+Pontos Negativos:
+
+Falta de Suporte para Autenticação Multifator: Implementar autenticação multifator para aumentar a segurança do login.
+
+Página de Cadastro
+Funcionalidade Avaliada: Registro de novos usuários.
+Grupo de Usuários: Novos visitantes do site.
+Ferramentas Utilizadas: Testes manuais, Ferramentas de inspeção do navegador.
+
+Pontos Positivos:
+
+Formulário de Cadastro Intuitivo: O formulário de cadastro é bem estruturado e fácil de preencher.
+Feedback Imediato: Os usuários recebem feedback imediato sobre a validade dos dados inseridos.
+Processo Rápido: O cadastro pode ser concluído rapidamente, sem etapas desnecessárias.
+
+Pontos Negativos:
+
+Ausência de Verificação de Email: Adicionar um sistema de verificação de email para garantir a autenticidade das contas registradas.
+
+Freelancers Disponíveis
+Funcionalidade Avaliada: Busca e filtros de freelancers.
+Grupo de Usuários: Empregadores.
+Ferramentas Utilizadas: Testes manuais, Ferramentas de inspeção do navegador.
+
+Pontos Positivos:
+
+Filtros Eficientes: Os filtros permitem refinar a busca de maneira eficaz, retornando resultados relevantes.
+Exibição Clara de Resultados: Os resultados da busca são exibidos de forma clara e organizada.
+Rapidez na Busca: A busca retorna resultados rapidamente, sem demora perceptível.
+
+Pontos Negativos:
+
+Filtros Limitados: Expandir as categorias e opções de filtros disponíveis para melhorar a precisão da busca.
+
+Vagas em Aberto
+Funcionalidade Avaliada: Exibição e busca de vagas de trabalho.
+Grupo de Usuários: Freelancers.
+Ferramentas Utilizadas: Testes manuais, Ferramentas de inspeção do navegador.
+
+Pontos Positivos:
+
+Busca Rápida e Precisa: A busca de vagas é rápida e retorna resultados precisos.
+Interface de Vagas Atraente: A interface de exibição de vagas é visualmente atraente e fácil de navegar.
+Filtros Úteis: Os filtros disponíveis ajudam a encontrar vagas específicas de acordo com os critérios do freelancer.
+
+Pontos Negativos:
+
+Falta de Opções Avançadas de Filtragem: Implementar opções avançadas de filtragem de vagas para facilitar a localização de vagas altamente específicas.
+
+Publicar Vaga
+Funcionalidade Avaliada: Criação e publicação de vagas.
+Grupo de Usuários: Empregadores.
+Ferramentas Utilizadas: Testes manuais, Ferramentas de inspeção do navegador.
+
+Pontos Positivos:
+
+Formulário de Publicação Simples: O formulário para publicar vagas é simples e fácil de usar.
+Processo Rápido: O processo de publicação de vagas é rápido e eficiente.
+Feedback Imediato: Os empregadores recebem feedback imediato sobre o status da vaga publicada.
+
+Pontos Negativos:
+
+Ausência de Pré-visualização: Adicionar uma funcionalidade de pré-visualização da vaga antes da publicação para permitir a revisão e correção de erros.
+
+Pagamento Fake com QR Code
+Funcionalidade Avaliada: Demonstração de pagamento com QR Code.
+Grupo de Usuários: Freelancers e empregadores (para fins de teste).
+Ferramentas Utilizadas: Testes manuais.
+
+Pontos Positivos:
+
+Facilidade de Uso: A função de pagamento com QR Code é fácil de usar e intuitiva.
+Processo Rápido: A geração e o escaneamento do QR Code ocorrem quase instantaneamente.
+Demonstração de Segurança: Apesar de ser fake, a implementação demonstra como os pagamentos com QR Code podem melhorar a segurança das transações.
+
+Pontos Negativos:
+
+Falta de Integração com Sistemas de Pagamento Reais: Atualmente, a funcionalidade não está integrada a sistemas de pagamento reais.
+Confusão Potencial entre Usuários: É importante comunicar claramente que a função atual é apenas para testes, para evitar confusões.
+
+##Estratégias para Melhorar nas Próximas Iterações
+
+Página Inicial:
+
+Ação: Adicionar elementos interativos, como vídeos introdutórios e tutoriais.
+Objetivo: Aumentar o engajamento dos novos usuários e incentivar a exploração da plataforma.
+
+Página de Login:
+
+Ação: Implementar suporte para autenticação multifator.
+Objetivo: Aumentar a segurança do processo de login.
+
+Página de Cadastro:
+
+Ação: Adicionar um sistema de verificação de email.
+Objetivo: Garantir a autenticidade das contas registradas e reduzir a criação de contas falsas.
+
+Busca e Filtros de Freelancers:
+
+Ação: Expandir as categorias e opções de filtros disponíveis.
+Objetivo: Melhorar a precisão e relevância dos resultados de busca para os empregadores.
+
+Exibição e Busca de Vagas:
+
+Ação: Implementar opções avançadas de filtragem de vagas.
+Objetivo: Facilitar a localização de vagas altamente específicas para os freelancers.
+
+Publicação de Vagas:
+
+Ação: Adicionar uma funcionalidade de pré-visualização da vaga antes da publicação.
+Objetivo: Permitir que os empregadores revisem e corrijam erros antes de publicar a vaga.
+
+Integração com Sistemas de Pagamento Reais:
+
+Ação: Trabalhar na integração da funcionalidade de pagamento com QR Code com provedores de pagamento reais, como bancos e carteiras digitais.
+Objetivo: Permitir que os usuários realizem transações financeiras reais através da plataforma.
+
+Comunicação Clara sobre Pagamento Fake:
+
+Ação: Adicionar mensagens claras e destacadas na interface de pagamento para informar os usuários de que a função atual é apenas para testes.
+Objetivo: Evitar confusão e garantir que os usuários entendam que o pagamento com QR Code é uma simulação.
 
 # Referências
 
