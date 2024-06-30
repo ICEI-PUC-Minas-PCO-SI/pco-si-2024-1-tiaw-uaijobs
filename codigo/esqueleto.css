@@ -291,3 +291,13 @@ button:hover {
 .botoes .btn {
     white-space: nowrap;
 }
+
+.btn-uaijobs{
+    background-color: #4e2525; 
+    color: antiquewhite; 
+    padding: 7px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
