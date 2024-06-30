@@ -490,14 +490,35 @@ Uso no Projeto: Garantem compatibilidade e responsividade em diversas plataforma
 
 ## Arquitetura da solução
 
-......  COLOQUE AQUI O SEU TEXTO E O DIAGRAMA DE ARQUITETURA .......
+>![Modelagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Codigos-Atualizados/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/MODELAGEM.JPG)
+alt: Modelagem.
 
-> Inclua um diagrama da solução e descreva os módulos e as tecnologias
-> que fazem parte da solução. Discorra sobre o diagrama.
-> 
-> **Exemplo do diagrama de Arquitetura**:
-> 
-> ![Exemplo de Arquitetura](images/arquitetura-exemplo.png)
+A imagem detalha como diferentes componentes do sistema interagem. A arquitetura está dividida em três partes principais: Navegador, Internet e Servidor. Abaixo está uma descrição detalhada de cada componente e suas funções:
+
+#### Navegador (Front-end)
+- **HTML, CSS, JS**: Estes são os componentes principais utilizados para construir a página web que o usuário vê e interage. HTML define a estrutura da página, CSS estiliza os elementos visuais, e JavaScript adiciona interatividade.
+- **Página WEB**: Representa a interface que os usuários acessam e utilizam. Esta página web é carregada no navegador do usuário.
+- **Local Storage**: Um armazenamento local no navegador que guarda dados temporários ou persistentes do usuário, como:
+  - **Usuário Corrente**: Armazena informações sobre o usuário que está atualmente logado.
+
+#### Internet
+- Representa a conexão entre o navegador do usuário e os servidores. A internet é o meio pelo qual as requisições e respostas são enviadas e recebidas.
+
+#### Nuvem
+- **Hospedagem da aplicação via Vercel**: Indica que a aplicação web está hospedada na plataforma Vercel, que serve as páginas web para os usuários.
+- **Hospedagem JSON-Server via Vercel**: JSON-Server é utilizado para simular uma API RESTful, e neste caso, também está hospedado na Vercel. Ele gerencia as requisições de dados enviadas pela aplicação web.
+- **Dados do usuário, Vagas Cadastradas, Freelancers Disponíveis**: Estes são os dados armazenados no servidor, incluindo informações sobre usuários, vagas de trabalho disponíveis e freelancers cadastrados.
+
+### Fluxo de Dados
+1. **Navegador**:
+   - O usuário interage com a página web utilizando HTML, CSS e JavaScript.
+   - Dados temporários, como o usuário corrente, são armazenados no Local Storage do navegador.
+2. **Internet**:
+   - As interações e solicitações do usuário são enviadas através da internet para o servidor.
+3. **Servidor**:
+   - O servidor processa as solicitações utilizando a aplicação hospedada na Vercel.
+   - O JSON-Server responde com dados necessários, como informações do usuário, vagas cadastradas e freelancers disponíveis.
+
 
 
 # Avaliação da Aplicação
