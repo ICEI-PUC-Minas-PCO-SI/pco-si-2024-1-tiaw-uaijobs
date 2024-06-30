@@ -393,7 +393,7 @@ A solução proposta pela UaiJobs envolve a criação de uma plataforma digital 
 
 ## Tecnologias Utilizadas
 
-Para desenvolver a UaiJobs, utilizaremos uma combinação de tecnologias modernas que garantem a funcionalidade e usabilidade da plataforma.
+Para desenvolver a UaiJobs, utilizamos as tecnologias e ferramentas a seguir
 
 **Tecnologias e Ferramentas:**
 
@@ -463,14 +463,77 @@ Uso no Projeto: Garantem compatibilidade e responsividade em diversas plataforma
 Para garantir que a aplicação atende aos requisitos e funciona corretamente, diversos cenários de teste foram planejados e executados.
 
 **Cenários de Teste:**
-* Teste de Cadastro de Usuário: Verificar se os usuários podem se cadastrar como freelancers ou empregadores e se todos os campos obrigatórios são validados corretamente.
-* Teste de Busca de Vagas: Validar a funcionalidade de busca, incluindo filtros por localização, tipo de trabalho e remuneração.
-* Teste de Sistema de Avaliação: Avaliar se o sistema de feedback funciona corretamente após a conclusão de um trabalho.
-* Teste de Responsividade: Garantir que a aplicação é responsiva e funciona bem em diferentes dispositivos e tamanhos de tela.
+* Cadastro de Usuário
+  
+Descrição: Permite que novos usuários se registrem na plataforma, seja como freelancers ou empregadores.
+Detalhes: Campos obrigatórios: nome, email, senha, tipo de usuário (freelancer ou empregador).
+Validação de campos e confirmação de senha.
 
-> Apresente os cenários de testes utilizados na realização dos testes da
-> sua aplicação. Escolha cenários de testes que demonstrem os requisitos
-> sendo satisfeitos.
+
+* Login de Usuário
+Descrição: Autentica usuários registrados, permitindo acesso às suas contas.
+Detalhes: Campos obrigatórios: email e senha.
+Validação de credenciais.
+Opção de recuperação de senha.
+
+* Perfil de Usuário
+Descrição: Permite que usuários visualizem e editem suas informações de perfil.
+Detalhes: Atualização de dados pessoais como nome, localização, foto de perfil, e descrição.
+Adição de habilidades (para freelancers).
+
+* Publicação de Vagas
+Descrição: Empregadores podem criar e publicar novas vagas de trabalho.
+Detalhes: Campos obrigatórios: título da vaga, descrição, requisitos, localização, remuneração.
+Definição de categorias e habilidades necessárias.
+
+* Busca de Vagas
+Descrição: Permite que freelancers busquem por vagas disponíveis.
+Detalhes: Filtros de busca por localização, categoria, habilidades, e faixa de remuneração.
+Exibição de resultados correspondentes aos critérios de busca.
+
+* Aplicação para Vagas
+Descrição: Freelancers podem aplicar para as vagas publicadas.
+Detalhes: Envio de mensagem ou carta de apresentação junto com a aplicação.
+Visualização do status da aplicação (pendente, aceita, rejeitada).
+
+* Sistema de Avaliação
+Descrição: Permite que empregadores e freelancers avaliem uns aos outros após a conclusão de um trabalho.
+Detalhes: Avaliação com estrelas e comentários.
+Exibição de avaliações no perfil do usuário.
+
+* Notificações
+Descrição: Sistema de notificações para manter os usuários informados sobre atividades importantes.
+Detalhes: Notificações sobre novas mensagens, aplicações recebidas, avaliações, e atualizações de status de vagas.
+
+* Mensagens Internas
+Descrição: Sistema de mensagens internas para comunicação entre freelancers e empregadores.
+Detalhes: Envio e recebimento de mensagens dentro da plataforma.
+Histórico de conversas.
+
+* Painel de Controle
+Descrição: Interface de gerenciamento para freelancers e empregadores.
+Detalhes: Freelancers: visualização de aplicações, mensagens, e avaliações.
+Empregadores: gerenciamento de vagas publicadas, aplicações recebidas, e avaliações.
+
+* Responsividade
+Descrição: Garantia de que a plataforma funciona bem em diferentes dispositivos e tamanhos de tela.
+Detalhes: Layouts adaptáveis para desktops, tablets, e dispositivos móveis.
+ Testes para garantir a funcionalidade em navegadores modernos.
+
+* Administração
+Descrição: Painel administrativo para gerenciamento de usuários e conteúdo.
+Detalhes: Gerenciamento de contas de usuários.
+Moderação de conteúdo (vagas, avaliações, mensagens).
+
+* Limites de Aplicações para Freelancers
+Descrição: Define o número máximo de vagas às quais freelancers podem se candidatar com base em seu status de assinatura.
+Detalhes: Freelancers Premium: Podem se candidatar a até 6 vagas simultaneamente.
+Freelancers Não-Premium: Podem se candidatar a até 3 vagas simultaneamente.
+
+* Limites de Publicações para Empregadores
+Descrição: Define o número máximo de vagas que empregadores podem publicar com base em seu status de assinatura.
+Detalhes: Empregadores Premium: Podem publicar até 10 vagas simultaneamente.
+Empregadores Não-Premium: Podem publicar até 5 vagas simultaneamente.
 
 ## Plano de Testes
 
