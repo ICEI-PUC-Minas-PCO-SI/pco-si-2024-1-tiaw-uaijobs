@@ -663,11 +663,8 @@ Os cenários foram selecionados para cobrir as funcionalidades essenciais da pla
 
 # Referências
 
-INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. **Pesquisa Nacional por Amostra de Domicílios Contínua - PNAD Contínua.** Disponível em: https://www.ibge.gov.br/estatisticas/sociais/trabalho/9171-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html. Acesso em: 10 jun. 2024.
+BRITISH BROADCASTING CORPORATION. **A dificuldade dos brasileiros de encontrar trabalho depois dos 50 anos: 'Pessoas nos julgam como inferiores'**. Disponível em: https://www.bbc.com/portuguese/articles/c4nvxvx8wqlo. Acesso em: 10 jun. 2024.
 
-INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. **161,6 milhões de pessoas com 10 anos ou mais de idade utilizaram a Internet no país, em 2022.** Disponível em: https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/38307-161-6-milhoes-de-pessoas-com-10-anos-ou-mais-de-idade-utilizaram-a-internet-no-pais-em-2022. Acesso em: 15 mar. 2024.
+R7 NOTÍCIAS. **Jovens relatam dificuldades para achar trabalho: 'Pedem experiência, mas negam oportunidade'**. Disponível em: https://noticias.r7.com/sao-paulo/jovens-relatam-dificuldades-para-achar-trabalho-pedem-experiencia-mas-negam-oportunidade-01052023/. Acesso em: 10 jun. 2024.
 
-INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. **Divulgação trimestral.** Disponível em: https://www.ibge.gov.br/estatisticas/sociais/populacao/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html?. Acesso em: 3 abr. 2024.
-
-INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. **Sistema IBGE de Recuperação Automática - SIDRA.** Disponível em: https://sidra.ibge.gov.br/home/pnadct/brasil. Acesso em: 21 mar. 2024.
-
+O TEMPO. **Há vagas, mas onde estão os candidatos? Comércio de BH enfrenta dificuldades para contratar**. Disponível em: https://www.otempo.com.br/economia/2024/6/28/ha-vagas--mas-onde-estao-os-candidatos--comercio-de-bh-enfrenta-. Acesso em: 10 jun. 2024.
