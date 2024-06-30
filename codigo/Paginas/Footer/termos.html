@@ -14,13 +14,29 @@
         <a href="../Home/Home.html">
             <img src="../../img/logoPNG.png" alt="Logo UaiJobs" class="logo"> <!-- Logo da UaiJobs -->
         </a>
-        <a href="home.html" class="titulo-link">
+        <a href="../Home/Home.html" class="titulo-link">
             <h1 class="titulo">UaiJobs</h1> <!-- Título da página -->
         </a>
         <nav class="navegacao">
             <ul class="lista-navegacao">
-                <li class="item-navegacao"><a href="login.html" class="link-navegacao">Login</a></li> <!-- Link para a página de login -->
-                <li class="item-navegacao"><a href="cadastro.html" class="link-navegacao">Cadastre-se</a></li> <!-- Link para a página de cadastro -->
+                <li class="item-navegacao" id="loginItem"><a href="../LoginCadastro/Login.html"
+                        class="link-navegacao">Login</a></li>
+                <li class="item-navegacao" id="cadastroItem"><a href="../LoginCadastro/Cadastro.html"
+                        class="link-navegacao">Cadastre-se</a></li>
+                <li class="item-navegacao" id="premiumButton"><a href="#" class="link-navegacao premium"
+                        data-bs-toggle="modal" data-bs-target="#premiumModal">Torna-se usuário premium</a></li>
+                <li class="NomeUsuario"><a id="NomeUser"></a></li>
+                <li class="item-navegacao" id="logoutItem">
+                    <button class="btn dropdown-toggle" onclick="Dropdown()">Menu</button>
+                    <div>
+                        <ul class="d-none ulDropdown" id="ulDropdown">
+                            <li class=""><a href="../MenuUsuario/MenuUsuario.html" class="link-navegacao">Página do
+                                    Usuário</a></li>
+                            <li class="logout item-navegacao"><a href="#" class="link-navegacao"
+                                    id="logoutLink">LogOut</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -53,6 +69,13 @@
         </ul>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> <!-- Link para o script do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../ScriptGeral.js"></script>
 </body>
 </html>

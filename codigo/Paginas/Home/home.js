@@ -53,18 +53,45 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(atualizarTextoDinamico, 2000);
 });
 
-
 //Carrossel dinamico de feedbacks
 document.addEventListener('DOMContentLoaded', () => {
-    mostraFeedbacks();
-    setupCarousel();
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+        mostraFeedbacksUmPorVez();
+    } else {
+        mostraFeedbacks();
+    }
 });
-//Construção dinamica do carrossel
+
+// Construção dinâmica do carrossel para 3 feedbacks por vez
+document.addEventListener('DOMContentLoaded', () => {
+    // Verifica o tamanho da tela e chama a função apropriada
+    if (window.innerWidth <= 768) {
+        mostraFeedbacksUmPorVez();
+    } else {
+        mostraFeedbacks();
+    }
+
+    // Adiciona um evento para ajustar o carrossel quando a tela for redimensionada
+    window.addEventListener('resize', () => {
+        const carouselInner = document.querySelector('.carousel-inner');
+        carouselInner.innerHTML = ''; // Limpa o carrossel
+
+        if (window.innerWidth <= 768) {
+            mostraFeedbacksUmPorVez();
+        } else {
+            mostraFeedbacks();
+        }
+    });
+});
+
+// Construção dinâmica do carrossel para 3 feedbacks por vez
 function mostraFeedbacks() {
-    axios.get('http://localhost:3000/feedbacks') // Substituir pela URL do JSon server
+    axios.get('http://localhost:3000/feedbacks')
         .then(response => {
             const feedbacks = response.data;
             const carouselInner = document.querySelector('.carousel-inner');
+            carouselInner.innerHTML = ''; // Limpar conteúdo existente
 
             if (feedbacks.length > 0) {
                 for (let i = 0; i < feedbacks.length; i += 3) {
@@ -75,12 +102,12 @@ function mostraFeedbacks() {
                     }
 
                     const feedbackGroup = document.createElement('div');
-                    feedbackGroup.classList.add('d-flex', 'justify-content-around');
+                    feedbackGroup.classList.add('d-flex', 'justify-content-around', 'flex-wrap');
 
                     for (let j = 0; j < 3 && i + j < feedbacks.length; j++) {
                         const feedback = feedbacks[i + j];
                         const feedbackCard = `
-                            <div class="boxAvaliacao rounded-4 shadow-lg border border-opacity-50 p-4 m-3">
+                            <div class="boxAvaliacao rounded-4 shadow-lg border border-opacity-50 p-4 m-3" style="flex: 0 0 30%;">
                                 <div class="nomeAvaliacao fw-semibold text-center pt-4">
                                     <p>${feedback.nome}</p>
                                 </div>
@@ -115,14 +142,70 @@ function mostraFeedbacks() {
             carouselInner.innerHTML = '<div class="carousel-item active"><p>Erro ao carregar feedbacks.</p></div>';
         });
 }
-//Geração de estrelas
-function geraEstrelas(rating) {
-    let starsHTML = '';
-    for (let i = 1; i <= 5; i++) {
-        starsHTML += `<span class="fa fa-star ${i <= rating ? 'checked' : ''}"></span>`;
-    }
-    return starsHTML;
+
+// Construção dinâmica do carrossel para 1 feedback por vez
+function mostraFeedbacksUmPorVez() {
+    axios.get('http://localhost:3000/feedbacks')
+        .then(response => {
+            const feedbacks = response.data;
+            const carouselInner = document.querySelector('.carousel-inner');
+            carouselInner.innerHTML = ''; // Limpar conteúdo existente
+
+            if (feedbacks.length > 0) {
+                for (let i = 0; i < feedbacks.length; i++) {
+                    const feedbackDiv = document.createElement('div');
+                    feedbackDiv.classList.add('carousel-item');
+                    if (i === 0) {
+                        feedbackDiv.classList.add('active');
+                    }
+
+                    const feedback = feedbacks[i];
+                    const feedbackCard = `
+                        <div class="boxAvaliacao rounded-4 shadow-lg border border-opacity-50 p-4 m-3">
+                            <div class="nomeAvaliacao fw-semibold text-center pt-4">
+                                <p>${feedback.nome}</p>
+                            </div>
+                            <div class="notaAvaliacao text-center fw-medium">
+                                <p>Avaliação: ${feedback.estrelas}/5</p>
+                            </div>
+                            <div class="estrelasAvaliacao fw-medium text-center">
+                                ${geraEstrelas(feedback.estrelas)}
+                            </div>
+                            <div class="feedbackAvaliacao mt-3">
+                                <div class="fundoFeedback border rounded-4 shadow-lg border-opacity-50 p-3">
+                                    <div class="textoFeedback p-4 text-center pt-5">
+                                        <textarea class="form-control" readonly>${feedback.descricao}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    feedbackDiv.innerHTML = feedbackCard;
+                    carouselInner.appendChild(feedbackDiv);
+                }
+            } else {
+                carouselInner.innerHTML = '<div class="carousel-item active"><p>Nenhum feedback disponível.</p></div>';
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao buscar feedbacks do servidor:', error);
+            const carouselInner = document.querySelector('.carousel-inner');
+            carouselInner.innerHTML = '<div class="carousel-item active"><p>Erro ao carregar feedbacks.</p></div>';
+        });
 }
+
+function geraEstrelas(estrelas) {
+    let estrelasHtml = '';
+    for (let i = 1; i <= 5; i++) {
+        if (i <= estrelas) {
+            estrelasHtml += '<span class="text-warning">★</span>';
+        } else {
+            estrelasHtml += '<span class="text-muted">★</span>';
+        }
+    }
+    return estrelasHtml;
+}
+
 //Tempo do carrossel
 function setupCarousel() {
     const feedbackCarousel = new bootstrap.Carousel(document.getElementById('feedbackCarousel'), {

@@ -116,3 +116,65 @@ function ajustarComportamentoBotao() {
 
 // Chama a função para ajustar o comportamento do botão quando a página carregar
 window.onload = ajustarComportamentoBotao;
+
+
+async function atualizarVagasPublicadasParaUsuarioCorrente() {
+    let JSON_SERVER_URL_EMPREGADORES = 'http://localhost:3000/empregadores ';
+    JSON_SERVER_URL_VAGAS = 'http://localhost:3000/vagas';
+    try {
+        const usuarioCorrente = JSON.parse(localStorage.getItem('UsuarioCorrente'));
+        if (!usuarioCorrente || usuarioCorrente.tipo !== 'empregador') {
+            console.error('Usuário corrente não é um empregador ou não está logado.');
+            return;
+        }
+
+        const responseVagas = await fetch(JSON_SERVER_URL_VAGAS);
+        if (!responseVagas.ok) {
+            throw new Error('Erro ao obter dados das vagas');
+        }
+
+        const vagas = await responseVagas.json();
+        const vagasPublicadasIds = vagas
+            .filter(vaga => vaga.email === usuarioCorrente.email)
+            .map(vaga => vaga.id);
+
+        if (!usuarioCorrente.vagasPublicadas) {
+            usuarioCorrente.vagasPublicadas = [];
+        }
+
+        usuarioCorrente.vagasPublicadas = [...new Set([...usuarioCorrente.vagasPublicadas, ...vagasPublicadasIds])];
+        localStorage.setItem('UsuarioCorrente', JSON.stringify(usuarioCorrente));
+
+        const responseEmpregador = await fetch(`${JSON_SERVER_URL_EMPREGADORES}/${usuarioCorrente.id}`);
+        if (!responseEmpregador.ok) {
+            throw new Error('Erro ao obter dados do empregador');
+        }
+
+        const empregador = await responseEmpregador.json();
+        if (!empregador.vagasPublicadas) {
+            empregador.vagasPublicadas = [];
+        }
+
+        empregador.vagasPublicadas = [...new Set([...empregador.vagasPublicadas, ...vagasPublicadasIds])];
+
+        const updateResponse = await fetch(`${JSON_SERVER_URL_EMPREGADORES}/${usuarioCorrente.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ vagasPublicadas: empregador.vagasPublicadas })
+        });
+
+        if (!updateResponse.ok) {
+            throw new Error('Erro ao atualizar dados do empregador');
+        }
+
+        console.log(`Empregador ${usuarioCorrente.id} atualizado com as vagas publicadas: ${vagasPublicadasIds}`);
+    } catch (error) {
+        console.error('Erro ao atualizar vagas publicadas para o usuário corrente:', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    atualizarVagasPublicadasParaUsuarioCorrente()
+});

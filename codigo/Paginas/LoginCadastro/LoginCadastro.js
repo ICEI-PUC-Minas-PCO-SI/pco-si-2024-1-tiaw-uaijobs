@@ -61,13 +61,13 @@ async function cadastrarUsuarioLS() {
 
     // Verifica se os emails coincidem
     if (email !== confEmail) {
-        window.alert("O Email e sua Confirmação precisam ser iguais!");
+        window.alert("O Email e sua Confirmação precisam ser iguais! Favor reenviar o formulário!");
         return;
     }
 
     // Verifica se as senhas coincidem
     if (senha !== confSenha) {
-        window.alert("A Senha e sua Confirmação precisam ser iguais!");
+        window.alert("A Senha e sua Confirmação precisam ser iguais! Favor reenviar o formulário!");
         return;
     }
 

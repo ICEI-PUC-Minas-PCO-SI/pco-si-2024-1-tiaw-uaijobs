@@ -411,7 +411,6 @@ O projeto UaiJobs foi desenvolvido pela equipe para a criação de uma plataform
 * **Geolocalização**: Utilização de geolocalização para facilitar a busca de vagas próximas ao usuário.
 * **Sistema de Assinatura**: Sistema que permite que o usuário assine uma versão premium da UaiJobs para benefícios especiais.
 
-
 # Tecnologias Utilizadas
 
 Para desenvolver a UaiJobs, utilizaremos uma combinação de tecnologias modernas que garantem a funcionalidade e usabilidade da plataforma. Abaixo, detalhamos cada tecnologia utilizada e sua aplicação no projeto:
@@ -477,19 +476,6 @@ Uso no Projeto: Garantem compatibilidade e responsividade em diversas plataforma
    - **Descrição**: Plataforma de colaboração visual.
    - **Aplicação**: Utilizado para brainstorming e design thinking, ajudando na geração de ideias e planejamento do projeto.
 
-
-> Descreva aqui qual(is) tecnologias você vai usar para resolver o seu
-> problema, ou seja, implementar a sua solução. Liste todas as
-> tecnologias envolvidas, linguagens a serem utilizadas, serviços web,
-> frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-> Apresente também uma figura explicando como as tecnologias estão
-> relacionadas ou como uma interação do usuário com o sistema vai ser
-> conduzida, por onde ela passa até retornar uma resposta ao usuário.
-> 
-> Inclua os diagramas de User Flow, esboços criados pelo grupo
-> (stoyboards), além dos protótipos de telas (wireframes). Descreva cada
-> item textualmente comentando e complementando o que está apresentado
-> nas imagens.
 
 ## Arquitetura da solução
 
@@ -738,6 +724,7 @@ Ferramentas Utilizadas: Testes manuais, Ferramentas de inspeção do navegador.
 
 Pontos Positivos:
 
+
 Formulário de Publicação Simples: O formulário para publicar vagas é simples e fácil de usar.
 Processo Rápido: O processo de publicação de vagas é rápido e eficiente.
 Feedback Imediato: Os empregadores recebem feedback imediato sobre o status da vaga publicada.
@@ -807,6 +794,7 @@ Objetivo: Evitar confusão e garantir que os usuários entendam que o pagamento 
 # Referências
 
 BRITISH BROADCASTING CORPORATION. **A dificuldade dos brasileiros de encontrar trabalho depois dos 50 anos: 'Pessoas nos julgam como inferiores'**. Disponível em: https://www.bbc.com/portuguese/articles/c4nvxvx8wqlo. Acesso em: 10 jun. 2024.
+
 
 R7 NOTÍCIAS. **Jovens relatam dificuldades para achar trabalho: 'Pedem experiência, mas negam oportunidade'**. Disponível em: https://noticias.r7.com/sao-paulo/jovens-relatam-dificuldades-para-achar-trabalho-pedem-experiencia-mas-negam-oportunidade-01052023/. Acesso em: 10 jun. 2024.
 

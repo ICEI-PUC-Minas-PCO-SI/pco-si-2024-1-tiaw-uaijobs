@@ -25,110 +25,115 @@
                 <li class="item-navegacao" id="cadastroItem"><a href="../LoginCadastro/Cadastro.html" class="link-navegacao">Cadastre-se</a></li>
                 <li class="item-navegacao" id="premiumButton"><a href="#" class="link-navegacao premium" data-bs-toggle="modal" data-bs-target="#premiumModal">Torna-se usuário premium</a></li>
                 <li class="NomeUsuario"><a id="NomeUser"></a></li>
-                <li class="item-navegacao" id="logoutItem"><a href="#" class="link-navegacao" id="logoutLink">LogOut</a></li>
+                <li class="item-navegacao" id="logoutItem">
+                    <button class="btn dropdown-toggle" onclick="Dropdown()">Menu</button>
+                    <div>
+                        <ul class="d-none ulDropdown" id="ulDropdown">
+                            <li class=""><a href="../MenuUsuario/MenuUsuario.html" class="link-navegacao">Página do Usuário</a></li>
+                            <li class="logout item-navegacao"><a href="#" class="link-navegacao" id="logoutLink">Sair da Conta</a></li>
+                        </ul>
+                    </div>   
+                </li>
             </ul>
         </nav>
     </header>
     <main class="conteudo-principal">
         <section class="botoes py-4 text-center">
-            <div class="btn-group" role="group">
-                <button class="botao-acao btn btn-light" onclick="location.href='../Home/Home.html'">Home</button>
-                <button class="botao-acao btn btn-light" onclick="location.href='../PaginaFreelancer.html'">Freelancers
-                    Disponíveis</button>
-                <button class="botao-acao btn btn-light" onclick="location.href='../Vagas/VagaAberto.html'">Vagas
-                    abertas</button>
-                <button class="botao-acao btn btn-light" onclick="location.href='../sobrenos/sobrenos.html'">Sobre
-                    Nos</button>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-auto mb-2">
+                        <button class="botao-acao btn btn-light w-100" onclick="location.href='../Home/Home.html'">Home</button>
+                    </div>
+                    <div class="col-12 col-md-auto mb-2">
+                        <button class="botao-acao btn btn-light w-100" onclick="location.href='../Freelancers/PaginaFreelancer.html'">Freelancers Disponíveis</button>
+                    </div>
+                    <div class="col-12 col-md-auto mb-2">
+                        <button class="botao-acao btn btn-light w-100" onclick="location.href='../Vagas/VagaAberto.html'">Vagas abertas</button>
+                    </div>
+                    <div class="col-12 col-md-auto mb-2">
+                        <button class="botao-acao btn btn-light w-100" onclick="location.href='../sobrenos/sobrenos.html'">Sobre os Criadores</button>
+                    </div>
+                </div>
             </div>
         </section>
-
-        <div class="container m-0" id="divForm">
+        <div class="container d-flex justify-content-center" id="divForm">
             <div class="row">
 
                 <!-- Título do formulário -->
-                <div class="divTituloForm">
-                    <h2 class="tituloForm">Informações da Vaga</h2>
+                <div class="col-12">
+                    <div class="divTituloForm">
+                        <h2 class="tituloForm">Informações da Vaga</h2>
+                    </div>
                 </div>
-
                 <!-- Formulário com informações da vaga -->
-                <form action="" id="formInfoVaga" class="formPublicar py-4">
-
-                    <div id="divInputNomeVaga">
-                        <label for="nomeVaga">Nome da vaga:</label>
-                        <input type="text" name="nomeVaga" id="nomeVaga" placeholder="Insira o nome/título da vaga" required>
-                    </div>
-
-                    <div id="divInputLocalVaga">
-                        <label for="localVaga">CEP da Vaga:</label>
-                        <input type="text" name="localVaga" id="localVaga" placeholder="Insira o CEP da localização da vaga" class="w-25">
-                    </div>
-
-                    <div id="divInputSelecionavel">
-                        <div id="divInputDataVaga">
-                            <label for="dataVaga">Data da Vaga:</label>
-                            <input type="date" name="dataVaga" id="dataVaga">
+                <div class="col-12">
+                    <form action="" id="formInfoVaga" class="formPublicar py-4">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="nomeVaga" class="form-label">Nome da vaga:</label>
+                                <input type="text" class="form-control" name="nomeVaga" id="nomeVaga" placeholder="Insira o nome/título da vaga" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="localVaga" class="form-label">CEP da Vaga:</label>
+                                <input type="text" class="form-control" name="localVaga" id="localVaga" placeholder="Insira o CEP da localização da vaga">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="dataVaga" class="form-label">Data da Vaga:</label>
+                                <input type="date" class="form-control" name="dataVaga" id="dataVaga">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="categoriaVaga" class="form-label">Categoria:</label>
+                                <select class="form-select" name="categoriaVaga" id="categoriaVaga" required>
+                                    <option value="Categoria" selected>Categoria...</option>
+                                    <option value="Jurídico">Jurídico</option>
+                                    <option value="Culinária">Culinária</option>
+                                    <option value="Design">Design</option>
+                                    <option value="Finanças">Finanças</option>
+                                    <option value="Fotografia">Fotografia</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="Redação">Redação</option>
+                                    <option value="Construção">Construção</option>
+                                    <option value="Tradução">Tradução</option>
+                                    <option value="Vídeo Clipes">Vídeo Clipes</option>
+                                    <option value="Computação">Computação</option>
+                                    <option value="Mídias Sociais">Mídias Sociais</option>
+                                    <option value="Limpeza">Limpeza</option>
+                                    <option value="Trabalhos Manuais">Trabalhos Manuais</option>
+                                    <option value="Outros">Outro</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="turnoVaga" class="form-label">Turno:</label>
+                                <select class="form-select" id="turnoVaga">
+                                    <option value="---">Selecione um Turno</option>
+                                    <option value="Manhã">Manhã (06:00 às 12:00)</option>
+                                    <option value="Tarde">Tarde (12:00 às 18:00)</option>
+                                    <option value="Noite">Noite (18:00 às 00:00)</option>
+                                    <option value="Madrugada">Madrugada (00:00 às 06:00)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="valorVaga" class="form-label">Valor da Vaga:</label>
+                                <input type="text" class="form-control" name="valorVaga" id="valorVaga" placeholder="Insira o valor ou 'A negociar'">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="habilidadesVaga" class="form-label">Habilidades:</label>
+                                <input type="text" class="form-control" name="habilidadesVaga" id="habilidadesVaga" placeholder="Digite as habilidades separadas por vírgula">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="descricaoVaga" class="form-label">Descrição:</label>
+                                <textarea class="form-control" name="descricaoVaga" id="descricaoVaga" placeholder="Insira uma breve descrição sobre o trabalho realizado" rows="4"></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="imagemVaga" class="form-label">Imagem da Vaga:</label>
+                                <input type="hidden" role="uploadcare-uploader" class="form-control" data-public-key="a075f581d190705ab583" data-crop="free,4:3" id="imagemVaga">
+                            </div>
                         </div>
-
-                        <div id="divInputCategoriaVaga">
-                            <label for="categoriaVaga">Categoria:</label>
-                            <select name="categoriaVaga" id="categoriaVaga" required>
-                                <option value="Categoria" selected>Categoria...</option>
-                                <option value="Jurídico">Jurídico</option>
-                                <option value="Culinária">Culinária</option>
-                                <option value="Design">Design</option>
-                                <option value="Finanças">Finanças</option>
-                                <option value="Fotografia">Fotografia</option>
-                                <option value="Marketing">Marketing</option>
-                                <option value="Redação">Redação</option>
-                                <option value="Construção">Construção</option>
-                                <option value="Tradução">Tradução</option>
-                                <option value="Vídeo Clipes">Vídeo Clipes</option>
-                                <option value="Computação">Computação</option>
-                                <option value="Mídias Sociais">Mídias Sociais</option>
-                                <option value="Limpeza">Limpeza</option>
-                                <option value="Trabalhos Manuais">Trabalhos Manuais</option>
-                                <option value="Outros">Outro</option>
-                            </select>
+                        <div class="text-center mt-4">
+                            <button id="btnPublicarVaga" class="btn btn-primary mb-3">Publicar vaga</button>
                         </div>
-
-                        <div class="" id="divInputTurnoVaga">
-                            <label for="turnoVaga">Turno:</label>
-                            <select id="turnoVaga">
-                                <option value="---">Selecione um Turno</option>
-                                <option value="Manhã">Manhã (06:00 às 12:00)</option>
-                                <option value="Tarde">Tarde (12:00 às 18:00)</option>
-                                <option value="Noite">Noite (18:00 às 00:00)</option>
-                                <option value="Madrugada">Madrugada (00:00 às 06:00)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div id="divInputValorVaga">
-                        <label for="valorVaga">Valor da Vaga:</label>
-                        <input type="text" name="valorVaga" id="valorVaga" placeholder="Insira o valor ou 'A negociar'">
-                    </div>
-
-                    <div id="divInputHabilidadesVaga">
-                        <label for="habilidadesVaga">Habilidades:</label>
-                        <input type="text" name="habilidadesVaga" id="habilidadesVaga" placeholder="Digite as habilidades separadas por vírgula">
-                    </div>
-
-                    <div class="d-block" id="divInputDescricaoVaga">
-                        <label for="descricaoVaga" class="d-block">Descrição:</label>
-                        <input type="text" name="descricaoVaga" id="descricaoVaga" placeholder="Insira uma breve descrição sobre o trabalho realizado">
-                    </div>
-
-                    <!-- Adicione um input para upload de imagens no formulário -->
-                    <div id="divInputImagemVaga">
-                        <label for="imagemVaga">Imagem da Vaga:</label>
-                        <input type="file" id="imagemVaga" accept="image/*">
-                    </div>
-                </form>
-
-                <div id="divBotaoPublicar">
-                    <button id="btnPublicarVaga" class="btn btn-primary mb-3">Publicar vaga</button>
+                    </form>
                 </div>
-
             </div>
         </div>
     </main>
@@ -146,7 +151,8 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../../ScriptGeral.js"></script>
-
+    <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+    <link rel="stylesheet" href="https://ucarecdn.com/libs/widget/3.x/uploadcare.min.css">
 </body>
 
 </html>
