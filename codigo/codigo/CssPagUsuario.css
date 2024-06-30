@@ -1,0 +1,153 @@
+/*Arquivo Provisorio*/
+html, body {
+    height: 100%;
+    margin: 0;
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #4e2525;
+    display: block;
+}
+
+header h1 {
+    color: antiquewhite;
+    font-size: 3rem;
+    vertical-align: middle;
+}
+
+header .logo {
+    width: 8vw;
+    height: auto;
+    border: 5px solid antiquewhite;
+    border-radius: 100%;
+    margin-right: 50px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_usuario {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.detalhamento_usuario {
+    flex: 1;
+    padding: 10px;
+}
+
+.nome h2 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.img_usuario {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.usuario_imagem {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dataNasc,
+.Interesses {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.dataNasc p,
+.Interesses p {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #555;
+}
+
+.lista {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lista li {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #777;
+}
+
+.descricao_contato {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.descricaoUsuario {
+    margin-bottom: 20px;
+}
+
+.descricaoUsuario p {
+    font-size: 16px;
+    color: #666;
+}
+
+.botaoContato {
+    text-align: center;
+}
+
+.botao_contato {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.botao_contato:hover {
+    background-color: #0056b3;
+}
+
+/* FOOTER */
+footer {
+    border-top: 2px solid rgb(58, 58, 58);
+}
+
+footer ul {
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 0px;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 15px;
+    margin-left: 15px;
+}
