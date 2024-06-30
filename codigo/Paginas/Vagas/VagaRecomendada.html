@@ -53,9 +53,13 @@
             </div>
         </div>
 
-        <!-- Modal detalhamento-->
-
-        <div class="modal fade" id="vagaModal" tabindex="-1" aria-labelledby="vagaModalLabel" aria-hidden="true">
+        <!-- Controle de paginação -->
+        <nav class="Paginacao mt-4">
+            <ul class="pagination justify-content-center pagination-centered"></ul>
+        </nav>
+        
+         <!-- Modal detalhamento-->
+         <div class="modal fade" id="vagaModal" tabindex="-1" aria-labelledby="vagaModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -70,11 +74,11 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                         <button type="button" class="btn btn-primary" id="candidatarButton" style="display: none;">Candidatar-se</button>
+                        <button id="retirarCandidaturaButton" class="btn btn-outline-danger" style="display: none;">Retirar candidatura</button>
                     </div>
                 </div>
             </div>
         </div>
-
     </main>
 
     <footer class="rodape">
@@ -92,5 +96,6 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 <script src="../../ScriptGeral.js"></script>
+<script src="FuncionalidadesVagas.js"></script>
 
 </html>

@@ -93,7 +93,9 @@
       "cpf": "321.654.987-54",
       "cnpj": "56.789.012/0001-34",
       "publicado": true,
-      "candidatos": []
+      "candidatos": [
+        "8cbf"
+      ]
     },
     {
       "id": "4",
@@ -282,6 +284,15 @@
       "estrelas": "5",
       "descricao": "Site top",
       "data": "24/06/2024, 00:54:00",
+      "categoria": "positivo"
+    },
+    {
+      "id": "b167",
+      "nome": "Luis",
+      "email": "Luis@gmail.com",
+      "estrelas": "5",
+      "descricao": "Este é um teste da nossa funcionalidade de feedbacks",
+      "data": "30/06/2024, 03:10:13",
       "categoria": "positivo"
     }
   ],
@@ -545,7 +556,8 @@
       "UserPremium": true,
       "vagasCandidatadas": [
         "3596",
-        "9fd3"
+        "9fd3",
+        "3"
       ]
     },
     {

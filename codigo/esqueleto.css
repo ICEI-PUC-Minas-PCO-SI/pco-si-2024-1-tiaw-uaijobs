@@ -163,3 +163,66 @@ button:hover {
     background-color: #4e2525 !important; /* Muda a cor de fundo do botão ao passar o mouse */
     color: antiquewhite !important; /* Mantém a cor do texto do botão ao passar o mouse */
 }
+.btn {
+    border: none !important;
+}
+
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+}
+
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+.pagination .page-item .page-link {
+    color: #704040; /* Cor do texto */
+    background-color: #f8f9fa; /* Cor de fundo */
+    border: 1px solid #dee2e6; /* Cor da borda */
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination .page-item .page-link:hover {
+    color: antiquewhite;
+    background-color: #704040; /* Cor de fundo ao passar o mouse */
+    border-color: #704040; /* Cor da borda ao passar o mouse */
+}
+
+.pagination .page-item.active .page-link {
+    color: #fff;
+    background-color: #704040; /* Cor de fundo do item ativo */
+    border-color: #704040; /* Cor da borda do item ativo */
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #fff;
+    border-color: #dee2e6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .btn-group {
+        flex-direction: row;
+    }
+
+    .botao-acao {
+        flex: 1 1 calc(50% - 10px); /* Dois botões por linha */
+        max-width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .botao-acao {
+        flex: 1 1 100%; /* Um botão por linha em telas muito pequenas */
+        max-width: 100%;
+    }
+}

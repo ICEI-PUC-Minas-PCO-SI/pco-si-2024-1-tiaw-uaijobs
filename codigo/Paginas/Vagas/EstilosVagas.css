@@ -265,3 +265,22 @@
     object-fit: cover;
 }
 
+/* Página Dinamica */
+#container-vagas-recomendadas{
+    padding-left: 20%;
+}
+#vagasContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Container {
+    max-width: 80%; /* Define a largura máxima dos cards */
+    margin: 15px; /* Espaçamento entre os cards */
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
