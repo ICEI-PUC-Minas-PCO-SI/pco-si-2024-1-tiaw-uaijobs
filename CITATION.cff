@@ -1,30 +1,30 @@
 <<<<<<< HEAD
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: UaiJobs
 authors: 
-  - family-names: Prates de Souza Lima
-    given-names: Vitor
+  - family-names: de Oliveira Souza
+    given-names: Guilherme
+  - family-names: Maia Moreira Fernandes
+    given-names: Igor
+  - family-names: Henrique Sampaio Vieira
+    given-names: Luis 
   - family-names: Moreira de Queiroz
-    given-names: Thiago
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+    given-names: Thiago 
+  - family-names: Schneider do Vale
+    given-names: Victor 
+  - family-names: Prates de Souza Lima
+    given-names: Vitor 
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Soares Vieira de Vasconcelos
+    given-names: Amália 
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Vilela Cardoso
+    given-names: Leonardo 
 keywords:
-  - 
+  - Trabalho Informal
   - 
 repository-code: 
 license: CC-BY-4.0
