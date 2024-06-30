@@ -80,16 +80,12 @@
     padding-left: 5px;
 }
 
-
-
 #divInputNomeVaga, #divInputLocalVaga{
     width: 49%;
 }
 #divInputNomeVaga input, #divInputLocalVaga input{
     min-width: 80%;
 }
-
-
 
 #divInputSelecionavel{
     width: 49%;
@@ -103,16 +99,12 @@
     width: 60%;
 }
 
-
-
- #divInputValorVaga, #divInputHabilidadesVaga{
+#divInputValorVaga, #divInputHabilidadesVaga{
     min-width: 24%;
 }
  #divInputValorVaga input, #divInputHabilidadesVaga input{
     width: 70%;
 }
-
-
 
 #descricaoVaga{
     min-width: 100%;
@@ -143,9 +135,14 @@
 .filters-container {
     background-color: #704040;
     z-index: 999;
-    padding: 10px 0;
+    padding: 20px 20px;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-
 .filters-container .dropdown .dropdown-toggle {
     background-color: #4e2525;
     border-color: #4e2525;

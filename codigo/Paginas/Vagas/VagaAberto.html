@@ -46,7 +46,7 @@
         </section>
         
         <!-- Filtros -->
-        <div class="filters-container mb-3">
+        <div class="filters-container mb-3 rounded-5">
             <div class="row g-3 justify-content-center pt-2">
                 <div class="col-auto">
                     <button class="btn btn-light" type="button" onclick="resetFilters()">Resetar Filtros</button>
@@ -91,7 +91,7 @@
                             <li><a class="dropdown-item" href="#" onclick="setFilter('distance', 20, 'dropdownDistance')">20 km</a></li>
                         </ul>
                     </div>
-                </div>
+                </div>                
                 <div class="col-auto d-flex">
                     <div class="range-container align-items-center">
                         <label for="valorHora" class="form-label fw-bold pt-1 pe-2">Valor</label>
@@ -130,6 +130,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                         <button type="button" class="btn btn-primary" id="candidatarButton" style="display: none;">Candidatar-se</button>
+                        <button id="retirarCandidaturaButton" class="btn btn-outline-danger" style="display: none;">Retirar candidatura</button>
                     </div>
                 </div>
             </div>

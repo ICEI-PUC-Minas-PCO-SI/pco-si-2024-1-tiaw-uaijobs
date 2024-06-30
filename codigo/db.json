@@ -9,7 +9,7 @@
       "imagem": "https://www.digitow.com.br/wp-content/uploads/2022/04/curso-para-auxiliar-administrativo.jpg",
       "valor": 300,
       "turno": "Manhã",
-      "CEP": "32687405",
+      "local": 32687405,
       "data": "01/06/2024",
       "habilidades": [
         "Comunicação",
@@ -25,7 +25,6 @@
       "interessados": [],
       "publicado": true,
       "candidatos": [
-        "8cbf",
         "4ca4",
         "4472"
       ]
@@ -39,7 +38,7 @@
       "imagem": "https://blog.orientu.com.br/wp-content/uploads/2021/03/assistente-de-recursos-humanos.jpeg",
       "valor": 250,
       "turno": "Manhã",
-      "CEP": 32687405,
+      "local": 32687405,
       "data": "15/06/2024",
       "habilidades": [
         "Organização"
@@ -50,9 +49,7 @@
       "cpf": "987.654.321-98",
       "cnpj": "12.345.678/0001-90",
       "publicado": true,
-      "candidatos": [
-        "8cbf"
-      ]
+      "candidatos": []
     },
     {
       "id": "2",
@@ -63,7 +60,7 @@
       "imagem": "https://blog.fecap.br/wp-content/uploads/fecap-secretariado-executivo.jpg",
       "valor": 350,
       "turno": "Tarde",
-      "CEP": 123456789,
+      "local": 32687405,
       "data": "03/06/2024",
       "habilidades": [
         "Organização"
@@ -74,9 +71,7 @@
       "cpf": "543.210.987-65",
       "cnpj": "78.901.234/0001-23",
       "publicado": true,
-      "candidatos": [
-        "8cbf"
-      ]
+      "candidatos": []
     },
     {
       "id": "3",
@@ -87,7 +82,7 @@
       "imagem": "https://portalidea.com.br/cursos/assistente-financeiro.webp",
       "valor": 280,
       "turno": "Integral",
-      "CEP": 123456789,
+      "local": 32687405,
       "data": "10/06/2024",
       "habilidades": [
         "Análise Financeira"
@@ -98,9 +93,7 @@
       "cpf": "321.654.987-54",
       "cnpj": "56.789.012/0001-34",
       "publicado": true,
-      "candidatos": [
-        "8cbf"
-      ]
+      "candidatos": []
     },
     {
       "id": "4",
@@ -111,7 +104,7 @@
       "imagem": "https://edm2.b-cdn.net/blog/wp-content/uploads/2019/01/assistentedemarketing-1200x675.jpg",
       "valor": 320,
       "turno": "Noite",
-      "CEP": 123456789,
+      "local": 32687405,
       "data": "05/06/2024",
       "habilidades": [
         "Marketing Digital"
@@ -132,7 +125,7 @@
       "imagem": "https://www.totvs.com/wp-content/uploads/2023/11/assistente-de-logistica-salario.jpg",
       "valor": 300,
       "turno": "Tarde",
-      "CEP": 123456789,
+      "local": 32687405,
       "data": "07/06/2024",
       "habilidades": [
         "Gestão de Estoque"
@@ -176,7 +169,7 @@
       "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719518859/i6vclbycablst3iastq2.jpg",
       "valor": "1237846",
       "turno": "Tarde",
-      "local": 3212567315,
+      "local": 32687405,
       "data": "2024-09-16",
       "habilidades": [
         "ashdah"
@@ -552,11 +545,7 @@
       "UserPremium": true,
       "vagasCandidatadas": [
         "3596",
-        "9fd3",
-        "1",
-        "0",
-        "2",
-        "3"
+        "9fd3"
       ]
     },
     {
