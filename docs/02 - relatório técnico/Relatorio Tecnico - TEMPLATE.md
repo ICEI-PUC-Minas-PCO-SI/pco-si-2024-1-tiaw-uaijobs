@@ -396,28 +396,55 @@ A solução proposta pela UaiJobs envolve a criação de uma plataforma digital 
 Para desenvolver a UaiJobs, utilizaremos uma combinação de tecnologias modernas que garantem a funcionalidade e usabilidade da plataforma.
 
 **Tecnologias e Ferramentas:**
-* Linguagens de Programação: HTML, CSS, JavaScript.
-* Frameworks e Bibliotecas:
-  * Front-end: boostrap para construção de interfaces dinâmicas e responsivas.
-* Geolocalização: API do MapBox para fornecer serviços de localização.
-* IDEs de Desenvolvimento: Visual Studio Code (VS Code).
-* Ferramentas de Controle de Versão: GitHub para versionamento de código e colaboração entre os membros da equipe.
-* Prototipagem e Design:
-  * Figma: Para criar wireframes e protótipos interativos.
-  * Miro: Para brainstorming e design thinking.
 
-> Descreva aqui qual(is) tecnologias você vai usar para resolver o seu
-> problema, ou seja, implementar a sua solução. Liste todas as
-> tecnologias envolvidas, linguagens a serem utilizadas, serviços web,
-> frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-> Apresente também uma figura explicando como as tecnologias estão
-> relacionadas ou como uma interação do usuário com o sistema vai ser
-> conduzida, por onde ela passa até retornar uma resposta ao usuário.
-> 
-> Inclua os diagramas de User Flow, esboços criados pelo grupo
-> (stoyboards), além dos protótipos de telas (wireframes). Descreva cada
-> item textualmente comentando e complementando o que está apresentado
-> nas imagens.
+* HTML (HyperText Markup Language)
+Descrição: Linguagem de marcação usada para estruturar o conteúdo das páginas web.
+Uso no Projeto: Define a estrutura básica das páginas, incluindo cabeçalhos, parágrafos, links, botões e formulários.
+
+* CSS (Cascading Style Sheets)
+Descrição: Linguagem de estilo usada para descrever a apresentação dos documentos HTML.
+Uso no Projeto: Estiliza os elementos HTML, criando um design agradável e responsivo, definindo layouts, cores e fontes.
+
+* JavaScript
+Descrição: Linguagem de programação que permite a criação de conteúdo dinâmico e interativo na web.
+Uso no Projeto: Adiciona interatividade, manipula o DOM, faz requisições assíncronas e atualiza o conteúdo da página dinamicamente.
+
+* Bootstrap
+Descrição: Framework CSS de código aberto para desenvolvimento de interfaces web responsivas.
+Uso no Projeto: Fornece estilos predefinidos e componentes como botões, formulários e barras de navegação para acelerar o desenvolvimento e garantir um design consistente.
+
+* jQuery e jQuery UI
+Descrição: Biblioteca JavaScript que simplifica a manipulação do DOM e a criação de interações dinâmicas. jQuery UI adiciona widgets e efeitos visuais.
+Uso no Projeto: Facilita a manipulação de eventos, animações e a implementação de componentes interativos como sliders.
+
+* Axios
+Descrição: Biblioteca JavaScript para fazer requisições HTTP baseadas em Promises.
+Uso no Projeto: Utilizada para comunicação com o JSON Server, permitindo buscar, criar, atualizar e excluir dados de forma assíncrona.
+Ferramentas Utilizadas
+
+* Visual Studio Code (VS Code)
+Descrição: Editor de código-fonte desenvolvido pela Microsoft, altamente extensível e personalizável.
+Uso no Projeto: Edita código com suporte para diversas extensões, como Live Server e Prettier, para desenvolvimento mais eficiente.
+
+* Git e GitHub
+Descrição: Git é um sistema de controle de versão distribuído. GitHub é uma plataforma de hospedagem de código-fonte que usa Git.
+Uso no Projeto: Gerencia o código-fonte, facilita a colaboração, controle de versão e revisão de código.
+
+* Postman
+Descrição: Ferramenta de colaboração para desenvolvimento de APIs que permite criar, testar e documentar APIs.
+Uso no Projeto: Testa as APIs desenvolvidas com o JSON Server para verificar se as requisições estão corretas.
+
+* JSON Server
+Descrição: Ferramenta que cria uma API RESTful falsa a partir de um arquivo JSON.
+Uso no Projeto: Simula um backend durante o desenvolvimento, fornecendo dados de exemplo para testes.
+
+* npm (Node Package Manager)
+Descrição: Gerenciador de pacotes para Node.js, usado para instalar, compartilhar e gerenciar dependências.
+Uso no Projeto: Instala e gerencia pacotes como axios, json-server, jQuery e Bootstrap.
+
+* Browsers para Testes (Chrome, Opera)
+Descrição: Navegadores web usados para testar a aplicação em diferentes ambientes.
+Uso no Projeto: Garantem compatibilidade e responsividade em diversas plataformas e dispositivos.
 
 ## Arquitetura da solução
 
