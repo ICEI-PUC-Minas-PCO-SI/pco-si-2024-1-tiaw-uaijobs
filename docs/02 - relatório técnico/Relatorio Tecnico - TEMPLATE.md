@@ -381,30 +381,84 @@ Quanto à gerência dos issues, seguimos:
 
 
 # Projeto da Solução
+O projeto UaiJobs foi desenvolvido pela equipe para a criação de uma plataforma digital robusta e intuitiva para conectar trabalhadores informais e empregadores. A plataforma permitirá que trabalhadores busquem e se candidatem a vagas de trabalho esporádico e que empregadores divulguem suas necessidades de contratação de forma eficiente.
 
-A solução proposta pela UaiJobs envolve a criação de uma plataforma digital robusta e intuitiva para conectar trabalhadores informais e empregadores. A plataforma permitirá que trabalhadores busquem e se candidatem a vagas de trabalho esporádico e que empregadores divulguem suas necessidades de contratação de forma eficiente.
+## Objetivos do Projeto
 
-**Funcionalidades Principais:**
-* Cadastro de Usuários: Trabalhadores e empregadores poderão se cadastrar na plataforma, criando perfis detalhados que incluem habilidades e interesses favoritos.
-* Busca de Vagas e Trabalhadores: Ferramentas de busca avançada para encontrar vagas de acordo com critérios específicos, como localização, tipo de trabalho e remuneração.
-* Sistema de Avaliação e Feedback: Após a conclusão de um trabalho, tanto empregadores quanto trabalhadores poderão avaliar uns aos outros, ajudando a manter um padrão de qualidade.
-* Geolocalização: Utilização de geolocalização para facilitar a busca de vagas próximas ao usuário.
-* Anúncios no site: Espaço dedicado para patrocinadores ou investidores postarem seus produtos.
+1. **Facilitar a Conexão entre Trabalhadores e Empregadores**
+   - Criar uma plataforma intuitiva que permita a comunicação eficiente entre trabalhadores informais e empregadores, promovendo oportunidades de trabalho esporádico.
 
-## Tecnologias Utilizadas
+2. **Otimizar a Busca por Vagas de Trabalho**
+   - Desenvolver ferramentas de busca avançadas para que trabalhadores possam encontrar rapidamente vagas que correspondam às suas habilidades e localização.
 
-Para desenvolver a UaiJobs, utilizaremos uma combinação de tecnologias modernas que garantem a funcionalidade e usabilidade da plataforma.
+3. **Simplificar o Processo de Candidatura**
+   - Implementar um sistema de candidatura fácil de usar, que permita aos trabalhadores se candidatar a vagas com rapidez e eficiência.
 
-**Tecnologias e Ferramentas:**
-* Linguagens de Programação: HTML, CSS, JavaScript.
-* Frameworks e Bibliotecas:
-  * Front-end: boostrap para construção de interfaces dinâmicas e responsivas.
-* Geolocalização: API do MapBox para fornecer serviços de localização.
-* IDEs de Desenvolvimento: Visual Studio Code (VS Code).
-* Ferramentas de Controle de Versão: GitHub para versionamento de código e colaboração entre os membros da equipe.
-* Prototipagem e Design:
-  * Figma: Para criar wireframes e protótipos interativos.
-  * Miro: Para brainstorming e design thinking.
+4. **Aprimorar a Divulgação de Vagas por Empregadores**
+   - Fornecer aos empregadores uma interface amigável para listar vagas, detalhar requisitos e gerenciar candidatos, melhorando o processo de recrutamento.
+
+5. **Promover a Transparência e a Confiança**
+   - Estabelecer um sistema de avaliação e feedback que incentive a transparência e construa confiança entre trabalhadores e empregadores, assegurando um ambiente seguro e confiável na plataforma.
+
+## Funcionalidades Principais
+
+* **Cadastro de Usuários**: Trabalhadores e empregadores poderão se cadastrar na plataforma, criando perfis detalhados que incluem habilidades e interesses favoritos.
+* **Busca de Vagas e Trabalhadores**: Ferramentas de busca avançada para encontrar vagas de acordo com critérios específicos, como localização, tipo de trabalho e remuneração.
+* **Sistema de Avaliação e Feedback**: Após a conclusão de um trabalho, tanto empregadores quanto trabalhadores poderão avaliar uns aos outros, ajudando a manter um padrão de qualidade.
+* **Geolocalização**: Utilização de geolocalização para facilitar a busca de vagas próximas ao usuário.
+* **Sistema de Assinatura**: Sistema que permite que o usuário assine uma versão premium da UaiJobs para benefícios especiais.
+
+
+# Tecnologias Utilizadas
+
+Para desenvolver a UaiJobs, utilizaremos uma combinação de tecnologias modernas que garantem a funcionalidade e usabilidade da plataforma. Abaixo, detalhamos cada tecnologia utilizada e sua aplicação no projeto:
+
+### Linguagens de Programação
+
+1. **HTML (HyperText Markup Language)**
+   - **Descrição**: Utilizado para estruturar o conteúdo do site.
+   - **Aplicação**: Todas as páginas do site são criadas usando HTML para definir a estrutura básica dos elementos.
+
+2. **CSS (Cascading Style Sheets)**
+   - **Descrição**: Utilizado para estilizar e melhorar a aparência visual do site.
+   - **Aplicação**: CSS é utilizado para aplicar estilos personalizados às páginas, garantindo um design atraente e consistente.
+
+3. **JavaScript**
+   - **Descrição**: Linguagem de programação usada para adicionar interatividade e lógica ao site.
+   - **Aplicação**: JavaScript é implementado para funcionalidades dinâmicas como validação de formulários, manipulação do DOM, e comunicação assíncrona com o servidor.
+
+### Frameworks e Bibliotecas
+
+1. **Bootstrap**
+   - **Descrição**: Framework front-end para desenvolver interfaces responsivas.
+   - **Aplicação**: Bootstrap é utilizado para criar interfaces dinâmicas e responsivas, garantindo a compatibilidade do design em diferentes dispositivos.
+
+2. **API do MapBox**
+   - **Descrição**: Serviço de geolocalização.
+   - **Aplicação**: Utilizado para fornecer serviços de localização, facilitando a busca de vagas próximas ao usuário.
+
+### IDEs de Desenvolvimento
+
+1. **Visual Studio Code (VS Code)**
+   - **Descrição**: Ambiente de desenvolvimento integrado.
+   - **Aplicação**: Utilizado para escrever, depurar e testar o código, proporcionando um ambiente de desenvolvimento eficiente.
+
+### Ferramentas de Controle de Versão
+
+1. **GitHub**
+   - **Descrição**: Plataforma de hospedagem de código e controle de versão.
+   - **Aplicação**: Utilizado para versionamento de código e colaboração entre os membros da equipe, permitindo um desenvolvimento organizado e colaborativo.
+
+### Prototipagem e Design
+
+1. **Figma**
+   - **Descrição**: Ferramenta de design de interface e prototipagem.
+   - **Aplicação**: Utilizado para criar wireframes e protótipos interativos, facilitando a visualização do design antes da implementação.
+
+2. **Miro**
+   - **Descrição**: Plataforma de colaboração visual.
+   - **Aplicação**: Utilizado para brainstorming e design thinking, ajudando na geração de ideias e planejamento do projeto.
+
 
 > Descreva aqui qual(is) tecnologias você vai usar para resolver o seu
 > problema, ou seja, implementar a sua solução. Liste todas as
@@ -447,27 +501,56 @@ Para garantir que a aplicação atende aos requisitos e funciona corretamente, d
 
 ## Plano de Testes
 
-......  COLOQUE AQUI O SEU TEXTO ......
+### Cenários Selecionados
+Os cenários foram selecionados para cobrir as funcionalidades essenciais da plataforma UaiJobs. Detalhamos abaixo os cenários e as ferramentas utilizadas para cada teste.
 
-> Enumere quais cenários de testes foram selecionados para teste. Neste
-> tópico o grupo deve detalhar quais funcionalidades avaliadas, o grupo
-> de usuários que foi escolhido para participar do teste e as
-> ferramentas utilizadas.
-> 
-> **Links Úteis**:
-> - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
-> -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
+#### Tela - Página Inicial
+
+**Funcionalidade Avaliada:** Exibição da página inicial e navegação básica.  
+**Grupo de Usuários:** Todos os visitantes.  
+**Ferramentas Utilizadas:** Testes manuais, Ferramentas de inspeção do navegador.
+
+#### Página de Login
+
+**Funcionalidade Avaliada:** Autenticação de usuários.  
+**Grupo de Usuários:** Usuários registrados.  
+**Ferramentas Utilizadas:** Testes manuais, Ferramentas de inspeção do navegador.
+
+#### Página de Cadastro
+
+**Funcionalidade Avaliada:** Registro de novos usuários.  
+**Grupo de Usuários:** Novos visitantes do site.  
+**Ferramentas Utilizadas:** Testes manuais, Ferramentas de inspeção do navegador.
+
+#### Freelancers Disponíveis
+
+**Funcionalidade Avaliada:** Busca e filtros de freelancers.  
+**Grupo de Usuários:** Empregadores.  
+**Ferramentas Utilizadas:** Testes manuais, Ferramentas de inspeção do navegador.
+
+#### Vagas em Aberto
+
+**Funcionalidade Avaliada:** Exibição e busca de vagas de trabalho.  
+**Grupo de Usuários:** Freelancers.  
+**Ferramentas Utilizadas:** Testes manuais, Ferramentas de inspeção do navegador.
+
+#### Publicar Vaga
+
+**Funcionalidade Avaliada:** Criação e publicação de vagas.  
+**Grupo de Usuários:** Empregadores.  
+**Ferramentas Utilizadas:** Testes manuais, Ferramentas de inspeção do navegador.
 
 ## Ferramentas de Testes (Opcional)
 
-......  COLOQUE AQUI O SEU TEXTO ......
+### Testes Manuais
 
-> Comente sobre as ferramentas de testes utilizadas.
-> 
-> **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+**Descrição:** Realização de testes por meio de interações diretas com a interface do usuário, verificando o comportamento esperado em diferentes cenários.
+**Aplicação:** Utilizado para validar funcionalidades básicas e fluxos de navegação.
+
+### Ferramentas de Inspeção do Navegador
+
+**Descrição:** Ferramentas integradas nos navegadores, como o DevTools do Chrome, que permitem inspecionar e depurar elementos da página, verificar logs de console e monitorar o tráfego de rede.
+**Aplicação:** Utilizado para identificar problemas de renderização, depurar erros de JavaScript e monitorar requisições de rede.
 
 ## Registros de Testes
 
