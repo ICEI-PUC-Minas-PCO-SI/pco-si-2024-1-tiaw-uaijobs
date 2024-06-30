@@ -48,13 +48,21 @@
     <main>
         <!-- Botões userFlow -->
         <section class="botoes py-4 text-center">
-            <div class="btn-group" role="group">
-                <button class="botao-acao btn btn-light" onclick="location.href='../Home/Home.html'">Home</button>
-                <button class="botao-acao btn btn-light"
-                    onclick="location.href='../Freelancers/PaginaFreelancer.html'">Freelancers Disponíveis</button>
-                <button class="botao-acao btn btn-light" onclick="location.href='../Vagas/VagaAberto.html'">Vagas em
-                    Aberto</button>
-                
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-auto mb-2">
+                        <button class="botao-acao btn btn-light w-100" onclick="location.href='../Home/Home.html'">Home</button>
+                    </div>
+                    <div class="col-12 col-md-auto mb-2">
+                        <button class="botao-acao btn btn-light w-100" onclick="location.href='../Freelancers/PaginaFreelancer.html'">Freelancers Disponíveis</button>
+                    </div>
+                    <div class="col-12 col-md-auto mb-2">
+                        <button id="botaoAcao" class="botao-acao btn btn-light w-100" onclick="acaoBotao()">Publicar Vaga</button>
+                    </div>
+                    <div class="col-12 col-md-auto mb-2">
+                        <button class="botao-acao btn btn-light w-100" onclick="location.href='../sobrenos/sobrenos.html'">Sobre os Criadores</button>
+                    </div>
+                </div>
             </div>
         </section>
 

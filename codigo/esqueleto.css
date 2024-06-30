@@ -266,3 +266,28 @@ button:hover {
 .logout a {
     color: red; /* Ajuste conforme necessário */
 }
+
+/* Botoes responsivos */
+@media (min-width: 768px) {
+    .botoes .btn-group {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .botoes .btn-group .botao-acao {
+        flex: 1;
+        margin: 0 5px;
+    }
+    .botao-acao-home{
+        padding-left: 100px ;
+    }
+}
+
+.botoes .col-md-3 {
+    flex: 0 0 auto;
+}
+
+.botoes .btn {
+    white-space: nowrap;
+}
