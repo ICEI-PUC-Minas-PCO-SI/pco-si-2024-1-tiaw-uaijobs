@@ -247,6 +247,27 @@
       "publicado": true,
       "publicacao": "29/06/2024",
       "candidatos": []
+    },
+    {
+      "id": "6fa2",
+      "nome": "Vaga teste",
+      "categoria": "Finanças",
+      "descricao": "teste",
+      "imagem": "https://res.cloudinary.com/df7rlfmhg/image/upload/v1719731459/rvsd9fxvskbbnccx5ebo.jpg",
+      "valor": "100",
+      "turno": "Manhã",
+      "local": 32687405,
+      "data": "2024-07-01",
+      "habilidades": [
+        "Constução civil."
+      ],
+      "empregador": "Luisin do Job",
+      "email": "luis325@gmail.com",
+      "telefone": "31985494832",
+      "cnpj": "5615120800",
+      "publicado": true,
+      "publicacao": "30/06/2024",
+      "candidatos": []
     }
   ],
   "feedbacks": [
@@ -408,7 +429,8 @@
       "bio": "A Uaijobs é meu a melhor do mundo",
       "UserPremium": true,
       "vagasPublicadas": [
-        "81ba"
+        "81ba",
+        "6fa2"
       ]
     },
     {

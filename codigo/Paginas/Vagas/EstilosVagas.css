@@ -1,21 +1,19 @@
-/*Vagas abertas começa aqui*/
-
-/*Cards*/
-.Card{
+/* Cards */
+.Card {
     width: 500px;
     height: 500px;
 }
-.Cards-vagas-imagem img{
+.Cards-vagas-imagem img {
     min-height: 175px;
-    min-width: 100%;
-    width: 85%;
+    width: 100%;
     height: 80%;
 }
-/*Container*/
-.Vagas-abertas, .Vagas-candidatada-postada{
+
+/* Container */
+.Vagas-abertas,
+.Vagas-candidatada-postada {
     width: 100%;
     height: 40%;
-
 }
 .Vagas-abertas {
     display: flex;
@@ -23,6 +21,7 @@
     justify-content: center;
 }
 
+/* Responsividade dos Cards */
 @media (max-width: 1200px) {
     .vagas-container .Container {
         flex: 0 1 calc(50% - 20px); /* 2 cards por linha */
@@ -36,15 +35,19 @@
         max-width: calc(100% - 20px); /* 1 card por linha */
     }
 }
+
 /* Ajuste dos cards de vagas */
 .Container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 10px;
+    margin: 15px;
     padding: 15px;
-    max-width: 100%; /* Garante que os cards não excedam a largura */
+    max-width: 70%; /* Define a largura máxima dos cards */
+}
+.Container:hover {
+    transform: scale(1.05);
 }
 
 .Cards-vagas-title h2 {
@@ -54,13 +57,9 @@
 .Cards-vagas-descrição p {
     font-size: 1rem;
 }
-/*Vagas abertas termina aqui*/
 
-/*Publicar vagas começa aqui */
-
-/* FORMULÁRIO PUBLICAR VAGA*/
-
-.divTituloForm{
+/* Formulário Publicar Vaga */
+.divTituloForm {
     margin-left: 3vw;
     padding-left: 15px;
     min-width: 94vw;
@@ -68,13 +67,12 @@
     border-bottom: 3px solid rgb(141, 134, 134);
 }
 
-.tituloForm{
+.tituloForm {
     font-size: 2rem;
     margin-top: 10px;
 }
 
-
-.formPublicar{
+.formPublicar {
     min-width: 94vw;
     max-width: 100vw;
     margin-top: 20px;
@@ -85,7 +83,7 @@
     background-color: #f0f0f0;
 }
 
-.formPublicar label{
+.formPublicar label {
     font-weight: bold;
     padding: 5px;
     padding-bottom: 10px;
@@ -93,74 +91,77 @@
     word-wrap: break-word;
 }
 
-.formPublicar div{
+.formPublicar div {
     display: inline-block;
     margin: 0;
 }
 
-#divBotaoPublicar{
+#divBotaoPublicar {
     min-width: 100vw;
     text-align: center;
     margin-top: 15px;
 }
 
-#botaoPublicarVaga{
+#botaoPublicarVaga {
     background-color: #4e2525;
     color: antiquewhite;
     padding: 10px;
-    margin: 0px,10px, 0px;
+    margin: 0 10px;
 }
 
-/*DIVs dos inputs e inputs do FORMULÁRIO PUBLICAR VAGA*/
-
-.formPublicar input, .formPublicar select{
+/* DIVs dos inputs e inputs do Formulário Publicar Vaga */
+.formPublicar input,
+.formPublicar select {
     margin-right: 15px;
     padding-left: 5px;
 }
 
-#divInputNomeVaga, #divInputLocalVaga{
+#divInputNomeVaga,
+#divInputLocalVaga {
     width: 49%;
 }
-#divInputNomeVaga input, #divInputLocalVaga input{
+
+#divInputNomeVaga input,
+#divInputLocalVaga input {
     min-width: 80%;
 }
 
-#divInputSelecionavel{
+#divInputSelecionavel {
     width: 49%;
 }
 
-#divInputSelecionavel div{
+#divInputSelecionavel div {
     width: 33%;
 }
 
-#divInputSelecionavel div input{
+#divInputSelecionavel div input {
     width: 60%;
 }
 
-#divInputValorVaga, #divInputHabilidadesVaga{
+#divInputValorVaga,
+#divInputHabilidadesVaga {
     min-width: 24%;
 }
- #divInputValorVaga input, #divInputHabilidadesVaga input{
+
+#divInputValorVaga input,
+#divInputHabilidadesVaga input {
     width: 70%;
 }
 
-#descricaoVaga{
+#descricaoVaga {
     min-width: 100%;
     height: 10rem;
 }
 
-
-#infoEmpresa div{
-   width: 24%; 
+#infoEmpresa div {
+    width: 24%;
 }
 
-#infoEmpresa div input{
+#infoEmpresa div input {
     width: 70%;
 }
 
-/*Publicar vagas termina aqui */
-
-
+/* Estilos adicionais */
 .page-link-custom {
     cursor: pointer;
 }
@@ -181,6 +182,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .filters-container .dropdown .dropdown-toggle {
     background-color: #4e2525;
     border-color: #4e2525;
@@ -266,9 +268,6 @@
 }
 
 /* Página Dinamica */
-#container-vagas-recomendadas{
-    padding-left: 20%;
-}
 #vagasContainer {
     display: flex;
     flex-wrap: wrap;
@@ -276,7 +275,7 @@
 }
 
 .Container {
-    max-width: 80%; /* Define a largura máxima dos cards */
+    max-width: 70%; /* Define a largura máxima dos cards */
     margin: 15px; /* Espaçamento entre os cards */
 }
 

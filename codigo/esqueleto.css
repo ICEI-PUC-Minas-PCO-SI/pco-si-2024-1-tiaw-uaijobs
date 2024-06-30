@@ -226,3 +226,43 @@ button:hover {
         max-width: 100%;
     }
 }
+
+/* DropDown */
+
+/* Estilos para o conteúdo do dropdown */
+.ulDropdown {
+    position: absolute;
+    transform: translateX(-50%);
+    background-color: antiquewhite; /* Ajuste conforme necessário */
+    padding: 10px 0; /* Espaçamento interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra do dropdown */
+    list-style: none; /* Remover estilo de lista */
+    text-align: center; /* Centralizar texto */
+    width: max-content; /* Ajustar largura ao conteúdo */
+    min-width: 150px; /* Largura mínima */
+}
+
+/* Estilos para os itens do dropdown */
+.ulDropdown li {
+    padding: 10px 20px; /* Espaçamento interno dos itens */
+}
+
+.ulDropdown li a {
+    display: block;
+    text-decoration: none; /* Remover sublinhado */
+    color: #333; /* Cor do texto */
+}
+
+/* Exibir dropdown quando ativo */
+.item-navegacao .ulDropdown.d-none {
+    display: none; /* Ocultar dropdown por padrão */
+}
+
+.item-navegacao:hover .ulDropdown {
+    display: block; /* Exibir dropdown ao passar o mouse */
+}
+
+/* Estilos para o link de logout */
+.logout a {
+    color: red; /* Ajuste conforme necessário */
+}
