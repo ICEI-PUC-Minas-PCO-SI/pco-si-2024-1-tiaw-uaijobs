@@ -218,7 +218,7 @@ De acordo com o apresentado no User Flow, as telas do sistema contam com descri�
  
 * **Rodapé**: O rodapé, por fim, armazena a seção de perguntas frequentes, termos de uso e o “fale conosco”.
 
-![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Base_Elementos.jpg)
+![Imagem Wireframe Modelo](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Codigos-Atualizados/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Base_Elementos.jpg)
 alt: Imagem Wireframe Modelo.
 
 
@@ -232,72 +232,72 @@ Essa tela representa o que o usuário encontrará assim que carregar a página p
  
 * **Botão Freelancers disponíveis**: Esse botão guia o usuário até uma página que exibe todos os usuários cadastrados na plataforma que estão disponíveis para realizar serviços.
 
-![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Inicial.jpg)
-alt: Imagem Tela Página inicial.
+![Página Inicial](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Codigos-Atualizados/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Inicial.jpg)
+alt: Página Inicial.
 
 
 ### Tela - Página de Login
 
 Nesse ambiente, o usuário poderá realizar seu login na página.
 
-![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Login.jpg)
-alt: Imagem Tela Página de Login.
+![Página de Login](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Codigos-Atualizados/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Login.jpg)
+alt: Página de Login.
 
 
 ### Tela - Página de Cadastro
 
 Nessa página o usuário poderá realizar seu cadastro caso ainda não possua login no sistema.
 
-![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Cadastro.jpg)
-alt: Imagem Tela Página inicial.
+![Página de Cadastro](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Codigos-Atualizados/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Cadastro.jpg)
+alt: Página de Cadastro.
 
 
 ### Tela - Freelancers Disponíveis
 
 Na tela de Freelancers Disponíveis o usuário poderá localizar todos os demais usuários disponíveis para executar serviços na plataforma. Ele poderá usar uma serie de filtros para achar o freelancer ideal para seu serviço, podendo ainda, abrir o perfil deste Freelancer e acessar suas avaliações e detalhes de contato.
 
-![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Freelancers_Dispon%C3%ADveis.jpg)
-alt: Imagem Tela Freelancers Disponíveis.
+![Freelancers Disponíveis](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Codigos-Atualizados/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Freelancers_Dispon%C3%ADveis.jpg)
+alt: Freelancers Disponíveis.
 
 
 ### Tela - Página do Freelancer
 
 Nessa tela o usuário poderá ter uma visão mais detalhada de um freelancer em especifico, tal como, suas avaliações e um breve resumo do usuário ao qual ele deseja contratar.
 
-![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Freelancer.jpg)
-alt: Imagem Tela Página do Freelancer.
+![Página do Freelancer](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Codigos-Atualizados/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/P%C3%A1gina_Freelancer.jpg)
+alt: Página do Freelancer.
 
 
 ### Tela - Vagas em Aberto
 
 Essa página é destinada aos Freelancers, visto que expõe as vagas cadastradas por contratantes na plataforma. O usuário tem acesso a um breve resumo da vaga, contendo informações como: função, remuneração, data, etc. Além disso, existe um filtro de busca na barra horizontal da página, permitindo ao usuário navegar pelas vagas que desejar, deixando visível apenas as que atenderem seus requisitos.
 
-![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Vagas_Aberto.jpg)
-alt: Imagem Tela Vagas em aberto.
+![Vagas em Aberto](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Codigos-Atualizados/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Vagas_Aberto.jpg)
+alt: Vagas em Aberto.
 
 
 ### Tela - Detalhe da Vaga
 
 O usuário, ao clicar em uma vaga na página anterior, pode acessar todas as informações por completo, bem como manifestar seu interesse por ela.
 
-![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Vaga.jpg)
-alt: Imagem Tela Vaga.
+![Detalhe da Vaga](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Codigos-Atualizados/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Vaga.jpg)
+alt: Detalhe da Vaga.
 
 
 ### Tela - Como o UaiJobs funciona?
 
 Aqui o usuário tem acesso a um vídeo de apresentação de como a plataforma funciona, além de informações adicionais como um campo de anúncios e patrocínios.
 
-![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Como_UaiJobs_Funciona.jpg)
-alt: Imagem Tela Como o UaiJobs funciona?.
+![Como o UaiJobs Funciona](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Codigos-Atualizados/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Como_UaiJobs_Funciona.jpg)
+alt: Como o UaiJobs Funciona.
 
 
 ### Tela - Publicar Vaga
 
 Essa é a seção em que um dono de um serviço pode divulgar sua vaga em busca de um trabalhador para realizá-la. Nela há um formulário obrigatório ao qual o contratante deve preencher. 
 
-![imagem](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Documenta%C3%A7%C3%B5es/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Publicar_Vaga.jpg)
-alt: Imagem Tela Publicar Vaga.
+![Publicar Vaga](https://raw.githubusercontent.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-uaijobs/Codigos-Atualizados/docs/02%20-%20relat%C3%B3rio%20t%C3%A9cnico/images/Publicar_Vaga.jpg)
+alt: Publicar Vaga.
 
 
 
