@@ -24,7 +24,7 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 
 #### 1. Baixando o Código
 **Via arquivo ZIP:**
-1. **Receba o arquivo ZIP:** Você deve receber um arquivo chamado `(INSERIR NOME).zip`.
+1. **Receba o arquivo ZIP:** Você deve receber um arquivo chamado `(pco-si-2024-1-tiaw-uaijobs).zip`.
 2. **Extraia o arquivo:** Clique com o botão direito no arquivo ZIP e selecione "Extrair aqui" ou "Extrair para INSERIR NOME".
 
 **Via GitHub:**
@@ -37,7 +37,7 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 
 #### 3. Configurando o Projeto no VS Code
 1. **Abra o VS Code:** Dê um duplo clique no ícone do VS Code.
-2. **Abra a pasta do projeto:** No VS Code, clique em "File" -> "Open Folder" e navegue até a pasta extraída do projeto (`INSERIR NOME`). Selecione a pasta e clique em "Select Folder".
+2. **Abra a pasta do projeto:** No VS Code, clique em "File" -> "Open Folder" e navegue até a pasta extraída do projeto (`pco-si-2024-1-tiaw-uaijobs`). Selecione a pasta e clique em "Select Folder".
 
 #### 4. Instalando Node.js
 1. **Baixe o Node.js:** Vá para [Node.js](https://nodejs.org/) e baixe a versão recomendada para o seu sistema operacional.
